@@ -34,6 +34,8 @@
             <li class="news"><a class="nav-link" th:href="@{/home}">Test</a></li>
             <li class="contact"><a class="nav-link" th:href="@{/home}">Test</a></li>
             <li sec:authorize="isAnonymous()" class="header_login"><a class="nav-link" th:href="@{/user/login}">Login</a></li>
+            <li sec:authorize="isAuthenticated()" class="header_logout"><a class="nav-link" th:href="@{/user/logout}">Logout</a></li>
+
         </ul>
     </div>
 </div>
