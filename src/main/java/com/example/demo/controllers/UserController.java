@@ -10,7 +10,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
 import java.security.Principal;
 
 @Controller
@@ -41,14 +45,13 @@ public class UserController {
 
     @PostMapping({"/user/register"})
     public String registerPost(@RequestParam String username,
-                           @RequestParam String password,
-                           @RequestParam String name,
-                           @RequestParam String bio,
-                           Principal principal) {
+                               @RequestParam String password,
+                               @RequestParam String name,
+                               @RequestParam String bio,
+                               @RequestParam("file") MultipartFile file) {
         if (username.equals("")
                 || !username.matches("^[a-zA-Z0-9]*$")
-                || userRepository.findByUsername(username).isPresent()
-                || principal != null) {
+                || userRepository.findByUsername(username).isPresent()) {
             return "user/register";
         }
         username = username.toLowerCase();
@@ -62,6 +65,20 @@ public class UserController {
         Profile newProfile = new Profile();
         newProfile.setName(name);
         newProfile.setBio(bio);
+        var profile = profileRepository.save(newProfile);
+        // Naively assume uploaded file is an image
+        try {
+            Path path = Path.of("./static/images/" + profile.getId() + ".png");
+            file.transferTo(path);
+            File transferredFile = path.toFile();
+            transferredFile.deleteOnExit(); // Since we're using in-memory H2 database
+            profile.setPathOfProfilePicture(profile.getId() + ".png");
+            profileRepository.save(profile);
+        } catch (IOException e) {
+            e.printStackTrace();
+            profileRepository.delete(profile);
+            return "redirect:register";
+        }
         newProfile.setUser(user);
         profileRepository.save(newProfile);
         return "redirect:/";

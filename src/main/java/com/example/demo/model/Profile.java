@@ -10,6 +10,7 @@ public class Profile {
     private Integer id;
     private String name;
     private String bio;
+    private String photo_path;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
@@ -40,6 +41,14 @@ public class Profile {
 
     public void setBio(String bio) {
         this.bio = bio;
+    }
+
+    public String getPathOfProfilePicture() {
+        return photo_path;
+    }
+
+    public void setPathOfProfilePicture(String photo_path) {
+        this.photo_path = photo_path;
     }
 
     public User getUser() {
