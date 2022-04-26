@@ -35,7 +35,7 @@ public class UserController {
     }
 
     @GetMapping({"/user/register"})
-    public String register(Principal principal) {
+    public String register() {
         return "user/register";
     }
 
