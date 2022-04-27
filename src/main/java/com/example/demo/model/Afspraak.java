@@ -8,8 +8,8 @@ import java.util.Date;
 
 @Entity
 public class Afspraak {
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "boeking_generator")
-    @SequenceGenerator(name = "boeking_generator", sequenceName = "boeking_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "afspraak_generator")
+    @SequenceGenerator(name = "afspraak_generator", sequenceName = "afspraak_seq", allocationSize = 1)
     @Id
     private Integer id;
     @Temporal(TemporalType.DATE)
