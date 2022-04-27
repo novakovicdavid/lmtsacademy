@@ -1,0 +1,40 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<!--suppress XmlUnusedNamespaceDeclaration -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/stylesheet.css}" href="../static/css/stylesheet.css"/>
+
+    <title>Title</title>
+</head>
+<body>
+<div th:replace="fragments/header :: header">Header</div>
+
+<h1 class="h1Afspraken">Overzicht afspraken</h1>
+<table  class="afsprakenTabel">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Datum</th>
+        <th>Van</th>
+        <th>Tot</th>
+        <th>Naam</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="b: ${afspraken}">
+        <td th:text="${b.id}"></td>
+        <td th:text="${b.datum}"></td>
+        <td th:text="${b.startUur}"></td>
+        <td th:text="${b.eindUur}"></td>
+        <td th:text="${b.naam}"></td>
+
+    </tr>
+    </tbody>
+</table>
+
+
+</body>
+</html>
