@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class Profile {
@@ -8,9 +9,20 @@ public class Profile {
     @SequenceGenerator(name = "profile_seq", sequenceName = "PROFILE_SEQ", initialValue = 0, allocationSize = 1)
     @GeneratedValue(generator = "profile_seq")
     private Integer id;
-    private String name;
-    private String bio;
-    private String photo_path;
+    private String firstName;
+    private String lastName;
+    private String city;
+    private String province;
+
+    @Temporal(TemporalType.DATE)
+    private Date birthday;
+
+    private String email;
+    private String phoneNumber;
+    private String experience;
+
+    // No intake interview done/planned
+    private Boolean isNew;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
@@ -27,28 +39,76 @@ public class Profile {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getBio() {
-        return bio;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setBio(String bio) {
-        this.bio = bio;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getPathOfProfilePicture() {
-        return photo_path;
+    public String getCity() {
+        return city;
     }
 
-    public void setPathOfProfilePicture(String photo_path) {
-        this.photo_path = photo_path;
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date age) {
+        this.birthday = age;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getExperience() {
+        return experience;
+    }
+
+    public void setExperience(String experience) {
+        this.experience = experience;
+    }
+
+    public Boolean getNew() {
+        return isNew;
+    }
+
+    public void setNew(Boolean aNew) {
+        isNew = aNew;
     }
 
     public User getUser() {
