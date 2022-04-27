@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cursus</title>
+</head>
+<body>
+<div>
+    <div th:if="${course}">
+
+        <h2 th:text="${course.getName}">coursedetails</h2>
+        <div>
+            <div class="infoName">id:</div>
+            <div class="infoValue" th:text="${course.getId()}">id</div>
+        </div>
+        <div>
+            <div class="infoName">Omschrijving:</div>
+            <div class="infoValue" th:text="${course.getDescription()}">omschrijving</div>
+        </div>
+
+
+    </div>
+</div>
+</body>
+</html>
