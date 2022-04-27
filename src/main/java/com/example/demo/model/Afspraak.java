@@ -17,17 +17,17 @@ public class Afspraak {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date Datum;
     @NotNull
-    private Integer startUur;
+    private String startUur;
     @NotNull
 
-    private Integer eindUur;
+    private String eindUur;
     //    moet vervangen worden door lid
     private String naam;
 
     public Afspraak() {
     }
 
-    public Afspraak(Integer id, Date datum, Integer startUur, Integer eindUur, String naam) {
+    public Afspraak(Integer id, Date datum, String startUur, String eindUur, String naam) {
         this.id = id;
         Datum = datum;
         this.startUur = startUur;
@@ -51,19 +51,19 @@ public class Afspraak {
         Datum = datum;
     }
 
-    public Integer getStartUur() {
+    public String getStartUur() {
         return startUur;
     }
 
-    public void setStartUur(Integer startUur) {
+    public void setStartUur(String startUur) {
         this.startUur = startUur;
     }
 
-    public Integer getEindUur() {
+    public String getEindUur() {
         return eindUur;
     }
 
-    public void setEindUur(Integer eindUur) {
+    public void setEindUur(String eindUur) {
         this.eindUur = eindUur;
     }
 
