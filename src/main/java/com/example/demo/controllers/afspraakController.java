@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+
 @Controller
 public class afspraakController {
     private final Logger logger = LoggerFactory.getLogger(afspraakController.class);
@@ -22,5 +25,20 @@ public class afspraakController {
 
         return "afspraken";
 
+    }
+
+    @GetMapping("/afspraaknew")
+    public String afspraakNew(Model model) {
+        model.addAttribute("afspraak", new Afspraak());
+        model.addAttribute("afspraken", afspraakRepository.findAll());
+        return "afspraaknew";
+
+    }
+
+    @PostMapping("/afspraaknew")
+    public String afspraakNewPost(@ModelAttribute("afspraak") Afspraak afspraak) {
+
+        Afspraak newAfspraak = afspraakRepository.save(afspraak);
+        return "redirect:/afspraken";
     }
 }

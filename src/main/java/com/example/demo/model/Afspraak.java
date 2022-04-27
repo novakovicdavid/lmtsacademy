@@ -16,21 +16,18 @@ public class Afspraak {
     @NotNull
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date Datum;
-    @Temporal(TemporalType.TIME)
     @NotNull
-    @DateTimeFormat(pattern = "hh-MM-ss")
-    private Date startUur;
-    @Temporal(TemporalType.TIME)
+    private Integer startUur;
     @NotNull
-    @DateTimeFormat(pattern = "hh-MM-ss")
-    private Date eindUur;
-//    moet vervangen worden door lid
+
+    private Integer eindUur;
+    //    moet vervangen worden door lid
     private String naam;
 
     public Afspraak() {
     }
 
-    public Afspraak(Integer id, Date datum, Date startUur, Date eindUur, String naam) {
+    public Afspraak(Integer id, Date datum, Integer startUur, Integer eindUur, String naam) {
         this.id = id;
         Datum = datum;
         this.startUur = startUur;
@@ -54,19 +51,19 @@ public class Afspraak {
         Datum = datum;
     }
 
-    public Date getStartUur() {
+    public Integer getStartUur() {
         return startUur;
     }
 
-    public void setStartUur(Date startUur) {
+    public void setStartUur(Integer startUur) {
         this.startUur = startUur;
     }
 
-    public Date getEindUur() {
+    public Integer getEindUur() {
         return eindUur;
     }
 
-    public void setEindUur(Date eindUur) {
+    public void setEindUur(Integer eindUur) {
         this.eindUur = eindUur;
     }
 

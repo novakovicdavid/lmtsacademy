@@ -12,26 +12,31 @@
 <body>
 <!--<div th:replace="fragments/header :: header">Header</div>-->
 
-<form th:object="${afspraak}" th:action="@{/afspraakNew}" method="post">
-    <div class="appartementinfo">
+<form th:object="${afspraak}" th:action="@{/afspraaknew}" method="post">
+    <div class="afspraakinfo">
 
-        <div>
-            <label for="afspraakId" class="grootheid">afspraakid </label>
-            <input id="afspraakId" th:field="*{afspraak.id}" class="infoLineValue">
-        </div>
+<!--        <div>-->
+<!--            <label for="afspraakId" class="grootheid">afspraakid </label>-->
+<!--            <input id="afspraakId" th:field="*{id}" class="infoLineValue">-->
+<!--        </div>-->
         <div>
             <label for="date" class="grootheid">datum <i>(yyyy-mm-dd)</i>: </label>
-            <input id="date" th:field="*{date}" class="infoLineValue">
+            <input id="date" th:field="*{datum}" class="infoLineValue">
         </div>
 
         <div>
-            <label for="startUur" class="grootheid">startdatum <i>(hh-mm-ss)</i>: </label>
+            <label for="startUur" class="grootheid">startuur : </label>
             <input id="startUur" th:field="*{startUur}" class="infoLineValue">
 
         </div>
         <div>
-            <label for="eindUur" class="grootheid">eindUur <i>(hh-mm-ss)</i>: </label>
+            <label for="eindUur" class="grootheid">eindUur: </label>
             <input id="eindUur" th:field="*{eindUur}" class="infoLineValue">
+
+        </div>
+        <div>
+            <label for="naam" class="grootheid">naam: </label>
+            <input id="naam" th:field="*{naam}" class="infoLineValue">
 
         </div>
 
