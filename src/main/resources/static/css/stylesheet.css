@@ -197,6 +197,7 @@ h1 {
 .h1Afspraken {
     font-size: xxx-large;
     text-align: center;
+    color: red;
 }
 .afsprakenTabel {
     text-align: center;
