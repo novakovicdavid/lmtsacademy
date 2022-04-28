@@ -23,16 +23,20 @@ public class Afspraak {
     private String eindUur;
     //    moet vervangen worden door lid
     private String naam;
+    private String vakgebied;
+    private String opmerking;
 
     public Afspraak() {
     }
 
-    public Afspraak(Integer id, Date datum, String startUur, String eindUur, String naam) {
+    public Afspraak(Integer id, Date datum, String startUur, String eindUur, String naam, String vakgebied, String opmerking) {
         this.id = id;
         Datum = datum;
         this.startUur = startUur;
         this.eindUur = eindUur;
         this.naam = naam;
+        this.vakgebied = vakgebied;
+        this.opmerking = opmerking;
     }
 
     public Integer getId() {
@@ -73,5 +77,21 @@ public class Afspraak {
 
     public void setNaam(String naam) {
         this.naam = naam;
+    }
+
+    public String getVakgebied() {
+        return vakgebied;
+    }
+
+    public void setVakgebied(String vakgebied) {
+        this.vakgebied = vakgebied;
+    }
+
+    public String getOpmerking() {
+        return opmerking;
+    }
+
+    public void setOpmerking(String opmerking) {
+        this.opmerking = opmerking;
     }
 }
