@@ -14,16 +14,26 @@ public class Course {
     private String description;
     @Column(length = 500)
     private String shortdescription;
+    private String location;
     public Course() {
 
     }
 
-    public Course(Integer id, String name, String teacher, String description,String shortDescription) {
+    public Course(Integer id, String name,String location, String teacher, String description,String shortDescription) {
         this.id = id;
         this.name = name;
         this.teacher = teacher;
+        this.location = location;
         this.shortdescription = shortDescription;
         this.description = description;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public String getShortdescription() {
