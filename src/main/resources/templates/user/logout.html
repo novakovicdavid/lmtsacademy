@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logout</title>
+</head>
+<body>
+Are you sure you want to logout?
+<form th:action="@{|/user/logout|}" method="post">
+    <input type="submit" value="Yes, log me out">
+</form>
+<a href="/">No, take me back home</a>
+</body>
+</html>

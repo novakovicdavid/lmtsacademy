@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
 html {
     overflow-x: hidden;
 }
@@ -163,6 +165,68 @@ h1 {
 
 }
 
+/*Homepage*/
+.textHomepage {
+    background-color: white;
+    padding: 10px;
+    position: relative;
+    margin: 20px;
+    font-family: Consolas, monaco, monospace;
+    font-weight: 500;
+}
+.textVision{
+    color: white;
+    font-family: Consolas, monaco, monospace;
+    font-size: 20px;
+    margin: 10px;
+    text-align: center;
+}
+
+.textHomepage:after {
+    content: '';
+    background: transparent;
+    border: 1px solid white;
+    top: 7px;
+    right: 30%;
+    bottom: -20px;
+    left: -10px;
+    position: absolute;
+    z-index: -1;
+}
+
+.teamContainer {
+    justify-content: center;
+}
+
+.teamMember {
+    text-align: center;
+    background: #E2ED8C;
+    margin: auto;
+    padding: 5px 5px;
+    border: 5px solid white;
+}
+
+.teamMemberName{
+    transform:rotate(-90deg);
+    position: absolute;
+    margin-top: 50px;
+    padding-bottom: 20px;
+    color: #619095;
+    font-family: bebas-neue, sans-serif;
+}
+.memberBio{
+    font-family: Consolas, monaco, monospace;
+
+}
+
+.imgTeam {
+    width: 13em;
+    margin: 10px;
+}
+.imgLogoPink{
+    width: 15em;
+}
+
 /*Footer*/
 .verticalLine {
     bottom: 0;
@@ -187,11 +251,79 @@ h1 {
 .verticalLine3 {
     background-color: #364182;
     bottom: 0;
+    background-color: #364182;
     left: 14%;
     position: fixed;
     height: 140px;
     width: 10px;
     border-radius: 20px 20px 0 0;
+}
+/* cursus
+
+ */
+.courselistitem{
+    border-style: outset;
+    border-width: medium;
+    max-width: 140px;
+}
+
+/* Footer Fragment */
+footer {
+    position: fixed;
+    bottom: 0;
+    background: #111;
+    width: 100%;
+    padding-top: 10px;
+    color: #fff;
+}
+
+.footer-content {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-content h3 {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
+
+.footer-content p {
+    max-width: 500px;
+    margin: 5px auto;
+    line-height: 15px;
+    font-size: 12px;
+    color: #cacdd2;
+}
+
+.socials {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.socials li {
+    margin-right: 10px;
+}
+
+.socials a {
+    text-decoration: none;
+    color: #fff;
+    border: 1.1px solid white;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.socials a i {
+    font-size: 1.1rem;
+    width: 20px;
+    transition: color .4s ease;
+}
+
+.socials a:hover i {
+    color: aqua;
 }
 /*css afspraken*/
 .h1Afspraken {
