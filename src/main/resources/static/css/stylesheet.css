@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
 html {
     overflow-x: hidden;
 }
 
 .body {
-    margin: 0;
+    margin: 0 0 10rem 0;
     padding: 0;
     background: #619095;
-
 }
 
 .bubbles {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 200%;
     z-index: 0;
     top: 0;
     left: 0;
@@ -129,11 +129,19 @@ html {
     }
 }
 
-h1 {
+h1{
     text-align: center;
     color: white;
     font-family: bebas-neue, sans-serif;
     margin-top: 50px !important;
+}
+
+h2.titleOurTeam{
+    font-family: bebas-neue, sans-serif;
+    color: white;
+    margin-top: 50px !important;
+    margin-left: 40px;
+    text-decoration: underline #EB95E7;
 }
 
 /*Navigation bar*/
@@ -162,6 +170,68 @@ h1 {
     display: block;
     font-family: bebas-neue, sans-serif;
 
+}
+
+/*Homepage*/
+.textHomepage {
+    background-color: white;
+    padding: 10px;
+    position: relative;
+    margin: 20px;
+    font-family: Consolas, monaco, monospace;
+    font-weight: 500;
+}
+.textVision{
+    color: white;
+    font-family: Consolas, monaco, monospace;
+    font-size: 20px;
+    margin: 10px;
+    text-align: center;
+}
+
+.textHomepage:after {
+    content: '';
+    background: transparent;
+    border: 1px solid white;
+    top: 7px;
+    right: 30%;
+    bottom: -20px;
+    left: -10px;
+    position: absolute;
+    z-index: -1;
+}
+
+.teamContainer {
+    justify-content: center;
+}
+
+.teamMember {
+    text-align: center;
+    background: #E2ED8C;
+    margin: auto;
+    padding: 5px 5px;
+    border: 5px solid white;
+}
+
+.teamMemberName{
+    transform:rotate(-90deg);
+    position: absolute;
+    margin-top: 50px;
+    padding-bottom: 20px;
+    color: #619095;
+    font-family: bebas-neue, sans-serif;
+}
+.memberBio{
+    font-family: Consolas, monaco, monospace;
+
+}
+
+.imgTeam {
+    width: 13em;
+    margin: 10px;
+}
+.imgLogoPink{
+    width: 15em;
 }
 
 /*Footer*/
@@ -205,7 +275,7 @@ h1 {
 }
 
 /* Footer Fragment */
-footer{
+footer {
     position: fixed;
     bottom: 0;
     background: #111;
@@ -213,35 +283,39 @@ footer{
     padding-top: 10px;
     color: #fff;
 }
-.footer-content{
+
+.footer-content {
     align-items: center;
     justify-content: center;
     flex-direction: column;
     text-align: center;
 }
-.footer-content h3{
+
+.footer-content h3 {
     font-size: 1.2rem;
     text-transform: capitalize;
 }
-.footer-content p{
+
+.footer-content p {
     max-width: 500px;
     margin: 5px auto;
     line-height: 15px;
     font-size: 12px;
     color: #cacdd2;
 }
-.socials{
+
+.socials {
     list-style: none;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.socials li{
-  margin-right: 10px;
+.socials li {
+    margin-right: 10px;
 }
 
-.socials a{
+.socials a {
     text-decoration: none;
     color: #fff;
     border: 1.1px solid white;
@@ -249,13 +323,13 @@ footer{
     border-radius: 50%;
 }
 
-.socials a i{
+.socials a i {
     font-size: 1.1rem;
     width: 20px;
     transition: color .4s ease;
 }
 
-.socials a:hover i{
+.socials a:hover i {
     color: aqua;
 }
 
