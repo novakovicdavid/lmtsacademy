@@ -31,8 +31,7 @@
             <li class="home"><a class="nav-link" th:href="@{/home}">Home</a></li>
             <li class="tutorials"><a class="nav-link" th:href="@{/home}">Test</a></li>
             <img th:src="@{/pictures/LMTSLogo.png}"/>
-            <li class="news"><a class="nav-link" th:href="@{/home}">Test</a></li>
-            <li class="contact"><a class="nav-link" th:href="@{/home}">Test</a></li>
+            <li class="contact"><a class="nav-link" th:href="@{/courselist}">Cursussen</a></li>
             <li sec:authorize="isAnonymous()" class="header_login"><a class="nav-link" th:href="@{/user/login}">Login</a></li>
             <li sec:authorize="isAuthenticated()" class="header_logout"><a class="nav-link" th:href="@{/user/logout}">Logout</a></li>
 
