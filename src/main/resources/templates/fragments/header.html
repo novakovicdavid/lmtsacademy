@@ -1,6 +1,7 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>backgroundfragment</title>
@@ -32,6 +33,9 @@
             <img th:src="@{/pictures/LMTSLogo.png}"/>
             <li class="news"><a class="nav-link" th:href="@{/home}">Test</a></li>
             <li class="contact"><a class="nav-link" th:href="@{/home}">Test</a></li>
+            <li sec:authorize="isAnonymous()" class="header_login"><a class="nav-link" th:href="@{/user/login}">Login</a></li>
+            <li sec:authorize="isAuthenticated()" class="header_logout"><a class="nav-link" th:href="@{/user/logout}">Logout</a></li>
+
         </ul>
     </div>
 </div>
