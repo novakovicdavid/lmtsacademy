@@ -5,18 +5,23 @@ html {
 }
 
 .body {
-    margin: 0 0 10rem 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
     padding: 0;
     background: #619095;
 }
+.main
+{
+    flex-grow: 1;
+}
 
 .bubbles {
-    position: absolute;
+    position: fixed;
     width: 100%;
-    height: 200%;
-    z-index: 0;
-    top: 0;
-    left: 0;
+    height: 100%;
+    bottom: 0;
     overflow: hidden;
 }
 
@@ -129,14 +134,14 @@ html {
     }
 }
 
-h1{
+h1 {
     text-align: center;
     color: white;
     font-family: bebas-neue, sans-serif;
     margin-top: 50px !important;
 }
 
-h2.titleOurTeam{
+h2.titleOurTeam {
     font-family: bebas-neue, sans-serif;
     color: white;
     margin-top: 50px !important;
@@ -145,6 +150,7 @@ h2.titleOurTeam{
 }
 
 /*Navigation bar*/
+
 .nav ul {
     position: relative;
     top: 0;
@@ -181,7 +187,8 @@ h2.titleOurTeam{
     font-family: Consolas, monaco, monospace;
     font-weight: 500;
 }
-.textVision{
+
+.textVision {
     color: white;
     font-family: Consolas, monaco, monospace;
     font-size: 20px;
@@ -213,24 +220,26 @@ h2.titleOurTeam{
     border: 5px solid white;
 }
 
-.teamMemberName{
-    transform:rotate(-90deg);
+.teamMemberName {
+    transform: rotate(-90deg);
     position: absolute;
     margin-top: 50px;
     padding-bottom: 20px;
     color: #619095;
     font-family: bebas-neue, sans-serif;
 }
-.memberBio{
+
+.memberBio {
     font-family: Consolas, monaco, monospace;
 
 }
 
 .imgTeam {
-    width: 13em;
+    width: 100%;
     margin: 10px;
 }
-.imgLogoPink{
+
+.imgLogoPink {
     width: 15em;
 }
 
@@ -265,45 +274,50 @@ h2.titleOurTeam{
     width: 10px;
     border-radius: 20px 20px 0 0;
 }
-/* cursus
 
- */
+/* cursus*/
 .courseContainer {
-    display: flex;
     justify-content: center;
+    position: relative;
 }
-.cursusInfo{
+
+.cursusInfo {
     border: 5px solid white;
     background: #E2ED8C;
     margin-left: 100px;
     max-width: 800px;
 }
-.infoName{
+
+.infoName {
     margin-bottom: 10px;
 }
-.courselistitem{
+
+.courselistitem {
     border: 5px solid white;
     text-align: center;
     background: #E2ED8C;
-    margin: auto;
+    margin: 10px;
     padding: 5px 5px;
     width: 140px;
-    height:170px;
+    height: 100%;
     display: inline-block;
+    border-radius: 10% 0;
 }
-.courselistitem a{
+
+.courselistitem a {
     text-decoration: none;
     font-family: bebas-neue, sans-serif;
-    color: white;
+    font-size: 2em;
+    color: green;
 }
 
 /* Footer Fragment */
 footer {
-    position: fixed;
-    bottom: 0;
+    position: relative;
+    bottom: -10px;
     background: #111;
-    width: 100%;
-    padding-top: 10px;
+    height: 100%;
+    padding: 10px;
     color: #fff;
 }
 

@@ -11,23 +11,20 @@
     <title>Cursussen</title>
 
 </head>
-<body>
-<div th:replace="fragments/header::background"></div>
-<h1>ONZE CURSUSSEN</h1>
-<div class="row">
-    <div class="courseContainer">
-        <div class="courselistitem" th:each="course: ${courses}">
+<body class="body">
+<div class="main">
+    <div th:replace="fragments/header::background"></div>
+    <h1>ONZE CURSUSSEN</h1>
+    <div class="courseContainer row">
+        <div class="courselistitem col-3" th:each="course: ${courses}">
             <a th:href="@{|/coursedetails/${course.id}|}" th:text="${course.name}">Cursus naam </a>
             <br>
-            <a th:text="${course.shortdescription}">Cursus naam</a>
+            <p th:text="${course.shortdescription}">Cursus naam</p>
         </div>
     </div>
 </div>
+
+
 <div th:replace="fragments/footer::footer"></div>
 </body>
-<style>
-    body {
-        background: #619095;
-    }
-</style>
 </html>
