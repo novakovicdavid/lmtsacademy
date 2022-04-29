@@ -5,7 +5,6 @@ import com.example.demo.model.User;
 import com.example.demo.repositories.ProfileRepository;
 import com.example.demo.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -19,7 +18,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.security.Principal;
-import java.util.Date;
 
 @Controller
 public class UserController {
@@ -51,33 +49,24 @@ public class UserController {
 
     @PostMapping({"/user/register"})
     public String registerPost(
-            @RequestParam String username,
+            @RequestParam String email,
             @RequestParam String password,
             @RequestParam String firstName,
             @RequestParam String lastName,
-            @RequestParam String city,
-            @RequestParam String province,
-            @RequestParam @DateTimeFormat(iso= DateTimeFormat.ISO.DATE) Date birthday,
-            @RequestParam String email,
-            @RequestParam String phoneNumber,
             @RequestParam String experience,
             Principal principal) {
-        if (username.equals("")
-                || !username.matches("^[a-zA-Z0-9]*$")
-                || userRepository.findByUsername(username).isPresent()
+        if (email.equals("")
+                || !email.matches("^[a-zA-Z0-9]*$")
+                || userRepository.findByEmail(email).isPresent()
                 || firstName.equals("")
                 || lastName.equals("")
-                || city.equals("")
-                || province.equals("")
-                || email.equals("")
-                || phoneNumber.equals("")
                 || experience.equals("")
                 || principal != null) {
             return "user/register";
         }
-        username = username.toLowerCase();
+        email = email.toLowerCase();
         User newUser = new User();
-        newUser.setUsername(username);
+        newUser.setEmail(email);
         String hashedPassword = passwordEncoder.encode(password);
         newUser.setPassword(hashedPassword);
         newUser.setRole("USER");
@@ -87,26 +76,22 @@ public class UserController {
         newProfile.setUser(user);
         newProfile.setFirstName(firstName);
         newProfile.setLastName(lastName);
-        newProfile.setCity(city);
-        newProfile.setProvince(province);
-        newProfile.setBirthday(birthday);
-        newProfile.setEmail(email);
-        newProfile.setPhoneNumber(phoneNumber);
         newProfile.setExperience(experience);
+        newProfile.setNew(true);
         profileRepository.save(newProfile);
 
-        autologin(username, password);
-        return "redirect:/user/registration/confirmation";
+        autologin(email, password);
+        return "redirect:/user/register/confirmation";
     }
 
-    @GetMapping({"/user/registration/confirmation"})
+    @GetMapping({"/user/register/confirmation"})
     public String confirmationRegistration() {
         return "user/registration_confirmation";
     }
 
-    private void autologin(String userName, String password) {
+    private void autologin(String email, String password) {
         UsernamePasswordAuthenticationToken token
-                = new UsernamePasswordAuthenticationToken(userName, password);
+                = new UsernamePasswordAuthenticationToken(email, password);
         try {
             Authentication auth = authenticationManager.authenticate(token);
             SecurityContext sc = SecurityContextHolder.getContext();

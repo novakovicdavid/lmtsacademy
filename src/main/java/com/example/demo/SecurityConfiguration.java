@@ -17,10 +17,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/admin/**").hasAuthority("ADMIN")
-                .anyRequest().permitAll();
+                .antMatchers("/user/register").anonymous();
         http.csrf().ignoringAntMatchers("/h2-console/**")
                 .and().headers().frameOptions().sameOrigin();
         http.formLogin()
+                .usernameParameter("email")
                 .loginPage("/user/login")
                 .failureUrl("/user/login?error=true")
                 .defaultSuccessUrl("/",true);
@@ -38,9 +39,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         auth.jdbcAuthentication()
                 .dataSource(dataSource)
                 .usersByUsernameQuery(
-                        "select username,password,true from user where username = ?")
+                        "select email,password,true from user where email = ?")
                 .authoritiesByUsernameQuery(
-                        "select username, role from user where username = ?");
+                        "select email, role from user where email = ?");
     }
 
     @Bean

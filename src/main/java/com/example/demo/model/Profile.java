@@ -17,7 +17,6 @@ public class Profile {
     @Temporal(TemporalType.DATE)
     private Date birthday;
 
-    private String email;
     private String phoneNumber;
     private String experience;
 
@@ -77,14 +76,6 @@ public class Profile {
 
     public void setBirthday(Date age) {
         this.birthday = age;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getPhoneNumber() {
