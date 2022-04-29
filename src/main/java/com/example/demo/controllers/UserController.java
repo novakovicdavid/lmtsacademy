@@ -43,7 +43,8 @@ public class UserController {
     }
 
     @GetMapping({"/user/register"})
-    public String register() {
+    public String register(Principal principal) {
+        if(principal != null) return "redirect:/";
         return "user/register";
     }
 
