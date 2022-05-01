@@ -12,25 +12,25 @@
     <form th:action="@{|/user/register|}" method="post" enctype="multipart/form-data">
         <div class="input_container">
             <label for="first_name">First name:</label>
-            <input id="first_name" name="firstName" type="text" placeholder="First name">
+            <input class="text_input" id="first_name" name="firstName" type="text" placeholder="First name">
         </div>
         <div class="input_container">
             <label for="last_name">Last name:</label>
-            <input id="last_name" name="lastName" type="text" placeholder="Last name">
+            <input class="text_input" id="last_name" name="lastName" type="text" placeholder="Last name">
         </div>
         <div class="input_container">
             <label for="email">Email:</label>
-            <input id="email" name="email" type="text" placeholder="Email">
+            <input class="text_input" id="email" name="email" type="text" placeholder="Email">
         </div>
         <div class="input_container">
             <label for="password">Password:</label>
-            <input id="password" name="password" type="password" placeholder="Password">
+            <input class="text_input" id="password" name="password" type="password" placeholder="Password">
         </div>
         <div class="input_container">
             <label for="experience">Do you have experience in one of the lessons offered? (Dance, singing, acting,
                 casting
                 techniques): </label>
-            <textarea id="experience" name="experience" type="text"></textarea>
+            <textarea class="text_input" id="experience" name="experience" type="text"></textarea>
         </div>
         <div class="input_container submit_container">
             <input class="submit_button" type="submit" value="SIGN ME UP!">

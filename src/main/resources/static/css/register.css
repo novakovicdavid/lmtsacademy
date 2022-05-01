@@ -59,8 +59,18 @@ form::after {
     margin: .5rem 2rem .5rem 2rem
 }
 
-.input_container input {
+.input_container input, .input_container textarea {
     padding: .5rem;
+}
+
+.text_input {
+    border: 1px solid rgb(118, 118, 118);
+    border-radius: 4px;
+}
+
+.text_input:focus {
+    border: 1px solid #ea95e8;
+    outline: 1px solid #ea95e8;
 }
 
 .input_container label {
