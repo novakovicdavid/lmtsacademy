@@ -102,3 +102,7 @@ form::after {
 .submit_button:active {
     background-color: #ca80c9;
 }
+
+.submit_button:focus {
+    outline: 2px solid #e2ef8d;
+}
