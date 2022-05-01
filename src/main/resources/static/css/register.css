@@ -91,4 +91,14 @@ form::after {
     border: none;
     box-shadow: 20px 20px 50px 0 rgba(128, 128, 128, 0.3);
     border-radius: 4px;
+
+    cursor:pointer;
+}
+
+.submit_button:hover {
+    background-color: #d688d5;
+}
+
+.submit_button:active {
+    background-color: #ca80c9;
 }
