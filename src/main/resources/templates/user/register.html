@@ -1,38 +1,41 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <link rel="stylesheet" type="text/css" media="all"
-      th:href="@{/css/style.css}"/>
+      th:href="@{/css/register.css}"/>
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
 </head>
 <body>
-<form th:action="@{|/user/register|}" method="post" enctype="multipart/form-data">
-    <div>
-        <div>
-            <label for="first_name">First name: </label>
-            <input id="first_name" name="firstName" type="text">
+<div class="content">
+    <p class="title">SIGN UP</p>
+    <form th:action="@{|/user/register|}" method="post" enctype="multipart/form-data">
+        <div class="input_container">
+            <label for="first_name">First name:</label>
+            <input id="first_name" name="firstName" type="text" placeholder="First name">
         </div>
-        <div>
-            <label for="last_name">Last name: </label>
-            <input id="last_name" name="lastName" type="text">
+        <div class="input_container">
+            <label for="last_name">Last name:</label>
+            <input id="last_name" name="lastName" type="text" placeholder="Last name">
         </div>
-        <div>
-            <label for="email">Email: </label>
-            <input id="email" name="email" type="text">
+        <div class="input_container">
+            <label for="email">Email:</label>
+            <input id="email" name="email" type="text" placeholder="Email">
         </div>
-        <div>
-            <label for="password">Password: </label>
-            <input id="password" name="password" type="password">
+        <div class="input_container">
+            <label for="password">Password:</label>
+            <input id="password" name="password" type="password" placeholder="Password">
         </div>
-        <div>
-            <label for="experience">Do you have experience in one of the lessons offered? (Dance, singing, acting, casting techniques): </label>
+        <div class="input_container">
+            <label for="experience">Do you have experience in one of the lessons offered? (Dance, singing, acting,
+                casting
+                techniques): </label>
+            <textarea id="experience" name="experience" type="text"></textarea>
         </div>
-        <textarea id="experience" name="experience" type="text"></textarea>
-        <div>
-            <input type="submit" value="Request intake interview">
+        <div class="input_container submit_container">
+            <input class="submit_button" type="submit" value="SIGN ME UP!">
         </div>
-    </div>
-</form>
+    </form>
+</div>
 </body>
 </html>
