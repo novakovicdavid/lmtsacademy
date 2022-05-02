@@ -46,35 +46,6 @@ h2.titleOurTeam {
     text-decoration: underline #EB95E7;
 }
 
-/*Navigation bar*/
-
-.nav ul {
-    position: relative;
-    top: 0;
-    list-style: none;
-    text-align: center;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-}
-
-.nav li {
-    width: 120px;
-    border-bottom: none;
-    height: 50px;
-    line-height: 50px;
-    font-size: 1.4em;
-    display: inline-block;
-}
-
-.nav a {
-    text-decoration: none;
-    color: white;
-    display: block;
-    font-family: bebas-neue, sans-serif;
-
-}
-
 /*Homepage*/
 .textHomepage {
     background-color: white;
@@ -140,38 +111,6 @@ h2.titleOurTeam {
     width: 15em;
 }
 
-/*Footer*/
-
-.verticalLine {
-    left: 10%;
-    bottom: 0;
-    position: fixed;
-    height: 175px;
-    width: 10px;
-    background-color: green;
-    border-radius: 20px 20px 0 0;
-}
-
-.verticalLine2 {
-    bottom: 0;
-    left: 12%;
-    position: fixed;
-    height: 200px;
-    width: 10px;
-    border-radius: 20px 20px 0 0;
-    background-color: #EB95E7;
-}
-
-.verticalLine3 {
-    bottom: 0;
-    background-color: #364182;
-    left: 14%;
-    position: fixed;
-    height: 140px;
-    width: 10px;
-    border-radius: 20px 20px 0 0;
-}
-
 /* cursus*/
 .courseContainer {
     justify-content: center;
@@ -219,65 +158,3 @@ h2.titleOurTeam {
     font-size: 2em;
     color: green;
 }
-
-/* Footer Fragment */
-footer {
-    position: relative;
-    bottom: -10px;
-    background: #111;
-    height: 100%;
-    padding: 10px;
-    color: #fff;
-}
-
-.footer-content {
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-}
-
-.footer-content h3 {
-    font-size: 1.2rem;
-    text-transform: capitalize;
-}
-
-.footer-content p {
-    max-width: 500px;
-    margin: 5px auto;
-    line-height: 15px;
-    font-size: 12px;
-    color: #cacdd2;
-}
-
-.socials {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.socials li {
-    margin-right: 10px;
-}
-
-.socials a {
-    text-decoration: none;
-    color: #fff;
-    border: 1.1px solid white;
-    padding: 5px;
-    border-radius: 50%;
-}
-
-.socials a i {
-    font-size: 1.1rem;
-    width: 20px;
-    transition: color .4s ease;
-}
-
-.socials a:hover i {
-    color: aqua;
-}
-
-
-
