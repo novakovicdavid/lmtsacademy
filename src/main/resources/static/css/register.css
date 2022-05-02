@@ -3,21 +3,22 @@ html, body {
 }
 
 body {
-    background-color: #52878c;
+    background-color: #52878c !important;
     margin: 0;
+}
 
+.content {
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.content {
-    display: inline;
-    flex-direction: column;
+.form_container {
+    max-width: 100%;
 }
 
 .title {
-    max-width: 100vh;
     font-family: bebas-neue, sans-serif;
     font-weight: bold;
     color: white;
@@ -29,8 +30,8 @@ body {
 
 form {
     position: relative; /* for decoration */
-    width: 30rem;
-    max-width: 100vh; /* zoom fix */
+    width: 50rem;
+    max-width: 100%;
     background-color: white;
 
     padding: 20px 0;
@@ -74,6 +75,7 @@ form::after {
 }
 
 .input_container label {
+    font-size: 20px;
     font-family: bebas-neue, sans-serif;
     font-weight: bold;
 }
