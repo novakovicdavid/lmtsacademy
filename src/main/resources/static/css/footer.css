@@ -1,6 +1,5 @@
 footer {
-    position: relative;
-    bottom: -10px;
+    margin-top: auto;
     background: #111;
     height: 100%;
     padding: 10px;
