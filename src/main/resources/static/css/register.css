@@ -1,17 +1,13 @@
-html, body {
-    min-height: 100vh;
-}
-
 body {
     background-color: #52878c !important;
     margin: 0;
 }
 
 .content {
-    min-height: 100vh;
+    margin-top: 5rem;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
 }
 
 .form_container {
