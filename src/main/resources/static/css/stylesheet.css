@@ -5,18 +5,24 @@ html {
 }
 
 .body {
-    margin: 0 0 10rem 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
     padding: 0;
     background: #619095;
+}
+
+.main {
+    flex-grow: 1;
 }
 
 .bubbles {
     position: absolute;
     width: 100%;
-    height: 200%;
-    z-index: 0;
-    top: 0;
-    left: 0;
+    height: 100%;
+    bottom: 0;
+    z-index: -1;
     overflow: hidden;
 }
 
@@ -129,14 +135,14 @@ html {
     }
 }
 
-h1{
+h1 {
     text-align: center;
     color: white;
     font-family: bebas-neue, sans-serif;
     margin-top: 50px !important;
 }
 
-h2.titleOurTeam{
+h2.titleOurTeam {
     font-family: bebas-neue, sans-serif;
     color: white;
     margin-top: 50px !important;
@@ -145,6 +151,7 @@ h2.titleOurTeam{
 }
 
 /*Navigation bar*/
+
 .nav ul {
     position: relative;
     top: 0;
@@ -181,7 +188,8 @@ h2.titleOurTeam{
     font-family: Consolas, monaco, monospace;
     font-weight: 500;
 }
-.textVision{
+
+.textVision {
     color: white;
     font-family: Consolas, monaco, monospace;
     font-size: 20px;
@@ -213,24 +221,26 @@ h2.titleOurTeam{
     border: 5px solid white;
 }
 
-.teamMemberName{
-    transform:rotate(-90deg);
+.teamMemberName {
+    transform: rotate(-90deg);
     position: absolute;
     margin-top: 50px;
     padding-bottom: 20px;
     color: #619095;
     font-family: bebas-neue, sans-serif;
 }
-.memberBio{
+
+.memberBio {
     font-family: Consolas, monaco, monospace;
 
 }
 
 .imgTeam {
-    width: 13em;
+    width: 100%;
     margin: 10px;
 }
-.imgLogoPink{
+
+.imgLogoPink {
     width: 15em;
 }
 
@@ -265,22 +275,62 @@ h2.titleOurTeam{
     width: 10px;
     border-radius: 20px 20px 0 0;
 }
-/* cursus
 
- */
-.courselistitem{
-    border-style: outset;
-    border-width: medium;
-    max-width: 140px;
+/* cursus*/
+.courseContainer {
+    justify-content: center;
+
+}
+
+.cursusInfo {
+    max-width: 80%;
+    padding: 1rem;
+    color: white;
+    border-width: 4px;
+    margin: auto;
+    border-style: solid;
+    border-image: linear-gradient(
+            to bottom,
+            #E2ED8C,
+            rgba(0, 0, 0, 0)
+    ) 1 100%;
+}
+
+
+.infoName {
+    margin: 10px;
+    font-size: 2em;
+}
+.infoValue{
+    margin: 10px;
+    font-size: 1.2em;
+}
+.courselistitem {
+    border: 5px solid white;
+    text-align: center;
+    background: #E2ED8C;
+    margin: 10px;
+    padding: 5px 5px;
+    width: 140px;
+    height: 100%;
+    display: inline-block;
+    border-radius: 10% 0;
+}
+
+.courselistitem a {
+    text-decoration: none;
+    font-family: bebas-neue, sans-serif;
+    font-size: 2em;
+    color: green;
 }
 
 /* Footer Fragment */
 footer {
-    position: fixed;
-    bottom: 0;
+    position: relative;
+    bottom: -10px;
     background: #111;
-    width: 100%;
-    padding-top: 10px;
+    height: 100%;
+    padding: 10px;
     color: #fff;
 }
 

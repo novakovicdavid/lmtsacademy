@@ -4,15 +4,27 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" media="all"
           th:href="@{/css/stylesheet.css}" href="/css/stylesheet.css"/>
+    <link rel="stylesheet" th:href="@{/bootstrap.min.css}">
+    <script th:src="@{/bootstrap.min.js}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/ssa0ifx.css">
     <title>Cursussen</title>
+
 </head>
-<body>
-<h2>De cursussen</h2>
-<div class="courselistitem" th:each="course: ${courses}">
-    <b><a th:href="@{|/coursedetails/${course.id}|}" th:text="${course.name}">Cursus naam </a ></b>
-    <br>
-    <a th:text="${course.shortdescription}">Cursus naam</a>
+<body class="body">
+<div class="main">
+    <div th:replace="fragments/header::background"></div>
+    <h1>ONZE CURSUSSEN</h1>
+    <div class="courseContainer row">
+        <div class="courselistitem col-3" th:each="course: ${courses}">
+            <a th:href="@{|/coursedetails/${course.id}|}" th:text="${course.name}">Cursus naam </a>
+            <br>
+            <p th:text="${course.shortdescription}">Cursus naam</p>
+        </div>
+    </div>
 </div>
-<a th:href="@{/home}">Home</a>
+
+
+<div th:replace="fragments/footer::footer"></div>
 </body>
 </html>
