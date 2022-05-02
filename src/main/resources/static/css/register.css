@@ -10,14 +10,13 @@ body {
     margin: 5rem 0;
     display: flex;
     justify-content: center;
-    align-items: start;
 }
 
 .form_container {
     max-width: 100%;
 }
 
-.title {
+.form_title {
     font-family: bebas-neue, sans-serif;
     font-weight: bold;
     color: white;
@@ -27,7 +26,7 @@ body {
 
 }
 
-form {
+.form_login {
     position: relative; /* for decoration */
     width: 50rem;
     max-width: 100%;
@@ -40,7 +39,7 @@ form {
     justify-content: center;
 }
 
-form::after {
+.form_login::after {
     position: absolute; /* element now ignored by flexbox parent */
     content: '';
     height: 100%;
@@ -55,7 +54,6 @@ form::after {
 .input_container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     margin: .5rem 2rem .5rem 2rem
 }
 
@@ -73,7 +71,7 @@ form::after {
     outline: 1px solid #ea95e8;
 }
 
-.input_container label {
+.input_container label, .submit_button {
     font-size: 20px;
     font-family: bebas-neue, sans-serif;
     font-weight: bold;
@@ -84,15 +82,10 @@ form::after {
 }
 
 .submit_button {
-    font-family: bebas-neue, sans-serif;
-    font-weight: bold;
     color: white;
-
     background-color: #ea95e8;
     border: none;
-    box-shadow: 20px 20px 50px 0 rgba(128, 128, 128, 0.3);
     border-radius: 4px;
-
     cursor:pointer;
 }
 
