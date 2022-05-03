@@ -51,7 +51,7 @@ body {
     z-index: -1;
 }
 
-.input_container {
+.form_login > * {
     display: flex;
     flex-direction: column;
     margin: .5rem 2rem .5rem 2rem
@@ -99,4 +99,8 @@ body {
 
 .submit_button:focus {
     outline: 2px solid #e2ef8d;
+}
+
+.form_error {
+    color: #ED4337;
 }
