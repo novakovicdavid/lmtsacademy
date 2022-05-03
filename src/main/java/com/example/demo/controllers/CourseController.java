@@ -32,14 +32,18 @@ public class CourseController {
     public String coursedetails(Model model, @PathVariable(required = false) Integer id) {
         if (id == null) return "coursedetails";
         Optional<Course> courseFromDb = courseRepository.findById(id);
-        courseFromDb.ifPresent(course -> model.addAttribute("course", course));
+        if (courseFromDb.isPresent()) {
+            model.addAttribute("course", courseFromDb.get());
+        }
         return "coursedetails";
     }
     @GetMapping("/editcourse/{id}")
     public String editcourse(Model model, @PathVariable int id){
         logger.info("editcourse "+id);
         Optional<Course> courseFromDb = courseRepository.findById(id);
-        courseFromDb.ifPresent(course -> model.addAttribute("course", course));
+        if (courseFromDb.isPresent()) {
+            model.addAttribute("course", courseFromDb.get());
+        }
         model.addAttribute("courses",courseRepository.findAll());
         return "admin/editcourse";
     }
