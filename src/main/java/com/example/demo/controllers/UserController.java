@@ -16,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.security.Principal;
 
@@ -55,15 +56,16 @@ public class UserController {
             @RequestParam String firstName,
             @RequestParam String lastName,
             @RequestParam String experience,
-            Principal principal) {
+            Principal principal, RedirectAttributes redirectAttributes) {
         if (email.equals("")
                 || !email.matches("^[a-zA-Z0-9]*$")
                 || userRepository.findByEmail(email).isPresent()
                 || firstName.equals("")
                 || lastName.equals("")
-                || experience.equals("")
+                || password.equals("")
                 || principal != null) {
-            return "user/register";
+            redirectAttributes.addAttribute("error", true);
+            return "redirect:/user/register";
         }
         email = email.toLowerCase();
         User newUser = new User();

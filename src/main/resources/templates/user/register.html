@@ -38,6 +38,7 @@
             <div class="input_container submit_container">
                 <input class="submit_button" type="submit" value="INSCHRIJVEN">
             </div>
+            <p class="form_error" th:if="${param.error != null}">Oops! Er ging iets mis. Heb je alle velden ingevuld?</p>
         </form>
     </div>
 </div>

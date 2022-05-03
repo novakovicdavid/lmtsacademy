@@ -20,13 +20,13 @@
                 <input class="text_input" id="email" name="email" type="text">
             </div>
             <div class="input_container">
-                <label for="password">Password: </label>
+                <label for="password">Wachtwoord: </label>
                 <input class="text_input" id="password" name="password" type="password">
             </div>
             <div class="input_container submit_container">
                 <input class="submit_button" type="submit" value="Login">
             </div>
-            <div class="form_error" th:if="${param.error != null}">Oops! Verkeerd email en/of wachtwoord. Probeer het opnieuw.</div>
+            <p class="form_error" th:if="${param.error != null}">Oops! Verkeerd email en/of wachtwoord. Probeer het opnieuw.</p>
         </form>
     </div>
 </div>
