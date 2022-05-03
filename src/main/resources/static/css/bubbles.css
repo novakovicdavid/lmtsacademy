@@ -1,3 +1,7 @@
+body {
+    position: relative; /* Bubbles now fully extend on all pages */
+}
+
 .bubbles {
     position: absolute;
     width: 100%;
