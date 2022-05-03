@@ -11,7 +11,7 @@
           href="../static/css/stylesheet.css"/>
 
 
-    <title>afsprakenNew</title>
+    <title>eventNew</title>
 </head>
 <body>
 <!--<div th:replace="fragments/header :: header">Header</div>-->
@@ -29,26 +29,26 @@
 
 
 
-<!--            <div>-->
-<!--                <label for="date" class="grootheid">datum <i>(yyyy-mm-dd)</i>: </label>-->
-<!--                <input id="date" th:field="*{datum}" class="infoLineValue" th:type="date">-->
-<!--            </div>-->
+            <div>
+                <label for="title" class="grootheid">titel: </label>
+                <input id="title" th:field="*{title}" class="infoLineValue">
+            </div>
 
-<!--            <div>-->
-<!--                <label for="startUur" class="grootheid">startuur : </label>-->
-<!--                <input id="startUur" th:field="*{startUur}" class="infoLineValue" th:type="time">-->
+            <div>
+                <label for="start" class="grootheid">start: </label>
+                <input id="start" th:field="*{start}" class="infoLineValue">
 
-<!--            </div>-->
-<!--            <div>-->
-<!--                <label for="eindUur" class="grootheid">eindUur: </label>-->
-<!--                <input id="eindUur" th:field="*{eindUur}" class="infoLineValue" th:type="time">-->
+            </div>
+            <div>
+                <label for="finish" class="grootheid">einde: </label>
+                <input id="finish" th:field="*{finish}" class="infoLineValue" th:type="datetime">
 
-<!--            </div>-->
-<!--            <div>-->
-<!--                <label for="naam" class="grootheid">naam: </label>-->
-<!--                <input id="naam" th:field="*{naam}" class="infoLineValue">-->
+            </div>
+            <div>
+                <label for="description" class="grootheid">omschrijving: </label>
+                <input id="description" th:field="*{description}" class="infoLineValue">
 
-<!--            </div>-->
+            </div>
 <!--            <div class="col-12"><label for="vakgebied"> vakgebied:</label>-->
 <!--                <input th:field="*{vakgebied}"  class="form-select" id="vakgebied" >-->
 

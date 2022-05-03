@@ -36,7 +36,7 @@ public class EventController {
     public String eventNewPost(@ModelAttribute("event") Event event) {
 
         Event newEvent = eventRepository.save(event);
-        return "redirect:/calendar";
+        return "redirect:/";
     }
 
 }
