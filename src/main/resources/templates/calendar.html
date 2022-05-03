@@ -4,7 +4,7 @@
       xmlns:th="http://www.thymeleaf.org" lang="en">
 
 <head>
-    <meta charset='utf-8' content="Cory Sanoy" name="Author" />
+    <meta charset='utf-8'  name="Author" />
 
     <link href="https://fullcalendar.io/js/fullcalendar-2.2.5/fullcalendar.css"
           th:href="@{/webjars/fullcalendar/2.2.5/fullcalendar.css}" rel="stylesheet"/>
@@ -23,8 +23,8 @@
                 header: {
                     left: 'prev,next today',
                     center: 'title',
-                    right: 'month,agendaWeek,agendaDay'
-                },
+                    right: 'month,agendaWeek,agendaDay'                },
+
                 defaultDate: '2022-05-03',
                 editable: true,
                 eventLimit: true, // allow "more" link when too many events
