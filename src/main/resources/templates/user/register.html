@@ -11,35 +11,37 @@
 <body>
 <div th:replace="fragments/header"></div>
 <div class="content">
-    <div class="form_container">
-        <p class="form_title">SCHRIJF JE IN</p>
-        <form class="form_login" th:action="@{|/user/register|}" method="post" enctype="multipart/form-data">
-            <div class="input_container">
-                <label for="first_name">Voornaam:</label>
-                <input class="text_input" id="first_name" name="firstName" type="text" placeholder="Voornaam">
-            </div>
-            <div class="input_container">
-                <label for="last_name">Achternaam:</label>
-                <input class="text_input" id="last_name" name="lastName" type="text" placeholder="Achternaam">
-            </div>
-            <div class="input_container">
-                <label for="email">Email:</label>
-                <input class="text_input" id="email" name="email" type="text" placeholder="Email">
-            </div>
-            <div class="input_container">
-                <label for="password">Wachtwoord:</label>
-                <input class="text_input" id="password" name="password" type="password" placeholder="Wachtwoord">
-            </div>
-            <div class="input_container">
-                <label for="experience">Heb je ervaring in een van de disciplines? (Dans, zang, acteren, podiumkunsten,
-                    casting techniques): </label>
-                <textarea class="text_input" id="experience" name="experience" type="text"></textarea>
-            </div>
-            <div class="input_container submit_container">
-                <input class="submit_button" type="submit" value="INSCHRIJVEN">
-            </div>
-            <p class="form_error" th:if="${param.error != null}">Oops! Er ging iets mis. Heb je alle velden ingevuld?</p>
-        </form>
+    <div class="dialog_container">
+        <p class="dialog_title">EERSTE AFSPRAAK</p>
+        <div class="dialog_content">
+            <form class="form_login" th:action="@{|/user/register|}" method="post" enctype="multipart/form-data">
+                <div class="input_container">
+                    <label for="first_name">Voornaam:</label>
+                    <input class="text_input" id="first_name" name="firstName" type="text" placeholder="Voornaam">
+                </div>
+                <div class="input_container">
+                    <label for="last_name">Achternaam:</label>
+                    <input class="text_input" id="last_name" name="lastName" type="text" placeholder="Achternaam">
+                </div>
+                <div class="input_container">
+                    <label for="email">Email:</label>
+                    <input class="text_input" id="email" name="email" type="text" placeholder="Email">
+                </div>
+                <div class="input_container">
+                    <label for="password">Wachtwoord:</label>
+                    <input class="text_input" id="password" name="password" type="password" placeholder="Wachtwoord">
+                </div>
+                <div class="input_container">
+                    <label for="experience">Heb je ervaring in een van de disciplines? (Dans, zang, acteren, podiumkunsten,
+                        casting techniques): </label>
+                    <textarea class="text_input" id="experience" name="experience" type="text"></textarea>
+                </div>
+                <div class="input_container submit_container">
+                    <input class="submit_button" type="submit" value="AFSPRAAK MAKEN">
+                </div>
+                <p class="form_error" th:if="${param.error != null}">Oops! Er ging iets mis. Heb je alle velden ingevuld?</p>
+            </form>
+        </div>
     </div>
 </div>
 <div th:replace="fragments/footer"></div>
