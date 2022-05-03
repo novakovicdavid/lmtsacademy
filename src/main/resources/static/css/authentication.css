@@ -30,33 +30,12 @@ body {
     line-height: 2.8rem;
 }
 
-@media only screen and (min-width: 50rem) { /* dialog width */
-    .dialog_title {
-        font-size: 5rem;
-        line-height: 3.40rem;
-        text-align: start;
-        margin: 0 0 0 1.5rem;
-    }
-}
-
 .dialog_content {
     position: relative; /* for decoration */
     background-color: white;
     width: var(--dialog-width);
     max-width: 100%;
     padding: 20px 2rem;
-}
-
-.dialog_content::after {
-    position: absolute; /* element now ignored by flexbox parent */
-    content: '';
-    height: 100%;
-    width: 100%;
-    border: 1px solid white;
-    background-color: transparent;
-    left: -20px;
-    bottom: -20px;
-    z-index: -1;
 }
 
 .form_login {
@@ -117,4 +96,25 @@ body {
 
 .form_error {
     color: #ED4337;
+}
+
+@media only screen and (min-width: 50rem) { /* dialog width */
+    .dialog_title {
+        font-size: 5rem;
+        line-height: 3.40rem;
+        text-align: start;
+        margin: 0 0 0 1.5rem;
+    }
+
+    .dialog_content::after {
+        position: absolute; /* element now ignored by flexbox parent */
+        content: '';
+        height: 100%;
+        width: 100%;
+        border: 1px solid white;
+        background-color: transparent;
+        left: -20px;
+        bottom: -20px;
+        z-index: -1;
+    }
 }
