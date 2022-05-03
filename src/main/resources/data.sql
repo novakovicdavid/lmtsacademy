@@ -20,6 +20,6 @@ INSERT INTO COURSE (ID,NAME,TEACHER,DESCRIPTION,SHORTDESCRIPTION) VALUES(2,'curs
 
 insert into event(id, title, start, finish, description) values (1, 'event1', '2022-05-04 1:00:00', '2022-05-05 2:00:00', 'description1');
 insert into event(id, title, start, finish, description) values (2, 'event2', '2022-05-10 2:00:00', '2022-05-11 3:00:00', 'description2');
-insert into event(id, title, start, finish, description) values (3, 'event3', '2022-05-12 5:00:00', '2022-05-13 7:00:00', 'description3');
+insert into event(id, title, start, finish, description) values (3, 'event3', '2022-05-12 5:00:00', '2022-05-13 6:00:00', 'description3');
 insert into event(id, title, start, finish, description) values (4, 'event4', '2022-05-15 1:00:00', '2022-05-17 5:00:00', 'description4');
 
