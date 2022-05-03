@@ -6,36 +6,21 @@
     <meta charset="UTF-8">
     <title>backgroundfragment</title>
     <link rel="stylesheet" type="text/css" media="all"
-          th:href="@{/css/stylesheet.css}" href="/css/stylesheet.css"/>
-    <link rel="stylesheet" th:href="@{/bootstrap.min.css}">
-    <script th:src="@{/bootstrap.min.js}"></script>
+          th:href="@{/css/header.css}" href="/static/css/header.css"/>
     <link rel="stylesheet" href="https://use.typekit.net/ssa0ifx.css">
 </head>
-<body class="body" th:fragment="background">
-<div class="bubbles">
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
+<body>
+<div class="nav">
+    <ul>
+        <li class="home"><a class="nav-link" th:href="@{/home}">Home</a></li>
+        <li class="tutorials"><a class="nav-link" th:href="@{/home}">Test</a></li>
+        <img th:src="@{/pictures/LMTSLogo.png}"/>
+        <li class="contact"><a class="nav-link" th:href="@{/courselist}">Cursussen</a></li>
+        <li sec:authorize="isAnonymous()" class="header_login"><a class="nav-link" th:href="@{/user/login}">Login</a></li>
+        <li sec:authorize="isAnonymous()" class="header_login"><a class="nav-link" th:href="@{/user/register}">Register</a></li>
+        <li sec:authorize="isAuthenticated()" class="header_logout"><a class="nav-link"
+                                                                       th:href="@{/user/logout}">Logout</a></li>
+    </ul>
 </div>
-    <div class="nav">
-        <ul>
-            <li class="home"><a class="nav-link" th:href="@{/home}">Home</a></li>
-            <li class="tutorials"><a class="nav-link" th:href="@{/home}">Test</a></li>
-            <img th:src="@{/pictures/LMTSLogo.png}"/>
-            <li class="contact"><a class="nav-link" th:href="@{/courselist}">Cursussen</a></li>
-            <li sec:authorize="isAnonymous()" class="header_login"><a class="nav-link" th:href="@{/user/login}">Login</a></li>
-            <li sec:authorize="isAuthenticated()" class="header_logout"><a class="nav-link" th:href="@{/user/logout}">Logout</a></li>
-
-        </ul>
-    </div>
-
 </body>
 </html>
