@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="all"
+          th:href="@{/css/stylesheet.css}" href="/css/stylesheet.css"/>
+    <link rel="stylesheet" th:href="@{/bootstrap.min.css}">
+    <script th:src="@{/bootstrap.min.js}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/ssa0ifx.css">
+    <title>Cursus aanpassen</title>
+</head>
+<body>
+<div>
+    <div th:if="${course}">
+        <h2 th:text="*{course.name}">course name</h2>
+        <form th:action="@{|/editcourse/*{id}|}" method="post">
+            <div>
+                <label for="courseName">Naam: </label>
+                <input id="courseName" th:field="*{course.name}">
+            </div>
+            <div>
+                <label for="courseTeacher">Docent: </label>
+                <input id="courseTeacher" th:field="*{course.teacher}">
+            </div>
+            <div>
+                <label for="courseShortDesc">Korte beschrijving: </label>
+                <input id="courseShortDesc" th:field="*{course.shortdescription}">
+            </div>
+            <div>
+                <label for="courseDescription">Beschrijving: </label>
+                <input id="courseDescription" th:field="*{course.description}">
+            </div>
+            <div>
+                <label for="courseLocation">Locatie: </label>
+                <input id="courseLocation" th:field="*{course.location}">
+            </div>
+            <div class="infoLine">
+                <a th:href="@{|/coursedetails/*{id}|}">cancel</a>
+                <input type="submit" value="save">
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
