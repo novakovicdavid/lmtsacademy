@@ -10,15 +10,19 @@ public class Event {
 
 
         @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long id;
+//        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "event_generator")
+
+        @SequenceGenerator(name = "event_generator", sequenceName = "event_seq", allocationSize = 1)
+
+        private Integer id;
 
         private String title;
         private String description;
         private LocalDateTime start;
         private LocalDateTime finish;
 
-        public Event(Long id, String title, String description, LocalDateTime start, LocalDateTime finish) {
+        public Event(Integer id, String title, String description, LocalDateTime start, LocalDateTime finish) {
             super();
             this.id = id;
             this.title = title;
@@ -33,11 +37,11 @@ public class Event {
         }
 
 
-        public Long getId() {
+        public Integer getId() {
             return id;
         }
 
-        public void setId(Long id) {
+        public void setId(Integer id) {
             this.id = id;
         }
 
