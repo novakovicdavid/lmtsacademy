@@ -49,12 +49,12 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 2rem;
 }
 
 .form_login > * {
     display: flex;
     flex-direction: column;
-    margin: .5rem 0;
 }
 
 .input_container input, .input_container textarea {
