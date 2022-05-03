@@ -4,27 +4,33 @@
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" type="text/css" media="all"
-          th:href="@{/css/stylesheet.css}"/>
+          th:href="@{/css/authentication.css}"/>
     <link rel="stylesheet" th:href="@{/bootstrap.min.css}">
     <script th:src="@{/bootstrap.min.js}"></script>
     <link rel="stylesheet" href="https://use.typekit.net/ssa0ifx.css">
 </head>
 <body>
-<form th:action="@{|/user/login|}" method="post" >
-    <div>
-        <div>
-            <label for="email">Email: </label>
-            <input id="email" name="email" type="text">
-        </div>
-        <div>
-            <label for="password">Password: </label>
-            <input id="password" name="password" type="password">
-        </div>
-        <div>
-            <input type="submit" value="Login">
-        </div>
+<div th:replace="fragments/header"></div>
+<div class="content">
+    <div class="form_container">
+        <p class="form_title">INLOGGEN</p>
+        <form class="form_login" th:action="@{|/user/login|}" method="post">
+            <div class="input_container">
+                <label for="email">Email: </label>
+                <input class="text_input" id="email" name="email" type="text">
+            </div>
+            <div class="input_container">
+                <label for="password">Password: </label>
+                <input class="text_input" id="password" name="password" type="password">
+            </div>
+            <div class="input_container submit_container">
+                <input class="submit_button" type="submit" value="Login">
+            </div>
+        </form>
     </div>
-</form>
+</div>
+<div th:replace="fragments/footer"></div>
+
 <div th:if="${param.error != null}">Incorrect credentials.</div>
 </body>
 </html>
