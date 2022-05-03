@@ -13,7 +13,7 @@
 </head>
 <body class="body">
 <div class="main">
-    <div th:replace="fragments/header::background"></div>
+    <div th:replace="fragments/header"></div>
     <h1>ONZE CURSUSSEN</h1>
     <div class="courseContainer row">
         <div class="courselistitem col-3" th:each="course: ${courses}">
@@ -25,6 +25,6 @@
 </div>
 
 
-<div th:replace="fragments/footer::footer"></div>
+<div th:replace="fragments/footer"></div>
 </body>
 </html>
