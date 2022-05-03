@@ -158,3 +158,22 @@ h2.titleOurTeam {
     font-size: 2em;
     color: green;
 }
+.edit_button {
+    text-decoration: none;
+    color: white;
+    background-color: #ea95e8;
+    border: none;
+    border-radius: 4px;
+    cursor:pointer;
+}
+.edit_button:hover {
+    background-color: #d688d5;
+}
+
+.edit_button:active {
+    background-color: #ca80c9;
+}
+
+.edit_button:focus {
+    outline: 2px solid #e2ef8d;
+}
