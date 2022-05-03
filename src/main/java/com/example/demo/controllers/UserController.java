@@ -58,7 +58,7 @@ public class UserController {
             @RequestParam String experience,
             Principal principal, RedirectAttributes redirectAttributes) {
         if (email.equals("")
-                || !email.matches("^[a-zA-Z0-9]*$")
+                || !email.matches("^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$") // OWASP
                 || userRepository.findByEmail(email).isPresent()
                 || firstName.equals("")
                 || lastName.equals("")
