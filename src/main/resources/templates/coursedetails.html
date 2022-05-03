@@ -18,7 +18,7 @@
         <h2 class="titleOurTeam" th:text="${course.getName}">course name</h2>
         <div class="cursusInfo">
             <div sec:authorize="hasAuthority('ADMIN')">
-                <a class ="edit_button"th:href="@{|/editcourse/*{id}|}">EDIT</a>
+                <a class ="edit_button" th:href="@{|/editcourse/*{id}|}">EDIT</a>
             </div>
             <div>
                 <div class="infoName"><b>Leerkracht:</b></div>

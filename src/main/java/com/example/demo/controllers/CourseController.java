@@ -32,18 +32,14 @@ public class CourseController {
     public String coursedetails(Model model, @PathVariable(required = false) Integer id) {
         if (id == null) return "coursedetails";
         Optional<Course> courseFromDb = courseRepository.findById(id);
-        if (courseFromDb.isPresent()) {
-            model.addAttribute("course", courseFromDb.get());
-        }
+        courseFromDb.ifPresent(course -> model.addAttribute("course", course));
         return "coursedetails";
     }
     @GetMapping("/editcourse/{id}")
     public String editcourse(Model model, @PathVariable int id){
         logger.info("editcourse "+id);
         Optional<Course> courseFromDb = courseRepository.findById(id);
-        if (courseFromDb.isPresent()) {
-            model.addAttribute("course", courseFromDb.get());
-        }
+        courseFromDb.ifPresent(course -> model.addAttribute("course", course));
         model.addAttribute("courses",courseRepository.findAll());
         return "admin/editcourse";
     }
@@ -58,5 +54,17 @@ public class CourseController {
         logger.info("editcoursePost " + id + " -- new location= " + course.getLocation());
         courseRepository.save(course);
         return "redirect:/coursedetails/" + id;
+    }
+    @GetMapping("/newcourse")
+    public String newcourse(Model model) {
+        logger.info("newcourse ");
+        model.addAttribute("course", new Course());
+        return "admin/newcourse";
+    }
+    @PostMapping("/newcourse")
+    public String newCoursePost(Model model, @ModelAttribute("course") Course course) {
+        logger.info("newCoursePost -- new name=" + course.getName() +", teacher=" +course.getTeacher()+ ", short description=" + course.getShortdescription() +", description=" +course.getDescription()+", location= "+course.getLocation());
+        Course newCourse = courseRepository.save(course);
+        return "redirect:/coursedetails/" + newCourse.getId();
     }
 }
