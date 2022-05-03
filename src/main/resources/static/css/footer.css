@@ -56,32 +56,34 @@ footer {
     color: aqua;
 }
 
-.verticalLine {
-    position: absolute;
-    left: 130px;
-    bottom: 0;
-    height: 175px;
-    width: 10px;
-    background-color: green;
-    border-radius: 20px 20px 0 0;
-}
+@media only screen and (min-width: 50rem) {
+    .verticalLine {
+        position: absolute;
+        left: 130px;
+        bottom: 0;
+        height: 175px;
+        width: 10px;
+        background-color: green;
+        border-radius: 20px 20px 0 0;
+    }
 
-.verticalLine2 {
-    position: absolute;
-    bottom: 0;
-    left: 160px;
-    height: 200px;
-    width: 10px;
-    background-color: #EB95E7;
-    border-radius: 20px 20px 0 0;
-}
+    .verticalLine2 {
+        position: absolute;
+        bottom: 0;
+        left: 160px;
+        height: 200px;
+        width: 10px;
+        background-color: #EB95E7;
+        border-radius: 20px 20px 0 0;
+    }
 
-.verticalLine3 {
-    position: absolute;
-    bottom: 0;
-    left: 190px;
-    height: 140px;
-    width: 10px;
-    background-color: #364182;
-    border-radius: 20px 20px 0 0;
+    .verticalLine3 {
+        position: absolute;
+        bottom: 0;
+        left: 190px;
+        height: 140px;
+        width: 10px;
+        background-color: #364182;
+        border-radius: 20px 20px 0 0;
+    }
 }
