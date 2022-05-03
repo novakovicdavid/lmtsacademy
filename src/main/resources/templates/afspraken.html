@@ -5,40 +5,27 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/stylesheet.css}" href="../static/css/stylesheet.css"/>
+    <link rel='stylesheet' type='text/css' href='fullcalendar.css' />
+    <script type='text/javascript' src='jquery.js'></script>
+    <script type='text/javascript' src='fullcalendar.js'></script>
+    <script>$(function() {
+
+        // page is now ready, initialize the calendar...
+
+        $('#calendar').fullCalendar({
+            // put your options and callbacks here
+        })
+
+    });</script>
 
     <title>Title</title>
 </head>
 <body>
 <!--<div th:replace="fragments/header :: header">Header</div>-->
-
-<h1 class="h1Afspraken">Overzicht afspraken</h1>
-<table border="1"  class="afsprakenTabel">
-    <thead>
-    <tr>
-        <th>Id</th>
-        <th>Datum</th>
-        <th>Van</th>
-        <th>Tot</th>
-        <th>Naam</th>
-        <th>Vakgebied</th>
-        <th>Opmerkingen</th>
+<div id='calendar'></div>
 
 
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="b: ${afspraken}">
-        <td th:text="${b.id}"></td>
-        <td th:text="${b.datum}"></td>
-        <td th:text="${b.startUur}"></td>
-        <td th:text="${b.eindUur}"></td>
-        <td th:text="${b.naam}"></td>
-        <td th:text="${b.vakgebied}"></td>
-        <td th:text="${b.opmerking}"></td>
 
-    </tr>
-    </tbody>
-</table>
 
 
 </body>
