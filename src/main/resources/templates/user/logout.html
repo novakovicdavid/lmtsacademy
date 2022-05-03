@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" type="text/css" media="all"
+          th:href="@{/css/authentication.css}"/>
+    <link rel="stylesheet" th:href="@{/bootstrap.min.css}">
+    <script th:src="@{/bootstrap.min.js}"></script>
+    <link rel="stylesheet" href="https://use.typekit.net/ssa0ifx.css">
     <meta charset="UTF-8">
     <title>Logout</title>
 </head>
 <body>
-Are you sure you want to logout?
-<form th:action="@{|/user/logout|}" method="post">
-    <input type="submit" value="Yes, log me out">
-</form>
-<a href="/">No, take me back home</a>
+<div th:replace="fragments/header"></div>
+<div class="content">
+    <div class="dialog_container">
+        <p class="dialog_title">UITLOGGEN?</p>
+        <div class="dialog_content">
+            <p class="dialog_text">Ben je zeker dat je wilt uitloggen?</p>
+            <form th:action="@{|/user/logout|}" method="post">
+                <input class="submit_button" type="submit" value="Log mij uit">
+            </form>
+        </div>
+    </div>
+</div>
+<div th:replace="fragments/footer"></div>
 </body>
 </html>
