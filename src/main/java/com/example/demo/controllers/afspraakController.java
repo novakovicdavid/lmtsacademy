@@ -7,9 +7,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class afspraakController {
@@ -40,5 +39,11 @@ public class afspraakController {
 
         Afspraak newAfspraak = afspraakRepository.save(afspraak);
         return "redirect:/afspraken";
+    }
+
+    @RequestMapping(value="/calendar", method= RequestMethod.GET)
+    public ModelAndView calendar() {
+        ModelAndView modelAndView = new ModelAndView("calendar");
+        return modelAndView;
     }
 }
