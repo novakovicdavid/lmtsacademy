@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.security.Principal;
+import java.util.regex.Pattern;
 
 @Controller
 public class UserController {
@@ -30,6 +31,7 @@ public class UserController {
     private PasswordEncoder passwordEncoder;
     @Autowired
     private AuthenticationManager authenticationManager;
+    private final Pattern emailPattern = Pattern.compile("^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$"); // OWASP
 
     @GetMapping({"/user/login"})
     public String login(Principal principal) {
@@ -58,7 +60,7 @@ public class UserController {
             @RequestParam String experience,
             Principal principal, RedirectAttributes redirectAttributes) {
         if (email.equals("")
-                || !email.matches("^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$") // OWASP
+                || !emailPattern.matcher(email).matches()
                 || userRepository.findByEmail(email).isPresent()
                 || firstName.equals("")
                 || lastName.equals("")
