@@ -3,12 +3,23 @@
 <head>
     <link rel="stylesheet" type="text/css" media="all"
           th:href="@{/css/authentication.css}"/>
+    <link rel="stylesheet" th:href="@{/bootstrap.min.css}">
+    <script th:src="@{/bootstrap.min.js}"></script>
+    <link rel="stylesheet" href="https://use.typekit.net/ssa0ifx.css">
     <meta charset="UTF-8">
     <title>Success!</title>
 </head>
 <body>
-<p>Thank you for registering! We will contact you as soon as possible for an appointment.</p>
-
-<a th:href="|@{/}|">Go back to homepage</a>
+<div th:replace="fragments/header"></div>
+<div class="content">
+    <div class="dialog_container">
+        <p class="dialog_title">Klaar!</p>
+        <div class="dialog_content">
+            <p class="dialog_text">We zullen je zo snel mogelijk contacteren via email voor een afspraak.</p>
+            <a class="dialog_button_confirm" th:href="|@{/profile}|">Ga naar je profiel</a>
+        </div>
+    </div>
+</div>
+<div th:replace="fragments/footer"></div>
 </body>
 </html>
