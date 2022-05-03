@@ -1,3 +1,7 @@
+:root {
+    --dialog-width: 50rem;
+}
+
 body {
     background-color: #52878c !important;
     margin: 0;
@@ -20,15 +24,23 @@ body {
     font-family: bebas-neue, sans-serif;
     font-weight: bold;
     color: white;
-    margin: 0 0 0 1.5rem;
+    text-align: center;
+    margin: 0;
     font-size: 5rem;
     line-height: 3.40rem;
+}
+
+@media only screen and (min-width: 50rem) { /* dialog width */
+    .dialog_title {
+        text-align: start;
+        margin: 0 0 0 1.5rem;
+    }
 }
 
 .dialog_content {
     position: relative; /* for decoration */
     background-color: white;
-    width: 50rem;
+    width: var(--dialog-width);
     max-width: 100%;
     padding: 20px 2rem;
 }
