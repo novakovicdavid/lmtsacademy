@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" media="all"
-          th:href="@{/css/stylesheet.css}" href="/css/stylesheet.css"/>
+          th:href="@{/css/authentication.css}"/>
     <link rel="stylesheet" th:href="@{/bootstrap.min.css}">
     <script th:src="@{/bootstrap.min.js}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -11,10 +11,12 @@
     <title>Cursus aanpassen</title>
 </head>
 <body>
+<div th:replace="fragments/header"></div>
 <div>
     <div th:if="${course}">
         <h2 th:text="*{course.name}">course name</h2>
         <form th:action="@{|/editcourse/*{id}|}" method="post">
+            <div class="content">
             <div>
                 <label for="courseName">Naam: </label>
                 <input id="courseName" th:field="*{course.name}">
@@ -38,6 +40,7 @@
             <div class="infoLine">
                 <a th:href="@{|/coursedetails/*{id}|}">cancel</a>
                 <input type="submit" value="save">
+            </div>
             </div>
         </form>
     </div>
