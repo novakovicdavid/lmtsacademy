@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="all"
+          th:href="@{/css/stylesheet.css}" href="/css/stylesheet.css"/>
+    <link rel="stylesheet" th:href="@{/bootstrap.min.css}">
+    <script th:src="@{/bootstrap.min.js}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/ssa0ifx.css">
+    <title>Error</title>
+</head>
+<style>
+    body{
+        background: #619095;
+    }
+</style>
+<body>
+    <div th:replace="fragments/header"></div>
+    <h1>OEPS, HIER GING IETS MIS</h1>
+
+    <div th:replace="fragments/footer"></div>
+</body>
+</html>
