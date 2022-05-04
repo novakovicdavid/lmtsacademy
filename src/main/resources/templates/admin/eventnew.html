@@ -4,88 +4,32 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
-    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/stylesheet.css}"
-          href="../../static/css/stylesheet.css"/>
-
-
-    <title>eventNew</title>
+    <link rel="stylesheet" type="text/css" media="all"
+          th:href="@{/css/eventbooking.css}" href="/css/eventbooking.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
-<body>
-<!--<div th:replace="fragments/header :: header">Header</div>-->
-
-<form th:object="${event}" th:action="@{/admin/eventnew}" method="post">
-    <div class="afspraakinfo">
-        <div class="container mt-5">
-            <div class="row">
-                <div class="col-md-6 offset-md-3 border p-4 shadow bg-light">
-                    <div class="col-12">
-                        <h3 class="fw-normal text-secondary fs-4 text-uppercase mb-4">Afspraakformulier</h3>
-                    </div>
-                </div>
-            </div>
+<main id="wrapper">
+    <div class="container">
+        <form th:object="${event}" th:action="@{/admin/eventnew}" id="appoint-form" method="POST">
+            <h1 id="form-head">Zet iets in je kalender</h1>
 
 
-
-            <div>
-                <label for="title" class="grootheid">titel: </label>
-                <input id="title" th:field="*{title}" class="infoLineValue">
-            </div>
-
-            <div>
-                <label for="start" class="grootheid">start: </label>
-                <input id="start" th:field="*{start}" class="infoLineValue" th:type="datetime-local">
-
-            </div>
-            <div>
-                <label for="finish" class="grootheid">einde: </label>
-                <input id="finish" th:field="*{finish}" class="infoLineValue" th:type="datetime-local">
-
-            </div>
-            <div>
-                <label for="description" class="grootheid">omschrijving: </label>
-                <input id="description" th:field="*{description}" class="infoLineValue">
-
-            </div>
-<!--            <div class="col-12"><label for="vakgebied"> vakgebied:</label>-->
-<!--                <input th:field="*{vakgebied}"  class="form-select" id="vakgebied" >-->
+            <label for="title"></label><input type="text" id="title"  th:field="*{title}" class="person-detail" placeholder="titel"  maxlength="20" required>
+            <label for="start"></label><input id="start" th:field="*{start}" class="person-detail"  placeholder="start" th:type="datetime-local"  required>
+            <label for="finish"></label><input id="finish" placeholder="Email(optional)"  class="person-detail" th:type="datetime-local" required>
+            <label for="description"></label><textarea id="description" name= rows="5" cols="3" placeholder="Voeg een opmerking toe" class="person-detail"></textarea>
+            <button type="submit" id="submit" value="Submit" onclick="">Submit </button>
+            <a th:href="@{/}" class="gaTerugLink" >Ga terug</a>
 
 
-
-                <!--                    <select th:path="vakgebied">-->
-
-
-                <!--                        <option selected>Vakgebied</option>-->
-                <!--                            <option value="1">Dans</option>-->
-                <!--                            <option value="2">Zang</option>-->
-                <!--                            <option value="3">Toneel</option>-->
-                <!--                            <option value="3">?????</option>-->
-                <!--                    </select>-->
-
-
-
-
-            </div>
-<!--            <div class="col-12">-->
-
-<!--                <label for="opmerking"> opmerkingen:-->
-<!--                    <input  id="opmerking" th:field="*{opmerking}" class="infoLineValue">-->
-
-
-<!--                </label>-->
-<!--            </div>-->
-
-
-            <div>
-                <a th:href="@{/}" class="cancelButton">cancel</a>
-                <input type="submit" value="save" class="editButton">
-            </div>
-        </div>
+        </form>
     </div>
-</form>
-
+</main>
 
 </body>
+<style>
+
+
+</style>
+
 </html>
