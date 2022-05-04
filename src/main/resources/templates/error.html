@@ -11,14 +11,17 @@
     <title>Error</title>
 </head>
 <style>
-    body{
+    body {
         background: #619095;
     }
 </style>
-<body>
-    <div th:replace="fragments/header"></div>
+<body class="body">
+<div th:replace="fragments/header"></div>
+<div class="errorblock">
+    <h1>ERROR</h1>
+    <br>
     <h1>OEPS, HIER GING IETS MIS</h1>
-
-    <div th:replace="fragments/footer"></div>
+</div>
+<div th:replace="fragments/footer"></div>
 </body>
 </html>
