@@ -23,19 +23,6 @@ public class EventController {
 
     }
 
-    @GetMapping("/eventnew")
-    public String eventNew(Model model) {
-        model.addAttribute("event", new Event());
-        model.addAttribute("eventlist", eventRepository.findAll());
-        return "eventnew";
 
-    }
-
-    @PostMapping("/eventnew")
-    public String eventNewPost(@ModelAttribute("event") Event event) {
-
-        Event newEvent = eventRepository.save(event);
-        return "redirect:/calendar";
-    }
 
 }
