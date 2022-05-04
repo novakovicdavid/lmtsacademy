@@ -1,0 +1,91 @@
+
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<!--suppress XmlUnusedNamespaceDeclaration -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/stylesheet.css}"
+          href="../static/css/stylesheet.css"/>
+
+
+    <title>eventNew</title>
+</head>
+<body>
+<!--<div th:replace="fragments/header :: header">Header</div>-->
+
+<form th:object="${event}" th:action="@{/eventnew}" method="post">
+    <div class="afspraakinfo">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-6 offset-md-3 border p-4 shadow bg-light">
+                    <div class="col-12">
+                        <h3 class="fw-normal text-secondary fs-4 text-uppercase mb-4">Afspraakformulier</h3>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div>
+                <label for="title" class="grootheid">titel: </label>
+                <input id="title" th:field="*{title}" class="infoLineValue">
+            </div>
+
+            <div>
+                <label for="start" class="grootheid">start: </label>
+                <input id="start" th:field="*{start}" class="infoLineValue" th:type="datetime-local">
+
+            </div>
+            <div>
+                <label for="finish" class="grootheid">einde: </label>
+                <input id="finish" th:field="*{finish}" class="infoLineValue" th:type="datetime-local">
+
+            </div>
+            <div>
+                <label for="description" class="grootheid">omschrijving: </label>
+                <input id="description" th:field="*{description}" class="infoLineValue">
+
+            </div>
+<!--            <div class="col-12"><label for="vakgebied"> vakgebied:</label>-->
+<!--                <input th:field="*{vakgebied}"  class="form-select" id="vakgebied" >-->
+
+
+
+                <!--                    <select th:path="vakgebied">-->
+
+
+                <!--                        <option selected>Vakgebied</option>-->
+                <!--                            <option value="1">Dans</option>-->
+                <!--                            <option value="2">Zang</option>-->
+                <!--                            <option value="3">Toneel</option>-->
+                <!--                            <option value="3">?????</option>-->
+                <!--                    </select>-->
+
+
+
+
+            </div>
+<!--            <div class="col-12">-->
+
+<!--                <label for="opmerking"> opmerkingen:-->
+<!--                    <input  id="opmerking" th:field="*{opmerking}" class="infoLineValue">-->
+
+
+<!--                </label>-->
+<!--            </div>-->
+
+
+            <div>
+                <a th:href="@{/}" class="cancelButton">cancel</a>
+                <input type="submit" value="save" class="editButton">
+            </div>
+        </div>
+    </div>
+</form>
+
+
+</body>
+</html>
