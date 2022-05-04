@@ -1,6 +1,5 @@
 package com.example.demo.controllers;
 
-import com.example.demo.model.Afspraak;
 import com.example.demo.model.Event;
 import com.example.demo.repositories.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
