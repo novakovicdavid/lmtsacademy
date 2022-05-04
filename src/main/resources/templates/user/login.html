@@ -1,30 +1,38 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
     <title>Login</title>
+    <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" media="all"
-          th:href="@{/css/stylesheet.css}"/>
+          th:href="@{/css/authentication.css}"/>
     <link rel="stylesheet" th:href="@{/bootstrap.min.css}">
     <script th:src="@{/bootstrap.min.js}"></script>
     <link rel="stylesheet" href="https://use.typekit.net/ssa0ifx.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<form th:action="@{|/user/login|}" method="post" >
-    <div>
-        <div>
-            <label for="username">Username: </label>
-            <input id="username" name="username" type="text">
-        </div>
-        <div>
-            <label for="password">Password: </label>
-            <input id="password" name="password" type="password">
-        </div>
-        <div>
-            <input type="submit" value="Login">
+<div th:replace="fragments/header"></div>
+<div class="content">
+    <div class="dialog_container">
+        <p class="dialog_title">INLOGGEN</p>
+        <div class="dialog_content">
+            <form class="form_login" th:action="@{|/user/login|}" method="post">
+                <div class="input_container">
+                    <label for="email">Email: </label>
+                    <input class="text_input" id="email" name="email" type="text">
+                </div>
+                <div class="input_container">
+                    <label for="password">Wachtwoord: </label>
+                    <input class="text_input" id="password" name="password" type="password">
+                </div>
+                <div class="input_container submit_container">
+                    <input class="submit_button" type="submit" value="Login">
+                </div>
+                <p class="form_error" th:if="${param.error != null}">Oops! Verkeerd email en/of wachtwoord. Probeer het opnieuw.</p>
+            </form>
         </div>
     </div>
-</form>
-<div th:if="${param.error != null}">Incorrect credentials.</div>
+</div>
+<div th:replace="fragments/footer"></div>
 </body>
 </html>

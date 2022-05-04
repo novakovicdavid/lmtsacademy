@@ -2,24 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="all"
+          th:href="@{/css/stylesheet.css}"/>
+    <link rel="stylesheet" th:href="@{/bootstrap.min.css}">
+    <script th:src="@{/bootstrap.min.js}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/ssa0ifx.css">
     <title>Cursus</title>
 </head>
 <body>
-<div>
+<div th:replace="fragments/header"></div>
+<div class="main">
     <div th:if="${course}">
 
-        <h2 th:text="${course.getName}">coursedetails</h2>
+        <h2 class="titleOurTeam" th:text="${course.getName}">course name</h2>
+        <div class="cursusInfo">
+            <div>
+                <div class="infoName"><b>Leerkracht:</b></div>
+                <div class="infoValue" th:text="${course.getTeacher()}">teacher</div>
+            </div>
         <div>
-            <div class="infoName">id:</div>
-            <div class="infoValue" th:text="${course.getId()}">id</div>
+            <div class="infoName"><b>Omschrijving:</b></div>
+            <div class="infoValue" th:text="${course.getDescription()}">description</div>
         </div>
-        <div>
-            <div class="infoName">Omschrijving:</div>
-            <div class="infoValue" th:text="${course.getDescription()}">omschrijving</div>
+            <div>
+                <div class="infoName"><b>Locatie:</b></div>
+                <div class="infoValue" th:text="${course.getLocation()}">location</div>
+            </div>
         </div>
-
-
     </div>
 </div>
+<div th:replace="fragments/footer"></div>
 </body>
+<style>
+    body {
+        background: #619095;
+    }
+</style>
 </html>

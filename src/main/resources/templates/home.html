@@ -5,8 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Welkom!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" media="all"
-          th:href="@{/css/stylesheet.css}" href="/css/stylesheet.css"/>
+          th:href="@{/css/stylesheet.css}" href="/static/css/stylesheet.css"/>
     <link rel="stylesheet" th:href="@{/bootstrap.min.css}">
     <script th:src="@{/bootstrap.min.js}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -14,7 +15,8 @@
 </head>
 <body class="body">
 
-<div th:replace="fragments/header::background"></div>
+<div th:replace="fragments/header"></div>
+<div th:replace="fragments/bubbles"></div>
 
 <h1>
     WELCOME TO LIMITS ACADEMY
@@ -23,7 +25,7 @@
     WIE ZIJN WIJ?
 </h2>
 <div class="row">
-    <div class="col-8">
+    <div class="col-9">
         <p class="textHomepage">
             LMTS ACADEMY is een academy speciaal opgericht voor mensen met een beperking.
             Het doel is om deze groep van mensen meer op het beeldscherm te krijgen, want geef nu toe,
@@ -46,7 +48,7 @@
 </h2>
 <div class="row teamContainer">
 
-    <div class="col-2 teamMember">
+    <div class="col-lg-2 col-sm-6 teamMember">
         <h2 class="teamMemberName">
             Yanis
         </h2>
@@ -59,7 +61,7 @@
             voor bepaalde producties verlopen.
         </p>
     </div>
-    <div class="col-2 teamMember">
+    <div class="col-lg-2 col-sm-6 teamMember">
         <h2 class="teamMemberName">
             Anna
         </h2>
@@ -71,7 +73,7 @@
             aan toe gaat.
         </p>
     </div>
-    <div class="col-2 teamMember">
+    <div class="col-lg-2 col-sm-6 teamMember">
         <h2 class="teamMemberName">
             Femke
         </h2>
@@ -84,7 +86,7 @@
             media werking van onze Start-Up.
         </p>
     </div>
-    <div class="col-2 teamMember">
+    <div class="col-lg-2 col-sm-6 teamMember">
         <h2 class="teamMemberName">
             Sharon
         </h2>
@@ -115,6 +117,6 @@
 </div>
 
 
-<div th:replace="fragments/footer::footer"></div>
+<div th:replace="fragments/footer"></div>
 </body>
 </html>
