@@ -11,11 +11,10 @@
 <body>
 <div th:replace="fragments/header"></div>
 <div class="content">
-    <div class="form_container">
-        <p class="form_title">NIEUWE CURSUS</p>
+    <div class="dialog_container">
+        <p class="dialog_title">NIEUWE CURSUS</p>
+        <div class="dialog_content">
         <form class="form_login" th:action="@{|/newcourse|}" method="post">
-            <div class="venueinfo">
-
                 <div class="input_container">
                     <label for="courseName">Naam: </label>
                     <input class="text_input" id="courseName" type="text" th:field="*{course.name}">
@@ -43,9 +42,8 @@
                 <a class="submit_button"
                    style="text-decoration: none ; background: #51585e ; width: 60px ; margin-left: 30px"
                    th:href="@{|/coursedetails/*{id}|}">cancel</a>
-
-            </div>
         </form>
+        </div>
     </div>
 </div>
 <div th:replace="fragments/footer"></div>

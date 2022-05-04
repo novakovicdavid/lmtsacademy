@@ -12,7 +12,8 @@
 <div th:replace="fragments/header"></div>
 <div th:if="${course}">
 <div class="content">
-    <div class="form_container">
+    <div class="dialog_container">
+        <div class="dialog_content">
         <p class="form_title" th:text="*{course.name}">course name</p>
         <form class="form_login" th:action="@{|/editcourse/*{id}|}" method="post">
             <div class="input_container">
