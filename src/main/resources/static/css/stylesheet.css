@@ -109,6 +109,7 @@ h2.titleOurTeam {
 
 .imgLogoPink {
     width: 15em;
+
 }
 
 /* cursus*/
@@ -157,4 +158,14 @@ h2.titleOurTeam {
     font-family: bebas-neue, sans-serif;
     font-size: 2em;
     color: green;
+}
+@media (max-width: 1000px) {
+    .imgLogoPink{
+        width: 80%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
 }

@@ -56,6 +56,17 @@ footer {
     color: aqua;
 }
 
+@media (max-width: 600px) {
+    .verticalLine {
+        display: none;
+    }
+    .verticalLine2 {
+        display: none;
+    }
+    .verticalLine3 {
+        display: none;
+    }
+}
 .verticalLine {
     position: absolute;
     left: 130px;
