@@ -10,11 +10,10 @@
     <link rel="stylesheet" href="https://use.typekit.net/ssa0ifx.css">
     <title>Cursus</title>
 </head>
-<body>
+<body class="body">
 <div th:replace="fragments/header"></div>
 <div class="main">
     <div th:if="${course}">
-
         <h2 class="titleOurTeam" th:text="${course.getName}">course name</h2>
         <div class="cursusInfo">
             <div sec:authorize="hasAuthority('ADMIN')">

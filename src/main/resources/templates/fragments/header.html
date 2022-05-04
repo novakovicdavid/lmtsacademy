@@ -11,31 +11,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <script>
-    function toggleButton(){
-        let x = document.getElementsByClassName("alignleft");
-        if (x.style.display === "none") {
-            x.style.display = "block";
-        } else {
-            x.style.display = "none";
+    function changeDisplay() {
+        var foo = document.getElementById('nav');
+
+        if(foo.style.display == '' || foo.style.display == 'none'){
+            foo.style.display = 'flex';
+        }
+        else {
+            foo.style.display = 'none';
         }
     }
 </script>
 <body>
-<div class="nav">
-            <span></span>
-            <span></span>
-            <span></span>
+<img class="logoMobile" th:src="@{/pictures/LMTSLogo.png}"/>
+<input type="button" value="Menu" id="btn-me" onclick="changeDisplay()">
+<div id="nav">
     <ul class="alignleft">
         <li class="home"><a class="nav-link" th:href="@{/home}">Home</a></li>
         <li class="contact"><a class="nav-link" th:href="@{/courselist}">Cursussen</a></li>
     </ul>
     <div class="aligncenter">
-        <img class="logoNav" th:src="@{/pictures/LMTSLogo.png}"/>
+        <img class="logoNavFullscreen" th:src="@{/pictures/LMTSLogo.png}"/>
     </div>
     <ul class="alignright">
         <li sec:authorize="isAnonymous()" class="header_login"><a class="nav-link"
                                                                   th:href="@{/user/login}">Login</a></li>
-        <li sec:authorize="isAnonymous()" class="header_login"><a class="nav-link" th:href="@{/user/register}">Maak een afspraak</a></li>
+        <li sec:authorize="isAnonymous()" class="header_login"><a class="nav-link" th:href="@{/user/register}">Maak een
+            afspraak</a></li>
         <li sec:authorize="isAuthenticated()" class="header_logout"><a class="nav-link"
                                                                        th:href="@{/user/logout}">Logout</a>
         </li>
