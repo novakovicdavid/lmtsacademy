@@ -1,4 +1,5 @@
 insert into USER (ID, EMAIL, PASSWORD, ROLE) values (nextval('USER_SEQ'), 'admin', '$2a$10$dZsdQUfAfZVCz7cUhl2uMutgekw8uOYKl6sb54JBKwwyYH/zvNVmC', 'ADMIN');
+-- insert into PROFILE(ID, USER_ID, HAS_DISMISSED_COMPLETE_PROFILE_NOTIFICATION) values (nextval('PROFILE_SEQ'), 0, FALSE);
 
 insert into Afspraak (ID, DATUM, START_UUR, EIND_UUR, NAAM, VAKGEBIED, OPMERKING)
 values ((nextval('AFSPRAAK_SEQ')), '2021-09-3', 16, 17, 'test', 'Dans', 'blaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');

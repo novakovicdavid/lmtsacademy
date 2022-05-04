@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.util.Optional;
 
 @Controller
-public class CourseController {
+public class CourseController extends RootController {
     @Autowired
     private CourseRepository courseRepository;
     private final Logger logger = LoggerFactory.getLogger(CourseController.class);

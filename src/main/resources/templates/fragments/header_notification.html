@@ -1,0 +1,16 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/header_notification.css}">
+</head>
+<body>
+<a class="notification_container" th:if="${notification_is_link}" th:href="${notification_link}">
+    <p class="notification_content" th:text="${notification_text}"></p>
+</a>
+<a class="notification_container" th:if="${notification_is_text}">
+    <p class="notification_content" th:text="${notification_text}"></p>
+</a>
+</body>
+</html>

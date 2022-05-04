@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class afspraakController {
+public class afspraakController extends RootController {
     private final Logger logger = LoggerFactory.getLogger(afspraakController.class);
 
     @Autowired
