@@ -158,6 +158,7 @@ h2.titleOurTeam {
     font-size: 2em;
     color: green;
 }
+
 .edit_button {
     text-decoration: none;
     color: white;
@@ -176,4 +177,15 @@ h2.titleOurTeam {
 
 .edit_button:focus {
     outline: 2px solid #e2ef8d;
+}
+
+@media (max-width: 1000px) {
+    .imgLogoPink{
+        width: 80%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
 }
