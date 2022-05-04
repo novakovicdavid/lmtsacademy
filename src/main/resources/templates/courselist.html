@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" media="all"
@@ -15,6 +15,9 @@
 <div class="main">
     <div th:replace="fragments/header"></div>
     <h1>ONZE CURSUSSEN</h1>
+    <div sec:authorize="hasAuthority('ADMIN')">
+        <a class ="edit_button" th:href="@{|/newcourse|}">NIEUWE CURSUS</a>
+    </div>
     <div class="courseContainer row">
         <div class="courselistitem col-3" th:each="course: ${courses}">
             <a th:href="@{|/coursedetails/${course.id}|}" th:text="${course.name}">Cursus naam </a>

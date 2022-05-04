@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" media="all"
+          th:href="@{/css/authentication.css}"/>
+    <link rel="stylesheet" th:href="@{/bootstrap.min.css}">
+    <script th:src="@{/bootstrap.min.js}"></script>
+    <meta charset="UTF-8">
+    <title>Cursus aanpassen</title>
+</head>
+<body>
+<div th:replace="fragments/header"></div>
+<div th:if="${course}">
+<div class="content">
+    <div class="dialog_container">
+        <div class="dialog_content">
+        <p class="form_title" th:text="*{course.name}">course name</p>
+        <form class="form_login" th:action="@{|/editcourse/*{id}|}" method="post">
+            <div class="input_container">
+                <label for="courseName">Naam: </label>
+                <input class="text_input" id="courseName" type="text" th:field="*{course.name}">
+            </div>
+            <div class="input_container">
+                <label for="courseTeacher">Docent: </label>
+                <input class="text_input" id="courseTeacher" type="text" th:field="*{course.teacher}">
+            </div>
+            <div class="input_container">
+                <label for="courseShortDesc">Korte beschrijving: </label>
+                <input class="text_input" id="courseShortDesc" type="text" th:field="*{course.shortdescription}">
+            </div>
+            <div class="input_container">
+                <label for="courseDescription">Beschrijving: </label>
+                <input class="text_input" id="courseDescription" type="text" th:field="*{course.description}">
+            </div>
+            <div class="input_container">
+                <label for="courseLocation">Locatie: </label>
+                <input class="text_input" id="courseLocation" type="text" th:field="*{course.location}">
+            </div>
+            <div class="input_container submit_container">
+                <input class="submit_button" type="submit" value="save">
+            </div>
+                    <a class="submit_button" style="text-decoration: none ; background: #51585e ; width: 60px ; margin-left: 30px" th:href="@{|/coursedetails/*{id}|}">cancel</a>
+
+        </form>
+            </div>
+            </div>
+
+    </div>
+</div>
+<div th:replace="fragments/footer"></div>
+</body>
+</html>

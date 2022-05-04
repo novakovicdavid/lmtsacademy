@@ -1,12 +1,12 @@
 package com.example.demo.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Course {
     @Id
+    @SequenceGenerator(name = "course_seq", sequenceName = "COURSE_SEQ", initialValue = 0, allocationSize = 1)
+    @GeneratedValue(generator = "course_seq")
     private Integer id;
     private String name;
     private String teacher;

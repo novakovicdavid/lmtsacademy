@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" media="all"
@@ -17,6 +17,9 @@
 
         <h2 class="titleOurTeam" th:text="${course.getName}">course name</h2>
         <div class="cursusInfo">
+            <div sec:authorize="hasAuthority('ADMIN')">
+                <a class ="edit_button" th:href="@{|/editcourse/*{id}|}">EDIT</a>
+            </div>
             <div>
                 <div class="infoName"><b>Leerkracht:</b></div>
                 <div class="infoValue" th:text="${course.getTeacher()}">teacher</div>

@@ -81,7 +81,6 @@ body {
     border-radius: 4px;
     cursor:pointer;
 }
-
 .submit_button:hover {
     background-color: #d688d5;
 }
