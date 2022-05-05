@@ -16,8 +16,8 @@
 
             <label for="title"></label><input type="text" id="title"  th:field="*{title}" class="person-detail" placeholder="titel"  maxlength="20" required>
             <label for="start"></label><input id="start" th:field="*{start}" class="person-detail"  placeholder="start" th:type="datetime-local"  required>
-            <label for="finish"></label><input id="finish" placeholder="Email(optional)"  class="person-detail" th:type="datetime-local" required>
-            <label for="description"></label><textarea id="description" name= rows="5" cols="3" placeholder="Voeg een opmerking toe" class="person-detail"></textarea>
+            <label for="finish"></label><input id="finish" placeholder="finish" th:field="*{finish}"  class="person-detail" th:type="datetime-local" required>
+            <label for="description"></label><textarea id="description" th:field="*{description}"  name= rows="5" cols="3" placeholder="Voeg een opmerking toe" class="person-detail"></textarea>
             <button type="submit" id="submit" value="Submit" onclick="">Submit </button>
             <a th:href="@{/}" class="gaTerugLink" >Ga terug</a>
 

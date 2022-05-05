@@ -15,26 +15,24 @@
 <table border="1"  class="afsprakenTabel">
     <thead>
     <tr>
+        <th>Title</th>
         <th>Id</th>
-        <th>Datum</th>
-        <th>Van</th>
-        <th>Tot</th>
-        <th>Naam</th>
-        <th>Vakgebied</th>
-        <th>Opmerkingen</th>
+        <th>Start</th>
+        <th>Finish</th>
+        <th>Description</th>
+
 
 
     </tr>
     </thead>
     <tbody>
-    <tr th:each="b: ${afspraken}">
+    <tr th:each="b: ${eventlist}">
         <td th:text="${b.id}"></td>
-        <td th:text="${b.datum}"></td>
-        <td th:text="${b.startUur}"></td>
-        <td th:text="${b.eindUur}"></td>
-        <td th:text="${b.naam}"></td>
-        <td th:text="${b.vakgebied}"></td>
-        <td th:text="${b.opmerking}"></td>
+        <td th:text="${b.title}"></td>
+        <td th:text="${b.start}"></td>
+        <td th:text="${b.finish}"></td>
+        <td th:text="${b.description}"></td>
+
 
     </tr>
     </tbody>
