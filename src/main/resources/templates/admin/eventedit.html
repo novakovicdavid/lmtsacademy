@@ -1,0 +1,31 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<!--suppress XmlUnusedNamespaceDeclaration -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="all"
+          th:href="@{/css/eventbooking.css}" href="/css/eventbooking.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <title>Appartementedit</title>
+</head>
+<body>
+<form th:action="@{|/admin/eventedit/${event.id}|}" th:object="${event}" method="post">
+    <label for="title"></label><input type="text" id="title"  th:field="*{title}" class="person-detail" placeholder="titel"  maxlength="20" required>
+    <label for="start"></label><input id="start" th:field="*{start}" class="person-detail"  placeholder="start" th:type="datetime-local"  required>
+    <label for="finish"></label><input id="finish" placeholder="finish" th:field="*{finish}"  class="person-detail" th:type="datetime-local" required>
+    <label for="description"></label><textarea id="description" th:field="*{description}"  name= rows="5" cols="3" placeholder="Voeg een opmerking toe" class="person-detail"></textarea>
+
+
+
+    <div class="appartementinfo">
+        <a th:href="@{/}" class="cancelButton">cancel</a>
+        <input type="submit" value="save" class=" editButton">
+    </div>
+</form>
+
+
+</body>
+</html>

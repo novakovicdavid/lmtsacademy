@@ -6,10 +6,9 @@ import com.example.demo.repositories.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/admin")
@@ -30,5 +29,41 @@ public class AdminController {
 
         Event newEvent = eventRepository.save(event);
         return "redirect:/calendar";
+    }
+
+
+    @ModelAttribute("event")
+    public Event findEvent(@PathVariable(required = false) Integer id) {
+
+        if (id == null) return new Event();
+        Optional<Event> optionalEvent = eventRepository.findById(id);
+        return optionalEvent.orElse(null);
+    }
+
+    @GetMapping("/eventedit/{id}")
+    public String eventEdit() {
+
+
+        return "admin/eventedit";
+    }
+
+    @PostMapping("/eventedit/{id}")
+    public String eventEditPost(Model model,
+                                      @PathVariable int id,
+                                      @ModelAttribute("event") Event event) {
+
+        Optional<Event> optionalEvent = eventRepository.findById(id);
+        if (optionalEvent.isPresent()) {
+            Event editedEvent = optionalEvent.get();
+            editedEvent.setTitle(event.getTitle());
+            editedEvent.setStart(event.getStart());
+            editedEvent.setFinish(event.getFinish());
+            editedEvent.setDescription(event.getDescription());
+            eventRepository.save(event);
+            model.addAttribute("event", editedEvent);
+        }
+//        return "redirect:/eventdetails/" + id;
+                return "redirect:/calendar";
+
     }
 }
