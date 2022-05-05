@@ -7,7 +7,12 @@
     <link rel="stylesheet" type="text/css" media="all"
           th:href="@{/css/eventbooking.css}" href="/css/eventbooking.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="all"
+          th:href="@{/css/stylesheet.css}" href="/css/stylesheet.css"/>
 </head>
+<body class="body">
+<div th:replace="fragments/header"></div>
+
 <main id="wrapper">
     <div class="container">
         <form th:object="${event}" th:action="@{/admin/eventnew}" id="appoint-form" method="POST">

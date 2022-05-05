@@ -32,6 +32,7 @@ body {
     font-size: 4rem;
     font-weight: 700;
     letter-spacing: 1.5px;
+    color: #1a1e21;
 }
 @media (max-width: 460px) {
     #form-head {
