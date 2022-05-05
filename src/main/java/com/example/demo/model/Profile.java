@@ -23,6 +23,8 @@ public class Profile {
     // No intake interview done/planned
     private Boolean isNew;
 
+    private Boolean hasDismissedCompleteProfileNotification;
+
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
@@ -108,5 +110,13 @@ public class Profile {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Boolean getHasDismissedCompleteProfileNotification() {
+        return hasDismissedCompleteProfileNotification;
+    }
+
+    public void setHasDismissedCompleteProfileNotification(Boolean hasDismissedCompleteProfileNotification) {
+        this.hasDismissedCompleteProfileNotification = hasDismissedCompleteProfileNotification;
     }
 }

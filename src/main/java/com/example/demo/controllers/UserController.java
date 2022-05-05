@@ -83,6 +83,7 @@ public class UserController {
         newProfile.setLastName(lastName);
         newProfile.setExperience(experience);
         newProfile.setNew(true);
+        newProfile.setHasDismissedCompleteProfileNotification(false);
         profileRepository.save(newProfile);
 
         autologin(email, password);

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-public class EventController {
+public class EventController extends RootController {
     @Autowired
     private EventRepository eventRepository;
 
