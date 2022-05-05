@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 10px;
+}
+body {
+    font-family: "Poppins", sans-serif;
+
+}
+#wrapper {
+    text-align: center;
+    margin-top: 10vh;
+}
+.container {
+    display: inline-block;
+    background-color: #fff;
+    padding: 6vw 7vw 8vw 7vw;
+}
+@media (max-width: 460px) {
+    #wrapper {
+        margin: 12vh 0 15vh 0;
+    }
+}
+#appoint-form {
+    text-align: justify;
+}
+#form-head {
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #1a1e21;
+}
+@media (max-width: 460px) {
+    #form-head {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+}
+.person-detail {
+    height: 35px;
+    font-size: 2.1rem;
+    padding-left: 8px;
+    margin-top: 20px;
+    font-family: "Poppins", sans-serif;
+}
+
+
+#name {
+    margin-top: 0px;
+}
+.person-detail {
+    display: block;
+    width: 95%;
+    margin: 12px 0 12px 0;
+    border: 1.5px solid #aaa;
+}
+#mobile {
+}
+#email {
+}
+#message {
+    height: 80px;
+    padding-top: 3px;
+}
+textarea {
+    resize: none;
+}
+#submit {
+    display: block;
+    border-radius: 3px;
+    width: 96%;
+    color: #fff;
+    height: 48px;
+    font-size: 2rem;
+    background-color: #29b8e6;
+    margin-top: 20px;
+    border-style: none;
+    font-family: "Poppins", sans-serif;
+    opacity: 1;
+    transition: 0.3s;
+}
+input:focus,
+
+
+#submit:hover {
+    border-radius: 5px;
+    opacity: 0.5;
+}
+
+.container {
+    padding: 6vw 4vw 8vw 8vw;
+}
+.gaTerugLink{
+    font-size: x-large;
+/*}*/
+/*.input-group.md-form.form-sm.form-2 input {*/
+/*    border: 1px solid #bdbdbd;*/
+/*    border-top-left-radius: 0.25rem;*/
+/*    border-bottom-left-radius: 0.25rem;*/
+/*}*/
+/*.input-group.md-form.form-sm.form-2 input {*/
+/*    border: 1px solid #9e9e9e;*/
+/*}*/
+/*.input-group.md-form.form-sm.form-2 input[type=text]:focus:not([readonly]) {*/
+/*    border: 1px solid #ba68c8;*/
+/*    box-shadow: none;*/
+}
+
+
+.success-text {
+    color: #00C851;
+}
+/*.table-bordered.red-border th, .table-bordered.red-border td {*/
+/*    border: 1px solid #ff3547!important;*/
+/*}*/
+/*.table.table-bordered th {*/
+/*    text-align: center;*/
+/*}*/

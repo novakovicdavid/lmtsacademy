@@ -4,7 +4,11 @@
       xmlns:th="http://www.thymeleaf.org" lang="en">
 
 <head>
-    <meta charset='utf-8'  name="Author" />
+    <meta charset='utf-8' />
+    <link rel="stylesheet" type="text/css" media="all"
+          th:href="@{/css/stylesheet.css}" href="/css/stylesheet.css"/>
+    <link rel="stylesheet" th:href="@{/bootstrap.min.css}">
+    <script th:src="@{/bootstrap.min.js}"></script>
 
     <link href="https://fullcalendar.io/js/fullcalendar-2.2.5/fullcalendar.css"
           th:href="@{/webjars/fullcalendar/2.2.5/fullcalendar.css}" rel="stylesheet"/>
@@ -68,6 +72,12 @@
     <title></title>
 </head>
 <body>
+<a th:href="@{/}" class="btn btn-secondary btn-lg" role="button" >Home</a>
+<a th:href="@{/eventlist}" class="btn btn-secondary btn-lg" role="button" >events</a>
+<a th:href="@{|/admin/eventedit/1|}" class="btn btn-secondary btn-lg" role="button" >eventedit</a>
+
+
+
 <div id='calendar' th:id="calendar"></div>
 </body>
 </html>

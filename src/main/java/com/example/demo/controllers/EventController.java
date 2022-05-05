@@ -1,6 +1,5 @@
 package com.example.demo.controllers;
 
-import com.example.demo.model.Afspraak;
 import com.example.demo.model.Event;
 import com.example.demo.repositories.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,19 +23,6 @@ public class EventController {
 
     }
 
-    @GetMapping("/eventnew")
-    public String eventNew(Model model) {
-        model.addAttribute("event", new Event());
-        model.addAttribute("eventlist", eventRepository.findAll());
-        return "eventnew";
 
-    }
-
-    @PostMapping("/eventnew")
-    public String eventNewPost(@ModelAttribute("event") Event event) {
-
-        Event newEvent = eventRepository.save(event);
-        return "redirect:/calendar";
-    }
 
 }

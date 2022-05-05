@@ -17,14 +17,14 @@ public class afspraakController {
     @Autowired
     private AfspraakRepository afspraakRepository;
 
-    @GetMapping("/afspraken")
-    public String afsprakenLijst(Model model) {
-        Iterable<Afspraak> afspraken = afspraakRepository.findAll();
-        model.addAttribute("afspraken", afspraken);
-
-        return "afspraken";
-
-    }
+//    @GetMapping("/afspraken")
+//    public String afsprakenLijst(Model model) {
+//        Iterable<Afspraak> afspraken = afspraakRepository.findAll();
+//        model.addAttribute("afspraken", afspraken);
+//
+//        return "afspraken";
+//
+//    }
 
     @GetMapping("/afspraaknew")
     public String afspraakNew(Model model) {
