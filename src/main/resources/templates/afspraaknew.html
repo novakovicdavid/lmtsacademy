@@ -1,4 +1,3 @@
-
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 <!--suppress XmlUnusedNamespaceDeclaration -->
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
@@ -28,61 +27,57 @@
             </div>
 
 
+            <div>
+                <label for="date" class="grootheid">datum <i>(yyyy-mm-dd)</i>: </label>
+                <input id="date" th:field="*{datum}" class="infoLineValue" th:type="date">
+            </div>
 
-        <div>
-            <label for="date" class="grootheid">datum <i>(yyyy-mm-dd)</i>: </label>
-            <input id="date" th:field="*{datum}" class="infoLineValue" th:type="date">
-        </div>
+            <div>
+                <label for="startUur" class="grootheid">startuur : </label>
+                <input id="startUur" th:field="*{startUur}" class="infoLineValue" th:type="time">
 
-        <div>
-            <label for="startUur" class="grootheid">startuur : </label>
-            <input id="startUur" th:field="*{startUur}" class="infoLineValue" th:type="time">
+            </div>
+            <div>
+                <label for="eindUur" class="grootheid">eindUur: </label>
+                <input id="eindUur" th:field="*{eindUur}" class="infoLineValue" th:type="time">
 
-        </div>
-        <div>
-            <label for="eindUur" class="grootheid">eindUur: </label>
-            <input id="eindUur" th:field="*{eindUur}" class="infoLineValue" th:type="time">
+            </div>
+            <div>
+                <label for="naam" class="grootheid">naam: </label>
+                <input id="naam" th:field="*{naam}" class="infoLineValue">
 
-        </div>
-        <div>
-            <label for="naam" class="grootheid">naam: </label>
-            <input id="naam" th:field="*{naam}" class="infoLineValue">
-
-        </div>
+            </div>
             <div class="col-12"><label for="vakgebied"> vakgebied:</label>
-                    <input th:field="*{vakgebied}"  class="form-select" id="vakgebied" >
+                <input th:field="*{vakgebied}" class="form-select" id="vakgebied">
 
 
-
-<!--                    <select th:path="vakgebied">-->
-
-
-<!--                        <option selected>Vakgebied</option>-->
-<!--                            <option value="1">Dans</option>-->
-<!--                            <option value="2">Zang</option>-->
-<!--                            <option value="3">Toneel</option>-->
-<!--                            <option value="3">?????</option>-->
-<!--                    </select>-->
+                <!--                    <select th:path="vakgebied">-->
 
 
+                <!--                        <option selected>Vakgebied</option>-->
+                <!--                            <option value="1">Dans</option>-->
+                <!--                            <option value="2">Zang</option>-->
+                <!--                            <option value="3">Toneel</option>-->
+                <!--                            <option value="3">?????</option>-->
+                <!--                    </select>-->
 
 
             </div>
             <div class="col-12">
 
                 <label for="opmerking"> opmerkingen:
-                    <input  id="opmerking" th:field="*{opmerking}" class="infoLineValue">
+                    <input id="opmerking" th:field="*{opmerking}" class="infoLineValue">
 
 
                 </label>
             </div>
 
 
-        <div>
-            <a th:href="@{/}" class="cancelButton">cancel</a>
-            <input type="submit" value="save" class="editButton">
+            <div>
+                <a th:href="@{/}" class="cancelButton">cancel</a>
+                <input type="submit" value="save" class="editButton">
+            </div>
         </div>
-    </div>
     </div>
 </form>
 
