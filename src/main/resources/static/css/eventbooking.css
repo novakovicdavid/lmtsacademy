@@ -8,14 +8,7 @@ html {
 }
 body {
     font-family: "Poppins", sans-serif;
-    background: rgb(67, 60, 193);
-    background: linear-gradient(
-            90deg,
-            rgba(67, 60, 193, 1) 0%,
-            rgba(116, 111, 211, 1) 0%,
-            rgba(74, 150, 147, 1) 100%,
-            rgba(189, 14, 246, 1) 100%
-    );
+
 }
 #wrapper {
     text-align: center;
@@ -49,7 +42,7 @@ body {
 }
 .person-detail {
     height: 35px;
-    font-size: 1.8rem;
+    font-size: 2.1rem;
     padding-left: 8px;
     margin-top: 20px;
     font-family: "Poppins", sans-serif;
@@ -103,4 +96,27 @@ input:focus,
 }
 .gaTerugLink{
     font-size: x-large;
+/*}*/
+/*.input-group.md-form.form-sm.form-2 input {*/
+/*    border: 1px solid #bdbdbd;*/
+/*    border-top-left-radius: 0.25rem;*/
+/*    border-bottom-left-radius: 0.25rem;*/
+/*}*/
+/*.input-group.md-form.form-sm.form-2 input {*/
+/*    border: 1px solid #9e9e9e;*/
+/*}*/
+/*.input-group.md-form.form-sm.form-2 input[type=text]:focus:not([readonly]) {*/
+/*    border: 1px solid #ba68c8;*/
+/*    box-shadow: none;*/
 }
+
+
+.success-text {
+    color: #00C851;
+}
+/*.table-bordered.red-border th, .table-bordered.red-border td {*/
+/*    border: 1px solid #ff3547!important;*/
+/*}*/
+/*.table.table-bordered th {*/
+/*    text-align: center;*/
+/*}*/
