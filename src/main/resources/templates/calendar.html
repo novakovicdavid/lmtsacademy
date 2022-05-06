@@ -7,8 +7,8 @@
     <meta charset='utf-8' />
     <link rel="stylesheet" type="text/css" media="all"
           th:href="@{/css/stylesheet.css}" href="/css/stylesheet.css"/>
-    <link rel="stylesheet" th:href="@{/bootstrap.min.css}">
-    <script th:src="@{/bootstrap.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/static/bootstrap.min.js}">
+    <script th:src="@{static/bootstrap.min.css}"></script>
 
     <link href="https://fullcalendar.io/js/fullcalendar-2.2.5/fullcalendar.css"
           th:href="@{/webjars/fullcalendar/2.2.5/fullcalendar.css}" rel="stylesheet"/>
@@ -28,7 +28,7 @@
 
         $(document).ready(function() {
             $('#calendar').fullCalendar({
-                themeSystem: 'bootstrap5',
+                themeSystem: 'bootstrap4',
                 header: {
                     left: 'prev,next today',
                     center: 'title',
@@ -37,17 +37,17 @@
                 defaultDate: '2022-05-03',
                 editable: true,
                 eventLimit: true,
-                         // allow "more" link when too many events
                 events: {
                     url: '/events',
                     type: 'GET',
                     error: function() {
                         alert('there was an error while fetching events!');
                     },
+
                   
 
-                    color: 'orange',   // a non-ajax option
-                    //textColor: 'white' // a non-ajax option
+                    color: 'orange',
+
                 }
             });
         });
