@@ -193,6 +193,42 @@ h2.titleOurTeam {
     margin-top: 20px;
     border: 5px solid white;
 }
+.prevButtonDiv {
+    position: fixed;
+    left: 0.5%;
+    top: 160px;
+}
+
+.nextButtonDiv {
+    position: fixed;
+    right: 5%;
+    top: 160px;
+
+}
+.buttonLook {
+    background-color: #EB95E7;
+    color: #6A8E7F;
+    border-radius: 50px 20px 0 20px;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 1px 1px 1px darkgrey;
+}
+
+.buttonLook:hover {
+    background-color: #a4caf3;
+    color: black;
+    box-shadow: 3px 4px 5px darkgrey;
+}
+
+.buttonLook:active {
+    background-color: #a4caf3;
+    color: #EDC7CF;
+}
+a.smallButton {
+    display: block;
+    font-size: 1em;
+    padding: 0.5em;
+}
 @media (max-width: 1000px) {
     .imgLogoPink{
         width: 80%;

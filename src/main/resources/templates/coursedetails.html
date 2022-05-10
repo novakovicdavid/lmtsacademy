@@ -14,6 +14,12 @@
 <div th:replace="fragments/header"></div>
 <div class="main">
     <div th:if="${course}">
+        <div class="prevButtonDiv">
+            <a class="buttonLook smallButton" th:href="@{|/coursedetails/${course.id}/prev|}">&lt;</a>
+        </div>
+        <div class="nextButtonDiv">
+            <a class="buttonLook smallButton" th:href="@{|/coursedetails/${course.id}/next|}">&gt;</a>
+        </div>
         <h2 class="titleOurTeam" th:text="${course.getName}">course name</h2>
         <div class="cursusInfo">
             <div sec:authorize="hasAuthority('ADMIN')">
