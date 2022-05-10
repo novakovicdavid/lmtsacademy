@@ -33,8 +33,10 @@
         <li class="contact"><a class="nav-link" th:href="@{/courselist}">Cursussen & Workshops</a></li>
     </ul>
     <div class="aligncenter">
-        <img class="logoNavFullscreen" th:src="@{/pictures/LMTSLogo.png}"/>
+        <a th:href="@{/home}"><img class="logoNavFullscreen" alt="Logo" th:src="@{/pictures/LMTSLogo.png}" /></a>
+
     </div>
+
     <ul class="alignright">
         <li sec:authorize="isAnonymous()" class="header_login"><a class="nav-link"
                                                                   th:href="@{/user/login}">Login</a></li>
