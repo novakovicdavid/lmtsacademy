@@ -19,19 +19,19 @@
             <form class="form_login" th:action="@{|/user/register|}" method="post" enctype="multipart/form-data">
                 <div class="input_container">
                     <label for="first_name">Voornaam:</label>
-                    <input class="text_input" id="first_name" name="firstName" type="text" placeholder="Voornaam">
+                    <input class="text_input" id="first_name" name="firstName" type="text" placeholder="Voornaam" required>
                 </div>
                 <div class="input_container">
                     <label for="last_name">Achternaam:</label>
-                    <input class="text_input" id="last_name" name="lastName" type="text" placeholder="Achternaam">
+                    <input class="text_input" id="last_name" name="lastName" type="text" placeholder="Achternaam" required>
                 </div>
                 <div class="input_container">
                     <label for="email">Email:</label>
-                    <input class="text_input" id="email" name="email" type="text" placeholder="Email">
+                    <input class="text_input" id="email" name="email" type="email" placeholder="Email" required>
                 </div>
                 <div class="input_container">
                     <label for="password">Wachtwoord:</label>
-                    <input class="text_input" id="password" name="password" type="password" placeholder="Wachtwoord">
+                    <input class="text_input" id="password" name="password" type="password" placeholder="Wachtwoord" required>
                 </div>
                 <div class="input_container">
                     <label for="experience">Heb je ervaring in een van de disciplines? (Dans, zang, acteren, podiumkunsten,
