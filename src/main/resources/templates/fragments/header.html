@@ -41,7 +41,10 @@
         <li sec:authorize="isAnonymous()" class="header_login"><a class="nav-link" th:href="@{/user/register}">Maak een
             afspraak</a></li>
         <li sec:authorize="isAuthenticated()" class="header_logout"><a class="nav-link"
+                                                                       th:href="@{/myProfile}">My Profile</a>
+        <li sec:authorize="isAuthenticated()" class="header_logout"><a class="nav-link"
                                                                        th:href="@{/user/logout}">Logout</a>
+
         </li>
         <li sec:authorize="hasAuthority('ADMIN')" class="header_login"><a class="nav-link" th:href="@{/admin/eventnew}">plaats in agenda</a></li>
 

@@ -19,9 +19,6 @@
     <label for="start"></label><input id="start" th:field="*{start}" class="person-detail"  placeholder="start" th:type="datetime-local"  required>
     <label for="finish"></label><input id="finish" placeholder="finish" th:field="*{finish}"  class="person-detail" th:type="datetime-local" required>
     <label for="description"></label><textarea id="description" th:field="*{description}"  name= rows="5" cols="3" placeholder="Voeg een opmerking toe" class="person-detail"></textarea>
-
-
-
     <div>
         <a th:href="@{/calendar}" class="cancelButton">cancel</a>
         <input type="submit" value="save" class=" editButton">

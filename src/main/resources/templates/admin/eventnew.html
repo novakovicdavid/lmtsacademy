@@ -13,21 +13,16 @@
 </head>
 <body class="body">
 <div th:replace="fragments/header"></div>
-
 <main id="wrapper">
     <div class="container">
         <form th:object="${event}" th:action="@{/admin/eventnew}" id="appoint-form" method="POST">
             <h1 id="form-head">Zet iets in je kalender</h1>
-
-
             <label for="title"></label><input type="text" id="title"  th:field="*{title}" class="person-detail" placeholder="titel"  maxlength="20" required>
             <label for="start"></label><input id="start" th:field="*{start}" class="person-detail"  placeholder="start" th:type="datetime-local"  required>
             <label for="finish"></label><input id="finish" placeholder="finish" th:field="*{finish}"  class="person-detail" th:type="datetime-local" required>
             <label for="description"></label><textarea id="description" th:field="*{description}"  name= rows="5" cols="3" placeholder="Voeg een opmerking toe" class="person-detail"></textarea>
-            <button type="submit" id="submit" value="Submit" onclick="">Submit </button>
+            <button type="submit" id="submit" value="Submit" onclick="">Submit</button>
             <a th:href="@{/}" class="gaTerugLink" >Ga terug</a>
-
-
         </form>
     </div>
 </main>
