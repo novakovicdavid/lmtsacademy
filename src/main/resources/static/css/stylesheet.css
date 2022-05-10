@@ -54,6 +54,8 @@ h2.titleOurTeam {
     margin: 20px;
     font-family: Consolas, monaco, monospace;
     font-weight: 500;
+    max-width: 70%;
+    font-size: 1.15em;
 }
 
 .textVision {
@@ -62,6 +64,7 @@ h2.titleOurTeam {
     font-size: 20px;
     margin: 10px;
     text-align: center;
+    height: 250px;
 }
 
 .textHomepage:after {
@@ -78,6 +81,7 @@ h2.titleOurTeam {
 
 .teamContainer {
     justify-content: center;
+    background: #ffca7d;
 }
 
 .teamMember {
@@ -96,8 +100,8 @@ h2.titleOurTeam {
     color: #619095;
     font-family: bebas-neue, sans-serif;
 }
-
 .memberBio {
+    font-size: 1em;
     font-family: Consolas, monaco, monospace;
 
 }
@@ -109,8 +113,14 @@ h2.titleOurTeam {
 
 .imgLogoPink {
     width: 15em;
+    max-height: 250px;
 }
+.test{
+    background: linear-gradient(
+    to right,#EB95E7 0%, #EB95E7 75%, green 75%, green 100%
 
+    );
+}
 /* cursus*/
 .courseContainer {
     justify-content: center;
