@@ -229,6 +229,16 @@ a.smallButton {
     font-size: 1em;
     padding: 0.5em;
 }
+.filterButton {
+    margin: 20px 0;
+    padding: .5em;
+    border: none;
+    font-size: medium;
+}
+.filtername {
+    width: 10em;
+    text-decoration: underline #EB95E7;
+}
 @media (max-width: 1000px) {
     .imgLogoPink{
         width: 80%;

@@ -92,4 +92,11 @@ public class CourseController extends RootController {
         Course newCourse = courseRepository.save(course);
         return "redirect:/coursedetails/" + newCourse.getId();
     }
+    @GetMapping("/courselist/workshop/{filter}")
+    public String courselistWorkshopYes(Model model, @PathVariable String filter) {
+        final Iterable<Course> courses = courseRepository.findByWorkshop(filter.equals("yes"));
+        model.addAttribute("courses", courses);
+        model.addAttribute("filterWorkshop", filter.equals("yes") ? "yes" : "no");
+        return "courselist";
+    }
 }

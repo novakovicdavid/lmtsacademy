@@ -15,17 +15,28 @@ public class Course {
     @Column(length = 500)
     private String shortdescription;
     private String location;
+    private Boolean workshop;
     public Course() {
 
     }
 
-    public Course(Integer id, String name,String location, String teacher, String description,String shortDescription) {
+    public Course(Integer id, String name,Boolean workshop, String location, String teacher, String description,String shortDescription) {
         this.id = id;
         this.name = name;
+        this.workshop = workshop;
         this.teacher = teacher;
         this.location = location;
         this.shortdescription = shortDescription;
         this.description = description;
+
+    }
+
+    public Boolean getWorkshop() {
+        return workshop;
+    }
+
+    public void setWorkshop(Boolean workshop) {
+        this.workshop = workshop;
     }
 
     public String getLocation() {
