@@ -59,6 +59,27 @@ public class CourseController extends RootController {
         courseRepository.save(course);
         return "redirect:/coursedetails/" + id;
     }
+    @GetMapping({"/coursedetails/{id}/prev"})
+    public String coursedetailsPrev(Model model, @PathVariable int id) {
+        Optional<Course> prevCourseFromDb = courseRepository.findFirstByIdLessThanOrderByIdDesc(id);
+        if (prevCourseFromDb.isPresent())
+            return String.format("redirect:/coursedetails/%d", prevCourseFromDb.get().getId());
+        Optional<Course> lastCourseFromDb = courseRepository.findFirstByOrderByIdDesc();
+        if (lastCourseFromDb.isPresent())
+            return String.format("redirect:/coursedetails/%d", lastCourseFromDb.get().getId());
+        return "coursedetails";
+    }
+
+    @GetMapping({"/coursedetails/{id}/next"})
+    public String receptdetailsNext(Model model, @PathVariable int id) {
+        Optional<Course> nextCourseFromDb = courseRepository.findFirstByIdGreaterThanOrderByIdAsc(id);
+        if (nextCourseFromDb.isPresent())
+            return String.format("redirect:/coursedetails/%d", nextCourseFromDb.get().getId());
+        Optional<Course> firstCourseFromDb = courseRepository.findFirstByOrderByIdAsc();
+        if (firstCourseFromDb.isPresent())
+            return String.format("redirect:/coursedetails/%d", firstCourseFromDb.get().getId());
+        return "coursedetails";
+    }
     @GetMapping("/newcourse")
     public String newcourse(Model model) {
         logger.info("newcourse ");

@@ -3,11 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
-html {
-    font-size: 10px;
-}
+/*html {*/
+/*    font-size: 10px;*/
+/*}*/
 body {
-    font-family: "Poppins", sans-serif;
+    font-size: 10px;
 
 }
 #wrapper {
@@ -115,9 +115,29 @@ input:focus,
 .success-text {
     color: #00C851;
 }
-/*.table-bordered.red-border th, .table-bordered.red-border td {*/
-/*    border: 1px solid #ff3547!important;*/
-/*}*/
-/*.table.table-bordered th {*/
-/*    text-align: center;*/
-/*}*/
+
+.calendar{
+    background: white;
+    margin: 40px 10px;
+    padding: 0;
+    /*font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;*/
+    font-size: 10px;
+    border-radius: 20px;
+    font-family: "Poppins", sans-serif;
+
+
+}
+#calendar {
+    max-width: 900px;
+    margin-top: 10px;
+    margin-left: 22%;
+}
+@media (max-width: 900px) {
+    .calendar{
+        margin-right: 50px;
+    }
+}
+.btn-lg{
+    width: 180px;
+
+}

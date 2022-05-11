@@ -14,35 +14,87 @@
     <link rel="stylesheet" href="https://use.typekit.net/ssa0ifx.css">
 </head>
 <body class="body">
-
 <div th:replace="fragments/header"></div>
 <div th:replace="fragments/bubbles"></div>
-
 <h1>
     WELCOME TO LIMITS ACADEMY
 </h1>
 <h2 class="titleOurTeam">
     WIE ZIJN WIJ?
 </h2>
-<div class="row">
-    <div class="col-9">
+<div class="row rowOurTeam">
+    <div class="col-lg-7 col-sm-12">
         <p class="textHomepage">
             LMTS ACADEMY is een academy speciaal opgericht voor mensen met een beperking.
             Het doel is om deze groep van mensen meer op het beeldscherm te krijgen, want geef nu toe,
             zij verdienen toch ook een kans om te schitter in de media sector?
+            <!--        </p>-->
+            <!--    </div>-->
+            <br>
+            <!--<br>-->
+            <!--<p class="textHomepage">-->
+            LMTS ACADEMY biedt 3 disciplines aan: zang, dans en acteerlessen.
+            Het is de bedoeling dat wanneer leden naar ons komen er een intake gesprek plaatsvindt met een coach die zal
+            luister
+            naar wat de persoon in kwestie
+            graag zou willen bereiken. Meespelen in een film, een reclamespot, eventueel deelnemen aan the voice?
+            Na dit gesprek zal er een persoonlijk lessenschema gemaakt worden om hen helemaal klaar te stomen en hen de
+            juiste
+            skills aan te leren.
         </p>
     </div>
-
+    <div class="col-sm-12 col-lg-4 carouselContainer">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img th:src="@{/pictures/WorkshopFoto1.jpg}" class="fotoCarousel">
+                </div>
+                <div class="carousel-item ">
+                    <img th:src="@{/pictures/WorkshopFoto2.jpg}" class="fotoCarousel">
+                </div>
+                <div class="carousel-item ">
+                    <img th:src="@{/pictures/WorkshopFoto3.jpg}" class="fotoCarousel">
+                </div>
+                <div class="carousel-item ">
+                    <img th:src="@{/pictures/WorkshopFoto4.jpg}" class="fotoCarousel">
+                </div>
+                <div class="carousel-item ">
+                    <img th:src="@{/pictures/WorkshopFoto5.jpg}" class="fotoCarousel">
+                </div>
+                <div class="carousel-item ">
+                    <img th:src="@{/pictures/WorkshopFoto6.jpg}" class="fotoCarousel">
+                </div>
+                <div class="carousel-item ">
+                    <img th:src="@{/pictures/WorkshopFoto8.jpg}" class="fotoCarousel">
+                </div>
+                <div class="carousel-item ">
+                    <img th:src="@{/pictures/WorkshopFoto9.jpg}" class="fotoCarousel">
+                </div>
+                <div class="carousel-item ">
+                    <img th:src="@{/pictures/WorkshopFoto10.jpg}" class="fotoCarousel">
+                </div>
+                <div class="carousel-item ">
+                    <img th:src="@{/pictures/WorkshopFoto11.jpg}" class="fotoCarousel">
+                </div>
+                <div class="carousel-item ">
+                    <img th:src="@{/pictures/WorkshopFoto12.jpg}" class="fotoCarousel">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
 </div>
-<br>
-<p class="textHomepage">
-    LMTS ACADEMY biedt 3 disciplines aan: zang, dans en acteerlessen.
-    Het is de bedoeling dat wanneer leden naar ons komen er een intake gesprek plaatsvindt met een coach die zal luister
-    naar wat de persoon in kwestie
-    graag zou willen bereiken. Meespelen in een film, een reclamespot, eventueel deelnemen aan the voice?
-    Na dit gesprek zal er een persoonlijk lessenschema gemaakt worden om hen helemaal klaar te stomen en hen de juiste
-    skills aan te leren.
-</p>
+
+
 <h2 class="titleOurTeam">
     OUR TEAM
 </h2>
@@ -57,7 +109,8 @@
             Als CEO hebben we Yanis Driege. Hij is professionele danser in zijn vrije tijd en zal in de toekomst ook
             deel uit maken van het welbekende #LikeMe
             dans-team. <br>
-            Hiermee kunnen wij onze doelgroep garanderen van professionele lessen en kan Yanis uitleggen hoe castings
+            Hiermee kunnen wij onze doelgroep garanderen van professionele lessen en kan Yanis uitleggen hoe
+            castings
             voor bepaalde producties verlopen.
         </p>
     </div>
@@ -69,7 +122,8 @@
         <p class="memberBio">
             Daarnaast hebben we Anna Lambaerts. We kunnen haar de rechterhand van Yanis noemen want zij is ook
             gespecialiseerd in dans en kan dus mee inspringen bij het geven van danslessen.
-            Hiernaast heeft Anna ook al enige werkervaring in een productiehuis. Zij weet perfect hoe het er allemaal
+            Hiernaast heeft Anna ook al enige werkervaring in een productiehuis. Zij weet perfect hoe het er
+            allemaal
             aan toe gaat.
         </p>
     </div>
@@ -80,9 +134,11 @@
         <img class="imgTeam" th:src="@{/pictures/femke.png}"/>
 
         <p class="memberBio">
-            Natuurlijk zijn er ook creatievelingen nodig in een team en daarvoor hebben wij Femke Overtus. Zij beschikt
+            Natuurlijk zijn er ook creatievelingen nodig in een team en daarvoor hebben wij Femke Overtus. Zij
+            beschikt
             over een secundair diploma van een kunstschool
-            en en kan heel goed werken met de verschillende Adobe programma's, wat zeer relevant is voor de hele social
+            en en kan heel goed werken met de verschillende Adobe programma's, wat zeer relevant is voor de hele
+            social
             media werking van onze Start-Up.
         </p>
     </div>
@@ -92,27 +148,42 @@
         </h2>
         <img class="imgTeam" th:src="@{/pictures/sharon.png}"/>
         <p class="memberBio">
-            Als laatste teamlid hebben we Sharon Debremaeker. Zij is afgestudeerd in de richting Handel. Dat betekent
+            Als laatste teamlid hebben we Sharon Debremaeker. Zij is afgestudeerd in de richting Handel. Dat
+            betekent
             dat Sharon alle kneepjes van het vak kent als het over
-            boekhouden gaat, een belangrijk elemenet binnen een Start-Up. Daarnaast is ze ook professioneel fotografe in
-            haar vrije tijd.
+            boekhouden gaat, een belangrijk elemenet binnen een Start-Up. Daarnaast is ze ook professioneel
+            fotografe.
         </p>
     </div>
 </div>
+
+
+<div class="videoContainer">
+    <video class="video" controls>
+        <source th:src="@{/pictures/LMTS_ACADEMY.mp4}" type=video/mp4>
+    </video>
+</div>
+
 <h2 class="titleOurTeam">
     VISIE
 </h2>
-<div class="row">
-    <div class="col-lg-9 col-sm-12">
-    <p class="textVision">
-        LMTS ACADEMY wil door het geven van kwalitatieve opleiding in podium en een persoonlijke begeleiding als eerste
-        organisatie in Vlaanderen ervoor zorgen dat mensen
-        met beperking meer op televisie komen. Er zal samengewerkt worden met productiehuizen zodat de LMTS artiesten
-        eenvoudig doorgestuurd kunnen worden naar de juiste productie.
-    </p>
-    </div>
-    <div class="col-lg-3 col-sm-12">
-        <img class="imgLogoPink" th:src="@{/pictures/LMTS-roos.png}"/>
+<div class="test">
+    <div class="row">
+        <div class="col-lg-9 col-sm-12">
+            <p class="textVision">
+                <br>
+                <br>
+                LMTS ACADEMY wil door het geven van kwalitatieve opleiding in podium en een persoonlijke begeleiding
+                als eerste
+                organisatie in Vlaanderen ervoor zorgen dat mensen
+                met beperking meer op televisie komen. Er zal samengewerkt worden met productiehuizen zodat de LMTS
+                artiesten
+                eenvoudig doorgestuurd kunnen worden naar de juiste productie.
+            </p>
+        </div>
+        <div class="col-lg-3 col-sm-12">
+            <img class="imgLogoPink" th:src="@{/pictures/LMTS-roos.png}"/>
+        </div>
     </div>
 </div>
 

@@ -16,19 +16,19 @@ public class AdminController {
     @Autowired
     private EventRepository eventRepository;
 
-    @GetMapping("/eventnew")
+    @GetMapping("/calendar")
     public String eventNew(Model model) {
         model.addAttribute("event", new Event());
         model.addAttribute("eventlist", eventRepository.findAll());
-        return "admin/eventnew";
+        return "admin/calendar";
 
     }
 
-    @PostMapping("/eventnew")
+    @PostMapping("/calendar")
     public String eventNewPost(@ModelAttribute("event") Event event) {
 
         Event newEvent = eventRepository.save(event);
-        return "redirect:/calendar";
+        return "redirect:/home";
     }
 
 
@@ -66,4 +66,5 @@ public class AdminController {
                 return "redirect:/calendar";
 
     }
+
 }
