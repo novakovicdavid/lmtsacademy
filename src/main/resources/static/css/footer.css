@@ -65,6 +65,7 @@ footer {
         width: 10px;
         background-color: green;
         border-radius: 20px 20px 0 0;
+        border: white solid 1px;
     }
 
     .verticalLine2 {
@@ -75,6 +76,7 @@ footer {
         width: 10px;
         background-color: #EB95E7;
         border-radius: 20px 20px 0 0;
+        border: white solid 1px;
     }
 
     .verticalLine3 {
@@ -85,5 +87,6 @@ footer {
         width: 10px;
         background-color: #364182;
         border-radius: 20px 20px 0 0;
+        border: white solid 1px;
     }
 }
