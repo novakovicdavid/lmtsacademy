@@ -1,10 +1,12 @@
 package com.example.demo.controllers;
 
 
+import com.example.demo.dtos.ProfileDTO;
 import com.example.demo.model.Profile;
 import com.example.demo.model.User;
 import com.example.demo.repositories.ProfileRepository;
 import com.example.demo.repositories.UserRepository;
+import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +14,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.security.Principal;
@@ -26,6 +27,7 @@ public class myProfileController extends RootController {
     @Autowired
     private UserRepository userRepository;
     private final Logger logger = LoggerFactory.getLogger(CourseController.class);
+    private final ModelMapper modelMapper = new ModelMapper();
 
     @GetMapping({"/myProfile"})
     public String profile(Model model, Principal principal) {
@@ -49,8 +51,13 @@ public class myProfileController extends RootController {
     }
 
     @PostMapping("/myProfileEdit")
-    public String myProfilePost(Model model, @ModelAttribute("profile") Profile profile) {
-        logger.info("editprofile: " + profile.getId() + " -- new name= " + profile.getFirstName());
+    public String myProfilePost(Principal principal, ProfileDTO editedProfile) {
+        var userOptional = userRepository.findByEmail(principal.getName());
+        if (userOptional.isEmpty()) return null;
+        var user = userOptional.get();
+        var profile = user.getProfile();
+        logger.info("editprofile: " + profile.getId() + " -- new name= " + editedProfile.getFirstName());
+        modelMapper.map(editedProfile, profile);
         profileRepository.save(profile);
         return "redirect:/myProfile";
     }
