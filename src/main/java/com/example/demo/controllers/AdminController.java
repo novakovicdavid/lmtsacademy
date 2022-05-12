@@ -63,7 +63,7 @@ public class AdminController {
             model.addAttribute("event", editedEvent);
         }
 //        return "redirect:/eventdetails/" + id;
-                return "redirect:/calendar";
+                return "redirect:/eventlist";
 
     }
 
