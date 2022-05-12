@@ -94,7 +94,6 @@ public class UserController {
     public String confirmationRegistration() {
         return "user/registration_confirmation";
     }
-
     private void autologin(String email, String password) {
         UsernamePasswordAuthenticationToken token
                 = new UsernamePasswordAuthenticationToken(email, password);
