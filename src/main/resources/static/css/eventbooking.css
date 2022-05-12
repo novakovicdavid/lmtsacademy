@@ -137,7 +137,23 @@ input:focus,
         margin-right: 50px;
     }
 }
-.btn-lg{
-    width: 180px;
+.btn-sm{
+    width: 150px;
+
+
 
 }
+
+.afsprakentitel{
+
+    text-align: center;
+    color: white;
+    font-family: bebas-neue, sans-serif;
+    margin-top: 50px !important;
+}
+.btn.newAppointmentButton {
+    background: #EB95E7;
+    border-color: #EB95E7;
+}
+
+

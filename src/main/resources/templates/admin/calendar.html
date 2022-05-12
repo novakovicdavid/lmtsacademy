@@ -13,8 +13,7 @@
           th:href="@{/css/eventbooking.css}" href="/static/css/eventbooking.css"/>
     <link rel="stylesheet" type="text/css" media="all"
           th:href="@{/css/stylesheet.css}" href="/static/css/stylesheet.css"/>
-    <link rel="stylesheet" type="text/css" media="all"
-          th:href="@{/css/eventbooking.css}" href="/static/css/eventbooking.css"/>
+
 
     <link href="https://fullcalendar.io/js/fullcalendar-3.9.0/fullcalendar.css"
           th:href="@{/webjars/fullcalendar/3.9.0/fullcalendar.css}" rel="stylesheet"/>
@@ -61,7 +60,7 @@
                     },
 
 
-                    color: 'orange',
+                    color: '#EB95E7',
 
                 }
             });
@@ -77,7 +76,7 @@
 
 <!--<a th:href="@{/}" class="btn btn-primary btn-lg"  role="button" >Home</a>-->
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg newEventButton" data-toggle="modal" data-target="#addAppointmentModal">
+<button type="button" class="btn btn-primary btn-sm mt-5 ml-4 newAppointmentButton" data-toggle="modal" data-target="#addAppointmentModal">
     Nieuwe afspraak
 </button>
 
@@ -154,17 +153,26 @@
 </body>
 <style>
 
-    /*body {*/
-    /*    margin: 40px 10px;*/
-    /*    padding: 0;*/
-    /*    font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;*/
-    /*    font-size: 14px;*/
-    /*}*/
+    .btn-primary{
+        background-color: #EB95E7;
+        border-color:#EB95E7 ;
+    }
+    .btn-primary:active{
+        background-color: #EB95E7;
+        border-color:#EB95E7 ;
 
-    /*#calendar {*/
-    /*    max-width: 900px;*/
-    /*    margin: 0 auto;*/
-    /*}*/
+    }
+    .btn-primary:not(:disabled):not(.disabled).active{
+        background-color: #EB95E7;
+        border-color:#EB95E7 ;
+        filter: brightness(85%);
+
+
+    }
+    .btn-primary.disabled{
+        background-color: #EB95E7;
+        border-color:#EB95E7 ;
+    }
 
 </style>
 </html>
