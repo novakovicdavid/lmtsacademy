@@ -14,4 +14,6 @@ public interface CourseRepository extends CrudRepository<Course,Integer> {
     Optional<Course> findFirstByIdGreaterThanOrderByIdAsc(int id);
 
     Optional<Course> findFirstByOrderByIdAsc();
+
+    Iterable<Course> findByWorkshop(boolean yes);
 }
