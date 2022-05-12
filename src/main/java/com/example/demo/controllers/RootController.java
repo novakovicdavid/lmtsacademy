@@ -28,7 +28,7 @@ public class RootController {
             || profile.getProvince() == null) {
                 model.addAttribute("notification_text", "Vervolledig je profiel");
                 model.addAttribute("notification_is_link", true);
-                model.addAttribute("notification_link", "/profile");
+                model.addAttribute("notification_link", "/myProfile");
                 return true;
             }
             else {
