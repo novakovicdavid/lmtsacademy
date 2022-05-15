@@ -2,7 +2,6 @@ package com.example.demo.controllers;
 
 
 import com.example.demo.dtos.ProfileDTO;
-import com.example.demo.model.Profile;
 import com.example.demo.model.User;
 import com.example.demo.repositories.ProfileRepository;
 import com.example.demo.repositories.UserRepository;
@@ -13,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.security.Principal;
@@ -21,7 +19,7 @@ import java.util.Optional;
 
 
 @Controller
-public class myProfileController extends RootController {
+public class ProfileController extends RootController {
     @Autowired
     private ProfileRepository profileRepository;
     @Autowired
