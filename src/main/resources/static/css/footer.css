@@ -1,13 +1,15 @@
 footer {
     position: relative;
     margin-top: auto;
-    background: #111;
+    background: white;
     height: 100%;
     padding: 10px;
-    color: #fff;
+    color: black;
+    box-shadow: 0 -10px 40px -10px #333;
 }
 
 .footer-content {
+
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -24,7 +26,7 @@ footer {
     margin: 5px auto;
     line-height: 15px;
     font-size: 12px;
-    color: #cacdd2;
+    color: black;
 }
 
 .socials {
@@ -40,7 +42,7 @@ footer {
 
 .socials a {
     text-decoration: none;
-    color: #fff;
+    color:black;
     border: 1.1px solid white;
     padding: 5px;
     border-radius: 50%;
