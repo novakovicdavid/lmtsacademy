@@ -6,25 +6,61 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" media="all"
-          th:href="@{/css/eventbooking.css}" href="/css/eventbooking.css"/>
+          th:href="@{/css/stylesheet.css}" href="/static/css/stylesheet.css"/>
     <link rel="stylesheet" type="text/css" media="all"
-          th:href="@{/css/stylesheet.css}"/>
+          th:href="@{/css/eventbooking.css}" href="/static/css/eventbooking.css"/>
+    <link rel="stylesheet" type="text/css" media="all"
+          th:href="@{/css/authentication.css}"/>
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
-    <title>Appartementedit</title>
+    <title>eventEdit</title>
 </head>
 <body  class="body">
-<form th:action="@{|/admin/eventedit/${event.id}|}" th:object="${event}" method="post">
-    <label for="title"></label><input type="text" id="title"  th:field="*{title}" class="person-detail" placeholder="titel"  maxlength="20" required>
-    <label for="start"></label><input id="start" th:field="*{start}" class="person-detail"  placeholder="start" th:type="datetime-local"  required>
-    <label for="finish"></label><input id="finish" placeholder="finish" th:field="*{finish}"  class="person-detail" th:type="datetime-local" required>
-    <label for="description"></label><textarea id="description" th:field="*{description}"  name= rows="5" cols="3" placeholder="Voeg een opmerking toe" class="person-detail"></textarea>
-    <div>
-        <a th:href="@{/calendar}" class="cancelButton">cancel</a>
-        <input type="submit" value="save" class=" editButton">
-    </div>
-</form>
+<div th:replace="fragments/header"></div>
+<div class="content">
+    <div class="dialog_container">
+        <p class="dialog_title">WIJZIG AFSPRAAK</p>
+        <div class="dialog_content">
+            <form class="form_login" th:action="@{|/admin/eventedit/${event.id}|}" th:object="${event}" method="post" enctype="multipart/form-data">
+                <div class="input_container">
+                    <label for="title">titel:</label>
+                    <input class="text_input" id="title" name="title" type="text" th:field="*{title}" required>
+                </div>
+                <div class="input_container">
+                    <label for="start">Van:</label>
+                    <input class="text_input" id="start" name="start" type="text" th:field="*{start}" th:type="datetime-local" required>
+                </div>
+                <div class="input_container">
+                    <label for="finish">Tot:</label>
+                    <input class="finish" id="finish" name="finish" type="text" th:field="*{finish}" th:type="datetime-local" required>
+                </div>
 
+                <div class="input_container">
+                    <label for="description">Opmerkingen: </label>
+                    <textarea class="text_input" id="description" name="description" type="text" th:field="*{description}"></textarea>
+                </div>
+                <div class="input_container submit_container">
+                    <input class="submit_button" type="submit" value="Sla wijzigingen op">
+                </div>
+                <p class="form_error" th:if="${param.error != null}">Oops! Er ging iets mis. Heb je alle velden ingevuld?</p>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--<form th:action="@{|/admin/eventedit/${event.id}|}" th:object="${event}" method="post">-->
+<!--    <label for="title"></label><input type="text" id="title"  th:field="*{title}" class="person-detail" placeholder="titel"  maxlength="20" required>-->
+<!--    <label for="start"></label><input id="start" th:field="*{start}" class="person-detail"  placeholder="start" th:type="datetime-local"  required>-->
+<!--    <label for="finish"></label><input id="finish" placeholder="finish" th:field="*{finish}"  class="person-detail" th:type="datetime-local" required>-->
+<!--    <label for="description"></label><textarea id="description" th:field="*{description}"  name= rows="5" cols="3" placeholder="Voeg een opmerking toe" class="person-detail"></textarea>-->
+<!--<div>-->
+<!--        <a th:href="@{/calendar}" class="cancelButton">cancel</a>-->
+<!--        <input type="submit" value="save" class=" editButton">-->
+<!--    </div>-->
+<!--</form>-->
+
+<div th:replace="fragments/footer"></div>
 
 </body>
 </html>

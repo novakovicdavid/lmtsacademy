@@ -46,7 +46,7 @@
 
     <ul class="alignright">
         <li sec:authorize="isAnonymous()" class="header_login"><a class="nav-link"
-                                                                  th:href="@{/user/login}">Login</a></li>
+                                                                  th:href="@{/user/login}"><i class="fa fa-user" aria-hidden="true"></i>Login</a></li>
         <li sec:authorize="isAnonymous()" class="header_login"><a class="nav-link" th:href="@{/user/register}">Maak een
             afspraak</a></li>
         <li sec:authorize="isAuthenticated()" class="header_logout"><a class="nav-link"
