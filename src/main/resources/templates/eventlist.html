@@ -1,101 +1,54 @@
-<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
-<!--suppress XmlUnusedNamespaceDeclaration -->
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<!DOCTYPE html>
+
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" media="all"
+      th:href="@{/css/eventbooking.css}" href="/static/css/eventbooking.css"/>
     <link rel="stylesheet" type="text/css" media="all"
           th:href="@{/css/stylesheet.css}" href="/static/css/stylesheet.css"/>
-    <link rel="stylesheet" type="text/css" media="all"
-          th:href="@{/css/eventbooking.css}" href="/static/css/eventbooking.css"/>
-
-
-
-    <script src="https://cdn.jsdelivr.net/webjars/jquery/3.6.0/jquery.min.js"
-            th:src="@{/webjars/jquery/3.6.0/jquery.min.js}" type="text/javascript"></script>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" th:href="@{/bootstrap.min.css}">
-    <script th:src="@{/bootstrap.min.js}"></script>
-
-    <!--    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/stylesheet.css}" href="../static/css/stylesheet.css"/>-->
-
-
-    <!--    <link rel="stylesheet" type="text/css" media="all"-->
-    <!--          th:href="@{/css/eventbooking.css}" href="/static/css/eventbooking.css"/>-->
-    <!--    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/stylesheet.css}" href="../static/css/stylesheet.css"/>-->
-    <!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
-    <!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
-    <!--    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
-
-
-    <link rel="stylesheet" th:href="@{/bootstrap.min.css}">
-    <script th:src="@{/bootstrap.min.js}"></script>
-
-    <title>Afsprakenlijst</title>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <title></title>
 </head>
 <body class="body">
 <div th:replace="fragments/header"></div>
 
-<div class="card mb-4">
-    <div class="card-body">
-        <div class="row">
-            <div class="col-md-12">
-                <h1 class="afsprakentitel">AFSPRAKEN</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card card-margin" th:each="b: ${eventlist}">
+                <div class="card-header no-border">
+                    <h5 class="card-title">MOM</h5>
+                </div>
+                <div class="card-body pt-0">
+                    <div class="widget-49">
+                        <div class="widget-49-title-wrapper">
+                            <div class="widget-49-date-primary">
+                                <div th:text=" ${#strings.arraySplit(${b.start}, '-')}">
+                                <span class="widget-49-date-day"></span>
+                                </div>
+                                <span class="widget-49-date-month">apr</span>
+                            </div>
+                            <div class="widget-49-meeting-info">
+                                <span class="widget-49-pro-title">PRO-08235 DeskOpe. Website</span>
+                                <span class="widget-49-meeting-time">12:00 to 13.30 Hrs</span>
+                            </div>
+                        </div>
+                        <ol class="widget-49-meeting-points">
+                            <li class="widget-49-meeting-item"><span>Expand module is removed</span></li>
+                            <li class="widget-49-meeting-item"><span>Data migration is in scope</span></li>
+                            <li class="widget-49-meeting-item"><span>Session timeout increase to 30 minutes</span></li>
+                        </ol>
+                        <div class="widget-49-meeting-action">
+                            <a href="#" class="btn btn-sm btn-flash-border-primary">View All</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-
         </div>
 
-        <table class="table">
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>Titel</th>
-                <th>start</th>
-                <th>einde</th>
-                <th>omschrijving</th>
-                <th>edit</th>
-
-            </tr>
-            </thead>
-            <tbody>
-            <tr class="table-success" th:each="b: ${eventlist}">
-                <td th:text="${b.id}"></td>
-                <td th:text="${b.title}"></td>
-                <td th:text="${b.start}"></td>
-                <td th:text="${b.finish}"></td>
-                <td th:text="${b.description}"></td>
-                <td>
-                    <!--                    <button type="button" class="bi bi-pen" data-toggle="modal"-->
-                    <!--                            data-target="#addAppointmentModal">-->
-                    <!--                    </button>-->
-                    <a class="bi bi-pen" th:href="@{|/admin/eventedit/${b.id}|}"></a>
-                </td>
-            </tr>
-
-            </tbody>
-        </table>
     </div>
 </div>
-
 <div th:replace="fragments/footer"></div>
 
 </body>
-<style>
-    .card {
-        background: #619095;
-    }
-    .py-3 {
-        color: white;
-    }
-  td{
-      background-color: white;
-  }
-</style>
-
 </html>
