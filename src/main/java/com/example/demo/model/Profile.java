@@ -20,6 +20,8 @@ public class Profile {
     private String phoneNumber;
     private String experience;
 
+    private String pathToProfilePicture;
+
     // No intake interview done/planned
     private Boolean isNew;
 
@@ -118,5 +120,13 @@ public class Profile {
 
     public void setHasDismissedCompleteProfileNotification(Boolean hasDismissedCompleteProfileNotification) {
         this.hasDismissedCompleteProfileNotification = hasDismissedCompleteProfileNotification;
+    }
+
+    public String getPathToProfilePicture() {
+        return pathToProfilePicture;
+    }
+
+    public void setPathToProfilePicture(String pathToProfilePicture) {
+        this.pathToProfilePicture = pathToProfilePicture;
     }
 }

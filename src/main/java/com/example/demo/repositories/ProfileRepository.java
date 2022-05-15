@@ -1,7 +1,7 @@
 package com.example.demo.repositories;
 
 import com.example.demo.model.Profile;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
-public interface ProfileRepository extends CrudRepository<Profile, Integer> {
+public interface ProfileRepository extends PagingAndSortingRepository<Profile, Integer> {
 }

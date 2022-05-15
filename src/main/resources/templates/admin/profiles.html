@@ -1,0 +1,25 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Leden</title>
+    <link rel="stylesheet" th:href="@{/css/profiles.css}">
+    <link rel="stylesheet" th:href="@{/bootstrap.min.css}">
+    <script th:src="@{/bootstrap.min.js}"></script>
+    <link rel="stylesheet" href="https://use.typekit.net/ssa0ifx.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div th:replace="fragments/header"></div>
+<div class="content">
+    <div class="profiles-list">
+        <a class="profile-entry" th:each="profile: ${profiles}" th:href="${'/admin/profile/' + profile.id}">
+            <img class="profile-entry-picture" th:src="${profile.getPathToProfilePicture}" alt="Profile Picture">
+            <p th:text="${profile.getFirstName()}"></p>
+            <p th:text="${profile.getLastName()}"></p>
+        </a>
+    </div>
+</div>
+<div th:replace="fragments/footer"></div>
+</body>
+</html>
