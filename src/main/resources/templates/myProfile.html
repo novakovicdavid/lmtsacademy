@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="all"
+          th:href="@{/css/stylesheet.css}" href="/css/stylesheet.css"/>
+    <link rel="stylesheet" th:href="@{/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" media="all"
+          th:href="@{/css/myProfile.css}" href="/css/myProfile.css"/>
+    <script th:src="@{/bootstrap.min.js}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/ssa0ifx.css">
+    <title>Mijn Profiel</title>
+</head>
+<body class="body">
+<div class="main">
+    <div th:replace="fragments/header"></div>
+    <div th:replace="fragments/bubbles"></div>
+    <h1>My Profile</h1>
+    <div class="row justify-content-center" th:if="${profile}">
+        <div class="col-4 myProfileBasics">
+                <h2 class="h2Profile">Basis informatie</h2>
+                <div class="form-group row ">
+                    <div class="col-4 col-form-label">Voornaam:</div>
+                    <div class="col-8">
+                        <div th:text="${profile.getFirstName()}">firstname</div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4 col-form-label">Achternaam:</div>
+                    <div class="col-8">
+                        <div th:text="${profile.getLastName()}">lastname</div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4 col-form-label">GSM-nummer:</div>
+                    <div class="col-8">
+                        <div th:text="${profile.getPhoneNumber()}">phone</div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4 col-form-label">Ervaring:</div>
+                    <div class="col-8">
+                        <div th:text="${profile.getExperience()}">experience</div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-7 myProfileBasics">
+
+                <h2 class="h2Profile">Extra informatie</h2>
+                <div class="form-group row ">
+                    <div class="col-4 col-form-label">Stad:</div>
+                    <div class="col-8">
+                        <div th:text="${profile.getCity()}">city</div>
+                    </div>
+                </div>
+                <div class="form-group row ">
+                    <div class="col-4 col-form-label">Provincie:</div>
+                    <div class="col-8">
+                        <div th:text="${profile.getProvince()}">province</div>
+                    </div>
+                </div>
+                <div class="form-group row ">
+                    <div class="col-4 col-form-label">Verjaardag:</div>
+                    <div class="col-8">
+                        <div th:text="${profile.getBirthday()}">birthday</div>
+                    </div>
+                </div>
+                <a th:href="@{|/myProfileEdit|}" type="button" class="editProfile_button">Aanpassen</a>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
