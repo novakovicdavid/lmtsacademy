@@ -22,7 +22,7 @@ values ((nextval('EVENT_SEQ')), 'event1','2022-05-10 2:00:00', '2022-05-11 3:00:
 insert into event(id, title, start, finish, description)
 values ((nextval('EVENT_SEQ')), 'event2','2022-06-10 2:00:00', '2022-06-11 3:00:00', 'description1');
 insert into event(id, title, start, finish, description)
-values ((nextval('EVENT_SEQ')), 'event3','2022-05-10 2:00:00', '2022-05-11 3:00:00', 'description1');
+values ((nextval('EVENT_SEQ')), 'event3','2022-05-11 2:00:00', '2022-05-12 3:00:00', 'description1');
 insert into event(id, title, start, finish, description)
 values ((nextval('EVENT_SEQ')), 'event4','2022-05-12 2:00:00', '2022-05-13 3:00:00', 'description1');
 
