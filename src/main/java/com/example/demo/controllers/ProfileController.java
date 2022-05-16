@@ -27,17 +27,17 @@ public class ProfileController extends RootController {
     private final Logger logger = LoggerFactory.getLogger(CourseController.class);
     private final ModelMapper modelMapper = new ModelMapper();
 
-    @GetMapping({"/myProfile"})
+    @GetMapping({"/profile"})
     public String profile(Model model, Principal principal) {
         var user = userRepository.findByEmail(principal.getName());
         if (user.isEmpty()) return null;
         var profile = user.get().getProfile();
         model.addAttribute("profile", profile);
         if (profile == null) return null;
-        return "myProfile";
+        return "profile";
     }
 
-    @GetMapping({"/myProfileEdit"})
+    @GetMapping({"/profile/edit"})
     public String myProfileEdit(Model model, Principal principal) {
         Optional<User> userFromDb = userRepository.findByEmail(principal.getName());
         if (userFromDb.isEmpty()) return null;
@@ -45,10 +45,10 @@ public class ProfileController extends RootController {
         if (profile == null) return null;
         model.addAttribute("profile", profile);
 
-        return "admin/myProfileEdit";
+        return "editprofile";
     }
 
-    @PostMapping("/myProfileEdit")
+    @PostMapping("/profile/edit")
     public String myProfilePost(Principal principal, ProfileDTO editedProfile) {
         var userOptional = userRepository.findByEmail(principal.getName());
         if (userOptional.isEmpty()) return null;
@@ -57,6 +57,6 @@ public class ProfileController extends RootController {
         logger.info("editprofile: " + profile.getId() + " -- new name= " + editedProfile.getFirstName());
         modelMapper.map(editedProfile, profile);
         profileRepository.save(profile);
-        return "redirect:/myProfile";
+        return "redirect:/profile";
     }
 }

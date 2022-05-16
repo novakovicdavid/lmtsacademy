@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" media="all"
-          th:href="@{/css/stylesheet.css}" href="/css/stylesheet.css"/>
+          th:href="@{/css/stylesheet.css}"/>
     <link rel="stylesheet" th:href="@{/bootstrap.min.css}">
     <link rel="stylesheet" type="text/css" media="all"
-          th:href="@{/css/myProfile.css}" href="/css/myProfile.css"/>
+          th:href="@{/css/myProfile.css}"/>
     <script th:src="@{/bootstrap.min.js}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.typekit.net/ssa0ifx.css">
@@ -18,7 +18,7 @@
     <div th:if="${profile}">
         <h1>My Profile</h1>
         <div class="row justify-content-center">
-            <form class="text-center" th:action="@{/myProfileEdit}" method="post">
+            <form class="text-center" th:action="@{/profile/edit}" method="post">
                 <div class="col-4 myProfileBasics">
 
                     <h2 class="h2Profile">Basis informatie</h2>
