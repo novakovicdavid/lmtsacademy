@@ -35,13 +35,19 @@ body {
     overflow: hidden;
 }
 
-.profile-entry-picture {
+.profile-entry-left-side {
+    grid-row: span 2;
     width: 100%;
     height: 100%;
-    grid-row: span 2;
 }
 
-.profile-entry p {
+p.profile-entry-left-side {
+    display: grid;
+    place-items: center;
+    background-color: #ea95e8;
+}
+
+.profile-entry .profile-entry-right-side {
     margin-left: 1rem;
 }
 
