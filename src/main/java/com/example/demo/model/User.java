@@ -8,6 +8,7 @@ public class User {
     @SequenceGenerator(name = "user_seq", sequenceName = "USER_SEQ", initialValue = 0, allocationSize = 1)
     @GeneratedValue(generator = "user_seq")
     private Integer id;
+    private String username;
     private String email;
     private String password;
     private String role;
@@ -56,5 +57,13 @@ public class User {
 
     public void setProfile(Profile profile) {
         this.profile = profile;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }
