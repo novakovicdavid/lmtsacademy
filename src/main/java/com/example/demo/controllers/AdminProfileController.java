@@ -18,8 +18,10 @@ public class AdminProfileController {
     @GetMapping({"/profiles/{page}"})
     public String getMembersAtPage(@PathVariable Integer page,
                              Model model) {
-        var profiles = profileRepository.findAll(PageRequest.of(page, 20, Sort.by("id").descending()));
+        var profiles = profileRepository.findAll(PageRequest.of(page, 10, Sort.by("id").descending()));
         model.addAttribute("profiles", profiles.iterator());
+        model.addAttribute("page", page);
+        model.addAttribute("nextPageHasContent", (profiles.getTotalPages() - (page + 1)) != 0);
         return "admin/profiles";
     }
 

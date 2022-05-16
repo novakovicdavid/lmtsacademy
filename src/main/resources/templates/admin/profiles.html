@@ -12,10 +12,36 @@
 <body>
 <div th:replace="fragments/header"></div>
 <div class="content">
+    <div class="filter-and-navigation">
+        <form>
+            <div class="input-container">
+                <label for="email">Email:</label>
+                <input id="email" type="text">
+            </div>
+            <div class="input-container">
+                <label for="firstname">Voornaam:</label>
+                <input id="firstname" type="text">
+            </div>
+            <div class="input-container">
+                <label for="lastname">Achternaam:</label>
+                <input id="lastname" type="text">
+            </div>
+            <div class="input-container">
+                <input class="submit-button" type="submit" value="Zoeken">
+            </div>
+        </form>
+        <div class="profile-page-navigation">
+            <a th:if="${page > 0}" th:href="@{|/admin/profiles/${page - 1}|}" class="page-navigation-previous">&lt;</a>
+            <a th:if="${nextPageHasContent}" th:href="@{|/admin/profiles/${page + 1}|}"
+               class="page-navigation-next">&gt;</a>
+        </div>
+    </div>
     <div class="profiles-list">
         <a class="profile-entry" th:each="profile: ${profiles}" th:href="${'/admin/profile/' + profile.id}">
-            <img th:if="${profile.getPathToProfilePicture != null}" class="profile-entry-left-side" th:src="${profile.getPathToProfilePicture}" alt="Profile Picture">
-            <p th:unless="${profile.getPathToProfilePicture != null}" class="profile-entry-left-side" th:text="${profile.getFirstName().substring(0, 1) + profile.getLastName().substring(0, 1)}"></p>
+            <img th:if="${profile.getPathToProfilePicture != null}" class="profile-entry-left-side"
+                 th:src="${profile.getPathToProfilePicture}" alt="Profile Picture">
+            <p th:unless="${profile.getPathToProfilePicture != null}" class="profile-entry-left-side"
+               th:text="${profile.getFirstName().substring(0, 1) + profile.getLastName().substring(0, 1)}"></p>
             <p class="profile-entry-right-side" th:text="${profile.getUser().getEmail()}"></p>
             <p class="profile-entry-right-side" th:text="${profile.getFirstName() + ' ' + profile.getLastName()}"></p>
         </a>

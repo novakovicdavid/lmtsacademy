@@ -15,6 +15,40 @@ body {
     margin: 0; /* Bootstrap moment */
 }
 
+.filter-and-navigation {
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+    background-color: white;
+}
+
+.profile-page-navigation {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+}
+
+.submit-button {
+    background-color: #ea95e8;
+    border: none;
+    border-radius: 4px;
+    cursor:pointer;
+}
+.submit-button:hover {
+    background-color: #d688d5;
+}
+
+.submit-button:active {
+    background-color: #ca80c9;
+}
+
+.submit-button:focus {
+    outline: 2px solid #e2ef8d;
+}
+
+.page-navigation-next {
+    grid-column: 2 / 3;
+}
+
 .profiles-list {
     display: grid;
     max-width: 100%;
