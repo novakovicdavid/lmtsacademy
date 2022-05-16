@@ -21,16 +21,16 @@ public class Event {
     private LocalDateTime start;
     private LocalDateTime finish;
     @ManyToOne(fetch = FetchType.LAZY)
-    private User user;
+    private Employee employee;
 
-    public Event(Integer id, String title, String description, LocalDateTime start, LocalDateTime finish, User user) {
+    public Event(Integer id, String title, String description, LocalDateTime start, LocalDateTime finish, Employee employee) {
         super();
         this.id = id;
         this.title = title;
         this.description = description;
         this.start = start;
         this.finish = finish;
-        this.user = user;
+        this.employee = employee;
     }
 
     public Event() {
@@ -79,18 +79,24 @@ public class Event {
         this.finish = finish;
     }
 
-    public User getUser() {
-        return user;
+    public Employee getEmployee() {
+        return employee;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
     }
 
     @Override
     public String toString() {
-        return "Event [id=" + id + ", title=" + title + ", description=" + description + ", start=" + start
-                + ", finish=" + finish + "]";
+        return "Event{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", start=" + start +
+                ", finish=" + finish +
+                ", employee=" + employee +
+                '}';
     }
 }
 

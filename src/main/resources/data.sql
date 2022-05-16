@@ -1,31 +1,18 @@
 insert into USER (ID, EMAIL, PASSWORD, ROLE) values (nextval('USER_SEQ'), 'admin', '$2a$10$dZsdQUfAfZVCz7cUhl2uMutgekw8uOYKl6sb54JBKwwyYH/zvNVmC', 'ADMIN');
 -- insert into PROFILE(ID, USER_ID, HAS_DISMISSED_COMPLETE_PROFILE_NOTIFICATION) values (nextval('PROFILE_SEQ'), 0, FALSE);
+insert into EMPLOYEE (ID, USERNAME) values (nextval('USER_SEQ'), 'Yanis');
+insert into EMPLOYEE (ID, USERNAME) values (nextval('USER_SEQ'), 'Sharon');
+insert into EMPLOYEE (ID, USERNAME) values (nextval('USER_SEQ'), 'Femke');
+insert into EMPLOYEE (ID, USERNAME) values (nextval('USER_SEQ'), 'Anna');
 
-
-insert into Afspraak (ID, DATUM, START_UUR, EIND_UUR, NAAM, VAKGEBIED, OPMERKING)
-values ((nextval('AFSPRAAK_SEQ')), '2021-09-3', 16, 17, 'test', 'Dans', 'blaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
-insert into Afspraak (ID, DATUM, START_UUR, EIND_UUR, NAAM, VAKGEBIED, OPMERKING)
-values ((nextval('AFSPRAAK_SEQ')), '2021-09-3', 16, 17, 'test', 'Dans', 'blaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
-insert into Afspraak (ID, DATUM, START_UUR, EIND_UUR, NAAM, VAKGEBIED, OPMERKING)
-values ((nextval('AFSPRAAK_SEQ')), '2021-09-3', 16, 17, 'test', 'Dans', 'blaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
-insert into Afspraak (ID, DATUM, START_UUR, EIND_UUR, NAAM, VAKGEBIED, OPMERKING)
-values ((nextval('AFSPRAAK_SEQ')), '2021-09-3', 16, 17, 'test', 'Dans', 'blaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
-insert into Afspraak (ID, DATUM, START_UUR, EIND_UUR, NAAM, VAKGEBIED, OPMERKING)
-values ((nextval('AFSPRAAK_SEQ')), '2021-09-3', 16, 17, 'test', 'Dans', 'blaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
-
-
-
-
-
-
-insert into event(id, title, start, finish, description)
-values ((nextval('EVENT_SEQ')), 'event1','2022-05-10 2:00:00', '2022-05-11 3:00:00', 'description1');
-insert into event(id, title, start, finish, description)
-values ((nextval('EVENT_SEQ')), 'event2','2022-06-10 2:00:00', '2022-06-11 3:00:00', 'description1');
-insert into event(id, title, start, finish, description)
-values ((nextval('EVENT_SEQ')), 'event3','2022-05-11 2:00:00', '2022-05-12 3:00:00', 'description1');
-insert into event(id, title, start, finish, description)
-values ((nextval('EVENT_SEQ')), 'event4','2022-05-12 2:00:00', '2022-05-13 3:00:00', 'description1');
+insert into event(id, title, start, finish, description, EMPLOYEE_ID)
+values ((nextval('EVENT_SEQ')), 'event1','2022-05-10 2:00:00', '2022-05-11 3:00:00', 'description1', 1);
+insert into event(id, title, start, finish, description, EMPLOYEE_ID)
+values ((nextval('EVENT_SEQ')), 'event2','2022-06-10 2:00:00', '2022-06-11 3:00:00', 'description1', 1);
+insert into event(id, title, start, finish, description, EMPLOYEE_ID)
+values ((nextval('EVENT_SEQ')), 'event3','2022-05-11 2:00:00', '2022-05-12 3:00:00', 'description1', 2);
+insert into event(id, title, start, finish, description, EMPLOYEE_ID)
+values ((nextval('EVENT_SEQ')), 'event4','2022-05-12 2:00:00', '2022-05-13 3:00:00', 'description1', 3);
 
 -- insert into event(id, title, start, finish, description) values (2, 'event2', '2022-05-10 2:00:00', '2022-05-11 3:00:00', 'description2');
 -- insert into event(id, title, start, finish, description) values (3, 'event3', '2022-05-12 5:00:00', '2022-05-13 6:00:00', 'description3');
