@@ -16,8 +16,8 @@
         <a class="profile-entry" th:each="profile: ${profiles}" th:href="${'/admin/profile/' + profile.id}">
             <img th:if="${profile.getPathToProfilePicture != null}" class="profile-entry-left-side" th:src="${profile.getPathToProfilePicture}" alt="Profile Picture">
             <p th:unless="${profile.getPathToProfilePicture != null}" class="profile-entry-left-side" th:text="${profile.getFirstName().substring(0, 1) + profile.getLastName().substring(0, 1)}"></p>
-            <p class="profile-entry-right-side" th:text="${profile.getFirstName()}"></p>
-            <p class="profile-entry-right-side" th:text="${profile.getLastName()}"></p>
+            <p class="profile-entry-right-side" th:text="${profile.getUser().getEmail()}"></p>
+            <p class="profile-entry-right-side" th:text="${profile.getFirstName() + ' ' + profile.getLastName()}"></p>
         </a>
     </div>
 </div>

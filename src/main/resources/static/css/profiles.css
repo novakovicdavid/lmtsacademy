@@ -45,10 +45,13 @@ p.profile-entry-left-side {
     display: grid;
     place-items: center;
     background-color: #ea95e8;
+    font-family: bebas-neue, sans-serif;
+    font-size: 2rem;
 }
 
-.profile-entry .profile-entry-right-side {
-    margin-left: 1rem;
+.profile-entry-right-side {
+    padding-left: 1rem;
+    font-size: 1.1rem;
 }
 
 @media only screen and (min-width: 32rem) {
