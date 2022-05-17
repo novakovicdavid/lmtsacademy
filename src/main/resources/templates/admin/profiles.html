@@ -13,18 +13,22 @@
 <div th:replace="fragments/header"></div>
 <div class="content">
     <div class="filter-and-navigation">
-        <form>
+        <form th:action="@{|/admin/profiles/filter/${page}|}">
             <div class="input-container">
                 <label for="email">Email:</label>
-                <input id="email" type="text">
+                <input id="email" name="email" type="text">
             </div>
             <div class="input-container">
                 <label for="firstname">Voornaam:</label>
-                <input id="firstname" type="text">
+                <input id="firstname" name="firstName" type="text">
             </div>
             <div class="input-container">
                 <label for="lastname">Achternaam:</label>
-                <input id="lastname" type="text">
+                <input id="lastname" name="lastName" type="text">
+            </div>
+            <div class="input-container">
+                <label for="isnew">Alleen nieuwe leden zonder eerste afspraak:</label>
+                <input id="isnew" name="isNew" type="checkbox">
             </div>
             <div class="input-container">
                 <input class="submit-button" type="submit" value="Zoeken">
