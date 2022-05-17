@@ -99,7 +99,21 @@
             </div>
             <div class="modal-body">
                 <form th:object="${event}" th:action="@{/admin/calendar}" id="appoint-form" method="POST">
-
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="employee"> Afspraak voor:</label>
+<!--                                <input type="text" id="employee" th:field="*{employee}" class="form-control"-->
+<!--                                       placeholder="medewerker" maxlength="20" required>-->
+                                <select name="cars" th:field="*{employee}" id="employee">
+                                    <option value="1">Yanis</option>
+                                    <option value="2">Sharon</option>
+                                    <option value="3">Femke</option>
+                                    <option value="4">Anna</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
@@ -127,7 +141,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="description">To:</label>
+                                <label for="description">Opmerkingen:</label>
                                 <input id="description" placeholder="opmerkingen" th:field="*{description}"
                                        class="form-control" required></div>
                         </div>

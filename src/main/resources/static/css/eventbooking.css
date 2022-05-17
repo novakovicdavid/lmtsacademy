@@ -211,7 +211,7 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: #edf1fc;
+    background-color: #EB95E7;
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
@@ -444,7 +444,7 @@ body{
 
 .widget-49 .widget-49-title-wrapper .widget-49-meeting-info .widget-49-meeting-time {
     color: #B1BAC5;
-    font-size: 13px;
+    font-size: 16px;
 }
 
 .widget-49 .widget-49-meeting-points {
@@ -471,4 +471,13 @@ body{
 }
 .card{
     display: block;
+
+}
+.card-margin{
+    background: #E2ED8C;
+
+}
+.container{
+    background-color: #619095;
+    margin-top: 50px;
 }

@@ -16,8 +16,8 @@
     <div class="row">
         <div class="col-lg-4" th:each="b: ${eventlist}">
             <div class="card card-margin" >
-                <div class="card-header no-border">
-<!--                    <h5 class="card-title" th:text="${b.user.username}"></h5>-->
+                <div class="card-header no-border" >
+                    <h5 class="card-title" th:text="${b.employee.username}"></h5>
                 </div>
                 <div class="card-body pt-0">
                     <div class="widget-49">
@@ -27,7 +27,7 @@
 
                                 <span class="widget-49-date-day"></span>
                                 </div>
-                                <div th:text="${#temporals.monthName(b.start)}">
+                                <div th:text="${#temporals.monthNameShort(b.start)}">
                                 <span class="widget-49-date-month">apr</span>
                                 </div>
                             </div>
@@ -35,14 +35,14 @@
                                 <div th:text="${b.title}">
                                 <span class="widget-49-pro-title"></span>
                                 </div>
-                                <div class="widget-49-meeting-time" th:text="${#temporals.format(b.start, 'HH:mm')}+   to + ${#temporals.format(b.finish, 'HH:mm')}" >
+                                <div class="widget-49-meeting-time" th:text="${#temporals.format(b.start, 'HH:mm')}+ '-' + ${#temporals.format(b.finish, 'HH:mm')}" >
                                 </div>
                             </div>
                         </div>
                         <ol class="widget-49-meeting-points">
                             <li>Met:<span></span></li>
                             <li>Locatie:<span></span></li>
-                            <li>Opmerkingen:<span></span></li>
+                            <li>Opmerkingen:<span th:text="${b.description}"> </span></li>
                         </ol>
                         <div class="widget-49-meeting-action">
                             <a class="bi bi-pen" th:href="@{|/admin/eventedit/${b.id}|}"></a>
@@ -57,4 +57,11 @@
 <div th:replace="fragments/footer"></div>
 
 </body>
+<style>
+    .card-margin{
+        background: #E2ED8C;
+        border: white 4px solid;
+
+    }
+</style>
 </html>

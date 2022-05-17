@@ -1,7 +1,9 @@
 package com.example.demo.controllers;
 
+import com.example.demo.model.Employee;
 import com.example.demo.model.Event;
 import com.example.demo.model.User;
+import com.example.demo.repositories.EmployeeRepository;
 import com.example.demo.repositories.EventRepository;
 import com.example.demo.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,15 +21,15 @@ public class EventController extends RootController {
     @Autowired
     private EventRepository eventRepository;
     @Autowired
-    private UserRepository userRepository;
+    private EmployeeRepository employeeRepository;
 
 
     @GetMapping("/eventlist")
     public String eventList(Model model) {
         Iterable<Event> eventlist = eventRepository.findAll();
-        Iterable<User> users = userRepository.findAll();
+        Iterable<Employee> employees = employeeRepository.findAll();
         model.addAttribute("eventlist", eventlist);
-        model.addAttribute("users", users);
+        model.addAttribute("employees", employees);
 
 
         return "eventlist";
