@@ -11,7 +11,9 @@ import java.util.List;
 public interface EventRepository extends CrudRepository<Event, Integer> {
 
 
-    @Query("select b from Event b where b.start >= ?1 and b.finish <= ?2")
+    @Query("SELECT b fROM Event b WHERE " +
+            "(:start IS NULL OR b.start >= :start) AND "+
+            "(:finish IS NULL OR b.finish <= :finish)")
 //    public List<Event> findByDateBetween(LocalDateTime start, LocalDateTime end);
 
     List<Event> findByFilter(@Param("start") LocalDateTime start,

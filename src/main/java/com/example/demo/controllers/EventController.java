@@ -25,11 +25,11 @@ public class EventController extends RootController {
 
     @GetMapping("/eventlist")
     public String eventList(Model model) {
-        Iterable<Event> eventlist = eventRepository.findAll();
+        Iterable<Event> eventList = eventRepository.findAll();
         Iterable<Employee> employees = employeeRepository.findAll();
         long nrOfEvents = eventRepository.count();
 
-        model.addAttribute("eventlist", eventlist);
+        model.addAttribute("eventList", eventList);
         model.addAttribute("employees", employees);
         model.addAttribute("nrOfEvents", nrOfEvents);
         model.addAttribute("showFilters", false);
