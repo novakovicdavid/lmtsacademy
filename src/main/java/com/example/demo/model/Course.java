@@ -11,7 +11,7 @@ public class Course {
     private Integer id;
     private String name;
     //private String teacher;
-    @Column(length = 800)
+    @Column(length = 1500)
     private String description;
     @Column(length = 500)
     private String shortdescription;
