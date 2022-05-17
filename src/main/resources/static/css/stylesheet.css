@@ -89,12 +89,12 @@ h2.titleOurTeam {
 
 .teamMember {
     text-align: center;
-    background: #E2ED8C;
-   margin-right: 75px;
+    background: #619095;
+   margin-right: 50px;
     margin-left: 75px;
-    padding: 5px 5px;
-    border: 5px solid #619095;
+    padding: 20px;
     border-radius: 5px;
+    color: white;
 
 }
 
@@ -102,8 +102,7 @@ h2.titleOurTeam {
     transform: rotate(-90deg);
     position: absolute;
     margin-top: 50px;
-    padding-bottom: 20px;
-    color: #619095;
+    color: #E2ED8C;
     font-family: bebas-neue, sans-serif;
 }
 .memberBio {
@@ -156,7 +155,6 @@ h2.titleOurTeam {
     font-size: 1.2em;
 }
 .courselistitem {
-    border: 5px solid white;
     text-align: center;
     background: #E2ED8C;
     margin: 10px;
@@ -164,7 +162,6 @@ h2.titleOurTeam {
     width: 140px;
     height: 100%;
     display: inline-block;
-    border-radius: 10% 0;
 }
 
 .courselistitem a {
@@ -212,38 +209,46 @@ h2.titleOurTeam {
 
 }
 .buttonLook {
-    background-color: #EB95E7;
-    color: #6A8E7F;
-    border-radius: 50px 20px 0 20px;
+    border:#E2ED8C solid 2px;
+    color:#E2ED8C ;
     text-decoration: none;
     text-align: center;
     box-shadow: 1px 1px 1px darkgrey;
 }
 
 .buttonLook:hover {
-    background-color: #a4caf3;
-    color: black;
+    background-color: #E2ED8C ;
+    color: white;
     box-shadow: 3px 4px 5px darkgrey;
 }
 
 .buttonLook:active {
-    background-color: #a4caf3;
-    color: #EDC7CF;
+    background-color: #E2ED8C ;
+    color: white;
 }
 a.smallButton {
     display: block;
     font-size: 1em;
     padding: 0.5em;
 }
-.filterButton {
-    margin: 20px 0;
-    padding: .5em;
-    border: none;
-    font-size: medium;
+.containerFilter{
+    margin-left: 10px;
 }
-.filtername {
-    width: 10em;
-    text-decoration: underline #EB95E7;
+.filterButton {
+    margin: 20px auto;
+    padding: .5em;
+    font-size: medium;
+    display: block;
+    width: 50%;
+}
+.filtername{
+    font-size: 1.3em;
+    width: 50%;
+    margin: 20px auto;
+    display: block;
+    color: white;
+    font-family: bebas-neue, sans-serif;
+    text-align: center;
 }
 .video{
     display: block;
@@ -264,8 +269,6 @@ a.smallButton {
 }
 .carouselContainer{
     margin: auto 0 auto 0;
-    background: #e2ef8d;
-    padding: 20px;
 }
 .rowOurTeam{
     margin-bottom: 50px;
