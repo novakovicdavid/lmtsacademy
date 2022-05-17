@@ -9,11 +9,10 @@ import com.example.demo.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -28,12 +27,29 @@ public class EventController extends RootController {
     public String eventList(Model model) {
         Iterable<Event> eventlist = eventRepository.findAll();
         Iterable<Employee> employees = employeeRepository.findAll();
+        long nrOfEvents = eventRepository.count();
+
         model.addAttribute("eventlist", eventlist);
         model.addAttribute("employees", employees);
+        model.addAttribute("nrOfEvents", nrOfEvents);
+
 
 
         return "eventlist";
 
+    }
+
+    @GetMapping({"/eventlist/filter"})
+    public String eventlistWithFilterFilter(Model model,
+                                            @RequestParam(required = false)LocalDateTime start,
+                                            @RequestParam(required = false)LocalDateTime finish) {
+        List<Event> events = eventRepository.findByFilter(start, finish);
+        model.addAttribute("events", events);
+        model.addAttribute("nrOfEvents", events.size());
+
+
+        return "eventlist";
+    }
     }
 //    @PostMapping("/eventlist")
 //    public String eventEditPost(Model model,
@@ -54,4 +70,4 @@ public class EventController extends RootController {
 //    }
 ////        return "redirect:/eventdetails/" + id;
 
-    }
+

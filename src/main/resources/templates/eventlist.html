@@ -13,6 +13,8 @@
 <div th:replace="fragments/header"></div>
 
 <div class="container">
+    <div  th:text="|${nrOfEvents} afspraken gevonden|">
+    </div>
     <div class="row">
         <div class="col-lg-4" th:each="b: ${eventlist}">
             <div class="card card-margin" >
