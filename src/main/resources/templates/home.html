@@ -12,13 +12,22 @@
     <script th:src="@{/bootstrap.min.js}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.typekit.net/ssa0ifx.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 </head>
 <body class="body">
 <div th:replace="fragments/header"></div>
 <div th:replace="fragments/bubbles"></div>
+
 <h1>
     WELCOME TO LIMITS ACADEMY
 </h1>
+<div class="row">
+    <div class="col-12">
+        <img class="imgTeamPic img-responsive center-block d-block mx-auto" th:src="@{/pictures/groupPic.png}"/>
+    </div>
+</div>
 <h2 class="titleOurTeam">
     WIE ZIJN WIJ?
 </h2>
@@ -30,6 +39,7 @@
             zij verdienen toch ook een kans om te schitter in de media sector?
             <!--        </p>-->
             <!--    </div>-->
+            <br>
             <br>
             <!--<br>-->
             <!--<p class="textHomepage">-->
@@ -43,7 +53,7 @@
             skills aan te leren.
         </p>
     </div>
-    <div class="col-sm-12 col-lg-4 carouselContainer">
+    <div class="col-sm-12 col-lg-5 carouselContainer">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -98,13 +108,16 @@
 <h2 class="titleOurTeam">
     OUR TEAM
 </h2>
+
 <div class="row teamContainer">
 
     <div class="col-lg-2 col-sm-6 teamMember">
+        <div class="circular--portrait">
+            <img class="imgTeam" th:src="@{/pictures/yanis.png}"/>
+        </div>
         <h2 class="teamMemberName">
             Yanis
         </h2>
-        <img class="imgTeam" th:src="@{/pictures/yanis.png}"/>
         <p class="memberBio">
             Als CEO hebben we Yanis Driege. Hij is professionele danser in zijn vrije tijd en zal in de toekomst ook
             deel uit maken van het welbekende #LikeMe
@@ -115,10 +128,13 @@
         </p>
     </div>
     <div class="col-lg-2 col-sm-6 teamMember">
+
+        <div class="circular--portrait">
+            <img class="imgTeam" th:src="@{/pictures/anna.png}"/>
+        </div>
         <h2 class="teamMemberName">
             Anna
         </h2>
-        <img class="imgTeam" th:src="@{/pictures/anna.png}"/>
         <p class="memberBio">
             Daarnaast hebben we Anna Lambaerts. We kunnen haar de rechterhand van Yanis noemen want zij is ook
             gespecialiseerd in dans en kan dus mee inspringen bij het geven van danslessen.
@@ -128,11 +144,13 @@
         </p>
     </div>
     <div class="col-lg-2 col-sm-6 teamMember">
+
+        <div class="circular--portrait">
+            <img class="imgTeam" th:src="@{/pictures/femke.png}"/>
+        </div>
         <h2 class="teamMemberName">
             Femke
         </h2>
-        <img class="imgTeam" th:src="@{/pictures/femke.png}"/>
-
         <p class="memberBio">
             Natuurlijk zijn er ook creatievelingen nodig in een team en daarvoor hebben wij Femke Overtus. Zij
             beschikt
@@ -143,10 +161,12 @@
         </p>
     </div>
     <div class="col-lg-2 col-sm-6 teamMember">
+        <div class="circular--portrait ">
+            <img class="imgTeam imgSharon" th:src="@{/pictures/sharon.png}"/>
+        </div>
         <h2 class="teamMemberName">
             Sharon
         </h2>
-        <img class="imgTeam" th:src="@{/pictures/sharon.png}"/>
         <p class="memberBio">
             Als laatste teamlid hebben we Sharon Debremaeker. Zij is afgestudeerd in de richting Handel. Dat
             betekent
@@ -181,7 +201,7 @@
                 eenvoudig doorgestuurd kunnen worden naar de juiste productie.
             </p>
         </div>
-        <div class="col-lg-3 col-sm-12">
+        <div class="col-lg-3 col-sm-12 ">
             <img class="imgLogoPink" th:src="@{/pictures/LMTS-roos.png}"/>
         </div>
     </div>
