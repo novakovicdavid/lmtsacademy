@@ -27,7 +27,13 @@
             </div>
             <div>
                 <div class="infoName"><b>Leerkracht:</b></div>
-                <div class="infoValue" th:text="${course.getTeacher()}">teacher</div>
+                <div th:each="teacher: ${course.getTeacher()}">
+                    <a class="buttonLook smallButton2"
+                       th:href="@{|/teacherdetails/${teacher.id}|}"
+                    >
+                        <div th:text="${teacher.getName}">teacher</div>
+                    </a>
+                </div>
             </div>
         <div>
             <div class="infoName"><b>Omschrijving:</b></div>
@@ -38,6 +44,7 @@
                 <div class="infoValue" th:text="${course.getLocation()}">location</div>
             </div>
         </div>
+
     </div>
 </div>
 <div th:replace="fragments/footer"></div>

@@ -235,6 +235,12 @@ a.smallButton {
     font-size: 1em;
     padding: 0.5em;
 }
+.smallButton2 {
+    display: block;
+    max-width: 150px;
+    font-size: 1em;
+    padding: 0.5em;
+}
 .filterButton {
     margin: 20px 0;
     padding: .5em;
