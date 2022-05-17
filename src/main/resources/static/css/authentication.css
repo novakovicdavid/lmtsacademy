@@ -35,14 +35,14 @@ body {
     background-color: white;
     width: var(--dialog-width);
     max-width: 100%;
-    padding: 20px 2rem;
+    padding: 2rem 2rem;
 }
 
 .form_login {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .form_login > * {
