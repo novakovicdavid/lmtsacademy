@@ -15,24 +15,31 @@
 <div class="main">
     <div th:replace="fragments/header"></div>
     <h1>ONZE CURSUSSEN</h1>
-    <div sec:authorize="hasAuthority('ADMIN')">
-        <a class ="edit_button" th:href="@{|/newcourse|}">NIEUWE CURSUS</a>
-    </div>
-    <div class="filtername">Workshop door LMTS?</div>
-    <a  class="buttonLook filterButton" th:classappend="(${filterWorkshop}==null) ? 'activeFilter' : ''"
-        th:href="@{/courselist}">All</a>
-    <a  class="buttonLook filterButton" th:classappend="(${filterWorkshop}=='yes') ? 'activeFilter' : ''"
-        th:href="@{/courselist/workshop/yes}">ja</a>
-    <a  class="buttonLook filterButton" th:classappend="(${filterWorkshop}=='no') ? 'activeFilter' : ''"
-        th:href="@{/courselist/workshop/no}">Nee</a>
-</div>
-    <div class="courseContainer row">
-        <div class="courselistitem col-3" th:each="course: ${courses}">
-            <a th:href="@{|/coursedetails/${course.id}|}" th:text="${course.name}">Cursus naam </a>
-            <br>
-            <p th:text="${course.shortdescription}">Cursus naam</p>
+    <div class="row">
+
+            <div sec:authorize="hasAuthority('ADMIN')">
+                <a class="edit_button" th:href="@{|/newcourse|}">NIEUWE CURSUS</a>
+            </div>
+        <div class="col-lg-2 containerFilter">
+            <div class="filtername">Workshop door LMTS?</div>
+            <a class="buttonLook filterButton" th:classappend="(${filterWorkshop}==null) ? 'activeFilter' : ''"
+               th:href="@{/courselist}">Allemaal</a>
+            <a class="buttonLook filterButton" th:classappend="(${filterWorkshop}=='yes') ? 'activeFilter' : ''"
+               th:href="@{/courselist/workshop/yes}">Ja</a>
+            <a class="buttonLook filterButton" th:classappend="(${filterWorkshop}=='no') ? 'activeFilter' : ''"
+               th:href="@{/courselist/workshop/no}">Nee</a>
+        </div>
+        <div class="col-lg-9">
+            <div class="courseContainer row">
+                <div class="courselistitem col-3" th:each="course: ${courses}">
+                    <a th:href="@{|/coursedetails/${course.id}|}" th:text="${course.name}">Cursus naam </a>
+                    <br>
+                    <p th:text="${course.shortdescription}">Cursus naam</p>
+                </div>
+            </div>
         </div>
     </div>
+</div>
 </div>
 
 
