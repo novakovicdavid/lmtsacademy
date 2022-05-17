@@ -1,5 +1,6 @@
 package com.example.demo.controllers;
 
+import com.example.demo.dtos.ProfilesFilter;
 import com.example.demo.repositories.ProfileRepository;
 import com.example.demo.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,15 +35,13 @@ public class AdminProfileController {
 
     @GetMapping({"/profiles/filter/{page}"})
     public String getMembersAtPageFilter(@PathVariable Integer page,
-                                         @RequestParam(required = false) String email,
-                                         @RequestParam(required = false) String firstName,
-                                         @RequestParam(required = false) String lastName,
-                                         @RequestParam(required = false) Boolean isNew,
+                                         ProfilesFilter filter,
                                          Model model) {
-        var profiles = profileRepository.findAllByFilter(PageRequest.of(page, 10, Sort.by("id").descending()), firstName, lastName, email, isNew);
-        model.addAttribute("profiles", profiles.iterator());
+        var profiles = profileRepository.findAllByFilter(PageRequest.of(page, 10, Sort.by("id").descending()), filter.getFirstName(), filter.getLastName(), filter.getEmail(), filter.getIsNew() != null);
+        model.addAttribute("profiles", profiles);
         model.addAttribute("page", page);
         model.addAttribute("nextPageHasContent", (profiles.getTotalPages() - (page + 1)) != 0);
+        model.addAttribute("filter", filter);
         return "admin/profiles";
     }
 }
