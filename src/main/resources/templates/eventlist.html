@@ -11,53 +11,86 @@
 </head>
 <body class="body">
 <div th:replace="fragments/header"></div>
+<div th:unless="${showFilters}" class="filters">
+    <a class="filterButton" th:href="@{/eventlist/filter}">zoek op filter</a>
+</div>
+<div >
+    <div>
+        <div>
 
-<div class="container">
-    <div  th:text="|${nrOfEvents} afspraken gevonden|">
-    </div>
-    <div class="row">
-        <div class="col-lg-4" th:each="b: ${eventlist}">
-            <div class="card card-margin" >
-                <div class="card-header no-border" >
-                    <h5 class="card-title" th:text="${b.employee.username}"></h5>
+
+            <div th:if="${showFilters}" class="filters">
+                <a th:href="@{/eventlist}">-</a>
+
+                <form>
+
+                    <h3>Datum</h3>
+                    <div class="filterNumber">
+                        <label for="start"> min</label>
+                        <input type="datetime-local" id="start" name="start" th:value="${start}" >
+                    </div>
+                    <div class="endDate">
+                        <label for="finish">max</label>
+                        <input type="datetime-local" id="finish" name="finish" th:value="${finish}" >
+                    </div>
+
+                    <div class="submitButton">
+                        <input id="zoekFilter" type="submit" value="zoek">
+                    </div>
+                </form>
+            </div>
+            <div class="container">
+                <div  th:text="|${nrOfEvents} afspraken gevonden|">
                 </div>
-                <div class="card-body pt-0">
-                    <div class="widget-49">
-                        <div class="widget-49-title-wrapper">
-                            <div class="widget-49-date-primary">
-                                <div  th:text="${#temporals.format(b.start, 'dd')}">
 
-                                <span class="widget-49-date-day"></span>
-                                </div>
-                                <div th:text="${#temporals.monthNameShort(b.start)}">
-                                <span class="widget-49-date-month">apr</span>
+                <div class="row">
+                    <div class="col-lg-4" th:each="b: ${eventlist}">
+                        <div class="card card-margin" >
+                            <div class="card-header no-border" >
+                                <h5 class="card-title" th:text="${b.employee.username}"></h5>
+                            </div>
+                            <div class="card-body pt-0">
+                                <div class="widget-49">
+                                    <div class="widget-49-title-wrapper">
+                                        <div class="widget-49-date-primary">
+                                            <div  th:text="${#temporals.format(b.start, 'dd')}">
+
+                                                <span class="widget-49-date-day"></span>
+                                            </div>
+                                            <div th:text="${#temporals.monthNameShort(b.start)}">
+                                                <span class="widget-49-date-month">apr</span>
+                                            </div>
+                                        </div>
+                                        <div class="widget-49-meeting-info">
+                                            <div th:text="${b.title}">
+                                                <span class="widget-49-pro-title"></span>
+                                            </div>
+                                            <div class="widget-49-meeting-time" th:text="${#temporals.format(b.start, 'HH:mm')}+ '-' + ${#temporals.format(b.finish, 'HH:mm')}" >
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <ol class="widget-49-meeting-points">
+                                        <li>Met:<span></span></li>
+                                        <li>Locatie:<span></span></li>
+                                        <li>Opmerkingen:<span th:text="${b.description}"> </span></li>
+                                    </ol>
+                                    <div class="widget-49-meeting-action">
+                                        <a class="bi bi-pen" th:href="@{|/admin/eventedit/${b.id}|}"></a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="widget-49-meeting-info">
-                                <div th:text="${b.title}">
-                                <span class="widget-49-pro-title"></span>
-                                </div>
-                                <div class="widget-49-meeting-time" th:text="${#temporals.format(b.start, 'HH:mm')}+ '-' + ${#temporals.format(b.finish, 'HH:mm')}" >
-                                </div>
-                            </div>
-                        </div>
-                        <ol class="widget-49-meeting-points">
-                            <li>Met:<span></span></li>
-                            <li>Locatie:<span></span></li>
-                            <li>Opmerkingen:<span th:text="${b.description}"> </span></li>
-                        </ol>
-                        <div class="widget-49-meeting-action">
-                            <a class="bi bi-pen" th:href="@{|/admin/eventedit/${b.id}|}"></a>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
-
     </div>
 </div>
-<div th:replace="fragments/footer"></div>
 
+
+
+<div th:replace="fragments/footer"></div>
 </body>
 <style>
     .card-margin{

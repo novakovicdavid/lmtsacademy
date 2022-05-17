@@ -32,7 +32,7 @@ public class EventController extends RootController {
         model.addAttribute("eventlist", eventlist);
         model.addAttribute("employees", employees);
         model.addAttribute("nrOfEvents", nrOfEvents);
-
+        model.addAttribute("showFilters", false);
 
 
         return "eventlist";
@@ -41,16 +41,26 @@ public class EventController extends RootController {
 
     @GetMapping({"/eventlist/filter"})
     public String eventlistWithFilterFilter(Model model,
-                                            @RequestParam(required = false)LocalDateTime start,
-                                            @RequestParam(required = false)LocalDateTime finish) {
-        List<Event> events = eventRepository.findByFilter(start, finish);
-        model.addAttribute("events", events);
-        model.addAttribute("nrOfEvents", events.size());
+                                            @RequestParam(required = false) LocalDateTime start,
+                                            @RequestParam(required = false) LocalDateTime finish) {
+        Iterable<Event> eventList;
+
+        if (start == null || finish == null)
+            eventList = eventRepository.findAll();
+        else
+            eventList = eventRepository.findByFilter(start, finish);
+
+        model.addAttribute("eventList", eventList.iterator());
+
+//        model.addAttribute("nrOfEvents", eventList.size);
+        model.addAttribute("showFilters", true);
+        model.addAttribute("start", start);
+        model.addAttribute("finish", finish);
 
 
         return "eventlist";
     }
-    }
+}
 //    @PostMapping("/eventlist")
 //    public String eventEditPost(Model model,
 //
