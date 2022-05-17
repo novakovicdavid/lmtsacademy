@@ -40,11 +40,10 @@ h1 {
 
 h2.titleOurTeam {
     font-family: bebas-neue, sans-serif;
-    font-size: 4em;
+    font-size: 3em;
     color: white;
     margin-top: 50px !important;
     margin-left: 40px;
-    margin-bottom: 40px;
     text-decoration: underline #EB95E7;
 }
 
@@ -91,7 +90,7 @@ h2.titleOurTeam {
 .teamMember {
     text-align: center;
     background: #619095;
-    margin-right: 50px;
+   margin-right: 50px;
     margin-left: 75px;
     padding: 20px;
     border-radius: 5px;
@@ -100,45 +99,33 @@ h2.titleOurTeam {
 }
 
 .teamMemberName {
+    transform: rotate(-90deg);
+    position: absolute;
     margin-top: 50px;
     color: #E2ED8C;
     font-family: bebas-neue, sans-serif;
 }
-
 .memberBio {
     font-size: 1em;
     font-family: 'Montserrat', sans-serif;
 
 }
 
-.circular--portrait {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    overflow: hidden;
-    border-radius: 50%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.circular--portrait img {
+.imgTeam {
     width: 100%;
-    height: auto;
-
+    margin: 10px;
 }
 
 .imgLogoPink {
     width: 15em;
 
 }
-
-.test {
+.test{
     background: linear-gradient(
-            to right, black 50%, #619095
+    to right,black 50%,#619095
     );
     margin-bottom: 50px;
 }
-
 /* cursus*/
 .courseContainer {
     justify-content: center;
@@ -163,12 +150,10 @@ h2.titleOurTeam {
     margin: 10px;
     font-size: 2em;
 }
-
-.infoValue {
+.infoValue{
     margin: 10px;
     font-size: 1.2em;
 }
-
 .courselistitem {
     text-align: center;
     background: #E2ED8C;
@@ -192,9 +177,8 @@ h2.titleOurTeam {
     background-color: #ea95e8;
     border: none;
     border-radius: 4px;
-    cursor: pointer;
+    cursor:pointer;
 }
-
 .edit_button:hover {
     background-color: #d688d5;
 }
@@ -206,14 +190,12 @@ h2.titleOurTeam {
 .edit_button:focus {
     outline: 2px solid #e2ef8d;
 }
-
-.errorblock {
+.errorblock{
     margin-left: 25%;
     max-width: 50%;
     margin-top: 20px;
     border: 5px solid white;
 }
-
 .prevButtonDiv {
     position: fixed;
     left: 0.5%;
@@ -226,45 +208,32 @@ h2.titleOurTeam {
     top: 160px;
 
 }
-
 .buttonLook {
-    border: #E2ED8C solid 2px;
-    color: #E2ED8C;
+    border:#E2ED8C solid 2px;
+    color:#E2ED8C ;
     text-decoration: none;
     text-align: center;
     box-shadow: 1px 1px 1px darkgrey;
 }
 
 .buttonLook:hover {
-    background-color: #E2ED8C;
+    background-color: #E2ED8C ;
     color: white;
     box-shadow: 3px 4px 5px darkgrey;
 }
 
 .buttonLook:active {
-    background-color: #E2ED8C;
+    background-color: #E2ED8C ;
     color: white;
 }
-
 a.smallButton {
     display: block;
     font-size: 1em;
     padding: 0.5em;
 }
-<<<<<<< HEAD
-
-.containerFilter {
+.containerFilter{
     margin-left: 10px;
 }
-
-=======
-.smallButton2 {
-    display: block;
-    max-width: 150px;
-    font-size: 1em;
-    padding: 0.5em;
-}
->>>>>>> Teacher_Table
 .filterButton {
     margin: 20px auto;
     padding: .5em;
@@ -272,8 +241,7 @@ a.smallButton {
     display: block;
     width: 50%;
 }
-
-.filtername {
+.filtername{
     font-size: 1.3em;
     width: 50%;
     margin: 20px auto;
@@ -282,45 +250,41 @@ a.smallButton {
     font-family: bebas-neue, sans-serif;
     text-align: center;
 }
-
-.video {
+.video{
     display: block;
     width: 50%;
     margin-left: auto;
     margin-right: auto;
-    background: #619095;
+   background: #619095;
     padding: 20px;
     border: white 1px solid;
 }
 
 
-.fotoCarousel {
+
+
+.fotoCarousel{
     width: 100%;
-    margin: auto;
+    margin:auto;
 }
-
-.carouselContainer {
-    margin: 0;
+.carouselContainer{
+    margin: auto 0 auto 0;
 }
-
-.rowOurTeam {
+.rowOurTeam{
     margin-bottom: 50px;
 }
-
-.imgTeamPic {
-    width: 100%;
+.imgTeamPic{
+    width: 80%;
 }
-
 @media (max-width: 1000px) {
-    .imgLogoPink {
+    .imgLogoPink{
         width: 80%;
         display: block;
         margin-left: auto;
         margin-right: auto;
     }
-
-    .video {
-        width: 100%;
-    }
+.video{
+    width: 100%;
+}
 
 }
