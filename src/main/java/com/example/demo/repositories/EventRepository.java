@@ -13,7 +13,7 @@ public interface EventRepository extends CrudRepository<Event, Integer> {
 
     @Query("SELECT b fROM Event b WHERE " +
             "(:start IS NULL OR b.start >= :start) AND "+
-            "(:finish IS NULL OR b.finish <= :finish)")
+            "(:finish IS NULL OR b.start <= :finish)")
 //    public List<Event> findByDateBetween(LocalDateTime start, LocalDateTime end);
 
     List<Event> findByFilter(@Param("start") LocalDateTime start,
