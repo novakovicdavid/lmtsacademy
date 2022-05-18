@@ -17,14 +17,17 @@ body {
 }
 
 .filter-and-navigation {
+    display: flex;
+    flex-direction: column;
     padding: 1rem;
     margin-bottom: 1rem;
     background-color: white;
+    gap: 1rem;
 }
 
 .profile-page-navigation {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 3rem auto 3rem;
 }
 
 .filter-and-navigation form {
@@ -74,8 +77,14 @@ body {
     outline: 2px solid #e2ef8d;
 }
 
+.page-navigation-next, .page-navigation-previous {
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+}
+
 .page-navigation-next {
-    grid-column: 2 / 3;
+    grid-column: 3 / 3;
 }
 
 .profiles-list {

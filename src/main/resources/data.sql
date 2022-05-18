@@ -104,6 +104,7 @@ insert into USER (ID, EMAIL, PASSWORD, ROLE) values (nextval('USER_SEQ'), 'yorbe
 insert into USER (ID, EMAIL, PASSWORD, ROLE) values (nextval('USER_SEQ'), 'jisakov2r@bloglines.com', '$2a$10$dZsdQUfAfZVCz7cUhl2uMutgekw8uOYKl6sb54JBKwwyYH/zvNVmC', 'USER');
 
 -- Mock profiles
+insert into PROFILE (ID, USER_ID, FIRST_NAME, LAST_NAME, IS_NEW, HAS_DISMISSED_COMPLETE_PROFILE_NOTIFICATION) values (nextval('PROFILE_SEQ'), 1, 'John', 'Doe', true, false);
 insert into PROFILE (ID, USER_ID, FIRST_NAME, LAST_NAME, IS_NEW, HAS_DISMISSED_COMPLETE_PROFILE_NOTIFICATION) values (nextval('PROFILE_SEQ'), 2, 'Tallie', 'Risborough', true, false);
 insert into PROFILE (ID, USER_ID, FIRST_NAME, LAST_NAME, IS_NEW, HAS_DISMISSED_COMPLETE_PROFILE_NOTIFICATION) values (nextval('PROFILE_SEQ'), 3, 'Darrel', 'Elgood', true, false);
 insert into PROFILE (ID, USER_ID, FIRST_NAME, LAST_NAME, IS_NEW, HAS_DISMISSED_COMPLETE_PROFILE_NOTIFICATION) values (nextval('PROFILE_SEQ'), 4, 'Lind', 'Moreinu', false, true);
