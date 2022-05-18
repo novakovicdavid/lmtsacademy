@@ -1,14 +1,10 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
 
+<!--suppress ALL -->
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org" lang="nl">
 <head>
     <meta charset='utf-8'/>
-    <!--    <link rel="stylesheet" th:href="@{/bootstrap.min.css}">-->
-    <!--    <link rel="stylesheet" href="/static/bootstrap.min.css">-->
-
-    <!--    <script th:src="@{/bootstrap.min.js}"></script>-->
-    <!--    <script src="/static/bootstrap.min.js"></script>-->
     <link rel="stylesheet" type="text/css" media="all"
           th:href="@{/css/eventbooking.css}" href="/static/css/eventbooking.css"/>
     <link rel="stylesheet" type="text/css" media="all"
@@ -41,13 +37,8 @@
         $(document).ready(function () {
             $('#calendar').fullCalendar({
                 themeSystem: 'bootstrap4',
-                titleFormat:'MMMM YYYY',
-                timeFormat:'h:mm',
-
-
-
-
-
+                titleFormat: 'MMMM YYYY',
+                timeFormat: 'h:mm',
 
                 header: {
                     left: 'prev,next today',
@@ -55,7 +46,6 @@
                     right: 'month,agendaWeek,agendaDay'
                 },
 
-                // defaultDate: '2022-05-03',
                 editable: true,
                 eventLimit: true,
                 events: {
@@ -80,9 +70,8 @@
 <body class="body">
 <div th:replace="fragments/header" class="calendarHeader"></div>
 
-<!--<a th:href="@{/}" class="btn btn-primary btn-lg"  role="button" >Home</a>-->
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-sm mt-5 ml-4 newAppointmentButton" data-toggle="modal" data-target="#addAppointmentModal">
+<button type="button" class="btn btn-primary btn-sm mt-5 ml-4 newAppointmentButton" data-toggle="modal"
+        data-target="#addAppointmentModal">
     Nieuwe afspraak
 </button>
 <button type="button" class="btn btn-primary btn-sm mt-5 ml-4 newAppointmentButton">
@@ -90,7 +79,6 @@
 
 </button>
 
-<!-- Modal -->
 <div class="modal fade" id="addAppointmentModal" tabindex="-1" role="dialog" aria-labelledby="addAppointmentLabel"
      aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -107,8 +95,6 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="employee"> Afspraak voor:</label>
-<!--                                <input type="text" id="employee" th:field="*{employee}" class="form-control"-->
-<!--                                       placeholder="medewerker" maxlength="20" required>-->
                                 <select name="cars" th:field="*{employee}" id="employee">
                                     <option value="1">Yanis</option>
                                     <option value="2">Sharon</option>
@@ -162,71 +148,69 @@
     </div>
 </div>
 
-<!--<a th:href="@{/eventlist}" class="btn btn-secondary btn-lg" role="button" >events</a>-->
-<!--<a th:href="@{|/admin/eventedit/1|}" class="btn btn-secondary btn-lg" role="button" >eventedit</a>-->
-
-
-<!--<button type="button" class="btn btn-primary btn-sm">Primary</button>-->
 
 <div id='calendar' th:id="calendar" class="calendar"></div>
 <div th:replace="fragments/footer"></div>
 
 
-<!--<button type="button" class="btn btn-primary makeAppointmentButton">Primary</button>-->
-
 </body>
 <style>
 
-    .btn-primary{
+    .btn-primary {
         background-color: #EB95E7;
-        border-color:#EB95E7 ;
+        border-color: #EB95E7;
         box-shadow: none;
     }
-    .btn-primary:active{
+
+    .btn-primary:active {
         background-color: #EB95E7;
-        border-color:black;
+        border-color: black;
         filter: brightness(80%);
         box-shadow: none;
 
 
     }
-    .btn-primary:focus{
+
+    .btn-primary:focus {
         background-color: #EB95E7;
-        border-color:#EB95E7;
+        border-color: #EB95E7;
         box-shadow: none;
 
     }
-    .btn-primary:hover{
+
+    .btn-primary:hover {
         background-color: #EB95E7;
-        border-color:#EB95E7;
+        border-color: #EB95E7;
         filter: brightness(80%);
         box-shadow: none;
         color: white;
 
 
     }
-    .btn-primary:not(:disabled):not(.disabled).active{
+
+    .btn-primary:not(:disabled):not(.disabled).active {
         background-color: #EB95E7;
-        border-color:#EB95E7 ;
+        border-color: #EB95E7;
         filter: brightness(85%);
         box-shadow: none;
 
 
-
     }
-    .btn-primary.disabled{
+
+    .btn-primary.disabled {
         background-color: #EB95E7;
-        border-color:#EB95E7 ;
+        border-color: #EB95E7;
     }
 
-    .fc-center{
+    .fc-center {
         margin-left: 43px;
     }
-    .table-bordered{
+
+    .table-bordered {
         border: 1px solid black;
     }
 
-    .table-bordered thead th{
+    .table-bordered thead th {
 
         border: 1px solid black;
         border-bottom-width: 2px;
@@ -234,21 +218,24 @@
 
     }
 
-    .table-bordered td{
+    .table-bordered td {
         border: 1px solid black;
 
 
     }
-    .btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus{
+
+    .btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show > .btn-primary.dropdown-toggle:focus {
         /*box-shadow: 0 0 0 0.2rem rgb(246 109 236 / 50%);*/
         box-shadow: none;
 
     }
+
     .fc-prev-button:active:focus, .fc-next-button:active:focus {
         box-shadow: 0 0 0 0.2rem rgb(246 109 236 / 50%);
 
     }
-    .a:hover{
+
+    .a:hover {
         color: white;
     }
 
