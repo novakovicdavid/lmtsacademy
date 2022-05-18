@@ -571,7 +571,28 @@ body {
     color: white;
 }
 
-/*calendar*/
-.meetingSpecs{
-    font-weight: bold;
+.buttonLookFilter {
+    border: #E2ED8C solid 2px;
+    color: #E2ED8C;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 1px 1px 1px darkgrey;
+}
+
+.buttonLookFilter:hover {
+    background-color: #E2ED8C;
+    color: white;
+    box-shadow: 3px 4px 5px darkgrey;
+}
+
+.buttonLookFilter:active {
+    background-color: #E2ED8C;
+    color: white;
+}
+.buttonLook{
+    text-decoration: none;
+    color: white;
+    background-color: #ea95e8;
+    border: none;
+    border-radius: 4px;
 }

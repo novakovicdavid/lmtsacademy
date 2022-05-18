@@ -237,18 +237,6 @@ insert into event(id, title, start, finish, description, EMPLOYEE_ID)
 values ((nextval('EVENT_SEQ')), 'meeting','2022-05-28 16:00:00', '2022-05-28 18:00:00', 'Meeting met Yanis', 3);
 
 
-insert into event(id, title, start, finish, description)
-values ((nextval('EVENT_SEQ')), 'event1', '2022-05-10 2:00:00', '2022-05-11 3:00:00', 'description1');
-insert into event(id, title, start, finish, description)
-values ((nextval('EVENT_SEQ')), 'event2', '2022-06-10 2:00:00', '2022-06-11 3:00:00', 'description1');
-insert into event(id, title, start, finish, description)
-values ((nextval('EVENT_SEQ')), 'event3', '2022-05-10 2:00:00', '2022-05-11 3:00:00', 'description1');
-insert into event(id, title, start, finish, description)
-values ((nextval('EVENT_SEQ')), 'event4', '2022-05-12 2:00:00', '2022-05-13 3:00:00', 'description1');
-
--- insert into event(id, title, start, finish, description) values (2, 'event2', '2022-05-10 2:00:00', '2022-05-11 3:00:00', 'description2');
--- insert into event(id, title, start, finish, description) values (3, 'event3', '2022-05-12 5:00:00', '2022-05-13 6:00:00', 'description3');
--- insert into event(id, title, start, finish, description) values (4, 'event4', '2022-05-15 1:00:00', '2022-05-17 5:00:00', 'description4');
 
 INSERT INTO COURSE (ID, NAME, DESCRIPTION, SHORTDESCRIPTION, LOCATION, WORKSHOP)
 VALUES (nextval('COURSE_SEQ'), 'Dans', 'Deze dansles is speciaal voor mensen met een verstandelijke beperking. Ze leren verschillende dansen, losse dansen met eenvoudige bewegingen, party dance, maar ook stijldansen zoals Quickstep, Engelse wals, ChaChaCha en Tango. \nBij deze groep is het vooral belangrijk dat ze zich even lekker kunnen bewegen en uiten en dat ze andere mensen ontmoeten. Ervaring leert dat ze het als heel erg leuk ervaren en dit met heel veel plezier doen.

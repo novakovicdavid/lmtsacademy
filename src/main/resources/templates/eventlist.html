@@ -102,9 +102,9 @@
                                         </div>
                                     </div>
                                     <ol class="widget-49-meeting-points">
-                                        <li><div class="meetingSpecs">Met:</div></li><span></span>
-                                        <li ><div class="meetingSpecs"> Locatie:</div><span> Mechelen</span></li>
-                                        <li><div class="meetingSpecs"> Opmerkingen:</div><span th:text="${b.description}"> </span></li>
+                                        <li>Met:</li><span></span>
+                                        <li >Locatie:<span> Mechelen</span></li>
+                                        <li>Opmerkingen:<span th:text="${b.description}"> </span></li>
                                     </ol>
                                     <div class="widget-49-meeting-action">
                                         <a class="bi bi-pen" th:href="@{|/admin/eventedit/${b.id}|}"></a>
@@ -129,5 +129,7 @@
         border: white 4px solid;
 
     }
+
+
 </style>
 </html>
