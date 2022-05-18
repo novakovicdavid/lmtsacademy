@@ -32,8 +32,8 @@ public class ProfileController extends RootController {
         var user = userRepository.findByEmail(principal.getName());
         if (user.isEmpty()) return null;
         var profile = user.get().getProfile();
-        model.addAttribute("profile", profile);
         if (profile == null) return null;
+        model.addAttribute("profile", profile);
         return "profile";
     }
 

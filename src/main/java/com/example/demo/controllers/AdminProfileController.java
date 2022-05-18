@@ -21,7 +21,7 @@ public class AdminProfileController {
     @GetMapping({"/profiles/{page}"})
     public String getMembersAtPage(@PathVariable Integer page,
                              Model model) {
-        var profiles = profileRepository.findAll(PageRequest.of(page, 25, Sort.by("id").descending()));
+        var profiles = profileRepository.findAll(PageRequest.of(page, 20, Sort.by("id").descending()));
         model.addAttribute("profiles", profiles.iterator());
         model.addAttribute("page", page);
         model.addAttribute("nextPageHasContent", (profiles.getTotalPages() - (page + 1)) != 0);
@@ -38,11 +38,20 @@ public class AdminProfileController {
                                          ProfilesFilter filter,
                                          Model model) {
         if(filter.getIsNew() != null && filter.getIsNew().equals("null")) filter.setIsNew(null);
-        var profiles = profileRepository.findAllByFilter(PageRequest.of(page, 25, Sort.by("id").descending()), filter.getFirstName(), filter.getLastName(), filter.getEmail(), filter.getIsNew() != null);
+        var profiles = profileRepository.findAllByFilter(PageRequest.of(page, 20, Sort.by("id").descending()), filter.getFirstName(), filter.getLastName(), filter.getEmail(), filter.getIsNew() != null);
         model.addAttribute("profiles", profiles);
         model.addAttribute("page", page);
         model.addAttribute("nextPageHasContent", (profiles.getTotalPages() - (page + 1)) != 0);
         model.addAttribute("filter", filter);
         return "admin/profiles";
+    }
+
+    @GetMapping({"/profile/{id}"})
+    public String getMemberWithId(@PathVariable Integer id,
+                                  Model model) {
+        var profile = profileRepository.findById(id);
+        if (profile.isEmpty()) return "profile";
+        model.addAttribute("profile", profile.get());
+        return "profile";
     }
 }
