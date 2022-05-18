@@ -2,19 +2,15 @@ package com.example.demo.controllers;
 
 import com.example.demo.model.Employee;
 import com.example.demo.model.Event;
-import com.example.demo.model.User;
 import com.example.demo.repositories.EmployeeRepository;
 import com.example.demo.repositories.EventRepository;
-import com.example.demo.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 public class EventController extends RootController {
@@ -46,14 +42,11 @@ public class EventController extends RootController {
                                             @RequestParam(required = false) LocalDateTime start,
                                             @RequestParam(required = false) LocalDateTime finish,
                                             @RequestParam(required = false) Integer employeeId
-                                            ) {
+    ) {
         List<Event> eventList;
 
 
-//        if (start == null || finish == null)
-//            eventList = (List<Event>) eventRepository.findAll();
-//        else
-            eventList = eventRepository.findByFilter(employeeId, start, finish);
+        eventList = eventRepository.findByFilter(employeeId, start, finish);
 
         model.addAttribute("eventList", eventList.iterator());
 
@@ -64,34 +57,15 @@ public class EventController extends RootController {
         model.addAttribute("employeeId", employeeId);
 
 
-
-
         return "eventlist";
     }
 
-    @RequestMapping(value="/calendar", method= RequestMethod.GET)
+    @RequestMapping(value = "/calendar", method = RequestMethod.GET)
     public ModelAndView calendar() {
         ModelAndView modelAndView = new ModelAndView("calendar");
         return modelAndView;
     }
 
 }
-//    @PostMapping("/eventlist")
-//    public String eventEditPost(Model model,
-//
-//                                @ModelAttribute("event") Event event) {
-//
-//
-//            event.setId(event.getId());
-//            event.setTitle(event.getTitle());
-//            event.setStart(event.getStart());
-//            event.setFinish(event.getFinish());
-//            event.setDescription(event.getDescription());
-//            eventRepository.save(event);
-//            model.addAttribute("event", event);
-//
-//        return "redirect:/home";
-//
-//    }
-////        return "redirect:/eventdetails/" + id;
+
 
