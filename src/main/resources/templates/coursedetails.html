@@ -35,8 +35,7 @@
                 <div th:each="teacher: ${course.getTeacher()}">
 
                     <a class="buttonLook smallButton2"
-                       th:href="@{|/teacherdetails/${teacher.id}|}"
-                    >
+                       th:href="@{|/teacherdetails/${teacher.id}|}">
                         <div th:text="${teacher.getName}">teacher</div>
                     </a>
                 </div>

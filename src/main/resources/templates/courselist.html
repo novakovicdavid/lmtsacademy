@@ -22,11 +22,11 @@
             </div>
         <div class="col-lg-2 containerFilter">
             <div class="filtername">Workshop door LMTS?</div>
-            <a class="buttonLook filterButton" th:classappend="(${filterWorkshop}==null) ? 'activeFilter' : ''"
+            <a class="buttonLookFilter filterButton" th:classappend="(${filterWorkshop}==null) ? 'activeFilter' : ''"
                th:href="@{/courselist}">Allemaal</a>
-            <a class="buttonLook filterButton" th:classappend="(${filterWorkshop}=='yes') ? 'activeFilter' : ''"
+            <a class="buttonLookFilter filterButton" th:classappend="(${filterWorkshop}=='yes') ? 'activeFilter' : ''"
                th:href="@{/courselist/workshop/yes}">Ja</a>
-            <a class="buttonLook filterButton" th:classappend="(${filterWorkshop}=='no') ? 'activeFilter' : ''"
+            <a class="buttonLookFilter filterButton" th:classappend="(${filterWorkshop}=='no') ? 'activeFilter' : ''"
                th:href="@{/courselist/workshop/no}">Nee</a>
         </div>
         <div class="col-lg-9">
