@@ -16,34 +16,48 @@
 
     <title>eventEdit</title>
 </head>
-<body  class="body">
+<body class="body">
 <div th:replace="fragments/header"></div>
 <div class="content">
     <div class="dialog_container">
         <p class="dialog_title">WIJZIG AFSPRAAK</p>
         <div class="dialog_content">
-            <form class="form_login" th:action="@{|/admin/eventedit/${event.id}|}" th:object="${event}" method="post" enctype="multipart/form-data">
+            <form class="form_login" th:action="@{|/admin/eventedit/${event.id}|}" th:object="${event}" method="post"
+                  enctype="multipart/form-data">
+                <div class="input_container">
+                    <label for="employee">Afspraak voor: </label>
+                    <select name="cars" th:field="*{employee}" id="employee">
+                        <option value="1">Yanis</option>
+                        <option value="2">Sharon</option>
+                        <option value="3">Femke</option>
+                        <option value="4">Anna</option>
+                    </select></div>
                 <div class="input_container">
                     <label for="title">titel:</label>
                     <input class="text_input" id="title" name="title" type="text" th:field="*{title}" required>
                 </div>
                 <div class="input_container">
                     <label for="start">Van:</label>
-                    <input class="text_input" id="start" name="start" type="text" th:field="*{start}" th:type="datetime-local" required>
+                    <input class="text_input" id="start" name="start" type="text" th:field="*{start}"
+                           th:type="datetime-local" required>
                 </div>
                 <div class="input_container">
                     <label for="finish">Tot:</label>
-                    <input class="finish" id="finish" name="finish" type="text" th:field="*{finish}" th:type="datetime-local" required>
+                    <input class="finish" id="finish" name="finish" type="text" th:field="*{finish}"
+                           th:type="datetime-local" required>
                 </div>
 
                 <div class="input_container">
                     <label for="description">Opmerkingen: </label>
-                    <textarea class="text_input" id="description" name="description" type="text" th:field="*{description}"></textarea>
+                    <textarea class="text_input" id="description" name="description" type="text"
+                              th:field="*{description}"></textarea>
                 </div>
+
                 <div class="input_container submit_container">
                     <input class="submit_button" type="submit" value="Sla wijzigingen op">
                 </div>
-                <p class="form_error" th:if="${param.error != null}">Oops! Er ging iets mis. Heb je alle velden ingevuld?</p>
+                <p class="form_error" th:if="${param.error != null}">Oops! Er ging iets mis. Heb je alle velden
+                    ingevuld?</p>
             </form>
         </div>
     </div>
