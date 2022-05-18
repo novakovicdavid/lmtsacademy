@@ -4,44 +4,45 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
-public class Teacher {
+public class Company {
     @Id
-    @SequenceGenerator(name = "teacher_seq", sequenceName = "TEACHER_SEQ", initialValue = 0, allocationSize = 1)
-    @GeneratedValue(generator = "teacher_seq")
+    @SequenceGenerator(name = "company_seq", sequenceName = "COMPANY_SEQ", initialValue = 0, allocationSize = 1)
+    @GeneratedValue(generator = "company_seq")
     private Integer id;
     private String name;
     @Column(length = 800)
     private String bio;
-    private String experience;
-    private String image;
-   @ManyToMany
+    private String location;
+    @ManyToMany
     private Collection<Course> courses;
-    public Teacher(){
+    public Company(){
 
     }
-    public Teacher(Integer id, String name, String bio, String experience,String image, Collection<Course> courses) {
+
+    public Company(Integer id, String name, String bio,String location,Collection<Course> courses) {
         this.id = id;
         this.name = name;
         this.bio = bio;
-        this.experience = experience;
-        this.image = image;
+        this.location = location;
         this.courses = courses;
     }
+
     public Collection<Course> getCourses() {
         return courses;
     }
 
-    public String getImage() {
-        return image;
+    public String getLocation() {
+        return location;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public void setCourses(Collection<Course> courses) {
         this.courses = courses;
     }
+
     public Integer getId() {
         return id;
     }
@@ -65,14 +66,4 @@ public class Teacher {
     public void setBio(String bio) {
         this.bio = bio;
     }
-
-    public String getExperience() {
-        return experience;
-    }
-
-    public void setExperience(String experience) {
-        this.experience = experience;
-    }
-
-
 }

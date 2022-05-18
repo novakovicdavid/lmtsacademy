@@ -29,7 +29,7 @@
                 <div class="infoName"><b>Leerkracht:</b></div>
                 <div th:if="${course.getTeacher().isEmpty()}">
                     <div class="infoValue">
-                        <p>LMTS ACADEMY</p>
+                        <p>LMTS Academy</p>
                     </div>
                 </div>
                 <div th:each="teacher: ${course.getTeacher()}">
@@ -44,6 +44,21 @@
                 <div class="infoName"><b>Omschrijving:</b></div>
                 <div class="infoValue" th:each="descriptionPart: ${course.description.split('\\n')} "
                      th:text="${descriptionPart}">description
+                </div>
+            </div>
+            <div>
+                <div class="infoName"><b>Bedrijf:</b></div>
+                <div th:if="${course.getCompany().isEmpty()}">
+                    <div class="infoValue">
+                        <p>LMTS Academy</p>
+                    </div>
+                </div>
+                <div th:each="company: ${course.getCompany()}">
+
+                    <a class="buttonLook smallButton2"
+                       th:href="@{|/companydetails/${company.id}|}">
+                        <div th:text="${company.getName}">company</div>
+                    </a>
                 </div>
             </div>
             <div>

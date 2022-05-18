@@ -16,7 +16,9 @@
     <div th:if="${teacher}">
         <h2 class="titleOurTeam" th:text="${teacher.getName}">teacher name</h2>
 <div class="cursusInfo">
-
+    <div>
+        <img class="teacherpic" th:src="${teacher.getImage()}">
+    </div>
     <div>
         <div class="infoName"><b>Bio:</b></div>
         <div class="infoValue" th:text="${teacher.getBio()}">bio</div>

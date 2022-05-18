@@ -16,6 +16,8 @@ public class Course {
     @Column(length = 500)
     private String shortdescription;
     private String location;
+    @ManyToMany(mappedBy = "courses")
+    private Collection<Company> company;
     private Boolean workshop;
     @ManyToMany(mappedBy = "courses")
     private Collection<Teacher> teacher;
@@ -23,18 +25,28 @@ public class Course {
 
     }
 
-    public Course(Integer id, String name,Boolean workshop, String location, String description,String shortDescription,Collection<Teacher> teacher) {
+    public Course(Integer id, String name,Boolean workshop, String location,Collection<Company> company, String description,String shortDescription,Collection<Teacher> teacher) {
         this.id = id;
         this.name = name;
         this.workshop = workshop;
+        this.company = company;
         this.location = location;
         this.shortdescription = shortDescription;
         this.description = description;
         this.teacher = teacher;
 
+
     }
     public Collection<Teacher> getTeacher() {
         return teacher;
+    }
+
+    public Collection<Company> getCompany() {
+        return company;
+    }
+
+    public void setCompany(Collection<Company> company) {
+        this.company = company;
     }
 
     public void setTeacher(Collection<Teacher> teacher) {
