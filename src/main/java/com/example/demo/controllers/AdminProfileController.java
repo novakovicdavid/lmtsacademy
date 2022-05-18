@@ -37,6 +37,7 @@ public class AdminProfileController {
     public String getMembersAtPageFilter(@PathVariable Integer page,
                                          ProfilesFilter filter,
                                          Model model) {
+        if(filter.getIsNew() != null && filter.getIsNew().equals("null")) filter.setIsNew(null);
         var profiles = profileRepository.findAllByFilter(PageRequest.of(page, 25, Sort.by("id").descending()), filter.getFirstName(), filter.getLastName(), filter.getEmail(), filter.getIsNew() != null);
         model.addAttribute("profiles", profiles);
         model.addAttribute("page", page);
