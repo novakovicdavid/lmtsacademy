@@ -13,20 +13,30 @@ public class Teacher {
     @Column(length = 800)
     private String bio;
     private String experience;
+    private String image;
    @ManyToMany
     private Collection<Course> courses;
     public Teacher(){
 
     }
-    public Teacher(Integer id, String name, String bio, String experience, Collection<Course> courses) {
+    public Teacher(Integer id, String name, String bio, String experience,String image, Collection<Course> courses) {
         this.id = id;
         this.name = name;
         this.bio = bio;
         this.experience = experience;
+        this.image = image;
         this.courses = courses;
     }
     public Collection<Course> getCourses() {
         return courses;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public void setCourses(Collection<Course> courses) {
