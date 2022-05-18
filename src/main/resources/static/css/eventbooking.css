@@ -565,4 +565,8 @@ body {
 .summary{
     color: white;
     text-decoration: none;
+    text-underline: none;
+}
+.a:hover{
+    color: white;
 }

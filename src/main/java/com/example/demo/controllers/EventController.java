@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -67,6 +68,13 @@ public class EventController extends RootController {
 
         return "eventlist";
     }
+
+    @RequestMapping(value="/calendar", method= RequestMethod.GET)
+    public ModelAndView calendar() {
+        ModelAndView modelAndView = new ModelAndView("calendar");
+        return modelAndView;
+    }
+
 }
 //    @PostMapping("/eventlist")
 //    public String eventEditPost(Model model,
@@ -86,5 +94,4 @@ public class EventController extends RootController {
 //
 //    }
 ////        return "redirect:/eventdetails/" + id;
-
 

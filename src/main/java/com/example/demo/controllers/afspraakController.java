@@ -41,9 +41,5 @@ public class afspraakController extends RootController {
         return "redirect:/afspraken";
     }
 
-    @RequestMapping(value="/calendar", method= RequestMethod.GET)
-    public ModelAndView calendar() {
-        ModelAndView modelAndView = new ModelAndView("calendar");
-        return modelAndView;
-    }
+
 }

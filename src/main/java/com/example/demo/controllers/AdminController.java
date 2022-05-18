@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Optional;
 
@@ -28,7 +29,7 @@ public class AdminController {
     public String eventNewPost(@ModelAttribute("event") Event event) {
 
         Event newEvent = eventRepository.save(event);
-        return "redirect:/home";
+        return "redirect:/admin/calendar";
     }
 
 
@@ -60,11 +61,21 @@ public class AdminController {
             editedEvent.setFinish(event.getFinish());
             editedEvent.setDescription(event.getDescription());
             eventRepository.save(event);
+
             model.addAttribute("event", editedEvent);
+
         }
+
 //        return "redirect:/eventdetails/" + id;
                 return "redirect:/eventlist";
 
     }
+
+//    @RequestMapping(value="/calendar", method= RequestMethod.GET)
+//    public ModelAndView calendar() {
+//        ModelAndView modelAndView = new ModelAndView("calendar");
+//        return modelAndView;
+//    }
+
 
 }
