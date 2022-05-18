@@ -18,6 +18,8 @@ public class Profile {
     private Date birthday;
 
     private String phoneNumber;
+
+    @Column(length = 511)
     private String experience;
 
     private String pathToProfilePicture;
