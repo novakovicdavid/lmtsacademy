@@ -1,14 +1,15 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<!--suppress ALL -->
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
-<link rel="stylesheet" type="text/css" media="all"
-      th:href="@{/css/eventbooking.css}" href="/static/css/eventbooking.css"/>
+    <link rel="stylesheet" type="text/css" media="all"
+          th:href="@{/css/eventbooking.css}" href="/static/css/eventbooking.css"/>
     <link rel="stylesheet" type="text/css" media="all"
           th:href="@{/css/stylesheet.css}" href="/static/css/stylesheet.css"/>
     <link rel="stylesheet" th:href="@{/bootstrap.min.css}">
     <script th:src="@{/bootstrap.min.js}"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
 
     <title>eventlist</title>
 </head>
@@ -16,9 +17,9 @@
 <div th:replace="fragments/header"></div>
 <h1>AFSPRAKEN</h1>
 <div class="col-lg-2 containerFilter">
-<div th:unless="${showFilters}" class="filters">
-    <a class="buttonLook filterButton"  th:href="@{/eventlist/filter}">zoek op filter</a>
-</div>
+    <div th:unless="${showFilters}" class="filters">
+        <a class="buttonLook filterButton" th:href="@{/eventlist/filter}">zoek op filter</a>
+    </div>
 </div>
 <div>
     <div>
@@ -30,61 +31,60 @@
 
                 <div class="col-lg-2 containerFilter">
 
-                <form>
-<div class="filterDiv">
-    <div class="row">
-    <div class="col">
-                    <h3>Datum</h3>
-                    <div class="filterNumber">
-                        <label for="start">Van:</label>
-                        <input type="datetime-local" id="start" name="start" th:value="${start}" >
-                    </div>
-                    <div class="endDate">
-                        <label for="finish">Tot:</label>
-                        <input type="datetime-local" id="finish" name="finish" th:value="${finish}" >
-                    </div>
-    </div>
-    <div class="col">
-    <div class="employeeFilter">
-                    <h3>medewerker</h3>
-                    <div class="employeeId">
-                        <label for="employeeId">Medewerker:</label>
-                        <select name="employeeId" th:value="*{employeeId}" id="employeeId" th:placeholder="kies">
-                            <option value="1">Yanis</option>
-                            <option value="2">Sharon</option>
-                            <option value="3">Femke</option>
-                            <option value="4">Anna</option>
-                        </select>
-<!--                        <input type="select" id="employeeId" name="employeeId" th:value="${employeeId}" >-->
-                    </div>
-    </div>
-    </div>
-    </div>
-</div>
+                    <form>
+                        <div class="filterDiv">
+                            <div class="row">
+                                <div class="col">
+                                    <h3>Datum</h3>
+                                    <div class="filterNumber">
+                                        <label for="start">Van:</label>
+                                        <input type="datetime-local" id="start" name="start" th:value="${start}">
+                                    </div>
+                                    <div class="endDate">
+                                        <label for="finish">Tot:</label>
+                                        <input type="datetime-local" id="finish" name="finish" th:value="${finish}">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="employeeFilter">
+                                        <h3>medewerker</h3>
+                                        <div class="employeeId">
+                                            <label for="employeeId">Medewerker:</label>
+                                            <select name="employeeId" th:value="*{employeeId}" id="employeeId"
+                                                    th:placeholder="kies">
+                                                <option value="1">Yanis</option>
+                                                <option value="2">Sharon</option>
+                                                <option value="3">Femke</option>
+                                                <option value="4">Anna</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                    <div class="submitButton">
-                        <input id="zoekFilter" type="submit" value="zoek">
-                    </div>
-                </form>
+                        <div class="submitButton">
+                            <input id="zoekFilter" type="submit" value="zoek">
+                        </div>
+                    </form>
                 </div>
             </div>
-<!--            <div class="nrOfEvents"  th:text="|${nrOfEvents} afspraken gevonden|">-->
 
             <div class="courseContainer row">
-                <div class="nrOfAppointments"  th:text="|${nrOfEvents} afspraken gevonden|">
+                <div class="nrOfAppointments" th:text="|${nrOfEvents} afspraken gevonden|">
                 </div>
 
                 <div class="row">
                     <div class="col-lg-4" th:each="b: ${eventList}">
-                        <div class="card card-margin" >
-                            <div class="card-header no-border" >
+                        <div class="card card-margin">
+                            <div class="card-header no-border">
                                 <h5 class="card-title" th:text="${b.employee.username}"></h5>
                             </div>
                             <div class="card-body pt-0">
                                 <div class="widget-49">
                                     <div class="widget-49-title-wrapper">
                                         <div class="widget-49-date-primary">
-                                            <div  th:text="${#temporals.format(b.start, 'dd')}">
+                                            <div th:text="${#temporals.format(b.start, 'dd')}">
 
                                                 <span class="widget-49-date-day"></span>
                                             </div>
@@ -96,7 +96,8 @@
                                             <div th:text="${b.title}">
                                                 <span class="widget-49-pro-title"></span>
                                             </div>
-                                            <div class="widget-49-meeting-time" th:text="${#temporals.format(b.start, 'HH:mm')}+ '-' + ${#temporals.format(b.finish, 'HH:mm')}" >
+                                            <div class="widget-49-meeting-time"
+                                                 th:text="${#temporals.format(b.start, 'HH:mm')}+ '-' + ${#temporals.format(b.finish, 'HH:mm')}">
                                             </div>
                                         </div>
                                     </div>
@@ -120,11 +121,10 @@
 </div>
 
 
-
 <div th:replace="fragments/footer"></div>
 </body>
 <style>
-    .card-margin{
+    .card-margin {
         background: #E2ED8C;
         border: white 4px solid;
 
