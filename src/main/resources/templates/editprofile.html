@@ -20,9 +20,10 @@
     <div th:if="${profile}">
         <h1>My Profile</h1>
         <div class="row justify-content-center">
-            <form class="text-center" th:action="${(editedByAdmin != null && editedByAdmin) ? '/admin/profile/' + profile.id + '/edit' : '/profile/edit'}" method="post">
+            <form class="text-center"
+                  th:action="${(editedByAdmin != null && editedByAdmin) ? '/admin/profile/' + profile.id + '/edit' : '/profile/edit'}"
+                  method="post">
                 <div class="col-4 myProfileBasics">
-
                     <h2 class="h2Profile">Basis informatie</h2>
                     <div class="form-group row ">
                         <label for="firstname" class="col-4 col-form-label">Voornaam:</label>
@@ -77,6 +78,5 @@
         </div>
     </div>
 </div>
-
 </body>
 </html>

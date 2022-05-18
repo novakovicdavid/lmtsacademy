@@ -28,17 +28,22 @@
             </div>
             <div class="input-container input-container-checkbox">
                 <label for="isnew">Alleen nieuwe leden zonder eerste afspraak:</label>
-                <input id="isnew" name="isNew" type="checkbox" th:checked="${filter != null && filter.getIsNew() != null}">
+                <input id="isnew" name="isNew" type="checkbox"
+                       th:checked="${filter != null && filter.getIsNew() != null}">
             </div>
             <div class="input-container input-container-button">
                 <input class="submit-button" type="submit" value="Zoeken">
             </div>
         </form>
         <div class="profile-page-navigation">
-            <a class="page-navigation-previous submit-button" th:if="${filter == null && page > 0}" th:href="@{|/admin/profiles/${page - 1}|}">&lt;</a>
-            <a class="page-navigation-next submit-button" th:if="${filter == null && nextPageHasContent}" th:href="@{|/admin/profiles/${page + 1}|}">&gt;</a>
-            <a class="page-navigation-previous submit-button" th:if="${filter != null && page > 0}" th:href="@{|/admin/profiles/filter/${page - 1}?email=${filter.email}&firstName=${filter.firstName}&lastName=${filter.lastName}&isNew=${filter.isNew}|}">&lt;</a>
-            <a class="page-navigation-next submit-button" th:if="${filter != null && nextPageHasContent}" th:href="@{|/admin/profiles/filter/${page + 1}?email=${filter.email}&firstName=${filter.firstName}&lastName=${filter.lastName}&isNew=${filter.isNew}|}">&gt;</a>
+            <a class="page-navigation-previous submit-button" th:if="${filter == null && page > 0}"
+               th:href="@{|/admin/profiles/${page - 1}|}">&lt;</a>
+            <a class="page-navigation-next submit-button" th:if="${filter == null && nextPageHasContent}"
+               th:href="@{|/admin/profiles/${page + 1}|}">&gt;</a>
+            <a class="page-navigation-previous submit-button" th:if="${filter != null && page > 0}"
+               th:href="@{|/admin/profiles/filter/${page - 1}?email=${filter.email}&firstName=${filter.firstName}&lastName=${filter.lastName}&isNew=${filter.isNew}|}">&lt;</a>
+            <a class="page-navigation-next submit-button" th:if="${filter != null && nextPageHasContent}"
+               th:href="@{|/admin/profiles/filter/${page + 1}?email=${filter.email}&firstName=${filter.firstName}&lastName=${filter.lastName}&isNew=${filter.isNew}|}">&gt;</a>
         </div>
     </div>
     <div class="profiles-list">
@@ -46,7 +51,7 @@
             <img th:if="${profile.getPathToProfilePicture != null}" class="profile-entry-left-side"
                  th:src="${profile.getPathToProfilePicture}" alt="Profile Picture">
             <p th:unless="${profile.getPathToProfilePicture != null}" class="profile-entry-left-side"
-               th:text="${profile.getFirstName().substring(0, 1) + profile.getLastName().substring(0, 1)}"></p>
+               th:text="${(profile.getFirstName().length() > 0 ? profile.getFirstName().substring(0, 1) : '?') + (profile.getLastName().length() > 0 ? profile.getLastName().substring(0, 1) : '?')}"></p>
             <p class="profile-entry-right-side" th:text="${profile.getUser().getEmail()}"></p>
             <p class="profile-entry-right-side" th:text="${profile.getFirstName() + ' ' + profile.getLastName()}"></p>
         </a>
