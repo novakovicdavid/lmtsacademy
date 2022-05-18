@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 public class Course {
@@ -9,28 +10,48 @@ public class Course {
     @GeneratedValue(generator = "course_seq")
     private Integer id;
     private String name;
-    private String teacher;
-    @Column(length = 800)
+    //private String teacher;
+    @Column(length = 1500)
     private String description;
     @Column(length = 500)
     private String shortdescription;
     private String location;
+    @ManyToMany(mappedBy = "courses")
+    private Collection<Company> company;
     private Boolean workshop;
+    @ManyToMany(mappedBy = "courses")
+    private Collection<Teacher> teacher;
     public Course() {
 
     }
 
-    public Course(Integer id, String name,Boolean workshop, String location, String teacher, String description,String shortDescription) {
+    public Course(Integer id, String name,Boolean workshop, String location,Collection<Company> company, String description,String shortDescription,Collection<Teacher> teacher) {
         this.id = id;
         this.name = name;
         this.workshop = workshop;
-        this.teacher = teacher;
+        this.company = company;
         this.location = location;
         this.shortdescription = shortDescription;
         this.description = description;
+        this.teacher = teacher;
+
 
     }
+    public Collection<Teacher> getTeacher() {
+        return teacher;
+    }
 
+    public Collection<Company> getCompany() {
+        return company;
+    }
+
+    public void setCompany(Collection<Company> company) {
+        this.company = company;
+    }
+
+    public void setTeacher(Collection<Teacher> teacher) {
+        this.teacher = teacher;
+    }
     public Boolean getWorkshop() {
         return workshop;
     }
@@ -71,13 +92,7 @@ public class Course {
         this.name = name;
     }
 
-    public String getTeacher() {
-        return teacher;
-    }
 
-    public void setTeacher(String teacher) {
-        this.teacher = teacher;
-    }
 
     public String getDescription() {
         return description;
@@ -86,4 +101,5 @@ public class Course {
     public void setDescription(String description) {
         this.description = description;
     }
+
 }

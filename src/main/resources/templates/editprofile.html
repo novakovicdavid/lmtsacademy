@@ -1,12 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
+    <title>Profiel aanpassen</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" media="all"
-          th:href="@{/css/stylesheet.css}" href="/css/stylesheet.css"/>
+          th:href="@{/css/stylesheet.css}"/>
     <link rel="stylesheet" th:href="@{/bootstrap.min.css}">
     <link rel="stylesheet" type="text/css" media="all"
-          th:href="@{/css/myProfile.css}" href="/css/myProfile.css"/>
+          th:href="@{/css/myProfile.css}"/>
     <script th:src="@{/bootstrap.min.js}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.typekit.net/ssa0ifx.css">
@@ -18,9 +20,10 @@
     <div th:if="${profile}">
         <h1>My Profile</h1>
         <div class="row justify-content-center">
-            <form class="text-center" th:action="@{/myProfileEdit}" method="post">
+            <form class="text-center"
+                  th:action="${(editedByAdmin != null && editedByAdmin) ? '/admin/profile/' + profile.id + '/edit' : '/profile/edit'}"
+                  method="post">
                 <div class="col-4 myProfileBasics">
-
                     <h2 class="h2Profile">Basis informatie</h2>
                     <div class="form-group row ">
                         <label for="firstname" class="col-4 col-form-label">Voornaam:</label>
@@ -64,9 +67,9 @@
                         </div>
                     </div>
                     <div class="form-group row ">
-                        <label class="col-4 col-form-label">Verjaardag:</label>
+                        <label for="birthday" class="col-4 col-form-label">Verjaardag:</label>
                         <div class="col-8">
-                            <div th:text="*{profile.birthday}">birthday</div>
+                            <input id="birthday" type="date" th:field="*{profile.birthday}">
                         </div>
                     </div>
                     <input type="submit" value="save" class="editProfile_button">
@@ -75,6 +78,5 @@
         </div>
     </div>
 </div>
-
 </body>
 </html>

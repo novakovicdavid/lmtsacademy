@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="all"
+          th:href="@{/css/stylesheet.css}"/>
+    <link rel="stylesheet" th:href="@{/bootstrap.min.css}">
+    <script th:src="@{/bootstrap.min.js}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/ssa0ifx.css">
+    <title>Company</title>
+</head>
+<body class="body">
+<div th:replace="fragments/header"></div>
+<div class="main">
+    <div th:if="${company}">
+        <h2 class="titleOurTeam" th:text="${company.getName}">company name</h2>
+        <div class="cursusInfo">
+            <div>
+                <div class="infoName"><b>Wie zijn wij?</b></div>
+                <div class="infoValue" th:text="${company.getBio()}">bio</div>
+            </div>
+            <div>
+                <div class="infoName"><b>Locatie:</b></div>
+                <div class="infoValue" th:text="${company.getLocation()}">location</div>
+            </div>
+            <div>
+                <div class="infoName"><b>Welke cursussen bieden wie aan?</b></div>
+                <div th:each="course: ${company.getCourses()}">
+                    <a class="buttonLook smallButton2"
+                       th:href="@{|/coursedetails/${course.id}|}"
+                    >
+                        <div th:text="${course.getName}">coursename</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div th:replace="fragments/footer"></div>
+</body>
+<style>
+    body {
+        background: #619095;
+    }
+</style>
+</html>

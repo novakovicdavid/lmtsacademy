@@ -58,7 +58,11 @@ footer {
     color: aqua;
 }
 
-@media only screen and (min-width: 50rem) {
+@media only screen and (min-width: 78rem) {
+    .verticalLine, .verticalLine2, .verticalLine3 {
+        z-index: 5;
+    }
+
     .verticalLine {
         position: absolute;
         left: 130px;

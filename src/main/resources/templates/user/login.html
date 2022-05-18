@@ -19,11 +19,11 @@
             <form class="form_login" th:action="@{|/user/login|}" method="post">
                 <div class="input_container">
                     <label for="email">Email: </label>
-                    <input class="text_input" id="email" name="email" type="text">
+                    <input class="text_input" id="email" name="email" type="text" required>
                 </div>
                 <div class="input_container">
                     <label for="password">Wachtwoord: </label>
-                    <input class="text_input" id="password" name="password" type="password">
+                    <input class="text_input" id="password" name="password" type="password" required>
                 </div>
                 <div class="input_container submit_container">
                     <input class="submit_button" type="submit" value="Login">
