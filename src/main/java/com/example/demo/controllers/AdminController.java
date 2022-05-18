@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+
 import java.util.Optional;
 
 @Controller
@@ -27,8 +28,8 @@ public class AdminController {
     @PostMapping("/calendar")
     public String eventNewPost(@ModelAttribute("event") Event event) {
 
-        Event newEvent = eventRepository.save(event);
-        return "redirect:/home";
+        eventRepository.save(event);
+        return "redirect:/admin/calendar";
     }
 
 
@@ -49,8 +50,8 @@ public class AdminController {
 
     @PostMapping("/eventedit/{id}")
     public String eventEditPost(Model model,
-                                      @PathVariable int id,
-                                      @ModelAttribute("event") Event event) {
+                                @PathVariable int id,
+                                @ModelAttribute("event") Event event) {
 
         Optional<Event> optionalEvent = eventRepository.findById(id);
         if (optionalEvent.isPresent()) {
@@ -60,11 +61,15 @@ public class AdminController {
             editedEvent.setFinish(event.getFinish());
             editedEvent.setDescription(event.getDescription());
             eventRepository.save(event);
+
             model.addAttribute("event", editedEvent);
+
         }
-//        return "redirect:/eventdetails/" + id;
-                return "redirect:/eventlist";
+
+
+        return "redirect:/eventlist";
 
     }
+
 
 }

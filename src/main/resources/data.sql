@@ -206,22 +206,35 @@ insert into PROFILE (ID, USER_ID, FIRST_NAME, LAST_NAME, BIRTHDAY, CITY, PROVINC
 insert into PROFILE (ID, USER_ID, FIRST_NAME, LAST_NAME, BIRTHDAY, CITY, PROVINCE, PHONE_NUMBER, IS_NEW, HAS_DISMISSED_COMPLETE_PROFILE_NOTIFICATION, EXPERIENCE) values (nextval('PROFILE_SEQ'), 100, 'Arline', 'Blatcher', '2022-02-06', 'Baton Rouge', 'Louisiana', '2255183098', false, true, 'Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.');
 insert into PROFILE (ID, USER_ID, FIRST_NAME, LAST_NAME, BIRTHDAY, CITY, PROVINCE, PHONE_NUMBER, IS_NEW, HAS_DISMISSED_COMPLETE_PROFILE_NOTIFICATION, EXPERIENCE) values (nextval('PROFILE_SEQ'), 101, 'Lynnell', 'Deroche', '2022-01-24', 'Knoxville', 'Tennessee', '8655661144', false, false, 'Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit.');
 
-insert into Afspraak (ID, DATUM, START_UUR, EIND_UUR, NAAM, VAKGEBIED, OPMERKING)
-values ((nextval('AFSPRAAK_SEQ')), '2021-09-3', 16, 17, 'test', 'Dans',
-        'blaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
-insert into Afspraak (ID, DATUM, START_UUR, EIND_UUR, NAAM, VAKGEBIED, OPMERKING)
-values ((nextval('AFSPRAAK_SEQ')), '2021-09-3', 16, 17, 'test', 'Dans',
-        'blaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
-insert into Afspraak (ID, DATUM, START_UUR, EIND_UUR, NAAM, VAKGEBIED, OPMERKING)
-values ((nextval('AFSPRAAK_SEQ')), '2021-09-3', 16, 17, 'test', 'Dans',
-        'blaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
-insert into Afspraak (ID, DATUM, START_UUR, EIND_UUR, NAAM, VAKGEBIED, OPMERKING)
-values ((nextval('AFSPRAAK_SEQ')), '2021-09-3', 16, 17, 'test', 'Dans',
-        'blaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
-insert into Afspraak (ID, DATUM, START_UUR, EIND_UUR, NAAM, VAKGEBIED, OPMERKING)
-values ((nextval('AFSPRAAK_SEQ')), '2021-09-3', 16, 17, 'test', 'Dans',
-        'blaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
+insert into EMPLOYEE (ID, USERNAME) values (nextval('USER_SEQ'), 'Yanis');
+insert into EMPLOYEE (ID, USERNAME) values (nextval('USER_SEQ'), 'Sharon');
+insert into EMPLOYEE (ID, USERNAME) values (nextval('USER_SEQ'), 'Femke');
+insert into EMPLOYEE (ID, USERNAME) values (nextval('USER_SEQ'), 'Anna');
 
+insert into event(id, title, start, finish, description, EMPLOYEE_ID)
+values ((nextval('EVENT_SEQ')), 'cursus','2022-05-10 8:00:00', '2022-05-10 12:00:00', 'cursus dans', 1);
+insert into event(id, title, start, finish, description, EMPLOYEE_ID)
+values ((nextval('EVENT_SEQ')), 'webinar','2022-06-10 9:00:00', '2022-06-10 13:00:00', 'webinar limits academy', 2);
+insert into event(id, title, start, finish, description, EMPLOYEE_ID)
+values ((nextval('EVENT_SEQ')), 'webinar','2022-08-11 8:00:00', '2022-08-11 12:00:00', 'webinar limits academy', 3);
+insert into event(id, title, start, finish, description, EMPLOYEE_ID)
+values ((nextval('EVENT_SEQ')), 'meeting dans','2022-05-19 16:00:00', '2022-05-19 18:00:00', 'meeting met Anna voor Dans workshop', 4);
+insert into event(id, title, start, finish, description, EMPLOYEE_ID)
+values ((nextval('EVENT_SEQ')), 'meeting zang','2022-05-19 9:00:00', '2022-05-19 14:00:00', 'meeting met Yanis voor Dans workshop', 3);
+insert into event(id, title, start, finish, description, EMPLOYEE_ID)
+values ((nextval('EVENT_SEQ')), 'staking','2022-05-24 8:00:00', '2022-05-24 12:00:00', 'algemene staking', 4);
+insert into event(id, title, start, finish, description, EMPLOYEE_ID)
+values ((nextval('EVENT_SEQ')), 'lunch','2022-05-28 9:00:00', '2022-05-28 13:00:00', 'lunch met Anna', 3);
+insert into event(id, title, start, finish, description, EMPLOYEE_ID)
+values ((nextval('EVENT_SEQ')), 'paper','2022-05-28 8:00:00', '2022-05-28 12:00:00', 'paper', 4);
+insert into event(id, title, start, finish, description, EMPLOYEE_ID)
+values ((nextval('EVENT_SEQ')), 'schooltaak','2022-05-28 7:00:00', '2022-05-28 11:00:00', 'taak design', 3);
+insert into event(id, title, start, finish, description, EMPLOYEE_ID)
+values ((nextval('EVENT_SEQ')), 'meeting','2022-05-20 8:00:00', '2022-05-20 12:00:00', 'Meeting met Femke', 3);
+insert into event(id, title, start, finish, description, EMPLOYEE_ID)
+values ((nextval('EVENT_SEQ')), 'meeting','2022-05-28 12:00:00', '2022-05-28 16:00:00', 'Meeting met Sharon', 3);
+insert into event(id, title, start, finish, description, EMPLOYEE_ID)
+values ((nextval('EVENT_SEQ')), 'meeting','2022-05-28 16:00:00', '2022-05-28 18:00:00', 'Meeting met Yanis', 3);
 
 
 insert into event(id, title, start, finish, description)

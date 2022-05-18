@@ -1,5 +1,6 @@
 package com.example.demo.repositories;
 
+import com.example.demo.model.Event;
 import com.example.demo.model.User;
 import org.springframework.data.repository.CrudRepository;
 
