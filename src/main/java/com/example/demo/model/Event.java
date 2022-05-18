@@ -9,7 +9,6 @@ public class Event {
 
 
     @Id
-//        @GeneratedValue(strategy = GenerationType.IDENTITY)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "event_generator")
 
     @SequenceGenerator(name = "event_generator", sequenceName = "event_seq", allocationSize = 1)
@@ -23,22 +22,11 @@ public class Event {
     @ManyToOne(fetch = FetchType.LAZY)
     private Employee employee;
 
-    public Event(Integer id, String title, String description, LocalDateTime start, LocalDateTime finish, Employee employee) {
-        super();
-        this.id = id;
-        this.title = title;
-        this.description = description;
-        this.start = start;
-        this.finish = finish;
-        this.employee = employee;
-    }
 
     public Event() {
         super();
 
     }
-
-
     public Integer getId() {
         return id;
     }
@@ -90,14 +78,7 @@ public class Event {
 
     @Override
     public String toString() {
-        return "Event{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", start=" + start +
-                ", finish=" + finish +
-                ", employee=" + employee +
-                '}';
+        return "Event{" + "id=" + id + ", title='" + title + '\'' + ", description='" + description + '\'' + ", start=" + start + ", finish=" + finish + ", employee=" + employee + '}';
     }
 }
 
