@@ -1,5 +1,5 @@
-
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<!--suppress ALL -->
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -20,14 +20,20 @@
             <h1 id="form-head">Zet iets in je kalender</h1>
 
 
-            <label for="title"></label><input type="text" id="title"  th:field="*{title}" class="person-detail" placeholder="titel"  maxlength="20" required>
-            <label for="start"></label><input id="start" th:field="*{start}" class="person-detail"  placeholder="start" th:type="datetime-local"  required>
-            <label for="finish"></label><input id="finish" placeholder="finish" th:field="*{finish}"  class="person-detail" th:type="datetime-local" required>
-            <label for="description"></label><textarea id="description" th:field="*{description}"  name= rows="5" cols="3" placeholder="Voeg een opmerking toe" class="person-detail"></textarea>
-            <label for="employee"></label><input id="employee" placeholder="werknemer" th:field="*{employee}"  class="person-detail" th:type="datetime-local" required>
+            <label for="title"></label><input type="text" id="title" th:field="*{title}" class="person-detail"
+                                              placeholder="titel" maxlength="20" required>
+            <label for="start"></label><input id="start" th:field="*{start}" class="person-detail" placeholder="start"
+                                              th:type="datetime-local" required>
+            <label for="finish"></label><input id="finish" placeholder="finish" th:field="*{finish}"
+                                               class="person-detail" th:type="datetime-local" required>
+            <label for="description"></label><textarea id="description" th:field="*{description}" name=rows="5" cols="3"
+                                                       placeholder="Voeg een opmerking toe"
+                                                       class="person-detail"></textarea>
+            <label for="employee"></label><input id="employee" placeholder="werknemer" th:field="*{employee}"
+                                                 class="person-detail" th:type="datetime-local" required>
 
-            <button type="submit" id="submit" value="Submit" onclick="">Submit </button>
-            <a th:href="@{/}" class="gaTerugLink" >Ga terug</a>
+            <button type="submit" id="submit" value="Submit" onclick="">Submit</button>
+            <a th:href="@{/}" class="gaTerugLink">Ga terug</a>
 
 
         </form>
