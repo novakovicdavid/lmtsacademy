@@ -1,6 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
+    <title>Profiel</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" media="all"
           th:href="@{/css/stylesheet.css}"/>
@@ -10,7 +13,6 @@
     <script th:src="@{/bootstrap.min.js}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.typekit.net/ssa0ifx.css">
-    <title>Mijn Profiel</title>
 </head>
 <body class="body">
 <div class="main">
@@ -66,7 +68,8 @@
                     <div th:text="${profile.getBirthday()}">birthday</div>
                 </div>
             </div>
-            <a th:href="@{|/profile/edit|}" type="button" class="editProfile_button">Aanpassen</a>
+            <a sec:authorize="!hasAuthority('ADMIN')" th:href="@{|/profile/edit|}" type="button" class="editProfile_button">Aanpassen</a>
+            <a sec:authorize="hasAuthority('ADMIN')" th:href="@{|/admin/profile/${profile.id}/edit|}" type="button" class="editProfile_button">Aanpassen</a>
         </div>
     </div>
 </div>

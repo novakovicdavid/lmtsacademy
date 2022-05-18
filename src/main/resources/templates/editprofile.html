@@ -1,6 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
+    <title>Profiel aanpassen</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" media="all"
           th:href="@{/css/stylesheet.css}"/>
@@ -18,7 +20,7 @@
     <div th:if="${profile}">
         <h1>My Profile</h1>
         <div class="row justify-content-center">
-            <form class="text-center" th:action="@{/profile/edit}" method="post">
+            <form class="text-center" th:action="${(editedByAdmin != null && editedByAdmin) ? '/admin/profile/' + profile.id + '/edit' : '/profile/edit'}" method="post">
                 <div class="col-4 myProfileBasics">
 
                     <h2 class="h2Profile">Basis informatie</h2>
@@ -64,9 +66,9 @@
                         </div>
                     </div>
                     <div class="form-group row ">
-                        <label class="col-4 col-form-label">Verjaardag:</label>
+                        <label for="birthday" class="col-4 col-form-label">Verjaardag:</label>
                         <div class="col-8">
-                            <div th:text="*{profile.birthday}">birthday</div>
+                            <input id="birthday" type="date" th:field="*{profile.birthday}">
                         </div>
                     </div>
                     <input type="submit" value="save" class="editProfile_button">
