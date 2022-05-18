@@ -28,16 +28,26 @@
 
                 <form>
 
-                    <h3>Datum</h3>
-                    <div class="filterNumber">
-                        <label for="start">Van:</label>
-                        <input type="datetime-local" id="start" name="start" th:value="${start}" >
-                    </div>
-                    <div class="endDate">
-                        <label for="finish">Tot:</label>
-                        <input type="datetime-local" id="finish" name="finish" th:value="${finish}" >
-                    </div>
+<!--                    <h3>Datum</h3>-->
+<!--                    <div class="filterNumber">-->
+<!--                        <label for="start">Van:</label>-->
+<!--                        <input type="datetime-local" id="start" name="start" th:value="${start}" >-->
+<!--                    </div>-->
+<!--                    <div class="endDate">-->
+<!--                        <label for="finish">Tot:</label>-->
+<!--                        <input type="datetime-local" id="finish" name="finish" th:value="${finish}" >-->
+<!--                    </div>-->
                     <h3>medewerker</h3>
+                    <div class="employeeId">
+                        <label for="employeeId">Medewerker:</label>
+                        <select name="employeeId" th:value="*{employeeId}" id="employeeId">
+                            <option value="1">Femke</option>
+                            <option value="2">Sharon</option>
+                            <option value="3">Femke</option>
+                            <option value="4">Anna</option>
+                        </select>
+<!--                        <input type="select" id="employeeId" name="employeeId" th:value="${employeeId}" >-->
+                    </div>
 
                     <div class="submitButton">
                         <input id="zoekFilter" type="submit" value="zoek">

@@ -39,24 +39,29 @@ public class EventController extends RootController {
 
     }
 
+//    @RequestParam(required = false) LocalDateTime start,
+//    @RequestParam(required = false) LocalDateTime finish,
     @GetMapping({"/eventlist/filter"})
     public String eventlistWithFilterFilter(Model model,
-                                            @RequestParam(required = false) LocalDateTime start,
-                                            @RequestParam(required = false) LocalDateTime finish) {
+
+                                            @RequestParam(required = false) Integer employeeId
+                                            ) {
         List<Event> eventList;
 
 
-        if (start == null || finish == null)
-            eventList = (List<Event>) eventRepository.findAll();
-        else
-            eventList = eventRepository.findByFilter(start, finish);
+//        if (start == null || finish == null)
+//            eventList = (List<Event>) eventRepository.findAll();
+//        else
+            eventList = eventRepository.findByFilter(employeeId);
 
         model.addAttribute("eventList", eventList.iterator());
 
         model.addAttribute("nrOfEvents", eventList.size());
         model.addAttribute("showFilters", true);
-        model.addAttribute("start", start);
-        model.addAttribute("finish", finish);
+//        model.addAttribute("start", start);
+//        model.addAttribute("finish", finish);
+        model.addAttribute("employeeId", employeeId);
+
 
 
 
