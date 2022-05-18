@@ -55,7 +55,7 @@
                     right: 'month,agendaWeek,agendaDay'
                 },
 
-                defaultDate: '2022-05-03',
+                // defaultDate: '2022-05-03',
                 editable: true,
                 eventLimit: true,
                 events: {
@@ -84,6 +84,9 @@
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary btn-sm mt-5 ml-4 newAppointmentButton" data-toggle="modal" data-target="#addAppointmentModal">
     Nieuwe afspraak
+</button>
+<button type="button" class="btn btn-primary btn-sm mt-5 ml-4 newAppointmentButton">
+    <a class="summary" th:href="@{/eventlist}">Overzicht</a>
 </button>
 
 <!-- Modal -->
@@ -179,8 +182,9 @@
     }
     .btn-primary:active{
         background-color: #EB95E7;
-        border-color:#EB95E7;
+        border-color:black;
         filter: brightness(80%);
+
 
     }
     .btn-primary:focus{
@@ -225,6 +229,10 @@
 
 
     }
+
+    /*.btn-primary:not(:disabled):not(.disabled).active:focus{*/
+    /*    box-shadow:black;*/
+    /*}*/
 
 </style>
 </html>

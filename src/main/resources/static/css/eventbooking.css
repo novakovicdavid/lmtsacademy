@@ -557,3 +557,12 @@ body {
 .fc-day{
     border: 2px solid black; !important;
 }
+
+.bi.bi-plus-square-fill{
+    width: 50px;
+}
+
+.summary{
+    color: white;
+    text-decoration: none;
+}
