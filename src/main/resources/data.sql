@@ -206,10 +206,10 @@ insert into PROFILE (ID, USER_ID, FIRST_NAME, LAST_NAME, BIRTHDAY, CITY, PROVINC
 insert into PROFILE (ID, USER_ID, FIRST_NAME, LAST_NAME, BIRTHDAY, CITY, PROVINCE, PHONE_NUMBER, IS_NEW, HAS_DISMISSED_COMPLETE_PROFILE_NOTIFICATION, EXPERIENCE) values (nextval('PROFILE_SEQ'), 100, 'Arline', 'Blatcher', '2022-02-06', 'Baton Rouge', 'Louisiana', '2255183098', false, true, 'Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.');
 insert into PROFILE (ID, USER_ID, FIRST_NAME, LAST_NAME, BIRTHDAY, CITY, PROVINCE, PHONE_NUMBER, IS_NEW, HAS_DISMISSED_COMPLETE_PROFILE_NOTIFICATION, EXPERIENCE) values (nextval('PROFILE_SEQ'), 101, 'Lynnell', 'Deroche', '2022-01-24', 'Knoxville', 'Tennessee', '8655661144', false, false, 'Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit.');
 
-insert into EMPLOYEE (ID, USERNAME) values (nextval('USER_SEQ'), 'Yanis');
-insert into EMPLOYEE (ID, USERNAME) values (nextval('USER_SEQ'), 'Sharon');
-insert into EMPLOYEE (ID, USERNAME) values (nextval('USER_SEQ'), 'Femke');
-insert into EMPLOYEE (ID, USERNAME) values (nextval('USER_SEQ'), 'Anna');
+insert into EMPLOYEE (ID, USERNAME) values (1, 'Yanis');
+insert into EMPLOYEE (ID, USERNAME) values (2, 'Sharon');
+insert into EMPLOYEE (ID, USERNAME) values (3, 'Femke');
+insert into EMPLOYEE (ID, USERNAME) values (4, 'Anna');
 
 insert into event(id, title, start, finish, description, EMPLOYEE_ID)
 values ((nextval('EVENT_SEQ')), 'cursus','2022-05-10 8:00:00', '2022-05-10 12:00:00', 'cursus dans', 1);
