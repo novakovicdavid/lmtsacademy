@@ -572,15 +572,15 @@ VALUES (nextval('COURSE_SEQ'), 'workshop 2',
 INSERT INTO TEACHER (ID, NAME, BIO, EXPERIENCE,image)
 VALUES (nextval('TEACHER_SEQ'), 'KAREN BOONS',
         'Hallo ik ben Karen, ik ben 32 jaar en werk al 5 jaar bij "Creative Spirits". Ik ben de choreograaf die niets liever doet dan mijn passie voor dansen over te brengen aan beginners.',
-        '10 jaar modern ballet, 6 jaar hiphop' ,'fefef');
+        '10 jaar modern ballet, 6 jaar hiphop' ,'/pictures/karen.jpg');
 INSERT INTO TEACHER (ID, NAME, BIO, EXPERIENCE,image)
 VALUES (nextval('TEACHER_SEQ'), 'JOEP DE KLEINE',
         'Hallo ik ben Joep, ik ben 27 jaar en werk reeds 3 jaar bij "Creative Spirits". Ik ben de zanginstructeur en help soms ook mee als assistent bij de danscursussen die wij ook aanbieden. Zingen voor een publiek is niet voor iedereen weggelegt maar ik doe er alles aan om de beste zanger in je boven te halen',
         'Master aan de Dutch National Opera Acedemy,2 jaar hiphop en 6 jaar in een band ','/pictures/joep.jpg');
 INSERT INTO TEACHER (ID, NAME, BIO, EXPERIENCE,image)
 VALUES (nextval('TEACHER_SEQ'), 'KAREL BERG',
-        'Hallo ik ben Karel, ik ben 41 jaar en werk al 5 jaar bij "Screen Masters". Acteren zat al van jongs af aan in mijn interessepakket en daarom speelde ik bij elk schooltoneel mee. Later ben ik dan ook verder gaan studeren in die richting',
-        'Ik heb de academische bachelor- en masteropleiding in het Drama met afstudeerrichting Acteren ','fefee');
+        'Hallo ik ben Karel, ik ben 41 jaar en werk al 12 jaar bij "Screen Masters". Acteren zat al van jongs af aan in mijn interessepakket en daarom speelde ik bij elk schooltoneel mee. Later ben ik dan ook verder gaan studeren in die richting',
+        'Ik heb de academische bachelor- en masteropleiding in het Drama met afstudeerrichting Acteren ','/pictures/karel.jpg');
 INSERT INTO COMPANY(ID, NAME, BIO, LOCATION)
 VALUES (nextval('COMPANY_SEQ'), 'Creative Spirits',
         'Wij zijn een VZW dat ons vooral bezig houd met cursussen geven aan mensen met een beperking. /nWij geven dans , zang en muziek lessen voor verschillende niveaus.',
