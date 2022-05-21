@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://use.typekit.net/ssa0ifx.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<!--    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
     <link rel="stylesheet" th:href="@{/bootstrap.min.css}">
@@ -18,48 +18,36 @@
 
 </head>
 <script>
-    function changeDisplay() {
-        var foo = document.getElementById('nav');
-        if (foo.style.display == '' || foo.style.display == 'none') {
-            foo.style.display = 'flex';
+    function toggleMobileNavbar() {
+        const navbarItems = document.getElementById('navbar-items');
+        if (navbarItems.style.display === 'none' || navbarItems.style.display === '') {
+            navbarItems.style.display = 'grid';
+            document.body.style.overflowY = 'hidden';
         } else {
-            foo.style.display = 'none';
+            navbarItems.style.display = 'none';
+            document.body.style.overflowY = 'unset';
         }
     }
 </script>
 <body>
 <div th:replace="fragments/header_notification"></div>
-
-<img class="logoMobile" th:src="@{/pictures/LMTSLogo.png}"/>
-<input type="button" value="Menu" id="btn-me" onclick="changeDisplay()">
-<div id="nav">
-    <ul class="alignleft">
-        <li class="home"><a class="nav-link" th:href="@{/home}">Home</a></li>
-        <li class="contact"><a class="nav-link" th:href="@{/courselist}">Cursussen & Workshops</a></li>
-    </ul>
-    <div class="aligncenter">
-        <a th:href="@{/home}"><img class="logoNavFullscreen" alt="Logo" th:src="@{/pictures/LMTSLogo.png}"/></a>
-
+<nav id="navbar">
+    <div id="navbar-expander" onclick="toggleMobileNavbar()">☰</div>
+    <div id="navbar-items">
+        <ul id="navbar-left">
+            <li><a th:href="@{/home}">Home</a></li>
+            <li><a th:href="@{/courselist}">Cursussen & Workshops</a></li>
+        </ul>
+        <a id="navbar-center" href="/"><img alt="logo" th:src="@{/pictures/LMTSLogo.png}"></a>
+        <ul id="navbar-right">
+            <li sec:authorize="isAnonymous()"><a th:href="@{/user/register}">Maak een afspraak</a></li>
+            <li sec:authorize="isAnonymous()"><a th:href="@{/user/login}">Login</a></li>
+            <li sec:authorize="isAuthenticated() && !hasAuthority('ADMIN')"><a th:href="@{/profile}">My Profile</a></li>
+            <li sec:authorize="hasAuthority('ADMIN')"><a class="bi bi-calendar" th:href="@{/admin/calendar}"></a></li>
+            <li sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/admin/profiles}">Profiles</a></li>
+            <li sec:authorize="isAuthenticated()"><a th:href="@{/user/logout}">Logout</a></li>
+        </ul>
     </div>
-
-    <ul class="alignright">
-        <li sec:authorize="isAnonymous()" class="header_login"><a class="nav-link"
-                                                                  th:href="@{/user/login}"><i class="fa fa-user"
-                                                                                              aria-hidden="true"></i>Login</a>
-        </li>
-        <li sec:authorize="isAnonymous()" class="header_login"><a class="nav-link" th:href="@{/user/register}">Maak een
-            afspraak</a></li>
-        <li sec:authorize="isAuthenticated() && !hasAuthority('ADMIN')" class="header_logout"><a class="nav-link"
-                                                                       th:href="@{/profile}">My Profile</a>
-        <li sec:authorize="hasAuthority('ADMIN')" class="header_logout"><a class="nav-link" th:href="@{/admin/profiles}">Profiles</a>
-        <li sec:authorize="isAuthenticated()" class="header_logout"><a class="nav-link"
-                                                                       th:href="@{/user/logout}">Logout</a>
-
-        </li>
-        <li sec:authorize="hasAuthority('ADMIN')" class="header_login"><a class="bi bi-calendar" style="font-size:36px"
-                                                                          th:href="@{/admin/calendar}"></a></li>
-
-    </ul>
-</div>
+</nav>
 </body>
 </html>
