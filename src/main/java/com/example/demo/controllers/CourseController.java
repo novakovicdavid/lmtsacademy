@@ -22,8 +22,10 @@ public class CourseController extends RootController {
 
     @GetMapping({"/courselist"})
     public String courselist(Model model) {
-        final Iterable<Course> allcourses = courseRepository.findAll();
+        Iterable<Course> allcourses = courseRepository.findByWorkshop(false);
+        Iterable<Course> allworkshops = courseRepository.findByWorkshop(true);
         model.addAttribute("courses", allcourses);
+        model.addAttribute("workshops", allworkshops);
         return "courselist";
     }
 

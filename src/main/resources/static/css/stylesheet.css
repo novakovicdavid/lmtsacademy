@@ -178,6 +178,7 @@ h2.titleOurTeam {
     width: 140px;
     height: 100%;
     display: inline-block;
+    border: white solid 2px;
 }
 
 .courselistitem a {
