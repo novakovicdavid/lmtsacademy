@@ -1,156 +1,143 @@
-#nav {
-    display: flex;
-    flex-flow: row wrap;
-    background: white;
-    box-shadow:  5px 5px 40px 5px;
-
+html.freeze {
+    overflow-y: hidden;
 }
 
-#nav ul {
-    list-style: none;
+#navbar * {
+    margin: 0;
     padding: 0;
-    display: inline-block;
-}
 
-#nav li {
-    border-bottom: none;
-    height: 50px;
-    line-height: 50px;
-    font-size: 1.4em;
-    display: inline-block;
-    margin-left: 50px;
-    margin-top: 20px;
-    position: relative;
-}
-#nav li:after{
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #EB95E7;
-    transform-origin: bottom;
-    transition: transform 0.40s ease-out;
-}
-#nav li:hover:after{
-    transform: scaleX(1);
-    transform-origin: bottom;
-}
-
-#nav a {
+    list-style-type: none;
     text-decoration: none;
-    color: black;
-    font-family: bebas-neue, sans-serif;
 }
 
-.alignleft {
-    width: 33.33%;
-    text-align: right;
-    color: black;
+#navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    width: 100%;
 }
 
-.aligncenter {
-    width: 33.33%;
-    height: 97px; /* Height of LMTSLogo.png */
+#navbar-container {
+    background-color: white;
+}
+
+#navbar-expander {
+    width: 3rem;
+    height: 3rem;
+
+    font-size: 2rem;
     text-align: center;
+    user-select: none;
 }
 
-.alignright {
-    width: 33.33%;
-    text-align: right;
+#navbar-items {
+    position: absolute;
+    z-index: -1;
+    display: grid;
+    justify-items: center;
+    gap: .7rem;
+
+    width: 100%;
+    padding-bottom: 1rem;
+
+    background-color: white;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.4);
+
+    transform: translateY(-100%);
+    transition: transform 0.3s;
 }
 
-.logoMobile {
-    display: none;
+#navbar-items.active {
+    transform: translateY(0);
 }
 
-#btn-me {
-    display: none;
+#navbar-left, #navbar-right {
+    display: grid;
+    justify-items: center;
+    gap: .7rem;
 }
 
-@media (max-width: 78rem) {
-    #nav {
-        margin-top: 20px;
+#navbar-left a, #navbar-right a {
+    position: relative;
+
+    font-family: bebas-neue, sans-serif;
+    font-size: 1.6rem;
+    color: black;
+}
+
+#navbar-center {
+    grid-row: 1;
+}
+
+@media (min-width: 78rem) {
+    html.freeze {
+        overflow-y: unset;
+    }
+
+    #navbar {
+        position: sticky;
+        height: 97px; /* LMTS Logo height */
+    }
+
+    #navbar-expander {
         display: none;
-        background-color: black;
     }
 
+    #navbar-items {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        justify-items: stretch;
+        gap: unset;
+        padding-bottom: 0;
 
-    #nav a {
-        text-decoration: none;
-        color: white;
-        font-family: bebas-neue, sans-serif;
+        transform: unset;
     }
 
-    #nav li{
-        margin-top: 0;
+    #navbar-center {
+        display: grid;
+        place-items: center;
+        grid-column: 2;
     }
 
-    #btn-me {
-        display: block;
-        width: 50%;
-        margin: 50px auto 0;
-        background: #E2ED8C;
-        font-family: bebas-neue, sans-serif;
-        font-size: 25px;
-        border-radius: 20px;
-        border-color: white;
-    }
-
-    .logoMobile {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .logoNavFullscreen {
-        display: none;
-    }
-
-    .alignleft {
-        width: 100%;
-        text-align: center;
-    }
-
-    .alignright {
-        width: 100%;
-        text-align: center;
-    }
-
-    .burgerSign {
+    #navbar-left {
         display: flex;
-        flex-direction: column;
-        width: 70px;
-        text-align: left;
-        border: 4px white solid;
-        padding: 5px;
-        border-radius: 10px;
-        margin: 10px;
-        background: black;
+        justify-content: flex-end;
+        gap: 5rem;
     }
 
-    .burgerSign span {
-        background: #fff;
-        border-radius: 10px;
-        height: 7px;
-        margin: 7px 0;
+    #navbar-right {
+        display: flex;
+        justify-content: flex-end;
+        gap: 5rem;
+
+        padding-right: 5rem;
     }
 
-    span:nth-of-type(1) {
-        width: 50%;
+    #navbar-left a, #navbar-right a {
+        font-size: 1.4rem;
     }
 
-    span:nth-of-type(2) {
+    #navbar-left li a:after, #navbar-right li a:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 102;
+
         width: 100%;
+        height: 2px;
+
+        background-color: #EB95E7;
+
+        transform: scaleX(0);
+        transform-origin: bottom;
+        transition: transform 0.40s ease-out;
     }
 
-
-    span:nth-of-type(3) {
-        width: 75%;
+    #navbar-left li a:hover:after, #navbar-right li a:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom;
     }
 }
-
-
-

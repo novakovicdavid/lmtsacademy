@@ -12,6 +12,7 @@
 </head>
 <body class="body">
 <div th:replace="fragments/header"></div>
+<div class="container">
 <div class="main">
     <div th:if="${company}">
         <h2 class="titleOurTeam" th:text="${company.getName}">company name</h2>
@@ -36,6 +37,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
     <div th:replace="fragments/footer"></div>
 </body>

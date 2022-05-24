@@ -143,10 +143,10 @@ p.profile-entry-left-side {
     .profiles-list {
         grid-template-columns: repeat(auto-fit, 28rem);
         padding: 4rem;
-        box-shadow:  5px 5px 40px 5px inset;
+        box-shadow: 0 0 10px 5px rgba(0,0,0,0.4) inset;
     }
 
-    #nav, footer {
+    #navbar, footer {
         box-shadow: none !important;
     }
 }
