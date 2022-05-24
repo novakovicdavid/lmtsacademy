@@ -19,7 +19,7 @@
         <div class="cursusInfo">
             <div>
                 <div class="infoName"><b>Wie zijn wij?</b></div>
-                <div class="infoValue" th:text="${company.getBio()}">bio</div>
+                <div class="infoValue" th:each="bioPart: ${company.getBio().split('\\n')} " th:text="${bioPart}">bio</div>
             </div>
             <div>
                 <div class="infoName"><b>Locatie:</b></div>

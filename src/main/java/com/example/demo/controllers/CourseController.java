@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -94,10 +95,10 @@ public class CourseController extends RootController {
         Course newCourse = courseRepository.save(course);
         return "redirect:/coursedetails/" + newCourse.getId();
     }
-    @GetMapping("/courselist/workshop/{filter}")
-    public String courselistWorkshopYes(Model model, @PathVariable String filter) {
-        final Iterable<Course> courses = courseRepository.findByWorkshop(filter.equals("yes"));
-        model.addAttribute("courses", courses);
+    @GetMapping("/courselist/category/{filter}")
+    public String courselistCategory(Model model, @PathVariable String filter) {
+        List<Course> danscourses = courseRepository.findByCategory(filter);
+        model.addAttribute("danscourses", danscourses);
         model.addAttribute("filterWorkshop", filter.equals("yes") ? "yes" : "no");
         return "courselist";
     }

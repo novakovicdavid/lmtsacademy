@@ -18,6 +18,7 @@ public class Course {
     private String location;
     @ManyToMany(mappedBy = "courses")
     private Collection<Company> company;
+    private String category;
     private Boolean workshop;
     @ManyToMany(mappedBy = "courses")
     private Collection<Teacher> teacher;
@@ -25,9 +26,10 @@ public class Course {
 
     }
 
-    public Course(Integer id, String name,Boolean workshop, String location,Collection<Company> company, String description,String shortDescription,Collection<Teacher> teacher) {
+    public Course(Integer id, String name,String category,Boolean workshop, String location,Collection<Company> company, String description,String shortDescription,Collection<Teacher> teacher) {
         this.id = id;
         this.name = name;
+        this.category = category;
         this.workshop = workshop;
         this.company = company;
         this.location = location;
@@ -52,12 +54,21 @@ public class Course {
     public void setTeacher(Collection<Teacher> teacher) {
         this.teacher = teacher;
     }
+
     public Boolean getWorkshop() {
         return workshop;
     }
 
     public void setWorkshop(Boolean workshop) {
         this.workshop = workshop;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getLocation() {

@@ -14,7 +14,7 @@
 <body class="body">
 <div class="main">
     <div th:replace="fragments/header"></div>
-    <h1>ONZE CURSUSSEN</h1>
+    <h1>CURSUSSEN</h1>
     <div class="container">
     <div class="row">
 
@@ -22,13 +22,13 @@
             <a class="edit_button" th:href="@{|/newcourse|}">NIEUWE CURSUS</a>
         </div>
         <div class="col-lg-2 containerFilter">
-            <div class="filtername">Workshop door LMTS?</div>
-            <a class="buttonLookFilter filterButton" th:classappend="(${filterWorkshop}==null) ? 'activeFilter' : ''"
-               th:href="@{/courselist}">Toon alles</a>
-            <a class="buttonLookFilter filterButton" th:classappend="(${filterWorkshop}=='yes') ? 'activeFilter' : ''"
-               th:href="@{/courselist/workshop/yes}">Ja</a>
-            <a class="buttonLookFilter filterButton" th:classappend="(${filterWorkshop}=='no') ? 'activeFilter' : ''"
-               th:href="@{/courselist/workshop/no}">Nee</a>
+            <div class="filtername">Categorie: </div>
+            <a class="buttonLookFilter filterButton" th:classappend="${danscourses}"
+               th:href="@{/courselist/category/dans}">Dans</a>
+<!--            <a class="buttonLookFilter filterButton" th:classappend="(${filterWorkshop}=='yes') ? 'activeFilter' : ''"-->
+<!--               th:href="@{/courselist/workshop/yes}">Ja</a>-->
+<!--            <a class="buttonLookFilter filterButton" th:classappend="(${filterWorkshop}=='no') ? 'activeFilter' : ''"-->
+<!--               th:href="@{/courselist/workshop/no}">Nee</a>-->
         </div>
         <div class="col-lg-9">
             <div class="courseContainer row">
@@ -39,7 +39,7 @@
                 </div>
             </div>
         </div>
-        <h1>ONZE CURSUSSEN</h1>
+        <h1>ONZE WORKSHOPS</h1>
         <div class="col-lg-9">
             <div class="courseContainer row">
                 <div class="courselistitem col-12 col-sm-3" th:each="course: ${workshops}">
