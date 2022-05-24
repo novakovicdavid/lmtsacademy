@@ -278,7 +278,7 @@ VALUES (nextval('COURSE_SEQ'), 'Zang',
 INSERT INTO COURSE (ID, NAME, DESCRIPTION, SHORTDESCRIPTION, LOCATION, category,workshop)
 VALUES (nextval('COURSE_SEQ'), 'Casting technieken',
         'In de laatste workshop die we aanbieden leren we de LMTS-artiesten hoe ze zich het best kunnen voorbereiden op een casting call. We leren ze monologen voorbrengen, hoe ze teksten het best interpreteren… Zo kunnen zij net als anderen met een evenwaardige kans de castingruimtes binnenstappen',
-        'Bij deze workshop krijg je tips en tricks om je voor te bereiden op een goed casting gesprek.', 'Mechelen', 'ct',true);
+        'Bij deze workshop krijg je verschillende tips en tricks om je voor te bereiden voor een goed casting gesprek.', 'Mechelen', 'ct',true);
 
 INSERT INTO TEACHER (ID, NAME, BIO, EXPERIENCE,image)
 VALUES (nextval('TEACHER_SEQ'), 'KAREN BOONS',

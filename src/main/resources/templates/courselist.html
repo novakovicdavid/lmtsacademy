@@ -43,7 +43,8 @@
                         <p th:text="${course.shortdescription}">Cursus naam</p>
                     </div>
                     <h1>ONZE WORKSHOPS</h1>
-                    <div class="courselistitem col-12 col-sm-3" th:each="course: ${workshops}">
+                    <div style="margin: 10px" class="courselistitem col-12 col-sm-3" th:each="course: ${workshops}">
+
                         <a th:href="@{|/coursedetails/${course.id}|}" th:text="${course.name}">Cursus naam </a>
                         <br>
                         <p th:text="${course.shortdescription}">Cursus naam</p>
