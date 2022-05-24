@@ -1,5 +1,14 @@
 #calendar {
     max-width: 900px;
+
     margin: 40px auto;
     padding: 0 10px;
 }
+
+/*.calendarContainer{*/
+/*    max-width: 900px;*/
+/*    margin: 0 auto;*/
+
+/*    !*margin: 40px auto;*!*/
+/*    padding: 0 10px;*/
+/*}*/
