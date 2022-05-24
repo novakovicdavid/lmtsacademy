@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -97,9 +98,19 @@ public class CourseController extends RootController {
     }
     @GetMapping("/courselist/category/{filter}")
     public String courselistCategory(Model model, @PathVariable String filter) {
-        List<Course> danscourses = courseRepository.findByCategory(filter);
-        model.addAttribute("danscourses", danscourses);
-        model.addAttribute("filterWorkshop", filter.equals("yes") ? "yes" : "no");
+        List<Course> allcourses = courseRepository.findByCategory(filter);
+        List<Course> filteredworkshops = new ArrayList<>();
+        List<Course> filteredcourses = new ArrayList<>();
+        for (var course : allcourses){
+            if(course.getWorkshop()){
+                filteredworkshops.add(course);
+            }
+            else{
+                filteredcourses.add(course);
+            }
+        }
+            model.addAttribute("workshops", filteredworkshops);
+            model.addAttribute("courses", filteredcourses);
         return "courselist";
     }
 }

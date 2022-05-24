@@ -16,10 +16,10 @@ public interface CourseRepository extends CrudRepository<Course,Integer> {
     Optional<Course> findFirstByIdGreaterThanOrderByIdAsc(int id);
 
     Optional<Course> findFirstByOrderByIdAsc();
-//@Query("select c from Course c where c.category=:category")
-//List<Course> findByCategory(String category);
+@Query("select c from Course c where c.category = :category")
+List<Course> findByCategory(String category);
 
     Iterable<Course> findByWorkshop(boolean b);
 
-    List<Course> findByCategory(String filter);
+//    List<Course> findByCategory(String filter);
 }

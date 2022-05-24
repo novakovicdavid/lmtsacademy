@@ -253,13 +253,11 @@ VALUES (nextval('COURSE_SEQ'), 'Acteren',
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum', 'Doorheen de opleiding wordt er
 gewerkt met verschillende stijlen
 en theatervormen: komedie,
-tragedie, beweging, maskerspel,
-figurentheater, non verbaal
-theater, improvisatie …', 'Mechelen', 'theater',false);
+tragedie, beweging, maskerspel, figurentheater en nog veel meer', 'Mechelen', 'theater',false);
 INSERT INTO COURSE (ID, NAME, DESCRIPTION, SHORTDESCRIPTION, LOCATION, category,workshop)
-VALUES (nextval('COURSE_SEQ'), 'Dans: LMTS KIDS COMPANY',
+VALUES (nextval('COURSE_SEQ'), 'Dans: LMTS KIDS',
         'Deze dansgroep bestaat uit onze jongste leden die elke week weer op hun favoriete liedjes begeleid worden door Anna. Zij neemt hen mee naar hun grootste idolen door op hun muziek wekelijks een dans aan te leren op een speelse manier.',
-        'Deze dansgroep bestaat uit onze jongste leden', 'Antwerpen', 'dans',true);
+        'Deze dansgroep bestaat uit onze jongste leden die niet graag stil zitten met hun dansbenen!', 'Antwerpen', 'dans',true);
 
 INSERT INTO COURSE (ID, NAME, DESCRIPTION, SHORTDESCRIPTION, LOCATION, category,workshop)
 VALUES (nextval('COURSE_SEQ'), 'Dans: LMTS JUNIORS',
@@ -268,7 +266,7 @@ VALUES (nextval('COURSE_SEQ'), 'Dans: LMTS JUNIORS',
 INSERT INTO COURSE (ID, NAME, DESCRIPTION, SHORTDESCRIPTION, LOCATION, category,workshop)
 VALUES (nextval('COURSE_SEQ'), 'Dans: LMTS ELITE',
         'In de laatste dansgroep zitten de meest gevorderde dansers van LMTS ACADEMY. Zij worden voorzien van een iets moeilijker niveau om de extra uitdaging aan te gaan. Yanis leert ze de meer uitdagende passen aan binnen alle stijlen die ze aanbieden.',
-        'Een dansgroep voor onze gevorderde LMTS-artiesten die klaar zijn voor een uitdaging.', 'Mechelen', 'dans',true);
+        'Een dansgroep voor onze gevorderde LMTS-artiesten die niet bang zijn voor een uitdaging.', 'Mechelen', 'dans',true);
 INSERT INTO COURSE (ID, NAME, DESCRIPTION, SHORTDESCRIPTION, LOCATION, category,workshop)
 VALUES (nextval('COURSE_SEQ'), 'Theater',
         'In de workshop theater leiden we de LMTS-artiesten op tot de fijnste acteurs/actrices. Samen met professionele acteurs zoals Walter Bale en Kurt Rogiers werken ze elke paar maand toe naar een bekend toneelstuk zoals ‘Romeo & Julia’, ‘Otello’… ',
@@ -276,11 +274,11 @@ VALUES (nextval('COURSE_SEQ'), 'Theater',
 INSERT INTO COURSE (ID, NAME, DESCRIPTION, SHORTDESCRIPTION, LOCATION, category,workshop)
 VALUES (nextval('COURSE_SEQ'), 'Zang',
         'De zangworkshops worden gegeven door Yanis. Hij zal zich ontfermen over zowel de kleinsten als oudste zangroepen. Ze werken elke paar maand toe naar een cover van een bekend lied uit de muziekwereld. Zo coveren ze liedjes zoals ‘Laat de zon in je hart’, ‘Uptown girl’…',
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit', 'Mechelen', 'zang',true);
+        'Voor jong en oud, iedereen die zijn innerlijke nachtegaal naar boven wilt brengen samen met onze begeleiding!', 'Mechelen', 'zang',true);
 INSERT INTO COURSE (ID, NAME, DESCRIPTION, SHORTDESCRIPTION, LOCATION, category,workshop)
 VALUES (nextval('COURSE_SEQ'), 'Casting technieken',
         'In de laatste workshop die we aanbieden leren we de LMTS-artiesten hoe ze zich het best kunnen voorbereiden op een casting call. We leren ze monologen voorbrengen, hoe ze teksten het best interpreteren… Zo kunnen zij net als anderen met een evenwaardige kans de castingruimtes binnenstappen',
-        'Bij deze workshop krijg je tips en tricks om een goed casting gesprek te voeren.', 'Mechelen', 'ct',true);
+        'Bij deze workshop krijg je tips en tricks om je voor te bereiden op een goed casting gesprek.', 'Mechelen', 'ct',true);
 
 INSERT INTO TEACHER (ID, NAME, BIO, EXPERIENCE,image)
 VALUES (nextval('TEACHER_SEQ'), 'KAREN BOONS',

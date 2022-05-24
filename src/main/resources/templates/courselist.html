@@ -12,48 +12,52 @@
 
 </head>
 <body class="body">
-<div class="main">
-    <div th:replace="fragments/header"></div>
+<div th:replace="fragments/header"></div>
+<main>
     <h1>CURSUSSEN</h1>
     <div class="container">
-    <div class="row">
+        <div class="row">
 
-        <div sec:authorize="hasAuthority('ADMIN')">
-            <a class="edit_button" th:href="@{|/newcourse|}">NIEUWE CURSUS</a>
-        </div>
-        <div class="col-lg-2 containerFilter">
-            <div class="filtername">Categorie: </div>
-            <a class="buttonLookFilter filterButton" th:classappend="${danscourses}"
-               th:href="@{/courselist/category/dans}">Dans</a>
-<!--            <a class="buttonLookFilter filterButton" th:classappend="(${filterWorkshop}=='yes') ? 'activeFilter' : ''"-->
-<!--               th:href="@{/courselist/workshop/yes}">Ja</a>-->
-<!--            <a class="buttonLookFilter filterButton" th:classappend="(${filterWorkshop}=='no') ? 'activeFilter' : ''"-->
-<!--               th:href="@{/courselist/workshop/no}">Nee</a>-->
-        </div>
-        <div class="col-lg-9">
-            <div class="courseContainer row">
-                <div class="courselistitem col-12 col-sm-3" th:each="course: ${courses}">
-                    <a th:href="@{|/coursedetails/${course.id}|}" th:text="${course.name}">Cursus naam </a>
-                    <br>
-                    <p th:text="${course.shortdescription}">Cursus naam</p>
+            <div sec:authorize="hasAuthority('ADMIN')">
+                <a class="edit_button" th:href="@{|/newcourse|}">NIEUWE CURSUS</a>
+            </div>
+            <div class="col-lg-2 containerFilter">
+                <div class="filtername">Categorie:</div>
+                <a class="buttonLookFilter filterButton" th:classappend="${filteredcourses}"
+                   th:href="@{/courselist/}">Toon alles</a>
+                <a class="buttonLookFilter filterButton" th:classappend="${filteredcourses}"
+                   th:href="@{/courselist/category/dans}">Dans</a>
+                <a class="buttonLookFilter filterButton" th:classappend="${filteredcourses}"
+                   th:href="@{/courselist/category/theater}">Theater</a>
+                <a class="buttonLookFilter filterButton" th:classappend="${filteredcourses}"
+                   th:href="@{/courselist/category/zang}">Zang</a>
+                <a class="buttonLookFilter filterButton" th:classappend="${filteredcourses}"
+                   th:href="@{/courselist/category/ct}">Casting technieken</a>
+            </div>
+            <div class="col-lg-9">
+                <div class="courseContainer row">
+                    <div class="courselistitem col-12 col-sm-3" th:each="course: ${courses}">
+                        <a th:href="@{|/coursedetails/${course.id}|}" th:text="${course.name}">Cursus naam </a>
+                        <br>
+                        <p th:text="${course.shortdescription}">Cursus naam</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <h1>ONZE WORKSHOPS</h1>
-        <div class="col-lg-9">
-            <div class="courseContainer row">
-                <div class="courselistitem col-12 col-sm-3" th:each="course: ${workshops}">
-                    <a th:href="@{|/coursedetails/${course.id}|}" th:text="${course.name}">Cursus naam </a>
-                    <br>
-                    <p th:text="${course.shortdescription}">Cursus naam</p>
+            <h1>ONZE WORKSHOPS</h1>
+            <div class="col-lg-9">
+                <div class="courseContainer row">
+                    <div class="courselistitem col-12 col-sm-3" th:each="course: ${workshops}">
+                        <a th:href="@{|/coursedetails/${course.id}|}" th:text="${course.name}">Cursus naam </a>
+                        <br>
+                        <p th:text="${course.shortdescription}">Cursus naam</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    </div>
-</div>
 
 
-<div th:replace="fragments/footer"></div>
+
+    <div th:replace="fragments/footer"></div>
 </body>
 </html>
