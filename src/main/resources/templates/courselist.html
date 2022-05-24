@@ -14,8 +14,8 @@
 <body class="body">
 <div th:replace="fragments/header"></div>
 <main>
-    <h1>CURSUSSEN</h1>
-    <div class="container">
+
+    <div class="container-fluid">
         <div class="row">
 
             <div sec:authorize="hasAuthority('ADMIN')">
@@ -34,18 +34,15 @@
                 <a class="buttonLookFilter filterButton" th:classappend="${filteredcourses}"
                    th:href="@{/courselist/category/ct}">Casting technieken</a>
             </div>
-            <div class="col-lg-9">
+            <div class="col-lg-10">
                 <div class="courseContainer row">
+                    <h1>CURSUSSEN</h1>
                     <div class="courselistitem col-12 col-sm-3" th:each="course: ${courses}">
                         <a th:href="@{|/coursedetails/${course.id}|}" th:text="${course.name}">Cursus naam </a>
                         <br>
                         <p th:text="${course.shortdescription}">Cursus naam</p>
                     </div>
-                </div>
-            </div>
-            <h1>ONZE WORKSHOPS</h1>
-            <div class="col-lg-9">
-                <div class="courseContainer row">
+                    <h1>ONZE WORKSHOPS</h1>
                     <div class="courselistitem col-12 col-sm-3" th:each="course: ${workshops}">
                         <a th:href="@{|/coursedetails/${course.id}|}" th:text="${course.name}">Cursus naam </a>
                         <br>
@@ -53,9 +50,9 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
-
 
 
     <div th:replace="fragments/footer"></div>
