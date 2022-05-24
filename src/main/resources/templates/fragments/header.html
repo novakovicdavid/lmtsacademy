@@ -17,37 +17,39 @@
     <script th:src="@{/bootstrap.min.js}"></script>
 
 </head>
-<script>
-    function toggleMobileNavbar() {
-        const navbarItems = document.getElementById('navbar-items');
-        if (navbarItems.style.display === 'none' || navbarItems.style.display === '') {
-            navbarItems.style.display = 'grid';
-            document.body.style.overflowY = 'hidden';
-        } else {
-            navbarItems.style.display = 'none';
-            document.body.style.overflowY = 'unset';
-        }
-    }
-</script>
 <body>
 <div th:replace="fragments/header_notification"></div>
 <nav id="navbar">
-    <div id="navbar-expander" onclick="toggleMobileNavbar()">☰</div>
-    <div id="navbar-items">
-        <ul id="navbar-left">
-            <li><a th:href="@{/home}">Home</a></li>
-            <li><a th:href="@{/courselist}">Cursussen & Workshops</a></li>
-        </ul>
-        <a id="navbar-center" href="/"><img alt="logo" th:src="@{/pictures/LMTSLogo.png}"></a>
-        <ul id="navbar-right">
-            <li sec:authorize="isAnonymous()"><a th:href="@{/user/register}">Maak een afspraak</a></li>
-            <li sec:authorize="isAnonymous()"><a th:href="@{/user/login}">Login</a></li>
-            <li sec:authorize="isAuthenticated() && !hasAuthority('ADMIN')"><a th:href="@{/profile}">My Profile</a></li>
-            <li sec:authorize="hasAuthority('ADMIN')"><a class="bi bi-calendar" th:href="@{/admin/calendar}"></a></li>
-            <li sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/admin/profiles}">Profiles</a></li>
-            <li sec:authorize="isAuthenticated()"><a th:href="@{/user/logout}">Logout</a></li>
-        </ul>
+    <div id="navbar-container">
+        <div id="navbar-expander" onclick="toggleMobileNavbar()">☰</div>
+        <div id="navbar-items">
+            <ul id="navbar-left">
+                <li><a th:href="@{/home}">Home</a></li>
+                <li><a th:href="@{/courselist}">Cursussen & Workshops</a></li>
+            </ul>
+            <a id="navbar-center" href="/"><img alt="logo" th:src="@{/pictures/LMTSLogo.png}"></a>
+            <ul id="navbar-right">
+                <li sec:authorize="isAnonymous()"><a th:href="@{/user/register}">Maak een afspraak</a></li>
+                <li sec:authorize="isAnonymous()"><a th:href="@{/user/login}">Login</a></li>
+                <li sec:authorize="isAuthenticated() && !hasAuthority('ADMIN')"><a th:href="@{/profile}">My Profile</a></li>
+                <li sec:authorize="hasAuthority('ADMIN')"><a class="bi bi-calendar" th:href="@{/admin/calendar}"></a></li>
+                <li sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/admin/profiles}">Profiles</a></li>
+                <li sec:authorize="isAuthenticated()"><a th:href="@{/user/logout}">Logout</a></li>
+            </ul>
+        </div>
     </div>
 </nav>
+<script>
+    let navbarItems;
+
+    function toggleMobileNavbar() {
+        navbarItems.classList.toggle('active');
+        document.documentElement.classList.toggle('freeze');
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        navbarItems = document.getElementById('navbar-items');
+    });
+</script>
 </body>
 </html>
