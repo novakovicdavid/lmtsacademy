@@ -24,14 +24,14 @@ body {
     width: 80px;
     height: 80px;
     left: 10%;
-    animation-duration: 8s;
+    animation-duration: 18s;
 }
 
 .bubble:nth-child(2) {
     width: 30px;
     height: 30px;
     left: 20%;
-    animation-duration: 6s;
+    animation-duration: 16s;
     animation-delay: 1s;
 }
 
@@ -39,7 +39,7 @@ body {
     width: 55px;
     height: 55px;
     left: 35%;
-    animation-duration: 5s;
+    animation-duration: 15s;
     animation-delay: 2s;
 }
 
@@ -47,7 +47,7 @@ body {
     width: 20px;
     height: 20px;
     left: 50%;
-    animation-duration: 9s;
+    animation-duration: 19s;
     animation-delay: 3s;
 }
 
@@ -55,7 +55,7 @@ body {
     width: 40px;
     height: 40px;
     left: 45%;
-    animation-duration: 7s;
+    animation-duration: 17s;
     animation-delay: 1s;
 }
 
@@ -63,14 +63,14 @@ body {
     width: 15px;
     height: 15px;
     left: 60%;
-    animation-duration: 5s;
+    animation-duration: 15s;
 }
 
 .bubble:nth-child(7) {
     width: 50px;
     height: 50px;
     left: 80%;
-    animation-duration: 9s;
+    animation-duration: 19s;
     animation-delay: 3s;
 }
 
@@ -78,7 +78,7 @@ body {
     width: 25px;
     height: 25px;
     left: 75%;
-    animation-duration: 6s;
+    animation-duration: 16s;
     animation-delay: 1s;
 }
 
@@ -86,7 +86,7 @@ body {
     width: 55px;
     height: 55px;
     left: 90%;
-    animation-duration: 8s;
+    animation-duration: 18s;
     animation-delay: 4s;
 }
 
@@ -94,7 +94,7 @@ body {
     width: 30px;
     height: 30px;
     left: 80%;
-    animation-duration: 5s;
+    animation-duration: 15s;
     animation-delay: 2s;
 }
 
@@ -102,6 +102,6 @@ body {
     width: 40px;
     height: 40px;
     left: 95%;
-    animation-duration: 9s;
+    animation-duration: 19s;
     animation-delay: 0s;
 }

@@ -12,12 +12,10 @@
 
 </head>
 <body class="body">
-<div class="main">
-    <div th:replace="fragments/header"></div>
-    <h1>ONZE CURSUSSEN</h1>
-    <div class="container">
+<div th:replace="fragments/header"></div>
+<h1>ONZE CURSUSSEN</h1>
+<div class="container">
     <div class="row">
-
         <div sec:authorize="hasAuthority('ADMIN')">
             <a class="edit_button" th:href="@{|/newcourse|}">NIEUWE CURSUS</a>
         </div>
@@ -49,7 +47,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </div>
 
