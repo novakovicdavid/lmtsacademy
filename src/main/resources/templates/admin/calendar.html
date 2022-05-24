@@ -41,6 +41,12 @@
                     center: 'title',
                     right: 'dayGridMonth,dayGridWeek,dayGridDay'
                 },
+                dateClick: function(date) {
+                    $('#addAppointmentModal').modal('show');
+                    var now = new Date(date);
+                    now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+                    document.getElementById('dt').value = now.toISOString().slice(0,16);
+                },
                 eventLimit: true,
                 events: {
                     url: '/events',
