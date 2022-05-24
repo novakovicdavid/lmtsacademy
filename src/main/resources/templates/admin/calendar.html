@@ -5,6 +5,8 @@
       xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset='utf-8' />
+        <link rel="stylesheet" type="text/css" media="all"
+              th:href="@{/css/calendar.css}" href="/static/css/calendar.css"/>
     <link href='/fullcalendar/main.css'
           th:href="@{https://cdn.jsdelivr.net/webjars/org.webjars/fullcalendar/5.10.2/main.css}" rel="stylesheet"/>
     <script src='/fullcalendar/main.js'
@@ -43,6 +45,10 @@
     </script>
 </head>
 <body>
+<div th:replace="fragments/header" class="calendarHeader"></div>
+
 <div id='calendar'></div>
+<div th:replace="fragments/footer" class="calendarHeader"></div>
+
 </body>
 </html>
