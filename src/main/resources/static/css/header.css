@@ -71,8 +71,12 @@ html.freeze {
 }
 
 @media (min-width: 78rem) {
+    html.freeze {
+        overflow-y: unset;
+    }
+
     #navbar {
-        position: static;
+        position: sticky;
         height: 97px; /* LMTS Logo height */
     }
 
