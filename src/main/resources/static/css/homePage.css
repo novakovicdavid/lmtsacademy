@@ -127,8 +127,10 @@ h2.titleOurTeam {
 .rowOurTeam {
     margin-bottom: 50px;
 }
-
-
+.containerLayout{
+    margin:0 ! important;
+    padding:0 ! important;
+}
 @media (max-width: 1000px) {
     .imgLogoPink {
         width: 80%;
@@ -136,7 +138,12 @@ h2.titleOurTeam {
         margin-left: auto;
         margin-right: auto;
     }
-
+    .test {
+        background: linear-gradient(
+                to top, black 50%, #619095
+        );
+        margin-bottom: 50px;
+    }
     .video {
         width: 100%;
     }
