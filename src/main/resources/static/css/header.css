@@ -23,11 +23,14 @@ html.freeze {
 }
 
 #navbar-expander {
+    display: grid;
+    place-items: center;
+
     width: 3rem;
     height: 3rem;
 
     font-size: 2rem;
-    text-align: center;
+    font-family: Consolas, serif; /* Override Bootstrap font which causes misalignment */
     user-select: none;
 }
 
