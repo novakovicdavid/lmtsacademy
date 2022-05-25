@@ -145,6 +145,10 @@ h2.titleOurTeam {
     justify-content: center;
 }
 
+.workshopContainer {
+    justify-content: right;
+}
+
 .cursusInfo {
     max-width: 80%;
     padding: 1rem;
@@ -180,8 +184,16 @@ h2.titleOurTeam {
     display: inline-block;
     border: white solid 2px;
 }
+.courselistitem a{
+    text-decoration: none;
+}
+.coursetext {
+    color: black;
+    text-decoration: none;
+}
 
-.courselistitem a {
+
+.coursename {
     text-decoration: none;
     font-family: bebas-neue, sans-serif;
     font-size: 2em;
@@ -247,7 +259,8 @@ h2.titleOurTeam {
     background-color: #E2ED8C;
     color: white;
 }
-.buttonLook{
+
+.buttonLook {
     text-decoration: none;
     color: white;
     background-color: #ea95e8;
@@ -260,7 +273,8 @@ a.smallButton {
     font-size: 1em;
     padding: 0.5em;
 }
-a.smallButton2{
+
+a.smallButton2 {
     display: block;
     font-size: 1em;
     padding: 0.5em;
@@ -269,9 +283,6 @@ a.smallButton2{
     margin-left: 20px;
 }
 
-.containerFilter {
-    margin-left: 10px;
-}
 
 .filterButton {
     margin: 20px auto;
@@ -290,7 +301,8 @@ a.smallButton2{
     font-family: bebas-neue, sans-serif;
     text-align: center;
 }
-.teacherpic{
+
+.teacherpic {
     position: relative;
     width: 10%;
     overflow: hidden;
@@ -298,6 +310,7 @@ a.smallButton2{
     margin-left: auto;
     margin-right: auto;
 }
+
 .video {
     display: block;
     width: 50%;
