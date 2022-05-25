@@ -1,0 +1,160 @@
+h2.titleOurTeam {
+    font-family: bebas-neue, sans-serif;
+    font-size: 4em;
+    color: white;
+    margin-top: 50px !important;
+    margin-left: 40px;
+    margin-bottom: 40px;
+    text-decoration: underline #EB95E7;
+}
+
+.imgFullTeam {
+    width: 100%;
+}
+
+/*Homepage*/
+.textHomepage {
+    background-color: white;
+    padding: 20px;
+    position: relative;
+    margin-left: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    max-width: 90%;
+    font-size: 1.15em;
+}
+
+.textVision {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    margin: 30px;
+    text-align: center;
+    height: 250px;
+}
+
+.textHomepage:after {
+    content: '';
+    background: transparent;
+    border: 1px solid white;
+    top: 7px;
+    right: 30%;
+    bottom: -20px;
+    left: -10px;
+    position: absolute;
+    z-index: -1;
+}
+
+.teamContainer {
+    justify-content: center;
+    padding: 20px;
+    background: white;
+    margin-bottom: 50px;
+}
+
+.teamMember {
+    text-align: center;
+    background: #619095;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    color: white;
+
+}
+
+.teamMemberName {
+    margin-top: 50px;
+    color: #E2ED8C;
+    font-family: bebas-neue, sans-serif;
+}
+
+.memberBio {
+    font-size: 1em;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.circular--portrait {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.circular--portrait img {
+    width: 100%;
+    height: auto;
+
+}
+
+.imgLogoPink {
+    width: 15em;
+
+}
+
+.test {
+    background: linear-gradient(
+            to right, black 50%, #619095
+    );
+    margin-bottom: 50px;
+}
+
+.video {
+    display: block;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    background: #619095;
+    padding: 20px;
+    border: white 1px solid;
+}
+
+
+.fotoCarousel {
+    width: 100%;
+    margin: auto;
+}
+
+.carouselContainer {
+    margin: 0;
+}
+
+.rowOurTeam {
+    margin-bottom: 50px;
+}
+.containerLayout{
+    margin:0 ! important;
+    padding:0 ! important;
+}
+@media (max-width: 1000px) {
+    .imgLogoPink {
+        width: 80%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .test {
+        background: linear-gradient(
+                to top, black 50%, #619095
+        );
+        margin-bottom: 50px;
+    }
+    .video {
+        width: 100%;
+    }
+
+    .circular--portrait {
+        width: 70%;
+    }
+}
+
+@media (max-width: 1840px) {
+    .teamMember {
+        width: 100%;
+    }
+}

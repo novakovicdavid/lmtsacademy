@@ -1,0 +1,88 @@
+/* Coding With Nick */
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+.header{
+    text-align: center;
+    padding: 32px;
+}
+.header h1{
+    font-family: 'Sacramento';
+    font-size: 50px;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 100px 100px 100px;
+}
+.column{
+    flex: 30%;
+    max-width: 30%;
+}
+.middle{
+    flex: 40%;
+    max-width: 40%;
+}
+.img-hover-zoom{
+    height: auto;
+    overflow: hidden;
+    border: 5px solid #ffff;
+    margin: 10px;
+}
+.img-hover-zoom img{
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition:  transform .5s ease;
+}
+.img-hover-zoom:hover img{
+    transform: scale(1.5);
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+}
+.scrollFade {
+    opacity: 1;
+    pointer-events: all;
+}
+.scrollFade--hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+.scrollFade--visible {
+    opacity: 1;
+    pointer-events: all;
+}
+.scrollFade--animate {
+    transition: opacity 0.4s ease-in-out;
+}
+h2.titleGallery {
+    font-family: bebas-neue, sans-serif;
+    font-size: 4em;
+    color: white;
+    margin-top: 50px !important;
+    margin-left: 40px;
+    margin-bottom: 40px;
+    text-decoration: underline #EB95E7;
+    text-align: center;
+}
+@media screen and (max-width: 800px) {
+    .column{
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .column{
+        flex: 100%;
+        max-width: 100%;
+    }
+}

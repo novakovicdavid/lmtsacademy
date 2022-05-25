@@ -1,0 +1,101 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Welkom!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="all"
+          th:href="@{/css/stylesheet.css}" href="/static/css/stylesheet.css"/>
+    <link rel="stylesheet" type="text/css" media="all"
+          th:href="@{/css/galerij.css}" href="/static/css/galerij.css"/>
+    <link rel="stylesheet" th:href="@{/bootstrap.min.css}">
+    <script th:src="@{/bootstrap.min.js}"></script>
+    <script th:src="@{/scrollFade.js}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/ssa0ifx.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+</head>
+<body class="body">
+
+<div th:replace="fragments/header"></div>
+<div th:replace="fragments/bubbles"></div>
+<h2 class="titleGallery">
+    ONZE GALERIJ
+</h2>
+<div class="row">
+
+    <div class="column">
+        <div class="item scrollFade img-hover-zoom">
+            <img th:src="@{/pictures/WorkshopFoto2.jpg}" style="width:100%" alt="">
+        </div>
+        <div class="item scrollFade img-hover-zoom">
+            <img th:src="@{/pictures/blueWorkshop3.jpg}" style="width:100%" alt="">
+        </div>
+        <div class="item scrollFade img-hover-zoom">
+            <img th:src="@{/pictures/WorkshopFoto4.jpg}" style="width:100%" alt="">
+        </div>
+        <div class="item scrollFade img-hover-zoom">
+            <img th:src="@{/pictures/WorkshopFoto7.jpg}" style="width:100%" alt="">
+        </div>
+        <div class="item scrollFade img-hover-zoom">
+            <img th:src="@{/pictures/WorkshopFoto10.jpg}" style="width:100%" alt="">
+        </div>
+        <div class="item scrollFade img-hover-zoom">
+            <img th:src="@{/pictures/blueWorkshop4.jpg}" style="width:100%" alt="">
+        </div>
+
+
+
+    </div>
+
+    <div class="column middle">
+        <div class="item scrollFade img-hover-zoom">
+            <img th:src="@{/pictures/WorkshopFoto1.jpg}" style="width:100%" alt="">
+        </div>
+        <div class="item scrollFade img-hover-zoom">
+            <img th:src="@{/pictures/blueWorkshop5.jpg}" style="width:100%" alt="">
+        </div>
+        <div class="item scrollFade img-hover-zoom">
+            <img th:src="@{/pictures/WorkshopFoto2.jpg}" style="width:100%" alt="">
+        </div>
+        <div class="item scrollFade img-hover-zoom">
+            <img th:src="@{/pictures/WorkshopFoto12.jpg}" style="width:100%" alt="">
+        </div>
+        <div class="item scrollFade img-hover-zoom">
+            <img th:src="@{/pictures/blueWorkshop6.jpg}" style="width:100%" alt="">
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="item scrollFade img-hover-zoom">
+            <img th:src="@{/pictures/WorkshopFoto6.jpg}" style="width:100%" alt="">
+        </div>
+        <div class="item scrollFade img-hover-zoom">
+            <img th:src="@{/pictures/WorkshopFoto8.jpg}" style="width:100%" alt="">
+        </div>
+        <div class="item scrollFade img-hover-zoom">
+            <img th:src="@{/pictures/WorkshopFoto4.jpg}" style="width:100%" alt="">
+        </div>
+        <div class="item scrollFade img-hover-zoom">
+            <img th:src="@{/pictures/WorkshopFoto9.jpg}" style="width:100%" alt="">
+        </div>
+        <div class="item scrollFade img-hover-zoom">
+            <img th:src="@{/pictures/WorkshopFoto11.jpg}"style="width:100%" alt="">
+        </div>
+        <div class="item scrollFade img-hover-zoom">
+            <img th:src="@{/pictures/blueWorkshop1.png}"style="width:100%" alt="">
+        </div>
+        <div class="item scrollFade img-hover-zoom">
+            <img th:src="@{/pictures/blueWorkshop2.png}"style="width:100%" alt="">
+        </div>
+    </div>
+
+</div>
+
+<div th:replace="fragments/footer"></div>
+</body>
+</html>
