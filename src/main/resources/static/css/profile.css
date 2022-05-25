@@ -1,0 +1,82 @@
+body, html {
+    margin: 0;
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
+    min-height: 100vh;
+
+    background-color: #52878c;
+}
+
+#content {
+    display: grid;
+    place-items: center;
+
+    margin: 3rem 0;
+}
+
+#content p, #content h2 {
+    margin: 0;
+}
+
+.profile-container {
+    width: 100%;
+    max-width: 78rem;
+}
+
+.title {
+    font-family: bebas-neue, sans-serif;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin: 0;
+    font-size: 4rem;
+    line-height: 2.8rem;
+}
+
+.profile-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    justify-content: center;
+    gap: 4rem;
+
+    padding: 3rem 2rem;
+
+    border-radius: 4px;
+    background-color: white;
+}
+
+.profile-details section h2 {
+    padding-bottom: 2rem;
+
+    font-size: 2rem;
+    font-family: bebas-neue, sans-serif;
+    font-weight: bold;
+    text-decoration: underline #EB95E7;
+}
+
+.profile-details-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+}
+
+.profile-details-content {
+    gap: .5rem;
+}
+
+.profile-data-name {
+    font-size: 1.25rem;
+    font-family: bebas-neue, sans-serif;
+}
+
+@media only screen and (min-width: 78rem) {
+    .title {
+        font-size: 5rem;
+        line-height: 3.40rem;
+        text-align: start;
+        margin: 0 0 0 1.5rem;
+    }
+}

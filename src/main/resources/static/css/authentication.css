@@ -67,7 +67,6 @@ body {
 .input_container label, .submit_button {
     font-size: 20px;
     font-family: bebas-neue, sans-serif;
-    font-weight: bold;
 }
 
 .input_container textarea {
@@ -80,6 +79,7 @@ body {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .submit_button:hover {
