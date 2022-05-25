@@ -38,6 +38,11 @@
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 initialView: 'dayGridMonth',
                 themeSystem: 'journal',
+                handleWindowResize:true,
+                eventClick: function(info) {
+                    alert('Event: ' + info.event.title);
+
+                },
 
                 headerToolbar: {
                     left: 'prev,next today',
@@ -56,6 +61,7 @@
 
 
                     color: '#EB95E7',
+                    textColor: 'white',
 
                 },
                 dateClick: function(info) {
@@ -159,4 +165,9 @@
 <div th:replace="fragments/footer" class="calendarHeader"></div>
 
 </body>
+<style>
+    a.fc-event{
+        color: white;
+    }
+</style>
 </html>
