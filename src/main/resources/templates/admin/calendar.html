@@ -81,14 +81,10 @@
 
     </script>
 </head>
-<body>
+<body class="body">
 <div th:replace="fragments/header" class="calendarHeader"></div>
-<button type="button" class="btn btn-primary btn-sm mt-5 ml-4 newAppointmentButton" data-toggle="modal"
-        data-target="#addAppointmentModal">
-    Nieuwe afspraak
-</button>
 <button type="button" class="btn btn-primary btn-sm mt-5 ml-4 newAppointmentButton">
-    <a class="summary" th:href="@{/eventlist}" style="text-decoration: none">Overzicht</a>
+    <a class="summary" th:href="@{/eventlist}" style="color: white; text-decoration: none">Overzicht</a>
 
 </button>
 

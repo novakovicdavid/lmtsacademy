@@ -5,6 +5,16 @@
     padding: 0 10px;
 }
 
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    background: #619095;
+    overflow-x: hidden;
+}
+
 /*.calendarContainer{*/
 /*    max-width: 900px;*/
 /*    margin: 0 auto;*/
