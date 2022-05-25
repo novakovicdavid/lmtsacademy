@@ -32,7 +32,7 @@
 
 
     <script>
-
+//  todo eventclick LINK TO HEROKU !!!!
         document.addEventListener('DOMContentLoaded', function() {
             var calendarEl = document.getElementById('calendar');
             var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -40,8 +40,9 @@
                 themeSystem: 'journal',
                 handleWindowResize:true,
                 eventClick: function(info) {
-                    alert('Event: ' + info.event.title);
-
+                    alert('Event: ' + info.event.id);
+                    let test= info.event.id;
+                    window.location.href = 'http://localhost:8080/admin/eventedit/'+ test;
                 },
 
                 headerToolbar: {
