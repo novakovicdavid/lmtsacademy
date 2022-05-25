@@ -40,9 +40,8 @@
                 themeSystem: 'journal',
                 handleWindowResize:true,
                 eventClick: function(info) {
-                    alert('Event: ' + info.event.id);
                     let test= info.event.id;
-                    window.location.href = 'http://localhost:8080/admin/eventedit/'+ test;
+                    window.location.href = '/admin/eventedit/'+ test;
                 },
 
                 headerToolbar: {
