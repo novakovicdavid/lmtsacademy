@@ -44,7 +44,7 @@ public class AdminProfileController {
         var profiles = profileRepository.findAllByFilter(PageRequest.of(page, 20, Sort.by("id").descending()), filter.getFirstName(), filter.getLastName(), filter.getEmail(), filter.getIsNew() != null);
         model.addAttribute("profiles", profiles);
         model.addAttribute("page", page);
-        model.addAttribute("nextPageHasContent", (profiles.getTotalPages() - (page + 1)) != 0);
+        model.addAttribute("nextPageHasContent", (profiles.getTotalPages() - (page + 1)) > 0);
         model.addAttribute("filter", filter);
         return "admin/profiles";
     }
