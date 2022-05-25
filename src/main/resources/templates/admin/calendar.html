@@ -57,12 +57,13 @@
 
                 },
                 dateClick: function(info) {
-                    alert('Date: ' + info.date);
                     $('#addAppointmentModal').modal('show');
 
                     var now = new Date(info.date);
                     now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
                     document.getElementById('start').value = now.toISOString().slice(0,16);
+                    document.getElementById('finish').value = now.toISOString().slice(0,16);
+
                 },
 
             });
