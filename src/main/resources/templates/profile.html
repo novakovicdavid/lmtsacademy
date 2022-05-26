@@ -5,6 +5,7 @@
 <head>
     <title>Profiel</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/profile.css}">
     <link rel="stylesheet" href="https://use.typekit.net/ssa0ifx.css">
 </head>
@@ -14,48 +15,85 @@
     <div class="profile-container">
         <h1 class="title">Profiel</h1>
         <div class="profile-details">
-            <section class="profile-details-main">
-                <h2 class="section-title">Hoofdinformatie</h2>
-                <div class="profile-details-content">
-                    <div class="profile-data">
-                        <p class="profile-data-name">Email:</p>
-                        <p class="profile-data-value" th:text="${profile.user.email}"></p>
-                    </div>
-                    <div class="profile-data">
-                        <p class="profile-data-name">GSM-nummer:</p>
-                        <p class="profile-data-value" th:text="${profile.phoneNumber}"></p>
-                    </div>
-                    <div class="profile-data">
-                        <p class="profile-data-name">Voornaam:</p>
-                        <p class="profile-data-value" th:text="${profile.firstName}"></p>
-                    </div>
-                    <div class="profile-data">
-                        <p class="profile-data-name">Achternaam:</p>
-                        <p class="profile-data-value" th:text="${profile.lastName}"></p>
-                    </div>
+            <div class="profile-details-entry profile-picture-container">
+                <div class="profile-picture">
+                    <img th:if="${profile.getPathToProfilePicture != null}" class="profile-picture"
+                         th:src="${profile.getPathToProfilePicture}" alt="Profile Picture">
+                    <p th:unless="${profile.getPathToProfilePicture != null}" class="profile-picture"
+                       th:text="${(profile.getFirstName().length() > 0 ? profile.getFirstName().substring(0, 1) : '?') + (profile.getLastName().length() > 0 ? profile.getLastName().substring(0, 1) : '?')}"></p>
                 </div>
-            </section>
-            <section class="profile-details-extra">
-                <h2 class="section-title">Extra</h2>
-                <div class="profile-details-content">
-                    <div class="profile-data">
-                        <p class="profile-data-name">Stad:</p>
-                        <p class="profile-data-value" th:text="${profile.city}"></p>
+            </div>
+            <div class="profile-details-entry text padding-top">
+                <section>
+                    <h2 class="section-title">Gegevens</h2>
+                    <div class="profile-details-content">
+                        <div class="profile-data">
+                            <p class="profile-data-name">Voornaam:</p>
+                            <p class="profile-data-value" th:text="${profile.firstName}"></p>
+                        </div>
+                        <div class="profile-data">
+                            <p class="profile-data-name">Achternaam:</p>
+                            <p class="profile-data-value" th:text="${profile.lastName}"></p>
+                        </div>
+                        <div class="profile-data">
+                            <p class="profile-data-name">Email:</p>
+                            <p class="profile-data-value" th:text="${profile.user.email}"></p>
+                        </div>
+                        <div class="profile-data">
+                            <p class="profile-data-name">GSM-nummer:</p>
+                            <p class="profile-data-value" th:text="${profile.phoneNumber}"></p>
+                        </div>
                     </div>
-                    <div class="profile-data">
-                        <p class="profile-data-name">Provincie:</p>
-                        <p class="profile-data-value" th:text="${profile.province}"></p>
+                </section>
+                <section>
+                    <h2 class="section-title">Extra</h2>
+                    <div class="profile-details-content">
+                        <div class="profile-data">
+                            <p class="profile-data-name">Stad:</p>
+                            <p class="profile-data-value" th:text="${profile.city}"></p>
+                        </div>
+                        <div class="profile-data">
+                            <p class="profile-data-name">Provincie:</p>
+                            <p class="profile-data-value" th:text="${profile.province}"></p>
+                        </div>
+                        <div class="profile-data">
+                            <p class="profile-data-name">Geboortedatum:</p>
+                            <p class="profile-data-value" th:text="${profile.birthday}"></p>
+                        </div>
+                        <div class="profile-data">
+                            <p class="profile-data-name">Ervaring:</p>
+                            <p class="profile-data-value" th:text="${profile.experience}"></p>
+                        </div>
                     </div>
-                    <div class="profile-data">
-                        <p class="profile-data-name">Geboortedatum:</p>
-                        <p class="profile-data-value" th:text="${profile.birthday}"></p>
+                </section>
+            </div>
+            <div class="profile-details-entry text">
+                <section>
+                    <h2 class="section-title">Notities</h2>
+                    <div class="profile-details-content">
+                        <p>Filler</p>
+                        <p>Filler</p>
+                        <p>Filler</p>
+                        <p>Filler</p>
+                        <p>Filler</p>
+                        <p>Filler</p>
+                        <p>Filler</p>
                     </div>
-                    <div class="profile-data">
-                        <p class="profile-data-name">Ervaring:</p>
-                        <p class="profile-data-value" th:text="${profile.experience}"></p>
-                    </div>
-                </div>
-            </section>
+                </section>
+                <section>
+                    <h2 class="section-title">Afspraken</h2>
+                    <p>More filler</p>
+                    <p>More filler</p>
+                    <p>More filler</p>
+                    <p>More filler</p>
+                    <p>More filler</p>
+                    <p>More filler</p>
+                    <p>More filler</p>
+                    <p>More filler</p>
+                    <p>More filler</p>
+                    <p>More filler</p>
+                </section>
+            </div>
         </div>
     </div>
 </div>
