@@ -1,22 +1,31 @@
-#calendar {
-    max-width: 900px;
+/*#calendar {*/
+/*    max-width: 900px;*/
 
-/*    !*margin: 40px auto;*!*/
-/*    !*padding: 0 10px;*!*/
-    margin: 20px auto;
-    background-color: white;
-    border-radius: 10px;
-}
+/*!*    !*margin: 40px auto;*!*!*/
+/*!*    !*padding: 0 10px;*!*!*/
+/*    margin: 20px auto;*/
+/*    background-color: white;*/
+/*    border-radius: 10px;*/
+/*}*/
 
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
-    background: #619095;
-    overflow-x: hidden;
-}
+/*body {*/
+/*    min-height: 100vh;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    background: #619095;*/
+/*    overflow-x: hidden;*/
+/*}*/
+/*body {*/
+/*    min-height: 100vh;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    margin-top: 40px;*/
+/*    padding: 0;*/
+/*    background: #619095;*/
+/*    overflow-x: hidden;*/
+/*}*/
 
 /*@media (max-width: 767px) {*/
 /*    .fc-toolbar .fc-left {*/
@@ -116,3 +125,4 @@ body {
 /*        padding: 2px;*/
 /*    }*/
 /*}*/
+

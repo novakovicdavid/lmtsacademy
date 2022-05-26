@@ -7,12 +7,12 @@
     <meta charset='utf-8' />
         <link rel="stylesheet" type="text/css" media="all"
               th:href="@{/css/calendar.css}" href="/static/css/calendar.css"/>
-    <link rel="stylesheet" type="text/css" media="all"
-          th:href="@{/css/calendarrespons1.css}" href="/static/css/calendarrespons1.css"/>
-    <link rel="stylesheet" type="text/css" media="all"
-          th:href="@{/css/calendarrespons.css}" href="/static/css/calendarrespons.css"/>
-    <link rel="stylesheet" type="text/css" media="all"
-          th:href="@{/css/stylesheet.css}" href="/static/css/stylesheet.css"/>
+<!--    <link rel="stylesheet" type="text/css" media="all"-->
+<!--          th:href="@{/css/calendarrespons1.css}" href="/static/css/calendarrespons1.css"/>-->
+<!--    <link rel="stylesheet" type="text/css" media="all"-->
+<!--          th:href="@{/css/calendarrespons.css}" href="/static/css/calendarrespons.css"/>-->
+<!--    <link rel="stylesheet" type="text/css" media="all"-->
+<!--          th:href="@{/css/stylesheet.css}" href="/static/css/stylesheet.css"/>-->
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Muli:300,400,600,800,900' />
 
     <!--    <link rel="stylesheet" type="text/css" media="all"-->
@@ -51,6 +51,7 @@
                     let test= info.event.id;
                     window.location.href = '/admin/eventedit/'+ test;
                 },
+               
 
                 headerToolbar: {
                     left: 'prev,next today',
@@ -93,6 +94,9 @@
         // $(document).on('click', '.fc-button', function(e) {
         //     $('.fc-toolbar.fc-header-toolbar').addClass('row col-lg-12');
         // });
+
+        // document.querySelector('style').textContent += "@media screen and (max-width:767px) { .fc-toolbar.fc-header-toolbar {flex-direction:column;} .fc-toolbar-chunk { display: table-row; text-align:center; padding:5px 0; } }";
+
     </script>
 </head>
 <body class="body">
@@ -269,5 +273,19 @@
         box-shadow: 0 0 0 0.2rem rgb(246 109 236 / 50%);
 
     }
+
+
+
+    #calendar {
+       max-width: 900px;
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-bottom: 25px;
+    }
+    @media screen and (max-width:767px) { .fc-toolbar.fc-header-toolbar {font-size: 50%}
+    }
+    @media screen and (max-width:767px) { .fc-daygrid-more-link.fc-more-link {font-size: 50%;display:block; margin-bottom: 100px}}
+
+
 </style>
 </html>
