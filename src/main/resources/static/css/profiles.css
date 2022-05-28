@@ -53,7 +53,7 @@ body {
 }
 
 .input-container label, .submit-button {
-    font-size: 20px;
+    font-size: 1.25rem;
     font-family: bebas-neue, sans-serif;
 }
 
