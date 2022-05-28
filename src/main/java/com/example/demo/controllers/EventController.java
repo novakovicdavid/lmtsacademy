@@ -2,8 +2,10 @@ package com.example.demo.controllers;
 
 import com.example.demo.model.Employee;
 import com.example.demo.model.Event;
+import com.example.demo.model.Profile;
 import com.example.demo.repositories.EmployeeRepository;
 import com.example.demo.repositories.EventRepository;
+import com.example.demo.repositories.ProfileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,16 +20,22 @@ public class EventController extends RootController {
     private EventRepository eventRepository;
     @Autowired
     private EmployeeRepository employeeRepository;
+    @Autowired
+    private ProfileRepository profileRepository;
 
 
     @GetMapping("/eventlist")
     public String eventList(Model model) {
         Iterable<Event> eventList = eventRepository.findAll();
         Iterable<Employee> employees = employeeRepository.findAll();
+        Iterable<Profile> profiles = profileRepository.findAll();
+
         long nrOfEvents = eventRepository.count();
 
         model.addAttribute("eventList", eventList);
         model.addAttribute("employees", employees);
+        model.addAttribute("profiles", profiles);
+
         model.addAttribute("nrOfEvents", nrOfEvents);
         model.addAttribute("showFilters", false);
 
