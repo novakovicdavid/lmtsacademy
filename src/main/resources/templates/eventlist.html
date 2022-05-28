@@ -7,6 +7,8 @@
           th:href="@{/css/eventbooking.css}" href="/static/css/eventbooking.css"/>
     <link rel="stylesheet" type="text/css" media="all"
           th:href="@{/css/stylesheet.css}" href="/static/css/stylesheet.css"/>
+    <link rel="stylesheet" type="text/css" media="all"
+          th:href="@{/css/filter.css}" href="/static/css/filter.css"/>
     <link rel="stylesheet" th:href="@{/bootstrap.min.css}">
     <script th:src="@{/bootstrap.min.js}"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -28,105 +30,147 @@
 
             <div th:if="${showFilters}" class="filters">
                 <a th:href="@{/eventlist}">-</a>
-
-                <div class="col-lg-2 containerFilter">
-
+                <div class="container filterContainer">
                     <form>
-                        <div class="filterDiv">
+                        <div class="zone filter clearfix">
                             <div class="row">
-                                <div class="col">
-                                    <h3>Datum</h3>
-                                    <div class="filterNumber">
-                                        <label for="start">Van:</label>
-                                        <input type="datetime-local" id="start" name="start" th:value="${start}">
-                                    </div>
-                                    <div class="endDate">
-                                        <label for="finish">Tot:</label>
-                                        <input type="datetime-local" id="finish" name="finish" th:value="${finish}">
-                                    </div>
+                                <h3>Medewerker</h3>
+                                <label for="employeeId"></label>
+                                <select name="employeeId" value="geen" th:value="*{employeeId}" id="employeeId"
+                                        th:placeholder="kies">
+                                    <option value="1">Yanis</option>
+                                    <option value="2">Sharon</option>
+                                    <option value="3">Femke</option>
+                                    <option value="4">Anna</option>
+                                </select>
+                            </div>
+
+                            <div class="row">
+                                <h3>Van:</h3>
+                                <div class="filterNumber">
+                                    <label for="start"></label>
+                                    <input type="datetime-local" id="start" name="start" th:value="${start}">
                                 </div>
-                                <div class="col">
-                                    <div class="employeeFilter">
-                                        <h3>medewerker</h3>
-                                        <div class="employeeId">
-                                            <label for="employeeId">Medewerker:</label>
-                                            <select name="employeeId" th:value="*{employeeId}" id="employeeId"
-                                                    th:placeholder="kies">
-                                                <option value="1">Yanis</option>
-                                                <option value="2">Sharon</option>
-                                                <option value="3">Femke</option>
-                                                <option value="4">Anna</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
+                        </div>
+                        <div class="row">
+                            <h3>Tot:</h3>
+                            <div class="endDate">
+                                <label for="finish"></label>
+                                <input type="datetime-local" id="finish" name="finish" th:value="${finish}">
+                            </div>
+                        </div>
+                            <div class="submitButton">
+                                <input id="zoekFilter" type="submit" value="zoek">
                             </div>
                         </div>
 
-                        <div class="submitButton">
-                            <input id="zoekFilter" type="submit" value="zoek">
-                        </div>
                     </form>
+<!--                        <button class="button button&#45;&#45;reset">Reset filters</button>-->
+<!--                        <p class="filter-count"></p>-->
+                    </div>
                 </div>
+                <div class="clear"></div>
+
             </div>
 
-            <div class="courseContainer row">
-                <div class="nrOfAppointments" th:text="|${nrOfEvents} afspraken gevonden|">
-                </div>
+            <!--                <div class="col-lg-2 containerFilter">-->
 
-                <div class="row">
-                    <div class="col-lg-4" th:each="b: ${eventList}">
-                        <div class="card card-margin">
-                            <div class="card-header no-border">
-                                <h5 class="card-title" th:text="${b.employee.username}"></h5>
-                            </div>
-                            <div class="card-body pt-0">
-                                <div class="widget-49">
-                                    <div class="widget-49-title-wrapper">
-                                        <div class="widget-49-date-primary">
-                                            <div th:text="${#temporals.format(b.start, 'dd')}">
+            <!--                    <form>-->
+            <!--                        <div class="filterDiv">-->
+            <!--                            <div class="row">-->
+            <!--                                <div class="col">-->
+            <!--                                    <h3>Datum</h3>-->
+            <!--                                    <div class="filterNumber">-->
+            <!--                                        <label for="start">Van:</label>-->
+            <!--                                        <input type="datetime-local" id="start" name="start" th:value="${start}">-->
+            <!--                                    </div>-->
+            <!--                                    <div class="endDate">-->
+            <!--                                        <label for="finish">Tot:</label>-->
+            <!--                                        <input type="datetime-local" id="finish" name="finish" th:value="${finish}">-->
+            <!--                                    </div>-->
+            <!--                                </div>-->
+            <!--                                <div class="col">-->
+            <!--                                    <div class="employeeFilter">-->
+            <!--                                        <h3>medewerker</h3>-->
+            <!--                                        <div class="employeeId">-->
+            <!--                                            <label for="employeeId">Medewerker:</label>-->
+            <!--                                            <select name="employeeId" th:value="*{employeeId}" id="employeeId"-->
+            <!--                                                    th:placeholder="kies">-->
+            <!--                                                <option value="1">Yanis</option>-->
+            <!--                                                <option value="2">Sharon</option>-->
+            <!--                                                <option value="3">Femke</option>-->
+            <!--                                                <option value="4">Anna</option>-->
+            <!--                                            </select>-->
+            <!--                                        </div>-->
+            <!--                                    </div>-->
+            <!--                                </div>-->
+            <!--                            </div>-->
+            <!--                        </div>-->
 
-                                                <span class="widget-49-date-day"></span>
-                                            </div>
-                                            <div th:text="${#temporals.monthNameShort(b.start)}">
-                                                <span class="widget-49-date-month">apr</span>
-                                            </div>
+            <!--                        <div class="submitButton">-->
+            <!--                            <input id="zoekFilter" type="submit" value="zoek">-->
+            <!--                        </div>-->
+            <!--                    </form>-->
+            <!--                </div>-->
+        </div>
+
+        <div class="courseContainer row">
+            <div class="nrOfAppointments" th:text="|${nrOfEvents} afspraken gevonden|">
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4" th:each="b: ${eventList}">
+                    <div class="card card-margin">
+                        <div class="card-header no-border">
+                            <h5 class="card-title" th:text="${b.employee.username}"></h5>
+                        </div>
+                        <div class="card-body pt-0">
+                            <div class="widget-49">
+                                <div class="widget-49-title-wrapper">
+                                    <div class="widget-49-date-primary">
+                                        <div th:text="${#temporals.format(b.start, 'dd')}">
+
+                                            <span class="widget-49-date-day"></span>
                                         </div>
-                                        <div class="widget-49-meeting-info">
-                                            <div th:text="${b.title}">
-                                                <span class="widget-49-pro-title"></span>
-                                            </div>
-                                            <div class="widget-49-meeting-time"
-                                                 th:text="${#temporals.format(b.start, 'HH:mm')}+ '-' + ${#temporals.format(b.finish, 'HH:mm')}">
-                                            </div>
+                                        <div th:text="${#temporals.monthNameShort(b.start)}">
+                                            <span class="widget-49-date-month">apr</span>
                                         </div>
                                     </div>
-                                    <ol class="widget-49-meeting-points">
-                                        <div class="bold">
-                                            <li>Met:
+                                    <div class="widget-49-meeting-info">
+                                        <div th:text="${b.title}">
+                                            <span class="widget-49-pro-title"></span>
                                         </div>
-                                        <span></span></li>
-                                        <div class="bold">
-                                            <li>Locatie:
+                                        <div class="widget-49-meeting-time"
+                                             th:text="${#temporals.format(b.start, 'HH:mm')}+ '-' + ${#temporals.format(b.finish, 'HH:mm')}">
                                         </div>
-                                        <span> Mechelen</span></li>
-                                        <div class="bold">
-                                            <li>Opmerkingen:
-                                        </div>
-                                        <span th:text="${b.description}"> </span></li>
-                                    </ol>
-                                    <div class="widget-49-meeting-action">
-                                        <a class="bi bi-pen" th:href="@{|/admin/eventedit/${b.id}|}"></a>
                                     </div>
+                                </div>
+                                <ol class="widget-49-meeting-points">
+                                    <div class="bold">
+                                        <li>Met:
+                                    </div>
+                                    <span></span></li>
+                                    <div class="bold">
+                                        <li>Locatie:
+                                    </div>
+                                    <span> Mechelen</span></li>
+                                    <div class="bold">
+                                        <li>Opmerkingen:
+                                    </div>
+                                    <span th:text="${b.description}"> </span></li>
+                                </ol>
+                                <div class="widget-49-meeting-action">
+                                    <a class="bi bi-pen" th:href="@{|/admin/eventedit/${b.id}|}"></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
+
             </div>
         </div>
     </div>
+</div>
 </div>
 
 
