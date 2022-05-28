@@ -1,82 +1,118 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
-    <title>Profiel aanpassen</title>
+    <title>Profiel</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" media="all"
-          th:href="@{/css/stylesheet.css}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
     <link rel="stylesheet" th:href="@{/bootstrap.min.css}">
-    <link rel="stylesheet" type="text/css" media="all"
-          th:href="@{/static/css/profile.css}"/>
     <script th:src="@{/bootstrap.min.js}"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/profile.css}">
     <link rel="stylesheet" href="https://use.typekit.net/ssa0ifx.css">
 </head>
-<body class="body">
-<div class="main">
-    <div th:replace="fragments/header"></div>
-    <div th:replace="fragments/bubbles"></div>
-    <div th:if="${profile}">
-        <h1>My Profile</h1>
-        <div class="row justify-content-center">
-            <form class="text-center"
-                  th:action="${(editedByAdmin != null && editedByAdmin) ? '/admin/profile/' + profile.id + '/edit' : '/profile/edit'}"
-                  method="post">
-                <div class="col-4 myProfileBasics">
-                    <h2 class="h2Profile">Basis informatie</h2>
-                    <div class="form-group row ">
-                        <label for="firstname" class="col-4 col-form-label">Voornaam:</label>
-                        <div class="col-8">
-                            <input id="firstname" type="text" th:field="*{profile.firstName}">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="lastname" class="col-4 col-form-label">Achternaam:</label>
-                        <div class="col-8">
-                            <input id="lastname" type="text" th:field="*{profile.lastName}">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="phone" class="col-4 col-form-label">GSM-nummer:</label>
-                        <div class="col-8">
-                            <input id="phone" type="text" th:field="*{profile.phoneNumber}">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="experience" class="col-4 col-form-label">Ervaring:</label>
-                        <div class="col-8">
-                            <input id="experience" type="text" th:field="*{profile.experience}">
-                        </div>
-                    </div>
-
+<body>
+<div th:replace="fragments/header"></div>
+<div id="content">
+    <div class="profile-container">
+        <h1 class="title">Profiel</h1>
+        <form id="profile-form" th:action="${(editedByAdmin != null && editedByAdmin) ? '/admin/profile/' + profile.id + '/edit' : '/profile/edit'}"
+              method="post" enctype="multipart/form-data" class="profile-details">
+            <div class="profile-details-entry profile-picture-container">
+                <div class="profile-picture">
+                    <img th:if="${profile.getPathToProfilePicture != null}" class="profile-picture"
+                         th:src="${profile.getPathToProfilePicture}" alt="Profile Picture">
+                    <p th:unless="${profile.getPathToProfilePicture != null}" class="profile-picture"
+                       th:text="${(profile.getFirstName()?.length() > 0 ? profile.getFirstName().substring(0, 1) : '?') + (profile.getLastName()?.length() > 0 ? profile.getLastName().substring(0, 1) : '?')}"></p>
                 </div>
-                <div class="col-7 myProfileBasics">
-
-                    <h2 class="h2Profile">Extra informatie</h2>
-                    <div class="form-group row ">
-                        <label for="city" class="col-4 col-form-label">Stad:</label>
-                        <div class="col-8">
-                            <input id="city" type="text" th:field="*{profile.city}">
+                <input form="profile-form" type="file" accept="image/png, image/jpeg">
+            </div>
+            <div class="profile-details-entry text padding-top">
+                <section>
+                    <h2 class="section-title">Gegevens</h2>
+                    <div class="profile-details-content">
+                        <div class="profile-data">
+                            <label for="first-name" class="profile-data-name">Voornaam:</label>
+                            <br>
+                            <input form="profile-form" id="first-name" class="profile-data-value" th:field="${profile.firstName}">
+                        </div>
+                        <div class="profile-data">
+                            <label for="last-name" class="profile-data-name">Achternaam:</label>
+                            <br>
+                            <input id="last-name" class="profile-data-value" th:field="${profile.lastName}">
+                        </div>
+                        <div class="profile-data">
+                            <label for="email" class="profile-data-name">Email:</label>
+                            <br>
+                            <input id="email" name="email" class="profile-data-value" th:disabled="${!#authorization.expression('hasAuthority(''ADMIN'')')}" th:value="${profile.user.email}">
+                        </div>
+                        <div class="profile-data">
+                            <label for="phone-number" class="profile-data-name">GSM-nummer:</label>
+                            <br>
+                            <input id="phone-number" class="profile-data-value" th:field="${profile.phoneNumber}">
                         </div>
                     </div>
-                    <div class="form-group row ">
-                        <label for="province" class="col-4 col-form-label">Provincie:</label>
-                        <div class="col-8">
-                            <input id="province" type="text" th:field="*{profile.province}">
+                </section>
+                <section>
+                    <h2 class="section-title">Extra</h2>
+                    <div class="profile-details-content">
+                        <div class="profile-data">
+                            <label for="city" class="profile-data-name">Stad:</label>
+                            <br>
+                            <input id="city" class="profile-data-value" th:field="${profile.city}">
+                        </div>
+                        <div class="profile-data">
+                            <label for="province" class="profile-data-name">Provincie:</label>
+                            <br>
+                            <input id="province" class="profile-data-value" th:field="${profile.province}">
+                        </div>
+                        <div class="profile-data">
+                            <label for="birthdate" class="profile-data-name">Geboortedatum:</label>
+                            <br>
+                            <input type="date" id="birthdate" class="profile-data-value" th:field="${profile.birthday}">
+                        </div>
+                        <div class="profile-data">
+                            <label for="experience" class="profile-data-name">Ervaring:</label>
+                            <br>
+                            <textarea id="experience" class="profile-data-value" th:field="${profile.experience}"></textarea>
                         </div>
                     </div>
-                    <div class="form-group row ">
-                        <label for="birthday" class="col-4 col-form-label">Verjaardag:</label>
-                        <div class="col-8">
-                            <input id="birthday" type="date" th:field="*{profile.birthday}">
-                        </div>
+                </section>
+            </div>
+            <div class="profile-details-entry button-container">
+                <input form="profile-form" class="edit-button" type="submit" value="Opslaan" sec:authorize="!hasAuthority('ADMIN')" th:href="@{|/profile/edit|}">
+                <input form="profile-form" class="edit-button" type="submit" value="Opslaan" sec:authorize="hasAuthority('ADMIN')" th:href="@{|/admin/profile/${profile.id}/edit|}">
+            </div>
+            <div class="profile-details-entry text padding-bottom">
+                <section>
+                    <h2 class="section-title">Notities</h2>
+                    <div class="profile-details-content">
+                        <p>Filler</p>
+                        <p>Filler</p>
+                        <p>Filler</p>
+                        <p>Filler</p>
+                        <p>Filler</p>
+                        <p>Filler</p>
+                        <p>Filler</p>
                     </div>
-                    <input type="submit" value="save" class="editProfile_button">
-                </div>
-            </form>
-        </div>
+                </section>
+                <section>
+                    <h2 class="section-title">Afspraken</h2>
+                    <p>More filler</p>
+                    <p>More filler</p>
+                    <p>More filler</p>
+                    <p>More filler</p>
+                    <p>More filler</p>
+                    <p>More filler</p>
+                    <p>More filler</p>
+                    <p>More filler</p>
+                    <p>More filler</p>
+                    <p>More filler</p>
+                </section>
+            </div>
+        </form>
     </div>
 </div>
+<div th:replace="fragments/footer"></div>
 </body>
 </html>

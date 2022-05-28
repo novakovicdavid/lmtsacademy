@@ -22,7 +22,7 @@
                     <img th:if="${profile.getPathToProfilePicture != null}" class="profile-picture"
                          th:src="${profile.getPathToProfilePicture}" alt="Profile Picture">
                     <p th:unless="${profile.getPathToProfilePicture != null}" class="profile-picture"
-                       th:text="${(profile.getFirstName().length() > 0 ? profile.getFirstName().substring(0, 1) : '?') + (profile.getLastName().length() > 0 ? profile.getLastName().substring(0, 1) : '?')}"></p>
+                       th:text="${(profile.getFirstName()?.length() > 0 ? profile.getFirstName().substring(0, 1) : '?') + (profile.getLastName()?.length() > 0 ? profile.getLastName().substring(0, 1) : '?')}"></p>
                 </div>
             </div>
             <div class="profile-details-entry text padding-top">
@@ -73,7 +73,7 @@
                 <a class="edit-button" sec:authorize="!hasAuthority('ADMIN')" th:href="@{|/profile/edit|}">Gegevens aanpassen</a>
                 <a class="edit-button" sec:authorize="hasAuthority('ADMIN')" th:href="@{|/admin/profile/${profile.id}/edit|}">Gegevens aanpassen</a>
             </div>
-            <div class="profile-details-entry text">
+            <div class="profile-details-entry text padding-bottom">
                 <section>
                     <h2 class="section-title">Notities</h2>
                     <div class="profile-details-content">

@@ -57,6 +57,10 @@ body {
     padding-left: 2rem;
 }
 
+.profile-details-entry.padding-bottom {
+    padding-bottom: 2rem;
+}
+
 .profile-details section h2 {
     padding-bottom: 1rem;
 
@@ -68,7 +72,7 @@ body {
 
 .profile-details-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(auto, 12rem));
+    /*grid-template-columns: repeat(auto-fit, minmax(auto, 12rem));*/
     gap: .5rem;
 }
 
@@ -90,7 +94,7 @@ body {
     width: 12rem;
     height: 12rem;
     font-family: bebas-neue, sans-serif;
-    font-size: 2rem;
+    font-size: 4rem;
     background-color: #ea95e8;
     border-radius: 100%;
 }
@@ -104,7 +108,7 @@ body {
 .edit-button {
     display: grid;
     place-items: center;
-    height: 2rem;
+    height: 2.5rem;
     width: fit-content;
     padding: 0 2rem;
 
@@ -118,6 +122,7 @@ body {
 }
 
 .edit-button:hover {
+    color: white;
     background-color: #d688d5;
 }
 
@@ -142,7 +147,7 @@ body {
     }
 
     .profile-details-entry.text {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(14.5rem, 1fr));
         padding-right: 2rem;
         padding-left: 0;
     }
@@ -152,6 +157,9 @@ body {
 
         display: grid;
         grid-template-columns: auto;
+        grid-template-rows: auto auto;
+        align-items: start;
+        align-content: start;
     }
 
     .profile-details-content {

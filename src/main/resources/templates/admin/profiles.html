@@ -51,7 +51,7 @@
             <img th:if="${profile.getPathToProfilePicture != null}" class="profile-entry-left-side"
                  th:src="${profile.getPathToProfilePicture}" alt="Profile Picture">
             <p th:unless="${profile.getPathToProfilePicture != null}" class="profile-entry-left-side"
-               th:text="${(profile.getFirstName().length() > 0 ? profile.getFirstName().substring(0, 1) : '?') + (profile.getLastName().length() > 0 ? profile.getLastName().substring(0, 1) : '?')}"></p>
+               th:text="${(profile.getFirstName()?.length() > 0 ? profile.getFirstName().substring(0, 1) : '?') + (profile.getLastName()?.length() > 0 ? profile.getLastName().substring(0, 1) : '?')}"></p>
             <p class="profile-entry-right-side" th:text="${profile.getUser().getEmail()}"></p>
             <p class="profile-entry-right-side" th:text="${profile.getFirstName() + ' ' + profile.getLastName()}"></p>
         </a>
