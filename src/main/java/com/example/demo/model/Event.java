@@ -26,9 +26,8 @@ public class Event {
 
 
     public Event() {
-        super();
-
     }
+
     public Integer getId() {
         return id;
     }
