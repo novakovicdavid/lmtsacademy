@@ -151,6 +151,9 @@ h2.titleOurTeam {
     .circular--portrait {
         width: 70%;
     }
+    h2{
+        text-align: center;
+    }
 }
 
 
@@ -184,7 +187,8 @@ h5{
     height: 15vw;
     object-fit: cover;
 }
-.containerOwlCarousel{
-    width: 100%;
-   margin-left: 20px;
+.card{
+
+    margin-left: auto;
+    margin-right: auto;
 }
