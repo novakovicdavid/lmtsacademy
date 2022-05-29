@@ -19,17 +19,14 @@ public class Profile {
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date birthday;
-
     private String phoneNumber;
 
     @Column(length = 511)
     private String experience;
-
     private String pathToProfilePicture;
 
     // No intake interview done/planned
     private Boolean isNew;
-
     private Boolean hasDismissedCompleteProfileNotification;
 
     @OneToOne(fetch = FetchType.LAZY)

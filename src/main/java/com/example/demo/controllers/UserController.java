@@ -75,6 +75,7 @@ public class UserController {
         String hashedPassword = passwordEncoder.encode(password);
         newUser.setPassword(hashedPassword);
         newUser.setRole("USER");
+        newUser.setEnabled(true);
         User user = userRepository.save(newUser);
 
         Profile newProfile = new Profile();

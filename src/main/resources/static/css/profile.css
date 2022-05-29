@@ -101,11 +101,10 @@ body {
 
 .button-container {
     display: inline-grid;
-    grid-template-columns: auto;
     padding-left: 2rem;
 }
 
-.edit-button {
+.button {
     display: grid;
     place-items: center;
     height: 2.5rem;
@@ -121,17 +120,29 @@ body {
     text-decoration: none;
 }
 
-.edit-button:hover {
+.button:hover {
     color: white;
     background-color: #d688d5;
 }
 
-.edit-button:active {
+.button:active {
     background-color: #ca80c9;
 }
 
-.edit:focus {
+.button:focus {
     outline: 2px solid #e2ef8d;
+}
+
+.toggle-enabled-button.disable {
+    background-color: #ed4337;
+}
+
+.toggle-enabled-button.enable {
+    background-color: #5cb85c;
+}
+
+.hidden {
+    display: none;
 }
 
 @media (min-width: 43rem) {
@@ -162,16 +173,13 @@ body {
         align-content: start;
     }
 
-    .profile-details-content {
-        /*grid-template-columns: auto auto;*/
-    }
-
     .padding-top {
         padding: 2rem 0 0 0;
     }
 
     .button-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: auto auto;
+        justify-content: start;
         padding-left: 0;
     }
 }

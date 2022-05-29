@@ -31,6 +31,11 @@
                 <input id="isnew" name="isNew" type="checkbox"
                        th:checked="${filter != null && filter.getIsNew() != null}">
             </div>
+            <div class="input-container input-container-checkbox">
+                <label for="hideDisabled">Verberg uitgeschakelde accounts:</label>
+                <input id="hideDisabled" name="hideDisabled" type="checkbox"
+                       th:checked="${filter != null && filter.hideDisabled != null}">
+            </div>
             <div class="input-container input-container-button">
                 <input class="submit-button" type="submit" value="Zoeken">
             </div>
@@ -41,13 +46,13 @@
             <a class="page-navigation-next submit-button" th:if="${filter == null && nextPageHasContent}"
                th:href="@{|/admin/profiles/${page + 1}|}">&gt;</a>
             <a class="page-navigation-previous submit-button" th:if="${filter != null && page > 0}"
-               th:href="@{|/admin/profiles/filter/${page - 1}?email=${filter.email}&firstName=${filter.firstName}&lastName=${filter.lastName}&isNew=${filter.isNew}|}">&lt;</a>
+               th:href="@{|/admin/profiles/filter/${page - 1}?email=${filter.email}&firstName=${filter.firstName}&lastName=${filter.lastName}&isNew=${filter.isNew}&hideDisabled=${filter.hideDisabled}|}">&lt;</a>
             <a class="page-navigation-next submit-button" th:if="${filter != null && nextPageHasContent}"
-               th:href="@{|/admin/profiles/filter/${page + 1}?email=${filter.email}&firstName=${filter.firstName}&lastName=${filter.lastName}&isNew=${filter.isNew}|}">&gt;</a>
+               th:href="@{|/admin/profiles/filter/${page + 1}?email=${filter.email}&firstName=${filter.firstName}&lastName=${filter.lastName}&isNew=${filter.isNew}&hideDisabled=${filter.hideDisabled}|}">&gt;</a>
         </div>
     </div>
     <div class="profiles-list">
-        <a class="profile-entry" th:each="profile: ${profiles}" th:href="${'/admin/profile/' + profile.id}">
+        <a th:each="profile: ${profiles}" th:href="${'/admin/profile/' + profile.id}" class="profile-entry" th:classappend="${profile.user.enabled ? '' : 'disabled'}" >
             <img th:if="${profile.getPathToProfilePicture != null}" class="profile-entry-left-side"
                  th:src="@{|https://d23rta9s95jzo8.cloudfront.net/${profile.getPathToProfilePicture()}|}" alt="Profile Picture">
             <p th:unless="${profile.getPathToProfilePicture != null}" class="profile-entry-left-side"

@@ -27,7 +27,7 @@ public class AdminProfileController extends RootController {
     @GetMapping({"/profiles/{page}"})
     public String getMembersAtPage(@PathVariable Integer page,
                                    Model model) {
-        var profiles = profileRepository.findAll(PageRequest.of(page, 20, Sort.by("id").descending()));
+        var profiles = profileRepository.findAllByFilter(PageRequest.of(page, 20, Sort.by("id").descending()), null, null, null, false, false);
         model.addAttribute("profiles", profiles.iterator());
         model.addAttribute("page", page);
         model.addAttribute("nextPageHasContent", (profiles.getTotalPages() - (page + 1)) != 0);
@@ -44,7 +44,8 @@ public class AdminProfileController extends RootController {
                                          ProfilesFilter filter,
                                          Model model) {
         if (filter.getIsNew() != null && filter.getIsNew().equals("null")) filter.setIsNew(null);
-        var profiles = profileRepository.findAllByFilter(PageRequest.of(page, 20, Sort.by("id").descending()), filter.getFirstName(), filter.getLastName(), filter.getEmail(), filter.getIsNew() != null);
+        if (filter.getHideDisabled() != null && filter.getHideDisabled().equals("null")) filter.setHideDisabled(null);
+        var profiles = profileRepository.findAllByFilter(PageRequest.of(page, 20, Sort.by("id").descending()), filter.getFirstName(), filter.getLastName(), filter.getEmail(), filter.getIsNew() != null, filter.getHideDisabled() != null);
         model.addAttribute("profiles", profiles);
         model.addAttribute("page", page);
         model.addAttribute("nextPageHasContent", (profiles.getTotalPages() - (page + 1)) > 0);
@@ -93,6 +94,18 @@ public class AdminProfileController extends RootController {
             }
         }
         profileRepository.save(profile);
+        return "redirect:/admin/profile/{id}";
+    }
+
+    @PostMapping("/profile/{id}/toggleenabled")
+    public String profileToggleEnabled(@PathVariable Integer id) {
+        var profileOpt = profileRepository.findById(id);
+        if (profileOpt.isEmpty()) return "profile";
+        var profile = profileOpt.get();
+        var user = profile.getUser();
+
+        user.setEnabled(!user.getEnabled());
+        userRepository.save(user);
         return "redirect:/admin/profile/{id}";
     }
 }

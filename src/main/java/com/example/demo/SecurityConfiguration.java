@@ -14,6 +14,10 @@ import javax.sql.DataSource;
 
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+
+    @Autowired
+    CustomUserDetailsService customUserDetailsService;
+
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/admin/**").hasAuthority("ADMIN");
@@ -23,10 +27,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .usernameParameter("email")
                 .loginPage("/user/login")
                 .failureUrl("/user/login?error=true")
-                .defaultSuccessUrl("/",true);
+                .defaultSuccessUrl("/", true);
         http.logout()
                 .logoutUrl("/user/logout")
                 .logoutSuccessUrl("/");
+
+    }
+
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(customUserDetailsService).passwordEncoder(passwordEncoder());
     }
 
     @Autowired

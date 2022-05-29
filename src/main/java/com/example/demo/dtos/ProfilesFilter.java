@@ -10,4 +10,5 @@ public class ProfilesFilter {
     String firstName;
     String lastName;
     String isNew;
+    String hideDisabled;
 }

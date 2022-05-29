@@ -10,7 +10,8 @@ public interface ProfileRepository extends PagingAndSortingRepository<Profile, I
     @Query(value = "select profile from Profile profile where " +
             "(:firstName is null or UPPER(profile.firstName) like CONCAT('%',UPPER(:firstName),'%')) and " +
             "(:lastName is null or UPPER(profile.lastName) like CONCAT('%',UPPER(:lastName),'%')) and " +
-            "(:isNew = false or (:isNew = true and :isNew = profile.isNew)) and " +
-            "(:email is null or UPPER(profile.user.email) like CONCAT('%',UPPER(:email),'%'))")
-    Page<Profile> findAllByFilter(Pageable page, String firstName, String lastName, String email, Boolean isNew);
+            "(:showNewOnly = false or (:showNewOnly = true and :showNewOnly = profile.isNew)) and " +
+            "(:email is null or UPPER(profile.user.email) like CONCAT('%',UPPER(:email),'%')) and" +
+            "((:hideDisabled = true and profile.user.enabled = true) or :hideDisabled = false)")
+    Page<Profile> findAllByFilter(Pageable page, String firstName, String lastName, String email, Boolean showNewOnly, Boolean hideDisabled);
 }

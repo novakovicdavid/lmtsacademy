@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class User {
@@ -9,9 +10,13 @@ public class User {
     @GeneratedValue(generator = "user_seq")
     private Integer id;
     private String username;
+    @Column(nullable = false, unique = true)
     private String email;
+    @NotNull
     private String password;
     private String role;
+    @NotNull
+    private Boolean enabled;
 
     @OneToOne(mappedBy = "user", fetch = FetchType.LAZY)
     private Profile profile;
@@ -65,5 +70,13 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
     }
 }

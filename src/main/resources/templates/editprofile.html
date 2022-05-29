@@ -80,8 +80,8 @@
                 </section>
             </div>
             <div class="profile-details-entry button-container">
-                <input form="profile-form" class="edit-button" type="submit" value="Opslaan" sec:authorize="!hasAuthority('ADMIN')" th:href="@{|/profile/edit|}">
-                <input form="profile-form" class="edit-button" type="submit" value="Opslaan" sec:authorize="hasAuthority('ADMIN')" th:href="@{|/admin/profile/${profile.id}/edit|}">
+                <input form="profile-form" class="button" type="submit" value="Opslaan" sec:authorize="!hasAuthority('ADMIN')" th:href="@{|/profile/edit|}">
+                <input form="profile-form" class="button" type="submit" value="Opslaan" sec:authorize="hasAuthority('ADMIN')" th:href="@{|/admin/profile/${profile.id}/edit|}">
             </div>
             <div class="profile-details-entry text padding-bottom">
                 <section>

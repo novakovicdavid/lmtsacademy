@@ -30,6 +30,7 @@ public class ProfileController extends RootController {
     @GetMapping({"/profile"})
     public String profile(Model model, Principal principal) {
         var user = userRepository.findByEmail(principal.getName());
+        System.out.println(principal.getName());
         if (user.isEmpty()) return null;
         var profile = user.get().getProfile();
         if (profile == null) return null;
