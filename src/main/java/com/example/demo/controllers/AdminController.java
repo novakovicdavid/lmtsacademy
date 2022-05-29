@@ -47,7 +47,9 @@ public class AdminController {
     }
 
     @GetMapping("/eventedit/{id}")
-    public String eventEdit() {
+    public String eventEdit(Model model) {
+        model.addAttribute("profiles", profileRepository.findAll());
+
 
 
         return "admin/eventedit";
