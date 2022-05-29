@@ -1,0 +1,19 @@
+{
+  "properties": [
+    {
+      "name": "aws.s3.accessKey",
+      "type": "java.lang.String",
+      "description": "AWS S3 Access Key ID."
+    },
+    {
+      "name": "aws.s3.secretKey",
+      "type": "java.lang.String",
+      "description": "AWS S3 Secret Key."
+    },
+    {
+      "name": "aws.s3.region",
+      "type": "java.lang.String",
+      "description": "Region of S3 Bucket (eu-central-1)."
+    }
+  ]
+}

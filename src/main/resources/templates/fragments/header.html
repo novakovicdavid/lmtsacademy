@@ -21,10 +21,8 @@
                 <li><a th:href="@{/home}">Home</a></li>
                 <li><a th:href="@{/courselist}">Cursussen & Workshops</a></li>
                 <li><a th:href="@{/galerij}">Galerij</a></li>
-
-
             </ul>
-            <a id="navbar-center" href="/"><img alt="logo" th:src="@{/pictures/LMTSLogo.png}"></a>
+            <a id="navbar-center" href="/"><img alt="logo" th:src="@{https://d23rta9s95jzo8.cloudfront.net/static_pictures/LMTSLogo.png}"></a>
             <ul id="navbar-right">
                 <li sec:authorize="isAnonymous()"><a th:href="@{/user/register}">Maak een afspraak</a></li>
                 <li sec:authorize="isAnonymous()"><a th:href="@{/user/login}">Login</a></li>

@@ -77,7 +77,6 @@
 			<artifactId>momentjs</artifactId>
 			<version>2.29.3</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>jquery-ui</artifactId>
@@ -93,8 +92,12 @@
 			<artifactId>modelmapper</artifactId>
 			<version>3.1.0</version>
 		</dependency>
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk</artifactId>
+			<version>1.12.220</version>
+		</dependency>
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -122,5 +125,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
