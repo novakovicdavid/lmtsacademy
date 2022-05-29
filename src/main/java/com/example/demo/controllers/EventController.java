@@ -57,12 +57,14 @@ public class EventController extends RootController {
         eventList = eventRepository.findByFilter(employeeId, start, finish);
 
         model.addAttribute("eventList", eventList.iterator());
+        model.addAttribute("profiles", profileRepository.findAll());
 
         model.addAttribute("nrOfEvents", eventList.size());
         model.addAttribute("showFilters", true);
         model.addAttribute("start", start);
         model.addAttribute("finish", finish);
         model.addAttribute("employeeId", employeeId);
+
 
 
         return "eventlist";
