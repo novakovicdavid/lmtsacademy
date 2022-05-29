@@ -63,9 +63,16 @@ body {
 #calendar{
     background-color: white;
     border-radius: 10px;
+    min-height: 200px;
+}
+.calendarContainer{
+    margin-bottom: 30px;
 }
 .labelTitel{
     font-weight: bold;
+}
+.newAppointmentButton{
+    margin-bottom: 50px;
 }
 
 #submit{

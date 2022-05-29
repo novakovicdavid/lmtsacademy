@@ -35,6 +35,17 @@
 
 
     <script>
+        $(document).ready(function(){
+
+
+            // Close modal on button click
+            $(".btn").click(function(){
+                $("#addAppointmentModal").modal('hide');
+            });
+            $(".close").click(function(){
+                $("#addAppointmentModal").modal('hide');
+            });
+        });
         document.addEventListener('DOMContentLoaded', function () {
             var calendarEl = document.getElementById('calendar');
             var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -104,7 +115,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Plaats iets in je agenda</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button id="closeModal" type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
