@@ -1,5 +1,8 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -21,6 +24,7 @@ public class Event {
     private LocalDateTime finish;
     @ManyToOne(fetch = FetchType.LAZY)
     private Employee employee;
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     private Profile profile;
 

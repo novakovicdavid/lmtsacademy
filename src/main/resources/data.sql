@@ -216,13 +216,13 @@ insert into EMPLOYEE (ID, USERNAME) values (3, 'Femke');
 insert into EMPLOYEE (ID, USERNAME) values (4, 'Anna');
 
 insert into EVENT(ID, TITLE, START, FINISH, DESCRIPTION, EMPLOYEE_ID, PROFILE_ID)
-values ((nextval('EVENT_SEQ')), 'cursus','2022-05-10 8:00:00', '2022-05-10 12:00:00', 'cursus dans', 1, 1);
+values ((nextval('EVENT_SEQ')), 'cursus','2022-05-10 8:00:00', '2022-05-10 12:00:00', 'cursus dans', 1, 5);
 insert into EVENT(ID, TITLE, START, FINISH, DESCRIPTION, EMPLOYEE_ID, PROFILE_ID)
-values ((nextval('EVENT_SEQ')), 'webinar','2022-06-10 9:00:00', '2022-06-10 13:00:00', 'webinar limits academy', 2, 2);
+values ((nextval('EVENT_SEQ')), 'webinar','2022-06-10 9:00:00', '2022-06-10 13:00:00', 'webinar limits academy', 2, 6);
 insert into EVENT(ID, TITLE, START, FINISH, DESCRIPTION, EMPLOYEE_ID, PROFILE_ID)
-values ((nextval('EVENT_SEQ')), 'webinar','2022-08-11 8:00:00', '2022-08-11 12:00:00', 'webinar limits academy', 3, 3);
+values ((nextval('EVENT_SEQ')), 'webinar','2022-08-11 8:00:00', '2022-08-11 12:00:00', 'webinar limits academy', 3, 7);
 insert into EVENT(ID, TITLE, START, FINISH, DESCRIPTION, EMPLOYEE_ID, PROFILE_ID)
-values ((nextval('EVENT_SEQ')), 'meeting dans','2022-05-19 16:00:00', '2022-05-19 18:00:00', 'meeting met Anna voor Dans workshop', 4, 4);
+values ((nextval('EVENT_SEQ')), 'meeting dans','2022-05-19 16:00:00', '2022-05-19 18:00:00', 'meeting met Anna voor Dans workshop', 4, 8);
 insert into EVENT(ID, TITLE, START, FINISH, DESCRIPTION, EMPLOYEE_ID, PROFILE_ID)
 values ((nextval('EVENT_SEQ')), 'meeting zang','2022-05-19 9:00:00', '2022-05-19 14:00:00', 'meeting met Yanis voor Dans workshop', 3, 5);
 insert into EVENT(ID, TITLE, START, FINISH, DESCRIPTION, EMPLOYEE_ID, PROFILE_ID)
