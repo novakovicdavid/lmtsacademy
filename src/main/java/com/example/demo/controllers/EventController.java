@@ -49,12 +49,13 @@ public class EventController extends RootController {
     public String eventlistWithFilterFilter(Model model,
                                             @RequestParam(required = false) LocalDateTime start,
                                             @RequestParam(required = false) LocalDateTime finish,
-                                            @RequestParam(required = false) Integer employeeId
+                                            @RequestParam(required = false) Integer employeeId,
+                                            @RequestParam(required = false) Integer profileId
     ) {
         List<Event> eventList;
 
 
-        eventList = eventRepository.findByFilter(employeeId, start, finish);
+        eventList = eventRepository.findByFilter(employeeId, start, finish, profileId);
 
         model.addAttribute("eventList", eventList.iterator());
         model.addAttribute("profiles", profileRepository.findAll());
@@ -64,6 +65,8 @@ public class EventController extends RootController {
         model.addAttribute("start", start);
         model.addAttribute("finish", finish);
         model.addAttribute("employeeId", employeeId);
+        model.addAttribute("profileId", profileId);
+
 
 
 
