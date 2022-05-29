@@ -38,7 +38,7 @@ public class ProfileController extends RootController {
     }
 
     @GetMapping({"/profile/edit"})
-    public String myProfileEdit(Model model, Principal principal) {
+    public String profileEdit(Model model, Principal principal) {
         Optional<User> userFromDb = userRepository.findByEmail(principal.getName());
         if (userFromDb.isEmpty()) return null;
         var profile = userFromDb.get().getProfile();
@@ -49,13 +49,23 @@ public class ProfileController extends RootController {
     }
 
     @PostMapping("/profile/edit")
-    public String myProfilePost(Principal principal, ProfileDTO editedProfile) {
+    public String profileEditPost(Principal principal, ProfileDTO editedProfile) {
         var userOptional = userRepository.findByEmail(principal.getName());
         if (userOptional.isEmpty()) return null;
         var user = userOptional.get();
         var profile = user.getProfile();
         logger.info("editprofile: " + profile.getId() + " -- new name= " + editedProfile.getFirstName());
         modelMapper.map(editedProfile, profile);
+
+        var profilePicture = editedProfile.getProfilePicture();
+        if(editedProfile.getProfilePicture() != null) {
+            try {
+                String path = uploadProfilePicture(profile.getId(), profilePicture);
+                profile.setPathToProfilePicture(path);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
         profileRepository.save(profile);
         return "redirect:/profile";
     }

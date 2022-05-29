@@ -21,11 +21,11 @@
             <div class="profile-details-entry profile-picture-container">
                 <div class="profile-picture">
                     <img th:if="${profile.getPathToProfilePicture != null}" class="profile-picture"
-                         th:src="${profile.getPathToProfilePicture}" alt="Profile Picture">
+                         th:src="@{|https://d23rta9s95jzo8.cloudfront.net/${profile.getPathToProfilePicture()}|}" alt="Profile Picture">
                     <p th:unless="${profile.getPathToProfilePicture != null}" class="profile-picture"
                        th:text="${(profile.getFirstName()?.length() > 0 ? profile.getFirstName().substring(0, 1) : '?') + (profile.getLastName()?.length() > 0 ? profile.getLastName().substring(0, 1) : '?')}"></p>
                 </div>
-                <input form="profile-form" type="file" accept="image/png, image/jpeg">
+                <input form="profile-form" type="file" name="profilePicture" accept="image/png, image/jpeg">
             </div>
             <div class="profile-details-entry text padding-top">
                 <section>

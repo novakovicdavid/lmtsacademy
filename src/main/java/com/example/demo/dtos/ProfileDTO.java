@@ -3,6 +3,7 @@ package com.example.demo.dtos;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -22,4 +23,6 @@ public class ProfileDTO {
 
     private String phoneNumber;
     private String experience;
+
+    private MultipartFile profilePicture;
 }

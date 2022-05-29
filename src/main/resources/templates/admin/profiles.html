@@ -49,7 +49,7 @@
     <div class="profiles-list">
         <a class="profile-entry" th:each="profile: ${profiles}" th:href="${'/admin/profile/' + profile.id}">
             <img th:if="${profile.getPathToProfilePicture != null}" class="profile-entry-left-side"
-                 th:src="${profile.getPathToProfilePicture}" alt="Profile Picture">
+                 th:src="@{|https://d23rta9s95jzo8.cloudfront.net/${profile.getPathToProfilePicture()}|}" alt="Profile Picture">
             <p th:unless="${profile.getPathToProfilePicture != null}" class="profile-entry-left-side"
                th:text="${(profile.getFirstName()?.length() > 0 ? profile.getFirstName().substring(0, 1) : '?') + (profile.getLastName()?.length() > 0 ? profile.getLastName().substring(0, 1) : '?')}"></p>
             <p class="profile-entry-right-side" th:text="${profile.getUser().getEmail()}"></p>
