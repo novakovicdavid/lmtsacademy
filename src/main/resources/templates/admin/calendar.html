@@ -10,8 +10,8 @@
 
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Muli:300,400,600,800,900'/>
 
-    <!--    <link rel="stylesheet" type="text/css" media="all"-->
-    <!--          th:href="@{/css/theme.css}" href="/static/css/theme.css"/>-->
+        <link rel="stylesheet" type="text/css" media="all"
+              th:href="@{/css/eventbooking.css}" href="/static/css/eventbooking.css"/>
     <!--    <link rel="stylesheet" type="text/css" media="all"-->
     <!--          th:href="@{/css/stylesheet.css}" href="/static/css/stylesheet.css"/>-->
     <link href='/fullcalendar/main.css'
@@ -60,7 +60,6 @@
                     right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek',
 
 
-
                 },
 
                 eventLimit: true,
@@ -89,16 +88,6 @@
             });
             calendar.render();
         });
-        // window.onload = function () {
-        //     $('.fc-toolbar.fc-header-toolbar').addClass('row col-lg-12');
-        // };
-        //
-        // // add the responsive classes when navigating with calendar buttons
-        // $(document).on('click', '.fc-button', function(e) {
-        //     $('.fc-toolbar.fc-header-toolbar').addClass('row col-lg-12');
-        // });
-
-        // document.querySelector('style').textContent += "@media screen and (max-width:767px) { .fc-toolbar.fc-header-toolbar {flex-direction:column;} .fc-toolbar-chunk { display: table-row; text-align:center; padding:5px 0; } }";
 
     </script>
 </head>
@@ -124,7 +113,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="employee"> Afspraak voor:</label>
+                                <label class="labelTitel" for="employee"> Afspraak voor:</label>
                                 <select name="cars" th:field="*{employee}" id="employee">
                                     <option value="1">Yanis</option>
                                     <option value="2">Sharon</option>
@@ -137,7 +126,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="title"> Titel:</label>
+                                <label class="labelTitel" for="title"> Titel:</label>
                                 <input type="text" id="title" th:field="*{title}" class="form-control"
                                        placeholder="titel" maxlength="20" required>
                             </div>
@@ -147,7 +136,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="start">Van:</label>
+                                <label class="labelTitel" for="start">Van:</label>
                                 <input id="start" th:field="*{start}" class="form-control" placeholder="start"
                                        th:type="datetime-local" required>
                             </div>
@@ -155,17 +144,31 @@
 
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="finish">Tot:</label>
+                                <label class="labelTitel" for="finish">Tot:</label>
                                 <input id="finish" placeholder="finish" th:field="*{finish}" class="form-control"
                                        th:type="datetime-local" required></div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="description">Opmerkingen:</label>
-                                <input id="description" placeholder="opmerkingen" th:field="*{description}"
-                                       class="form-control" required></div>
+                                <label class="labelTitel" for="description">Met:</label>
+
+                                <select id="member" placeholder="persoon" th:field="*{profile}"
+
+                                        class="form-control" required>
+                                    <option th:each="profile : ${profiles}" th:value="${profile.id}" th:text="${profile.firstName} + ' '+ ${profile.lastName} "></option>
+                                </select>
+                            </div>
                         </div>
                     </div>
+                    <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="labelTitel" for="description">Opmerkingen:</label>
+                            <input id="description" placeholder="opmerkingen" th:field="*{description}"
+                                   class="form-control" required></div>
+                    </div>
+                    </div>
+
 
                     <button type="submit" id="submit" value="Submit" onclick="">Sla op</button>
 
@@ -280,8 +283,8 @@
 
     }
 
-.newAppointmentButton{
-    width: 100px;
-}
+    .newAppointmentButton {
+        width: 100px;
+    }
 </style>
 </html>

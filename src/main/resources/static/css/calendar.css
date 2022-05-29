@@ -64,4 +64,10 @@ body {
     background-color: white;
     border-radius: 10px;
 }
+.labelTitel{
+    font-weight: bold;
+}
 
+#submit{
+    background-color: #0c4128;
+}
