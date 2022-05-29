@@ -17,11 +17,11 @@ body {
     margin-top: 10vh;
 }
 
-.container {
-    display: inline-block;
-    background-color: #fff;
-    padding: 6vw 7vw 8vw 7vw;
-}
+/*.container {*/
+/*    display: inline-block;*/
+/*    background-color: #fff;*/
+/*    padding: 6vw 7vw 8vw 7vw;*/
+/*}*/
 
 @media (max-width: 460px) {
     #wrapper {
@@ -508,10 +508,10 @@ body {
 
 }
 
-.container {
-    background-color: #619095;
-    margin-top: 50px;
-}
+/*.container {*/
+/*    background-color: #619095;*/
+/*    margin-top: 50px;*/
+/*}*/
 
 /*.filterButton {*/
 /*    margin: 20px auto;*/
@@ -549,9 +549,10 @@ body {
 /*}*/
 
 .nrOfAppointments {
-    margin-left: 87%;
+    margin-left: 40px;
     margin-bottom:15px ;
-    font-size: larger;
+    font-size: x-large;
+    color: black;
 }
 
 .fc-day{
@@ -609,5 +610,27 @@ body {
 }
 .profileAppointment{
     text-decoration: none;
+
+}
+.h1Afspraken{
+text-align: center;
+color: white;
+font-family: bebas-neue, sans-serif;
+margin-top: 50px !important;}
+
+.searchButton{
+    text-align: center;
+;
+}
+.closeFilter{
+    color: white;
+    font-size: xxx-large;
+    margin-left: 20px;
+    text-decoration: none;
+}
+.courseContainer .row {
+    margin-bottom: 45px;
+    margin-left: 20px;
+    margin-right: 20px;
 
 }
