@@ -81,12 +81,13 @@ hr .new1 {
 
 .join {
     text-align: center;
-    font-size: 25px;
+    font-size: 20px;
     font-family: bebas-neue, sans-serif;
     color:white;
     text-decoration: none;
 }
 
 .date {
+    font-size: 10px;
     background-color: #ea95e8
 }
