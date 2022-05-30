@@ -52,14 +52,14 @@
                                     <div class="col-lg-3 col-md-3 col-sm-12 p-0 ">
                                         <label for="start"></label>
 
-                                        <input type="datetime-local" class="form-control search-slt" id="start"
-                                               name="start" th:value="${start}" placeholder="koekje" >
+                                        <input type="text" class="form-control search-slt" id="start" placeholder="startdatum"
+                                               name="start"  th:value="${start}" onfocus="(this.type='datetime-local')">
                                     </div>
                                     <div class="col-lg-3 col-md-3 col-sm-12 p-0">
                                         <label for="finish"></label>
 
-                                        <input type="datetime-local" class="form-control search-slt" id="finish"
-                                               name="finish" th:value="${finish}">
+                                        <input type="text" class="form-control search-slt" id="finish" placeholder="einddatum"
+                                               name="finish" th:value="${finish}" onfocus="(this.type='datetime-local')">
 
                                     </div>
                                     <div class="col-lg-3 col-md-3 col-sm-12 p-0">
@@ -150,8 +150,6 @@
         </div>
     </div>
 </div>
-</div>
-</div>
 
 
 <div th:replace="fragments/footer"></div>
@@ -162,26 +160,37 @@
         border: white 4px solid;
 
     }
+
     .btn-danger {
         background-color: #EB95E7;
-        border-color:#EB95E7 ;
+        border-color: #EB95E7;
 
     }
+
     .btn-danger:hover {
         background-color: #EB95E7;
-        border-color:#EB95E7 ;
+        border-color: #EB95E7;
         filter: brightness(80%);
 
     }
+
     .btn-danger:focus {
         background-color: #EB95E7;
-        border-color:#EB95E7 ;
+        border-color: #EB95E7;
         filter: brightness(80%);
 
     }
 
     .filterContain {
-      width: 85%;
+        width: 85%;
+    }
+    .courseContainer {
+        margin-left: 20px;
+        margin-right: 20px;
+
+    }
+    .filterButton{
+        margin-left: 40px;
     }
 
 

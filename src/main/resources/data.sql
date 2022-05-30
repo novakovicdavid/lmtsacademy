@@ -239,7 +239,22 @@ insert into EVENT(ID, TITLE, START, FINISH, DESCRIPTION, EMPLOYEE_ID, PROFILE_ID
 values ((nextval('EVENT_SEQ')), 'meeting','2022-05-28 12:00:00', '2022-05-28 16:00:00', 'Meeting met Sharon', 3, 11);
 insert into EVENT(ID, TITLE, START, FINISH, DESCRIPTION, EMPLOYEE_ID, PROFILE_ID)
 values ((nextval('EVENT_SEQ')), 'meeting','2022-05-28 16:00:00', '2022-05-28 18:00:00', 'Meeting met Yanis', 3, 12);
-
+insert into EVENT(ID, TITLE, START, FINISH, DESCRIPTION, EMPLOYEE_ID, PROFILE_ID)
+values ((nextval('EVENT_SEQ')), 'cursus','2022-06-10 8:00:00', '2022-06-10 12:00:00', 'cursus dans', 1, 22);
+insert into EVENT(ID, TITLE, START, FINISH, DESCRIPTION, EMPLOYEE_ID, PROFILE_ID)
+values ((nextval('EVENT_SEQ')), 'cursus','2022-06-10 8:00:00', '2022-06-10 12:00:00', 'cursus dans', 1, 22);
+insert into EVENT(ID, TITLE, START, FINISH, DESCRIPTION, EMPLOYEE_ID, PROFILE_ID)
+values ((nextval('EVENT_SEQ')), 'cursus','2022-06-10 8:00:00', '2022-06-10 12:00:00', 'cursus dans', 1, 20);
+insert into EVENT(ID, TITLE, START, FINISH, DESCRIPTION, EMPLOYEE_ID, PROFILE_ID)
+values ((nextval('EVENT_SEQ')), 'cursus','2022-06-10 8:00:00', '2022-06-10 12:00:00', 'cursus dans', 2, 19);
+insert into EVENT(ID, TITLE, START, FINISH, DESCRIPTION, EMPLOYEE_ID, PROFILE_ID)
+values ((nextval('EVENT_SEQ')), 'cursus','2022-06-10 8:00:00', '2022-06-10 12:00:00', 'cursus dans', 2, 18);
+insert into EVENT(ID, TITLE, START, FINISH, DESCRIPTION, EMPLOYEE_ID, PROFILE_ID)
+values ((nextval('EVENT_SEQ')), 'cursus','2022-06-10 8:00:00', '2022-06-10 12:00:00', 'cursus dans', 3, 4);
+insert into EVENT(ID, TITLE, START, FINISH, DESCRIPTION, EMPLOYEE_ID, PROFILE_ID)
+values ((nextval('EVENT_SEQ')), 'cursus','2022-06-10 8:00:00', '2022-06-10 12:00:00', 'cursus dans', 2, 7);
+insert into EVENT(ID, TITLE, START, FINISH, DESCRIPTION, EMPLOYEE_ID, PROFILE_ID)
+values ((nextval('EVENT_SEQ')), 'cursus','2022-06-10 8:00:00', '2022-06-10 12:00:00', 'cursus dans', 1, 8);
 
 
 INSERT INTO COURSE (ID, NAME, DESCRIPTION, SHORTDESCRIPTION, LOCATION, category,workshop)

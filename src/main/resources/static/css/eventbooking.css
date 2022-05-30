@@ -661,3 +661,13 @@ body {
 .bi {
     margin-left: 15px;
 }
+
+.edit_button {
+    text-decoration: none;
+    color: white;
+    background-color: #ea95e8;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    max-width: 50px;
+}

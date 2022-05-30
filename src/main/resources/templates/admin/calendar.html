@@ -6,6 +6,7 @@
 <head>
     <title>Calendar</title>
     <meta charset='utf-8'/>
+
     <link rel="stylesheet" type="text/css" media="all"
           th:href="@{/css/calendar.css}" href="/static/css/calendar.css"/>
 
@@ -13,8 +14,9 @@
 
         <link rel="stylesheet" type="text/css" media="all"
               th:href="@{/css/eventbooking.css}" href="/static/css/eventbooking.css"/>
-    <!--    <link rel="stylesheet" type="text/css" media="all"-->
-    <!--          th:href="@{/css/stylesheet.css}" href="/static/css/stylesheet.css"/>-->
+
+        <link rel="stylesheet" type="text/css" media="all"
+              th:href="@{/css/stylesheet.css}" href="/static/css/stylesheet.css"/>
     <link href='/fullcalendar/main.css'
           th:href="@{https://cdn.jsdelivr.net/webjars/org.webjars/fullcalendar/5.10.2/main.css}" rel="stylesheet"/>
     <script src='/fullcalendar/main.js'
@@ -50,9 +52,11 @@
         document.addEventListener('DOMContentLoaded', function () {
             var calendarEl = document.getElementById('calendar');
             var calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridMonth',
+                initialView: (function () { if ($(window).width() <= 768) { return defaultView = 'listYear'; } else { return defaultView = 'dayGridMonth'; } })(),
                 themeSystem: 'bootstrap5',
                 dayMaxEventRows: true,
+
+
                 handleWindowResize: true,
                 locale: 'nl',
                 eventClick: function (info) {
@@ -63,13 +67,15 @@
                     month: 'maand',
                     day: 'dag',
                     today: 'vandaag',
-                    list: 'lijst'
+                    list: 'lijst',
+                    listYear: 'lijst'
                 },
 
                 headerToolbar: {
                     left: 'prev,next today',
                     center: 'title',
-                    right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek',
+                    right: (function () { if ($(window).width() <= 768) { return right = 'listYear, timeGridDay'; } else { return right = 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'; } })(),
+                        // 'dayGridMonth,timeGridWeek,timeGridDay,listWeek',
 
 
                 },
@@ -98,8 +104,13 @@
                 },
 
             });
+
+
             calendar.render();
         });
+
+
+
 
     </script>
 </head>
@@ -297,6 +308,12 @@
 
     .newAppointmentButton {
         width: 100px;
+    }
+    #navbar-left a, #navbar-right a {
+        position: relative;
+        font-family: bebas-neue, sans-serif;
+        font-size: 1.6rem;
+        color: black;
     }
 </style>
 </html>
