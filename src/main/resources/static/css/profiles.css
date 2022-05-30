@@ -144,6 +144,30 @@ p.profile-entry-left-side {
     font-size: 1.335rem;
 }
 
+#legend {
+    font-family: bebas-neue, sans-serif;
+}
+
+#legend label {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+}
+
+#legend label .legend-color {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+}
+
+#legend-new {
+    background-color: #c9ffa4;
+}
+
+#legend-disabled {
+    background-color: #f88985;
+}
+
 @media only screen and (min-width: 78rem) {
     .content {
         display: grid;

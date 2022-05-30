@@ -47,6 +47,11 @@
             <a class="page-navigation-next submit-button" th:if="${filter != null && nextPageHasContent}"
                th:href="@{|/admin/profiles/filter/${page + 1}?email=${filter.email}&firstName=${filter.firstName}&lastName=${filter.lastName}&isNew=${filter.isNew}&hideDisabled=${filter.hideDisabled}|}">&gt;</a>
         </div>
+        <fieldset id="legend">
+            <legend>Kleuren:</legend>
+            <label><span class="legend-color" id="legend-new"></span>Nieuw</label>
+            <label><span class="legend-color" id="legend-disabled"></span>Uitgeschakeld</label>
+        </fieldset>
     </div>
     <div class="profiles-list">
         <a th:each="profile: ${profiles}" th:href="${'/admin/profile/' + profile.id}" class="profile-entry" th:classappend="${profile.new ? 'new' : ''} + ' ' + ${profile.user.enabled ? '' : 'disabled'}">
