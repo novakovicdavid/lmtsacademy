@@ -41,12 +41,9 @@
             </div>
         </form>
         <div class="profile-page-navigation">
-            <a class="page-navigation-previous submit-button" th:if="${filter == null && page > 0}"
-               th:href="@{|/admin/profiles/${page - 1}|}">&lt;</a>
-            <a class="page-navigation-next submit-button" th:if="${filter == null && nextPageHasContent}"
-               th:href="@{|/admin/profiles/${page + 1}|}">&gt;</a>
             <a class="page-navigation-previous submit-button" th:if="${filter != null && page > 0}"
                th:href="@{|/admin/profiles/filter/${page - 1}?email=${filter.email}&firstName=${filter.firstName}&lastName=${filter.lastName}&isNew=${filter.isNew}&hideDisabled=${filter.hideDisabled}|}">&lt;</a>
+            <span class="page-indicator" th:text="${(page + 1) + ' / ' + pageTotal}"></span>
             <a class="page-navigation-next submit-button" th:if="${filter != null && nextPageHasContent}"
                th:href="@{|/admin/profiles/filter/${page + 1}?email=${filter.email}&firstName=${filter.firstName}&lastName=${filter.lastName}&isNew=${filter.isNew}&hideDisabled=${filter.hideDisabled}|}">&gt;</a>
         </div>

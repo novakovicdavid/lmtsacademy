@@ -132,6 +132,14 @@ p.profile-entry-left-side {
     background-color: #f88985;
 }
 
+.page-indicator {
+    display: grid;
+    place-items: center;
+    grid-column: 2;
+    font-family: bebas-neue, sans-serif;
+    font-size: 1.335rem;
+}
+
 @media only screen and (min-width: 78rem) {
     .content {
         display: grid;

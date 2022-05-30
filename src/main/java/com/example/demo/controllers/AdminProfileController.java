@@ -36,7 +36,9 @@ public class AdminProfileController extends RootController {
         var profiles = profileRepository.findAllByFilter(PageRequest.of(page, 20, Sort.by("id").descending()), null, null, null, false, false);
         model.addAttribute("profiles", profiles.iterator());
         model.addAttribute("page", page);
+        model.addAttribute("pageTotal", profiles.getTotalPages());
         model.addAttribute("nextPageHasContent", (profiles.getTotalPages() - (page + 1)) != 0);
+        model.addAttribute("filter", new ProfilesFilter("", "", "", null, null));
         return "admin/profiles";
     }
 
@@ -54,6 +56,7 @@ public class AdminProfileController extends RootController {
         var profiles = profileRepository.findAllByFilter(PageRequest.of(page, 20, Sort.by("id").descending()), filter.getFirstName(), filter.getLastName(), filter.getEmail(), filter.getIsNew() != null, filter.getHideDisabled() != null);
         model.addAttribute("profiles", profiles);
         model.addAttribute("page", page);
+        model.addAttribute("pageTotal", profiles.getTotalPages());
         model.addAttribute("nextPageHasContent", (profiles.getTotalPages() - (page + 1)) > 0);
         model.addAttribute("filter", filter);
         return "admin/profiles";
