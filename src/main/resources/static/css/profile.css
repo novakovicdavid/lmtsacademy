@@ -120,6 +120,10 @@ body {
     text-decoration: none;
 }
 
+.toggle-enabled-button {
+    width: 9.5rem;
+}
+
 .toggle-enabled-button.disable {
     background-color: #ed4337;
 }
