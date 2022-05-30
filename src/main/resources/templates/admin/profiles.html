@@ -49,7 +49,7 @@
         </div>
     </div>
     <div class="profiles-list">
-        <a th:each="profile: ${profiles}" th:href="${'/admin/profile/' + profile.id}" class="profile-entry" th:classappend="${profile.user.enabled ? '' : 'disabled'}" >
+        <a th:each="profile: ${profiles}" th:href="${'/admin/profile/' + profile.id}" class="profile-entry" th:classappend="${profile.new ? 'new' : ''} + ' ' + ${profile.user.enabled ? '' : 'disabled'}">
             <img th:if="${profile.getPathToProfilePicture != null}" class="profile-entry-left-side"
                  th:src="@{|https://d23rta9s95jzo8.cloudfront.net/${profile.getPathToProfilePicture()}|}" alt="Profile Picture">
             <p th:unless="${profile.getPathToProfilePicture != null}" class="profile-entry-left-side"

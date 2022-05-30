@@ -109,6 +109,10 @@ body {
     border-radius: 4px;
 }
 
+.profile-entry.new {
+    background-color: #c9ffa4;
+}
+
 .profile-entry-left-side {
     grid-row: span 2;
     width: 100%;
