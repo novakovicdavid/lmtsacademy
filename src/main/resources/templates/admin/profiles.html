@@ -13,6 +13,7 @@
 <div th:replace="fragments/header"></div>
 <div class="content">
     <div class="filter-and-navigation">
+        <h2 class="title-filter">Filter:</h2>
         <form th:action="@{|/admin/profiles/filter/0|}">
             <div class="input-container input-container-text">
                 <label for="email">Email:</label>
@@ -47,6 +48,7 @@
             <a class="page-navigation-next submit-button" th:if="${filter != null && nextPageHasContent}"
                th:href="@{|/admin/profiles/filter/${page + 1}?email=${filter.email}&firstName=${filter.firstName}&lastName=${filter.lastName}&isNew=${filter.isNew}&hideDisabled=${filter.hideDisabled}|}">&gt;</a>
         </div>
+        <div class="separator"></div>
         <fieldset id="legend">
             <legend>Kleuren:</legend>
             <label><span class="legend-color" id="legend-new"></span>Nieuw</label>

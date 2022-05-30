@@ -168,6 +168,17 @@ p.profile-entry-left-side {
     background-color: #f88985;
 }
 
+.title-filter {
+    font-family: bebas-neue, sans-serif;
+}
+
+.separator {
+    height: 1px;
+    margin-top: 0.375rem;
+    background-color: rgb(118, 118, 118);
+    /*background: rgb(118, 118, 118) linear-gradient(to right, #ffffff, rgb(118, 118, 118), #ffffff);*/
+}
+
 @media only screen and (min-width: 78rem) {
     .content {
         display: grid;
