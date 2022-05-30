@@ -4,6 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
+@Table(name="user", schema = "public")
 public class User {
     @Id
     @SequenceGenerator(name = "user_seq", sequenceName = "USER_SEQ", initialValue = 0, allocationSize = 1)
