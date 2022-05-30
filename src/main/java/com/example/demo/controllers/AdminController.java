@@ -77,6 +77,30 @@ public class AdminController {
         return "redirect:/eventlist";
 
     }
+    @GetMapping("/eventdelete/{id}")
+    public String eventDelete(Model model) {
+        model.addAttribute("profiles", profileRepository.findAll());
 
+
+
+        return "admin/eventdelete";
+    }
+
+    @PostMapping("/eventdelete/{id}")
+    public String eventDelete(Model model,
+                                @PathVariable int id,
+                                @ModelAttribute("event") Event event) {
+        Optional<Event> optionalEvent = eventRepository.findById(id);
+        if (optionalEvent.isPresent()) {
+            Event editedEvent = optionalEvent.get();
+
+            eventRepository.delete(event);
+            model.addAttribute("event", editedEvent);
+
+        }
+
+
+       return "redirect:/eventlist";
+    }
 
 }
