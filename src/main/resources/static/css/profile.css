@@ -120,6 +120,14 @@ body {
     text-decoration: none;
 }
 
+.toggle-enabled-button.disable {
+    background-color: #ed4337;
+}
+
+.toggle-enabled-button.enable {
+    background-color: #5cb85c;
+}
+
 .button:hover {
     color: white;
     background-color: #d688d5;
@@ -133,12 +141,12 @@ body {
     outline: 2px solid #e2ef8d;
 }
 
-.toggle-enabled-button.disable {
-    background-color: #ed4337;
+.toggle-enabled-button.disable:hover {
+    background-color: #d73f34;
 }
 
-.toggle-enabled-button.enable {
-    background-color: #5cb85c;
+.toggle-enabled-button.enable:hover {
+    background-color: #53a453;
 }
 
 .hidden {

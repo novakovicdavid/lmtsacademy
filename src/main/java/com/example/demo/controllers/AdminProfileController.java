@@ -1,5 +1,6 @@
 package com.example.demo.controllers;
 
+import com.example.demo.CustomUserDetails;
 import com.example.demo.dtos.ProfileAdminDTO;
 import com.example.demo.dtos.ProfilesFilter;
 import com.example.demo.repositories.ProfileRepository;
@@ -8,12 +9,15 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+import org.springframework.security.core.session.SessionRegistry;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.security.Principal;
 
 @Controller
 @RequestMapping("/admin")
@@ -22,6 +26,8 @@ public class AdminProfileController extends RootController {
     ProfileRepository profileRepository;
     @Autowired
     UserRepository userRepository;
+    @Autowired
+    SessionRegistry sessionRegistry;
     private final ModelMapper modelMapper = new ModelMapper();
 
     @GetMapping({"/profiles/{page}"})
@@ -105,6 +111,17 @@ public class AdminProfileController extends RootController {
         var user = profile.getUser();
 
         user.setEnabled(!user.getEnabled());
+        if (!user.getEnabled()) {
+            for (Object principalObj : sessionRegistry.getAllPrincipals()) {
+                CustomUserDetails principal = (CustomUserDetails) principalObj;
+                if (principal.getUsername().equals(user.getEmail())) {
+                    var sessions = sessionRegistry.getAllSessions(principal, false);
+                    for (var session : sessions) {
+                        session.expireNow();
+                    }
+                }
+            }
+        }
         userRepository.save(user);
         return "redirect:/admin/profile/{id}";
     }
