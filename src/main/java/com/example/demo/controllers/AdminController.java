@@ -1,7 +1,9 @@
 package com.example.demo.controllers;
 
 
+import com.example.demo.model.Course;
 import com.example.demo.model.Event;
+import com.example.demo.repositories.CourseRepository;
 import com.example.demo.repositories.EventRepository;
 import com.example.demo.repositories.ProfileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,8 @@ public class AdminController {
     private EventRepository eventRepository;
     @Autowired
     private ProfileRepository profileRepository;
+    @Autowired
+    private CourseRepository courseRepository;
 
     @GetMapping("/calendar")
     public String eventNew(Model model) {
@@ -77,6 +81,13 @@ public class AdminController {
         return "redirect:/eventlist";
 
     }
+    @ModelAttribute("course")
+    public Course findCourse(@PathVariable(required = false) Integer id) {
+
+        if (id == null) return new Course();
+        Optional<Course> optionalCourse = courseRepository.findById(id);
+        return optionalCourse.orElse(null);
+    }
     @GetMapping("/eventdelete/{id}")
     public String eventDelete(Model model) {
         model.addAttribute("profiles", profileRepository.findAll());
@@ -102,5 +113,26 @@ public class AdminController {
 
        return "redirect:/eventlist";
     }
+    @GetMapping("/coursedelete/{id}")
+    public String courseDelete(Model model) {
+        model.addAttribute("courses", courseRepository.findAll());
 
+
+
+        return "admin/coursedelete";
+    }
+
+    @PostMapping("/coursedelete/{id}")
+    public String eventDelete(Model model,
+                              @PathVariable int id,
+                              @ModelAttribute("course") Course course) {
+        Optional<Course> optionalCourse = courseRepository.findById(id);
+        if (optionalCourse.isPresent()) {
+            Course editedCourse = optionalCourse.get();
+            courseRepository.delete(course);
+            model.addAttribute("course", editedCourse);
+
+        }
+        return "redirect:/home";
+    }
 }
