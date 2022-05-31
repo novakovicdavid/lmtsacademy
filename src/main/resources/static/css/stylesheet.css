@@ -236,6 +236,7 @@ a.smallButton2 {
         width: 70%;
     }
 }
+
 @media (max-width: 995px) {
     .filterButton {
         width: 50%;
