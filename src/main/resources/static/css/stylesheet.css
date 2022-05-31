@@ -154,6 +154,7 @@ h1 {
     color: white;
     box-shadow: 3px 4px 5px darkgrey;
 }
+
 h2.titleCourse {
     font-family: bebas-neue, sans-serif;
     font-size: 4em;
@@ -163,6 +164,7 @@ h2.titleCourse {
     margin-bottom: 40px;
     text-decoration: underline #EB95E7;
 }
+
 .buttonLookFilter:active {
     background-color: #E2ED8C;
     color: white;
@@ -174,6 +176,7 @@ h2.titleCourse {
     background-color: #ea95e8;
     border: none;
     border-radius: 4px;
+    margin: auto;
 }
 
 a.smallButton {
@@ -198,6 +201,7 @@ a.smallButton2 {
     display: block;
     width: 50%;
 }
+
 
 .filtername {
     font-size: 1.3em;
@@ -224,5 +228,16 @@ a.smallButton2 {
         display: block;
         margin-left: auto;
         margin-right: auto;
+    }
+}
+
+@media (max-width: 1300px) {
+    .filterButton {
+        width: 70%;
+    }
+}
+@media (max-width: 995px) {
+    .filterButton {
+        width: 50%;
     }
 }
