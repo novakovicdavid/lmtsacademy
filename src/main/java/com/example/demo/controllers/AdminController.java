@@ -1,8 +1,11 @@
 package com.example.demo.controllers;
 
 
+import com.example.demo.model.Course;
 import com.example.demo.model.Event;
+import com.example.demo.repositories.CourseRepository;
 import com.example.demo.repositories.EventRepository;
+import com.example.demo.repositories.ProfileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,11 +19,17 @@ import java.util.Optional;
 public class AdminController {
     @Autowired
     private EventRepository eventRepository;
+    @Autowired
+    private ProfileRepository profileRepository;
+    @Autowired
+    private CourseRepository courseRepository;
 
     @GetMapping("/calendar")
     public String eventNew(Model model) {
         model.addAttribute("event", new Event());
         model.addAttribute("eventlist", eventRepository.findAll());
+        model.addAttribute("profiles", profileRepository.findAll());
+
         return "admin/calendar";
 
     }
@@ -42,7 +51,9 @@ public class AdminController {
     }
 
     @GetMapping("/eventedit/{id}")
-    public String eventEdit() {
+    public String eventEdit(Model model) {
+        model.addAttribute("profiles", profileRepository.findAll());
+
 
 
         return "admin/eventedit";
@@ -70,6 +81,58 @@ public class AdminController {
         return "redirect:/eventlist";
 
     }
+    @ModelAttribute("course")
+    public Course findCourse(@PathVariable(required = false) Integer id) {
+
+        if (id == null) return new Course();
+        Optional<Course> optionalCourse = courseRepository.findById(id);
+        return optionalCourse.orElse(null);
+    }
+    @GetMapping("/eventdelete/{id}")
+    public String eventDelete(Model model) {
+        model.addAttribute("profiles", profileRepository.findAll());
 
 
+
+        return "admin/eventdelete";
+    }
+
+    @PostMapping("/eventdelete/{id}")
+    public String eventDelete(Model model,
+                                @PathVariable int id,
+                                @ModelAttribute("event") Event event) {
+        Optional<Event> optionalEvent = eventRepository.findById(id);
+        if (optionalEvent.isPresent()) {
+            Event editedEvent = optionalEvent.get();
+
+            eventRepository.delete(event);
+            model.addAttribute("event", editedEvent);
+
+        }
+
+
+       return "redirect:/eventlist";
+    }
+    @GetMapping("/coursedelete/{id}")
+    public String courseDelete(Model model) {
+        model.addAttribute("courses", courseRepository.findAll());
+
+
+
+        return "admin/coursedelete";
+    }
+
+    @PostMapping("/coursedelete/{id}")
+    public String eventDelete(Model model,
+                              @PathVariable int id,
+                              @ModelAttribute("course") Course course) {
+        Optional<Course> optionalCourse = courseRepository.findById(id);
+        if (optionalCourse.isPresent()) {
+            Course editedCourse = optionalCourse.get();
+            courseRepository.delete(course);
+            model.addAttribute("course", editedCourse);
+
+        }
+        return "redirect:/home";
+    }
 }

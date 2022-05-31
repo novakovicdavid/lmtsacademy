@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>DeleteCourse</title>
+    <title>DeleteEvent</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" media="all"
           th:href="@{/css/authentication.css}"/>
     <link rel="stylesheet" th:href="@{/bootstrap.min.css}">
     <script th:src="@{/bootstrap.min.js}"></script>
-    <link rel="stylesheet" href="https://use.typekit.net/ssa0ifx.css%22%3E
-    meta name=" viewport></head>
-
+    <link rel="stylesheet" href="https://use.typekit.net/ssa0ifx.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 <body>
 <div th:replace="fragments/header"></div>
 <div class="content">
@@ -17,7 +17,7 @@
         <p class="dialog_title">VERWIJDEREN?</p>
         <div class="dialog_content">
             <p class="dialog_text">Ben je zeker dat je dit wilt verwijderen?</p>
-            <form th:action="@{|/admin/coursedelete/${course.id}|}" th:object="${course}" method="post">
+            <form th:action="@{|/admin/eventdelete/${event.id}|}" th:object="${event}" method="post">
                 <input class="submit_button" type="submit" value="verwijder">
             </form>
         </div>

@@ -6,11 +6,14 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" media="all"
+          th:href="@{/css/authentication.css}"/>
+    <link rel="stylesheet" type="text/css" media="all"
           th:href="@{/css/stylesheet.css}" href="/static/css/stylesheet.css"/>
     <link rel="stylesheet" type="text/css" media="all"
           th:href="@{/css/eventbooking.css}" href="/static/css/eventbooking.css"/>
-    <link rel="stylesheet" type="text/css" media="all"
-          th:href="@{/css/authentication.css}"/>
+    <link rel="stylesheet" th:href="@{/bootstrap.min.css}">
+    <script th:src="@{/bootstrap.min.js}"></script>
+
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
@@ -45,6 +48,16 @@
                     <label for="finish">Tot:</label>
                     <input class="finish" id="finish" name="finish" type="text" th:field="*{finish}"
                            th:type="datetime-local" required>
+                </div>
+                <div class="input_container">
+                    <label class="labelTitel" for="member">Met:</label>
+
+                    <select id="member" th:field="*{profile}"
+
+                            class="form-control" required>
+                        <option th:each="profile : ${profiles}" th:value="${profile.id}"
+                                th:text="${profile.firstName} + ' '+ ${profile.lastName} "></option>
+                    </select>
                 </div>
 
                 <div class="input_container">

@@ -17,11 +17,11 @@ body {
     margin-top: 10vh;
 }
 
-.container {
-    display: inline-block;
-    background-color: #fff;
-    padding: 6vw 7vw 8vw 7vw;
-}
+/*.container {*/
+/*    display: inline-block;*/
+/*    background-color: #fff;*/
+/*    padding: 6vw 7vw 8vw 7vw;*/
+/*}*/
 
 @media (max-width: 460px) {
     #wrapper {
@@ -159,6 +159,13 @@ input:focus,
     #calendar {
         margin: auto;
         width: 90%;
+        min-height: 350px;
+    }
+    .fc .fc-view-harness{
+        min-height: 350px;
+    }
+    .fc--button {
+        background-color: white;
     }
 }
 
@@ -508,28 +515,28 @@ body {
 
 }
 
-.container {
-    background-color: #619095;
-    margin-top: 50px;
-}
+/*.container {*/
+/*    background-color: #619095;*/
+/*    margin-top: 50px;*/
+/*}*/
 
-.filterButton {
-    margin: 20px auto;
-    padding: .5em;
-    font-size: medium;
-    display: block;
-    width: 50%;
-}
+/*.filterButton {*/
+/*    margin: 20px auto;*/
+/*    padding: .5em;*/
+/*    font-size: medium;*/
+/*    display: block;*/
+/*    width: 50%;*/
+/*}*/
 
-.filtername {
-    font-size: 1.3em;
-    width: 50%;
-    margin: 20px auto;
-    display: block;
-    color: white;
-    font-family: bebas-neue, sans-serif;
-    text-align: center;
-}
+/*.filtername {*/
+/*    font-size: 1.3em;*/
+/*    width: 50%;*/
+/*    margin: 20px auto;*/
+/*    display: block;*/
+/*    color: white;*/
+/*    font-family: bebas-neue, sans-serif;*/
+/*    text-align: center;*/
+/*}*/
 
 .endDate {
     display: block;
@@ -541,33 +548,36 @@ body {
     margin-top: 6px;
 }
 
-.filterNumber {
-    display: block;
+/*.filterNumber {*/
+/*    display: block;*/
 
 
-    float: left;
-}
+/*    float: left;*/
+/*}*/
 
 .nrOfAppointments {
-    margin-left: 87%;
-    margin-bottom:15px ;
-    font-size: larger;
+    margin-left: 40px;
+    margin-bottom: 15px;
+    font-size: x-large;
+    color: black;
 }
 
-.fc-day{
-    border: 2px solid black; !important;
+.fc-day {
+    border: 2px solid black;
+!important;
 }
 
-.bi.bi-plus-square-fill{
+.bi.bi-plus-square-fill {
     width: 50px;
 }
 
-.summary{
+.summary {
     color: white;
     text-decoration: none;
     text-underline: none;
 }
-.a:hover{
+
+.a:hover {
     color: white;
 }
 
@@ -589,16 +599,82 @@ body {
     background-color: #E2ED8C;
     color: white;
 }
-.buttonLook{
+
+.buttonLook {
     text-decoration: none;
     color: white;
     background-color: #ea95e8;
     border: none;
     border-radius: 4px;
 }
-.buttonLook .filterButton{
+
+.buttonLook .filterButton {
 
 }
-.bold{
+
+.bold {
     font-weight: bold;
+}
+
+.filterContainer {
+    padding-top: 30px;
+
+}
+
+.profileAppointment {
+    text-decoration: none;
+
+}
+
+.h1Afspraken {
+    text-align: center;
+    color: white;
+    font-family: bebas-neue, sans-serif;
+    margin-top: 50px !important;
+}
+
+.searchButton {
+    text-align: center;;
+}
+
+.closeFilter {
+    color: white;
+    font-size: xxx-large;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.closeFilter:hover {
+    color: white;
+    font-size: xxx-large;
+    margin-left: 20px;
+    text-decoration: none;
+    filter: brightness(80%);
+}
+
+.courseContainer .row {
+    margin-bottom: 60px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
+.buttonLookFilter:hover {
+    border: #E2ED8C solid 2px;
+    color: #E2ED8C;
+    text-decoration: none;!important;
+    text-align: center;
+    box-shadow: 1px 1px 1px darkgrey;
+}
+.bi {
+    margin-left: 15px;
+}
+
+.edit_button {
+    text-decoration: none;
+    color: white;
+    background-color: #ea95e8;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    max-width: 50px;
 }
