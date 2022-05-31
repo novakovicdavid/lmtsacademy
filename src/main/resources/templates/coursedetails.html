@@ -22,12 +22,13 @@
             <a class="buttonLookFilter filterButton" style="width: 50px" th:href="@{|/coursedetails/${course.id}/next|}">&gt;</a>
         </div>
         <h2 class="titleCourse" style="margin-left: 100px" th:text="${course.getName}">course name</h2>
+        <br>
         <div class="cursusInfo">
             <div sec:authorize="hasAuthority('ADMIN')">
-                <a class="edit_button" th:href="@{|/editcourse/*{id}|}">EDIT</a>
+                <a class="buttonLookFilter filterButton" style="margin-left: 10px ; justify-content:left;max-width: 200px" th:href="@{|/editcourse/*{id}|}">EDIT</a>
             </div>
             <div sec:authorize="hasAuthority('ADMIN')">
-                <a class="edit_button" th:href="@{|/admin/coursedelete/${course.id}|}">DELETE</a>
+                <a class="buttonLookFilter filterButton" style="margin-left: 10px ; justify-content:left;max-width: 200px" th:href="@{|/admin/coursedelete/${course.id}|}">DELETE</a>
             </div>
             <div>
                 <div class="infoName"><b>Leerkracht:</b></div>
@@ -38,8 +39,8 @@
                 </div>
                 <div th:each="teacher: ${course.getTeacher()}">
 
-                    <a class="buttonLook smallButton2"
-                       th:href="@{|/teacherdetails/${teacher.id}|}">
+                    <a class="buttonLookFilter filterButton "
+                       style="margin-left: 10px ; justify-content:left; max-width: 200px" th:href="@{|/teacherdetails/${teacher.id}|}" >
                         <div th:text="${teacher.getName}">teacher</div>
                     </a>
                 </div>
@@ -59,7 +60,7 @@
                 </div>
                 <div th:each="company: ${course.getCompany()}">
 
-                    <a class="buttonLook smallButton2"
+                    <a class="buttonLookFilter filterButton" style="margin-left: 10px ; justify-content:left;max-width: 200px"
                        th:href="@{|/companydetails/${company.id}|}">
                         <div th:text="${company.getName}">company</div>
                     </a>
