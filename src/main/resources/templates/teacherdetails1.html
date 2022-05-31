@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="all"
+          th:href="@{/css/stylesheet.css}"/>
+    <link rel="stylesheet" th:href="@{/bootstrap.min.css}">
+    <script th:src="@{/bootstrap.min.js}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/ssa0ifx.css">
+    <title>Teacher</title>
+</head>
+<body class="body">
+<div th:replace="fragments/header"></div>
+<div class="container">
+<div class="main">
+    <div th:if="${teacher}">
+        <h2 class="titleOurTeam" th:text="${teacher.getName}">teacher name</h2>
+<div class="cursusInfo">
+    <div>
+        <img class="teacherpic" th:src="${teacher.getImage()}">
+    </div>
+    <div>
+        <div class="infoName"><b>Bio:</b></div>
+        <div class="infoValue" th:text="${teacher.getBio()}">bio</div>
+    </div>
+    <div>
+        <div class="infoName"><b>Ervaring:</b></div>
+        <div class="infoValue" th:text="${teacher.getExperience()}">experience</div>
+    </div>
+    <div>
+        <div class="infoName"><b>Welke cursus(sen) geef ik?:</b></div>
+            <div th:each="course: ${teacher.getCourses()}">
+                <a class="buttonLook smallButton2"
+                   th:href="@{|/coursedetails/${course.id}|}"
+                >
+                    <div th:text="${course.getName}">teacher</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+    <div th:replace="fragments/footer"></div>
+</body>
+<style>
+    body {
+        background: #619095;
+    }
+</style>
+</html>

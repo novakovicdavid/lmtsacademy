@@ -34,17 +34,17 @@
         </div>
         <div class="col-lg-10">
             <div class="courseContainer row">
-                <h1>CURSUSSEN</h1>
-                <div class="courselistitem col-12 col-sm-3" th:each="course: ${courses}">
+                <h1>ONZE CURSUSSEN</h1>
+                <div class="courselistitem col-12 col-sm-3" th:each="course: ${workshops}">
                     <a th:href="@{|/coursedetails/${course.id}|}">
                         <p class="coursename" th:text="${course.name}">Cursus naam </p>
                         <br>
                         <p class="coursetext" th:text="${course.shortdescription}">Cursus naam</p>
                     </a>
                 </div>
-                <h1>ONZE WORKSHOPS</h1>
+                <h1>WORKSHOPS</h1>
 
-                <div style="margin: 10px" class="courselistitem col-12 col-sm-3" th:each="course: ${workshops}">
+                <div style="margin: 10px" class="courselistitem col-12 col-sm-3" th:each="course: ${courses}">
                     <a th:href="@{|/coursedetails/${course.id}|}">
                         <p class="coursename" th:text="${course.name}">Cursus naam </p>
                         <br>
