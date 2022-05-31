@@ -151,7 +151,11 @@ h2.titleOurTeam {
     .circular--portrait {
         width: 70%;
     }
+    h2{
+        text-align: center;
+    }
 }
+
 
 @media (max-width: 1840px) {
     .teamMember {
@@ -162,4 +166,29 @@ h2.titleOurTeam {
     .imgLogoPink{
         margin-top: 200px;
     }
+}
+.buttonMemberCarousel {
+    border: #E2ED8C solid 2px;
+    color: #E2ED8C;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 1px 1px 1px darkgrey;
+    padding: 5px;
+}
+.card{
+    text-align: center;
+    width: 75%;
+}
+h5{
+    margin-top: 25px;
+}
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+.card{
+
+    margin-left: auto;
+    margin-right: auto;
 }

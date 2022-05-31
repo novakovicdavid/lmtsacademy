@@ -11,13 +11,11 @@
     <link rel="stylesheet" th:href="@{/bootstrap.min.css}">
     <link rel="stylesheet" type="text/css" media="all"
           th:href="@{/css/homePage.css}" href="/static/css/homePage.css"/>
-
+    <link rel="stylesheet" th:href="@{/owl.carousel.min.css}">
+    <link rel="stylesheet" th:href="@{/owl.theme.default.css}">
     <script th:src="@{/bootstrap.min.js}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.typekit.net/ssa0ifx.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 </head>
 <body class="body">
 <div th:replace="fragments/header"></div>
@@ -114,11 +112,10 @@
 </div>
 
 <h2 class="titleOurTeam">
-    OUR TEAM
+    HET TEAM
 </h2>
 <div class="container-fluid">
     <div class="row teamContainer">
-
         <div class="col-lg-6 col-sm-12 col-xl-2 teamMember">
             <div class="circular--portrait">
                 <img class="imgTeam" th:src="@{https://d23rta9s95jzo8.cloudfront.net/static_pictures/yanis.png}"/>
@@ -191,10 +188,103 @@
         <source th:src="@{https://d23rta9s95jzo8.cloudfront.net/static_pictures/LMTS_ACADEMY.mp4}" type=video/mp4>
     </video>
 </div>
+<h2 class="titleOurTeam">
+    ONZE LEDEN
+</h2>
+<div class="containerOwlCarousel">
+    <div class="owl-carousel owl-theme">
+
+        <div class="item">
+            <div class="card">
+                <img th:src="@{/pictures/voorbeeldFotoLid1.jpg}" class="card-img-top">
+                <h5 class="card-title">Lydia</h5>
+                <div class="card-body">
+                    <p class="card-text">Lid voor 2 jaar!</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="item">
+            <div class="card ">
+                <img th:src="@{/pictures/voorbeeldFotoLid2.jpg}" class="card-img-top ">
+                <h5 class="card-title">Marcus</h5>
+                <div class="card-body">
+                    <p class="card-text">Lid voor 1 jaar!</p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="card ">
+                <img th:src="@{/pictures/voorbeeldFotoLid3.jpg}" class="card-img-top ">
+                <h5 class="card-title">Peter</h5>
+                <div class="card-body">
+                    <p class="card-text">Lid voor 2 jaar!</p>
+                </div>
+            </div>
+        </div>
+        <div class="item ">
+            <div class="card ">
+                <img th:src="@{/pictures/voorbeeldFotoLid4.jpg}" class="card-img-top ">
+                <h5 class="card-title">Nancy</h5>
+                <div class="card-body">
+                    <p class="card-text">Lid voor 1 jaar!</p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="card ">
+                <img th:src="@{/pictures/voorbeeldFotoLid5.jpg}" class="card-img-top ">
+                <h5 class="card-title">Arthur</h5>
+
+                <div class="card-body">
+                    <p class="card-text">Juist gestart!</p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="card ">
+                <img th:src="@{/pictures/voorbeeldFotoLid6.jpg}" class="card-img-top">
+                <h5 class="card-title">Lydia</h5>
+
+                <div class="card-body">
+                    <p class="card-text">Juist gestart!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script th:src="@{owl.carousel.min.js}"></script>
+<script>
+    $('.owl-carousel').owlCarousel({
+
+
+        loop: true,
+        autoplay: true,
+        nav: true,
+        center:true,
+        navText: ["<i class='buttonMemberCarousel'><</i>", "<i class='buttonMemberCarousel'>></i>"],
+        responsive: {
+            0: {
+                items: 1,
+                nav: false
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 5
+            }
+        }
+    })
+</script>
 
 <h2 class="titleOurTeam">
     VISIE
 </h2>
+
 <div class="container-fluid containerLayout">
     <div class="test">
         <div class="row">
