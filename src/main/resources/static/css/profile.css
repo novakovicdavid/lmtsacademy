@@ -157,6 +157,10 @@ body {
     display: none;
 }
 
+.profile-details {
+    padding-bottom: 2rem;
+}
+
 @media (min-width: 43rem) {
     .title {
         font-size: 5rem;
@@ -167,6 +171,7 @@ body {
 
     .profile-details {
         grid-template-columns: 16rem auto;
+        padding-bottom: 0;
     }
 
     .profile-details-entry.text {

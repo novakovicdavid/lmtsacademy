@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.security.Principal;
+import java.util.regex.Pattern;
 
 @Controller
 @RequestMapping("/admin")
@@ -29,6 +29,7 @@ public class AdminProfileController extends RootController {
     @Autowired
     SessionRegistry sessionRegistry;
     private final ModelMapper modelMapper = new ModelMapper();
+    private final Pattern emailPattern = Pattern.compile("^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$"); // OWASP
 
     @GetMapping({"/profiles/{page}"})
     public String getMembersAtPage(@PathVariable Integer page,
@@ -88,6 +89,7 @@ public class AdminProfileController extends RootController {
         if (profileOpt.isEmpty()) return "profile";
         var profile = profileOpt.get();
         var user = profile.getUser();
+        if (!emailPattern.matcher(editedProfile.getEmail()).matches()) editedProfile.setEmail(user.getEmail());
         modelMapper.map(editedProfile, profile);
         if (userRepository.findByEmail(editedProfile.getEmail()).isEmpty()) {
             user.setEmail(editedProfile.getEmail());

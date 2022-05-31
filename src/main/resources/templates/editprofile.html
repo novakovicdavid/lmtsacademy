@@ -83,33 +83,6 @@
                 <input form="profile-form" class="button" type="submit" value="Opslaan" sec:authorize="!hasAuthority('ADMIN')" th:href="@{|/profile/edit|}">
                 <input form="profile-form" class="button" type="submit" value="Opslaan" sec:authorize="hasAuthority('ADMIN')" th:href="@{|/admin/profile/${profile.id}/edit|}">
             </div>
-            <div class="profile-details-entry text padding-bottom">
-                <section>
-                    <h2 class="section-title">Notities</h2>
-                    <div class="profile-details-content">
-                        <p>Filler</p>
-                        <p>Filler</p>
-                        <p>Filler</p>
-                        <p>Filler</p>
-                        <p>Filler</p>
-                        <p>Filler</p>
-                        <p>Filler</p>
-                    </div>
-                </section>
-                <section>
-                    <h2 class="section-title">Afspraken</h2>
-                    <p>More filler</p>
-                    <p>More filler</p>
-                    <p>More filler</p>
-                    <p>More filler</p>
-                    <p>More filler</p>
-                    <p>More filler</p>
-                    <p>More filler</p>
-                    <p>More filler</p>
-                    <p>More filler</p>
-                    <p>More filler</p>
-                </section>
-            </div>
         </form>
     </div>
 </div>
