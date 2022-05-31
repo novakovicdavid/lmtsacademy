@@ -3,6 +3,7 @@ package com.example.demo.controllers;
 
 import com.example.demo.model.Event;
 import com.example.demo.repositories.EventRepository;
+import com.example.demo.repositories.ProfileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,11 +17,15 @@ import java.util.Optional;
 public class AdminController {
     @Autowired
     private EventRepository eventRepository;
+    @Autowired
+    private ProfileRepository profileRepository;
 
     @GetMapping("/calendar")
     public String eventNew(Model model) {
         model.addAttribute("event", new Event());
         model.addAttribute("eventlist", eventRepository.findAll());
+        model.addAttribute("profiles", profileRepository.findAll());
+
         return "admin/calendar";
 
     }
@@ -42,7 +47,9 @@ public class AdminController {
     }
 
     @GetMapping("/eventedit/{id}")
-    public String eventEdit() {
+    public String eventEdit(Model model) {
+        model.addAttribute("profiles", profileRepository.findAll());
+
 
 
         return "admin/eventedit";
@@ -70,6 +77,30 @@ public class AdminController {
         return "redirect:/eventlist";
 
     }
+    @GetMapping("/eventdelete/{id}")
+    public String eventDelete(Model model) {
+        model.addAttribute("profiles", profileRepository.findAll());
 
+
+
+        return "admin/eventdelete";
+    }
+
+    @PostMapping("/eventdelete/{id}")
+    public String eventDelete(Model model,
+                                @PathVariable int id,
+                                @ModelAttribute("event") Event event) {
+        Optional<Event> optionalEvent = eventRepository.findById(id);
+        if (optionalEvent.isPresent()) {
+            Event editedEvent = optionalEvent.get();
+
+            eventRepository.delete(event);
+            model.addAttribute("event", editedEvent);
+
+        }
+
+
+       return "redirect:/eventlist";
+    }
 
 }

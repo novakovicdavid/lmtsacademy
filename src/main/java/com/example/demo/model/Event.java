@@ -1,5 +1,7 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -21,12 +23,14 @@ public class Event {
     private LocalDateTime finish;
     @ManyToOne(fetch = FetchType.LAZY)
     private Employee employee;
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Profile profile;
 
 
     public Event() {
-        super();
-
     }
+
     public Integer getId() {
         return id;
     }
@@ -75,10 +79,25 @@ public class Event {
         this.employee = employee;
     }
 
+    public Profile getProfile() {
+        return profile;
+    }
+
+    public void setProfile(Profile profile) {
+        this.profile = profile;
+    }
 
     @Override
     public String toString() {
-        return "Event{" + "id=" + id + ", title='" + title + '\'' + ", description='" + description + '\'' + ", start=" + start + ", finish=" + finish + ", employee=" + employee + '}';
+        return "Event{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", start=" + start +
+                ", finish=" + finish +
+                ", employee=" + employee +
+                ", profile=" + profile +
+                '}';
     }
 }
 
