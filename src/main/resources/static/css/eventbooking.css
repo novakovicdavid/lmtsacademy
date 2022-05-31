@@ -159,6 +159,13 @@ input:focus,
     #calendar {
         margin: auto;
         width: 90%;
+        min-height: 350px;
+    }
+    .fc .fc-view-harness{
+        min-height: 350px;
+    }
+    .fc--button {
+        background-color: white;
     }
 }
 

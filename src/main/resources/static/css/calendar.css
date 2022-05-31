@@ -63,10 +63,11 @@ body {
 #calendar{
     background-color: white;
     border-radius: 10px;
-    min-height: 200px;
+    min-height: 300px;
 }
 .calendarContainer{
     margin-bottom: 30px;
+    min-height: 300px;
 }
 .labelTitel{
     font-weight: bold;
