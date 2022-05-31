@@ -41,6 +41,29 @@ public class CourseController extends RootController {
         }
         return "coursedetails";
     }
+    @GetMapping("/coursedelete/{id}")
+    public String courseDelete(Model model) {
+        model.addAttribute("courses", courseRepository.findAll());
+
+
+
+        return "admin/coursedelete";
+    }
+
+    @PostMapping("/coursedelete/{id}")
+    public String eventDelete(Model model,
+                              @PathVariable int id,
+                              @ModelAttribute("course") Course course) {
+        Optional<Course> optionalCourse = courseRepository.findById(id);
+        if (optionalCourse.isPresent()) {
+            Course editedCourse = optionalCourse.get();
+            courseRepository.delete(course);
+            model.addAttribute("course", editedCourse);
+
+        }
+        return "redirect:/courselist/" + id;
+    }
+
     @GetMapping("/editcourse/{id}")
     public String editcourse(Model model, @PathVariable int id){
         logger.info("editcourse "+id);
@@ -60,6 +83,7 @@ public class CourseController extends RootController {
         logger.info("editcoursePost " + id + " -- new short description= " + course.getShortdescription());
         logger.info("editcoursePost " + id + " -- new description= " + course.getDescription());
         logger.info("editcoursePost " + id + " -- new location= " + course.getLocation());
+        logger.info("editcoursePost " + id + " -- new workshop? " + course.getWorkshop());
         courseRepository.save(course);
         return "redirect:/coursedetails/" + id;
     }
@@ -92,7 +116,7 @@ public class CourseController extends RootController {
     }
     @PostMapping("/newcourse")
     public String newCoursePost(Model model, @ModelAttribute("course") Course course) {
-        logger.info("newCoursePost -- new name=" + course.getName() +", teacher=" +course.getTeacher()+ ", short description=" + course.getShortdescription() +", description=" +course.getDescription()+", location= "+course.getLocation());
+        logger.info("newCoursePost -- new name=" + course.getName() +", teacher=" +course.getTeacher()+ ", short description=" + course.getShortdescription() +", description=" +course.getDescription()+", location= "+course.getLocation()+", workshop? "+course.getWorkshop());
         Course newCourse = courseRepository.save(course);
         return "redirect:/coursedetails/" + newCourse.getId();
     }

@@ -23,7 +23,7 @@
                         <input class="text_input" id="courseName" type="text" th:field="*{course.name}">
                     </div>
                     <div class="input_container">
-                        <label for="courseTeacher">Docent: </label>
+                        <label for="courseTeacher">Docent: (leeg laten indien workshop) </label>
                         <input class="text_input" id="courseTeacher" type="text" th:field="*{course.teacher}">
                     </div>
                     <div class="input_container">
@@ -38,6 +38,10 @@
                     <div class="input_container">
                         <label for="courseLocation">Locatie: </label>
                         <input class="text_input" id="courseLocation" type="text" th:field="*{course.location}">
+                    </div>
+                    <div class="input_container">
+                        <label for="workshop">Workshop? (true/false)</label>
+                        <input class="text_input" id="workshop" type="text" th:field="*{course.workshop}">
                     </div>
                     <div class="input_container submit_container">
                         <input class="submit_button" type="submit" value="save">
