@@ -21,7 +21,7 @@
         <div class="nextButtonDiv">
             <a class="buttonLookFilter filterButton" style="width: 50px" th:href="@{|/coursedetails/${course.id}/next|}">&gt;</a>
         </div>
-        <h2 class="titleOurTeam" style="margin-left: 100px" th:text="${course.getName}">course name</h2>
+        <h2 class="titleCourse" style="margin-left: 100px" th:text="${course.getName}">course name</h2>
         <div class="cursusInfo">
             <div sec:authorize="hasAuthority('ADMIN')">
                 <a class="edit_button" th:href="@{|/editcourse/*{id}|}">EDIT</a>
@@ -66,8 +66,14 @@
                 <div class="infoName"><b>Locatie:</b></div>
                 <div class="infoValue" th:text="${course.getLocation()}">location</div>
             </div>
-        </div>
+            <div>
+                <div th:if="${course.getWorkshop().equals(true)}">
+                    <div class="infoName"><b>Prijs:</b></div>
+                    <div class="infoValue" th:text="'65 euro'">price</div>
+                </div>
 
+            </div>
+        </div>
     </div>
 </div>
 </div>

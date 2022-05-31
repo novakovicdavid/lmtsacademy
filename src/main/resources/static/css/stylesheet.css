@@ -97,7 +97,7 @@ h1 {
     text-decoration: none;
     font-family: bebas-neue, sans-serif;
     font-size: 2em;
-    color: green;
+    color: #619095;
 }
 
 .edit_button {
@@ -154,7 +154,15 @@ h1 {
     color: white;
     box-shadow: 3px 4px 5px darkgrey;
 }
-
+h2.titleCourse {
+    font-family: bebas-neue, sans-serif;
+    font-size: 4em;
+    color: white;
+    margin-top: 50px !important;
+    margin-left: 40px;
+    margin-bottom: 40px;
+    text-decoration: underline #EB95E7;
+}
 .buttonLookFilter:active {
     background-color: #E2ED8C;
     color: white;

@@ -1,7 +1,6 @@
 package com.example.demo.controllers;
 
 import com.example.demo.model.Teacher;
-import com.example.demo.repositories.CourseRepository;
 import com.example.demo.repositories.TeacherRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,9 +21,7 @@ public class TeacherController extends RootController{
     public String teacherdetails(Model model, @PathVariable(required = false) Integer id) {
         if (id == null) return "teacherdetails";
         Optional<Teacher> teacherFromDb = teacherRepository.findById(id);
-        if (teacherFromDb.isPresent()) {
-            model.addAttribute("teacher", teacherFromDb.get());
-        }
+        teacherFromDb.ifPresent(teacher -> model.addAttribute("teacher", teacher));
         return "teacherdetails";
     }
 }
