@@ -79,9 +79,7 @@ h2.titleOurTeam {
 .circular--portrait {
     position: relative;
     width: 100%;
-    height: 300px;
     overflow: hidden;
-    border-radius: 50%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -89,7 +87,6 @@ h2.titleOurTeam {
 .circular--portrait img {
     width: 100%;
     height: auto;
-
 }
 
 .imgLogoPink {
@@ -106,7 +103,7 @@ h2.titleOurTeam {
 
 .video {
     display: block;
-    width: 50%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     background: #619095;
@@ -127,10 +124,12 @@ h2.titleOurTeam {
 .rowOurTeam {
     margin-bottom: 50px;
 }
-.containerLayout{
-    margin:0 ! important;
-    padding:0 ! important;
+
+.containerLayout {
+    margin: 0 ! important;
+    padding: 0 ! important;
 }
+
 @media (max-width: 1000px) {
     .imgLogoPink {
         width: 80%;
@@ -138,35 +137,35 @@ h2.titleOurTeam {
         margin-left: auto;
         margin-right: auto;
     }
+
     .test {
         background: linear-gradient(
                 to top, black 50%, #619095
         );
         margin-bottom: 50px;
     }
+
     .video {
         width: 100%;
     }
 
-    .circular--portrait {
-        width: 70%;
-    }
-    h2{
+    h2.titleOurTeam {
         text-align: center;
     }
 }
 
-
-@media (max-width: 1840px) {
-    .teamMember {
-        width: 100%;
-    }
-}
 @media (max-width: 500px) {
-    .imgLogoPink{
+    .imgLogoPink {
         margin-top: 200px;
     }
 }
+
+@media (max-width: 600px) {
+    h2.titleOurTeam {
+        margin-left: 0;
+    }
+}
+
 .buttonMemberCarousel {
     border: #E2ED8C solid 2px;
     color: #E2ED8C;
@@ -175,20 +174,32 @@ h2.titleOurTeam {
     box-shadow: 1px 1px 1px darkgrey;
     padding: 5px;
 }
-.card{
+
+.card {
     text-align: center;
     width: 75%;
 }
-h5{
+
+h5 {
     margin-top: 25px;
 }
+
 .card-img-top {
     width: 100%;
     height: 15vw;
     object-fit: cover;
 }
-.card{
 
+.card {
     margin-left: auto;
     margin-right: auto;
+}
+
+.card-title {
+    font-family: bebas-neue, sans-serif;
+    font-size: 1.6em;
+}
+
+.card-text {
+    font-family: 'Montserrat', sans-serif;
 }
