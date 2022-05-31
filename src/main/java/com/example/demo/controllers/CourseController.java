@@ -41,6 +41,29 @@ public class CourseController extends RootController {
         }
         return "coursedetails";
     }
+    @GetMapping("/coursedelete/{id}")
+    public String courseDelete(Model model) {
+        model.addAttribute("courses", courseRepository.findAll());
+
+
+
+        return "admin/coursedelete";
+    }
+
+    @PostMapping("/coursedelete/{id}")
+    public String eventDelete(Model model,
+                              @PathVariable int id,
+                              @ModelAttribute("course") Course course) {
+        Optional<Course> optionalCourse = courseRepository.findById(id);
+        if (optionalCourse.isPresent()) {
+            Course editedCourse = optionalCourse.get();
+            courseRepository.delete(course);
+            model.addAttribute("course", editedCourse);
+
+        }
+        return "redirect:/courselist/" + id;
+    }
+
     @GetMapping("/editcourse/{id}")
     public String editcourse(Model model, @PathVariable int id){
         logger.info("editcourse "+id);

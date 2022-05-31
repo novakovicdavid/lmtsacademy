@@ -17,7 +17,7 @@
     <div class="row">
 
         <div sec:authorize="hasAuthority('ADMIN')">
-            <a class="edit_button" th:href="@{|/newcourse|}">NIEUWE CURSUS</a>
+            <a class="buttonLookFilter filterButton" style="margin-left: 10px ; justify-content:left;max-width: 200px" th:href="@{|/newcourse|}">NIEUWE CURSUS</a>
         </div>
         <div class="col-lg-2 containerFilter">
             <div class="filtername">Categorie:</div>
