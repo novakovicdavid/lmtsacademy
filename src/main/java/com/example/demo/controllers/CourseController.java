@@ -47,7 +47,7 @@ public class CourseController extends RootController {
 
 
 
-        return "coursedelete";
+        return "admin/coursedelete";
     }
 
     @PostMapping("/coursedelete/{id}")

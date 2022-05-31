@@ -17,7 +17,7 @@
         <p class="dialog_title">VERWIJDEREN?</p>
         <div class="dialog_content">
             <p class="dialog_text">Ben je zeker dat je dit wilt verwijderen?</p>
-            <form th:action="@{|/deletecourse/${course.id}|}" th:object="${courses}" method="post">
+            <form th:action="@{|/coursedelete/${course.id}|}" th:object="${course}" method="post">
                 <input class="submit_button" type="submit" value="verwijder">
             </form>
         </div>
