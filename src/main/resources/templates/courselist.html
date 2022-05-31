@@ -15,11 +15,10 @@
 <div th:replace="fragments/header"></div>
 <div class="container-fluid">
     <div class="row">
-
-        <div sec:authorize="hasAuthority('ADMIN')">
-            <a class="buttonLookFilter filterButton" style="margin-left: 10px ; justify-content:left;max-width: 200px" th:href="@{|/newcourse|}">NIEUWE CURSUS</a>
-        </div>
         <div class="col-lg-2 containerFilter">
+            <div sec:authorize="hasAuthority('ADMIN')">
+                <a class="buttonLookFilter filterButton" th:href="@{|/newcourse|}">NIEUWE CURSUS</a>
+            </div>
             <div class="filtername">Categorie:</div>
             <a class="buttonLookFilter filterButton" th:classappend="${filteredcourses}"
                th:href="@{/courselist/}">Toon alles</a>
