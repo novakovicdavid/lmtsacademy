@@ -1,8 +1,14 @@
 package com.example.demo.controllers;
 
-import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.model.ObjectMetadata;
+import com.backblaze.b2.client.B2StorageClient;
+import com.backblaze.b2.client.contentSources.B2ContentSource;
+import com.backblaze.b2.client.contentSources.B2ContentTypes;
+import com.backblaze.b2.client.contentSources.B2FileContentSource;
+import com.backblaze.b2.client.structures.B2UploadFileRequest;
+import com.example.demo.B2MultiPartContentSource;
 import com.example.demo.repositories.UserRepository;
+import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.codec.binary.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +16,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.imageio.ImageIO;
+import java.io.File;
 import java.security.Principal;
 import java.util.UUID;
 
@@ -17,8 +24,8 @@ import java.util.UUID;
 public class RootController {
     @Autowired
     private UserRepository userRepository;
-//    @Autowired
-//    private AmazonS3 s3Client;
+    @Autowired
+    private B2StorageClient webStorageClient;
 
     @ModelAttribute("show_notification")
     public Boolean insertCompleteProfileNotificationInModel(Model model, Principal principal) {
@@ -48,9 +55,11 @@ public class RootController {
     String uploadProfilePicture(Integer profileId, MultipartFile profilePicture) throws Exception {
         processProfilePicture(profilePicture);
         UUID uuid = UUID.randomUUID();
-        var path = String.format("profiles/%1$s/%2$s", profileId, uuid);
+
+//        var path = String.format("profiles/%1$s/%2$s", profileId, uuid);
 //        s3Client.putObject("lmtsbucketaj3jxiz2omvn6sidqaozmr", path, profilePicture.getInputStream(), new ObjectMetadata());
-        return path;
+        webStorageClient.uploadSmallFile(B2UploadFileRequest.builder("9fd50648ed75132c7dce041e", uuid.toString(), B2ContentTypes.B2_AUTO, new B2MultiPartContentSource(profilePicture)).build());
+        return uuid.toString();
     }
 
     private void processProfilePicture(MultipartFile profilePicture) throws Exception {

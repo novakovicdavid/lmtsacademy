@@ -58,7 +58,7 @@
     <div class="profiles-list">
         <a th:each="profile: ${profiles}" th:href="${'/admin/profile/' + profile.id}" class="profile-entry" th:classappend="${profile.new ? 'new' : ''} + ' ' + ${profile.user.enabled ? '' : 'disabled'}">
             <img th:if="${profile.getPathToProfilePicture != null}" class="profile-entry-left-side"
-                 th:src="@{|https://d23rta9s95jzo8.cloudfront.net/${profile.getPathToProfilePicture()}|}" alt="Profile Picture">
+                 th:src="@{|https://testing73819826474.s3.us-west-002.backblazeb2.com/${profile.getPathToProfilePicture()}|}" alt="Profile Picture">
             <p th:unless="${profile.getPathToProfilePicture != null}" class="profile-entry-left-side"
                th:text="${(profile.getFirstName()?.length() > 0 ? profile.getFirstName().substring(0, 1) : '?') + (profile.getLastName()?.length() > 0 ? profile.getLastName().substring(0, 1) : '?')}"></p>
             <p class="profile-entry-right-side" th:text="${profile.getUser().getEmail()}"></p>
