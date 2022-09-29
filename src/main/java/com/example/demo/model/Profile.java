@@ -8,7 +8,7 @@ import java.util.Date;
 @Entity
 public class Profile {
     @Id
-    @SequenceGenerator(name = "profile_seq", sequenceName = "PROFILE_SEQ", initialValue = 0, allocationSize = 1)
+    @SequenceGenerator(name = "profile_seq", sequenceName = "PROFILE_SEQ", initialValue = 1, allocationSize = 1)
     @GeneratedValue(generator = "profile_seq")
     private Integer id;
     private String firstName;

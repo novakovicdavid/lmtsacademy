@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 @Table(name="user", schema = "public")
 public class User {
     @Id
-    @SequenceGenerator(name = "user_seq", sequenceName = "USER_SEQ", initialValue = 0, allocationSize = 1)
+    @SequenceGenerator(name = "user_seq", sequenceName = "USER_SEQ", initialValue = 1, allocationSize = 1)
     @GeneratedValue(generator = "user_seq")
     private Integer id;
     private String username;

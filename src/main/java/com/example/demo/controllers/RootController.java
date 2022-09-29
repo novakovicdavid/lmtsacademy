@@ -17,8 +17,8 @@ import java.util.UUID;
 public class RootController {
     @Autowired
     private UserRepository userRepository;
-    @Autowired
-    private AmazonS3 s3Client;
+//    @Autowired
+//    private AmazonS3 s3Client;
 
     @ModelAttribute("show_notification")
     public Boolean insertCompleteProfileNotificationInModel(Model model, Principal principal) {
@@ -49,7 +49,7 @@ public class RootController {
         processProfilePicture(profilePicture);
         UUID uuid = UUID.randomUUID();
         var path = String.format("profiles/%1$s/%2$s", profileId, uuid);
-        s3Client.putObject("lmtsbucketaj3jxiz2omvn6sidqaozmr", path, profilePicture.getInputStream(), new ObjectMetadata());
+//        s3Client.putObject("lmtsbucketaj3jxiz2omvn6sidqaozmr", path, profilePicture.getInputStream(), new ObjectMetadata());
         return path;
     }
 

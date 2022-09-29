@@ -6,7 +6,7 @@ import java.util.Collection;
 @Entity
 public class Teacher {
     @Id
-    @SequenceGenerator(name = "teacher_seq", sequenceName = "TEACHER_SEQ", initialValue = 0, allocationSize = 1)
+    @SequenceGenerator(name = "teacher_seq", sequenceName = "TEACHER_SEQ", initialValue = 1, allocationSize = 1)
     @GeneratedValue(generator = "teacher_seq")
     private Integer id;
     private String name;
