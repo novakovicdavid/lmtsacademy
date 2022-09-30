@@ -98,7 +98,7 @@ public class AdminProfileController extends RootController {
         var profilePicture = editedProfile.getProfilePicture();
         if (editedProfile.getProfilePicture() != null) {
             try {
-                String path = uploadProfilePicture(profile.getId(), profilePicture);
+                String path = uploadProfilePicture(profilePicture);
                 profile.setPathToProfilePicture(path);
             } catch (Exception e) {
                 e.printStackTrace();
