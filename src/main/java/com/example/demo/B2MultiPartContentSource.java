@@ -1,36 +1,34 @@
 package com.example.demo;
 
 import com.backblaze.b2.client.contentSources.B2ContentSource;
-import com.backblaze.b2.client.exceptions.B2Exception;
-import org.springframework.web.multipart.MultipartFile;
-
-import java.io.IOException;
 import java.io.InputStream;
 
 public class B2MultiPartContentSource implements B2ContentSource {
-    MultipartFile file;
+    InputStream inputStream;
+    long contentLength;
 
-    public B2MultiPartContentSource(MultipartFile multipartFile) {
-        this.file = multipartFile;
+    public B2MultiPartContentSource(InputStream inputStream, long contentLength) {
+        this.inputStream = inputStream;
+        this.contentLength = contentLength;
     }
 
     @Override
-    public long getContentLength() throws IOException {
-        return file.getSize();
+    public long getContentLength() {
+        return contentLength;
     }
 
     @Override
-    public String getSha1OrNull() throws IOException {
+    public String getSha1OrNull() {
         return null;
     }
 
     @Override
-    public Long getSrcLastModifiedMillisOrNull() throws IOException {
+    public Long getSrcLastModifiedMillisOrNull() {
         return null;
     }
 
     @Override
-    public InputStream createInputStream() throws IOException, B2Exception {
-        return file.getInputStream();
+    public InputStream createInputStream() {
+        return inputStream;
     }
 }
